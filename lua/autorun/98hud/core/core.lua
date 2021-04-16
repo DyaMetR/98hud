@@ -28,16 +28,19 @@ end
 W98HUD:include('themes.lua')
 W98HUD:include('parameters.lua')
 W98HUD:include('sounds.lua')
+W98HUD:include('persistance.lua')
 
 -- include core default implementation
 W98HUD:include('data/items.lua')
 W98HUD:include('data/sounds.lua')
 W98HUD:include('data/default.lua')
 
--- include configuration
-W98HUD:include('config/parameters.lua')
-W98HUD:include('config/qmenu.lua')
-W98HUD:include('config/themes.lua')
+-- include configuration menus
+W98HUD:include('qmenu/qmenu.lua')
+W98HUD:include('qmenu/themes.lua')
+
+-- include UI components
+
 
 -- include HUD elements
 
