@@ -4,6 +4,7 @@
 
 if SERVER then return end
 
+local fonts = {} -- items with fonts (reduce iterations)
 local parameters = {} -- items
 local parameterOrder = {} -- in which order do items appear
 
@@ -19,6 +20,7 @@ local parameterOrder = {} -- in which order do items appear
 function W98HUD:addItem(id, name, hasSize, hasColour1, hasColour2, hasFont)
   parameters[id] = {name = name, size = hasSize, colour1 = hasColour1, colour2 = hasColour2, font = hasFont}
   table.insert(parameterOrder, id)
+  if hasFont then table.insert(fonts, id) end
 end
 
 --[[------------------------------------------------------------------
@@ -44,4 +46,12 @@ end
 ]]--------------------------------------------------------------------
 function W98HUD:getItemsOrdered()
   return parameterOrder
+end
+
+--[[------------------------------------------------------------------
+  Gets all items with a font attached to them
+  @return {table} fonts
+]]--------------------------------------------------------------------
+function W98HUD:getFonts()
+  return fonts
 end

@@ -13,9 +13,10 @@ local defaultTheme -- default theme
   @param {string} unique identifier
   @param {string} print name
   @param {table} theme data
+  @param {boolean} whether it was loaded from disk (enable overriding/deletion)
 ]]--------------------------------------------------------------------
-function W98HUD:addTheme(id, name, data)
-  themes[id] = {name = name, data = data}
+function W98HUD:addTheme(id, name, data, fromDisk)
+  themes[id] = {name = name, data = data, pure = not fromDisk}
   table.insert(themeOrder, id)
 end
 

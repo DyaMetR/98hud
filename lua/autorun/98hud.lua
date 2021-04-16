@@ -4,7 +4,7 @@
   April 14th, 2021
 
   Made by DyaMetR
-  * full credits list to be determined
+  * full credits found in the details below
 ]]--------------------------------------------------------------------
 
 W98HUD = {}
@@ -16,7 +16,8 @@ if CLIENT then
   W98HUD.version = '2'
   W98HUD.date = 'April 14th, 2021'
   W98HUD.credits = { -- {name, contribution}
-    {'DyaMetR', 'Developer'}
+    {'DyaMetR', 'Developer'},
+    {'Matsilagi', 'Reference material\nTesting'}
   }
 end
 
@@ -24,9 +25,9 @@ end
   Includes a file sharedwise
   @param {string} file
 ]]--------------------------------------------------------------------
-function W98HUD:include(file)
-  include(file)
-  if SERVER then AddCSLuaFile(file) end
+function W98HUD:include(path)
+  include(path)
+  if SERVER then AddCSLuaFile(path) end
 end
 
 -- include core
