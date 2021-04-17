@@ -14,3 +14,7 @@
 ]]--------------------------------------------------------------------
 
 if SERVER then return end
+
+W98HUD:addItem('3dobj', '3D Objects', false, true, false, false)
+W98HUD:addItem('aborder', 'Active Window Border', false, true, false, false)
+W98HUD:addItem('atitle', 'Active Title Bar', false, true, true, true)
