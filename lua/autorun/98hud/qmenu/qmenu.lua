@@ -14,7 +14,7 @@ hook.Add('PopulateToolMenu', UID, function()
     panel:ClearControls()
     panel:CheckBox('Enabled', '98hud_enabled')
     panel:Help('\nLayout') -- separator
-    local _, mode = panel:ComboBox('Layout mode', '98hud_layout')
+    local mode, _ = panel:ComboBox('Layout mode', '98hud_layout')
       mode:AddChoice('Default', 1)
       mode:AddChoice('Desktop icons', 2)
     panel:CheckBox('Windowed', '98hud_window')

@@ -71,5 +71,5 @@ end
   @return {table} theme data
 ]]--------------------------------------------------------------------
 function W98HUD:getDefaultTheme()
-  return W98HUD:getTheme(defaultTheme).data
+  return defaultTheme
 end

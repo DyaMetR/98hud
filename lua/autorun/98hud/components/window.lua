@@ -17,7 +17,7 @@ local GRADIENT = surface.GetTextureID('gui/gradient') -- title bar gradient text
 local WINDOW_CONTROL_W, WINDOW_CONTROL_H = 16, 14 -- window controls buttons' size
 local WINDOW_CONTROL_FONT = 'internal_98hud_wcontrol' -- window controls font
 local C_CLOSE, C_MAX, C_MIN, C_HELP = 'C', 'B', 'A', '?' -- window control icons
-local WINDOW_CONTROL_MARGIN = 2 -- window control buttons margin
+local WINDOW_CONTROL_MARGIN = 2 -- window control buttons margin with title bar
 local WINDOW_CONTROL_ICON_MARGIN = 2 -- window control button icon margin
 
 local outCol1 = Color(0, 0, 0) -- outer border primary colour cache
@@ -161,14 +161,18 @@ end
   @param {string} text
   @param {Color} colour
   @param {Color} icon colour
+  @param {number|nil} title bar size
+  @param {string|nil} font for icons
 ]]--------------------------------------------------------------------
-local function windowControl(x, y, text, colour, iconColour)
-  local w, h = WINDOW_CONTROL_W, WINDOW_CONTROL_H
+local function windowControl(x, y, text, colour, iconColour, size, font)
+  size = size or WINDOW_CONTROL_W
+  font = font or WINDOW_CONTROL_FONT
+  local w, h = size - WINDOW_CONTROL_MARGIN, size - (WINDOW_CONTROL_MARGIN + (WINDOW_CONTROL_W - WINDOW_CONTROL_H))
   local margin = WINDOW_CONTROL_ICON_MARGIN
   x = x - w -- aligned to the right
   draw.RoundedBox(0, x, y, w, h, colour)
   W98HUD.COMPONENTS:windowBorder(x, y, w, h, colour)
-  draw.SimpleText(text, WINDOW_CONTROL_FONT, math.Round(x + (w * .5) - margin), math.Round(y + (h * .5)), iconColour, TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER)
+  draw.SimpleText(text, font, math.Round(x + (w * .5) - margin), math.Round(y + (h * .5)), iconColour, TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER)
   return w, h
 end
 
@@ -180,22 +184,24 @@ end
   @param {Color} icon colour
   @param {boolean|nil} window minimization controls
   @param {boolean|nil} help
+  @param {number|nil} title bar size
+  @param {string|nil} icon font
 ]]--------------------------------------------------------------------
-function W98HUD.COMPONENTS:windowControls(x, y, colour, iconColour, minimize, help)
+function W98HUD.COMPONENTS:windowControls(x, y, colour, iconColour, minimize, help, size, font)
   local margin = WINDOW_CONTROL_MARGIN
   -- close button
-  local w = windowControl(x, y, C_CLOSE, colour, iconColour)
+  local w = windowControl(x, y, C_CLOSE, colour, iconColour, size, font)
   if minimize then
     x = x - w - margin
     -- maximize button
-    w = windowControl(x, y, C_MAX, colour, iconColour)
+    w = windowControl(x, y, C_MAX, colour, iconColour, size, font)
     x = x - w
     -- minimize button
-    w = windowControl(x, y, C_MIN, colour, iconColour)
+    w = windowControl(x, y, C_MIN, colour, iconColour, size, font)
   end
   if help then
     x = x - w - margin
-    w = windowControl(x, y, C_HELP, colour, iconColour)
+    w = windowControl(x, y, C_HELP, colour, iconColour, size, font)
   end
 end
 

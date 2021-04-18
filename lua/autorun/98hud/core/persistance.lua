@@ -21,8 +21,9 @@ local SAVE_SUCCESS = 'Theme \'%s\' saved successfully as \'%s\'.'
 local DONE = 'Done.'
 
 local cache = { -- current configuration instance
-    items = {},
-    sounds = {}
+  theme = nil, -- last theme selected
+  items = {},
+  sounds = {}
 }
 
 --[[------------------------------------------------------------------
@@ -39,6 +40,7 @@ end
   @param {table} sounds
 ]]--------------------------------------------------------------------
 local function precacheSounds(sounds)
+  if not sounds then return end
   for sound, path in pairs(sounds) do
     util.PrecacheSound(path) -- precache sounds to avoid freezing when sounding
   end
@@ -53,8 +55,8 @@ local function precacheFonts()
     surface.CreateFont(item, {
       font = font.fontFamily,
       size = font.fontSize,
-      weight = font.fontWeight,
-      italic = font.fontItalic
+      weight = font.fontWeight or 0,
+      italic = font.fontItalic or false
     })
   end
 end
@@ -63,12 +65,12 @@ end
   Overrides the current cache parameters with the given data
   @param {table} items settings
   @param {table} sounds
+  @param {string} which theme does the configuration belong to
 ]]--------------------------------------------------------------------
-local function overrideCache(items, sounds)
-  table.Empty(cache.items) -- empty item configuration
-  table.Empty(cache.sounds) -- empty sounds
-  table.Add(cache.items, items) -- add items' configuration
-  table.Add(cache.sounds, sounds) -- add sounds
+local function overrideCache(items, sounds, theme)
+  cache.theme = theme
+  cache.items = table.Copy(items) -- copy item parameters
+  cache.sounds = table.Copy(sounds) -- copy sound parameters
   precacheSounds(sounds) -- precache new sounds
   precacheFonts() -- precache fonts
 end
@@ -82,12 +84,22 @@ local function storeLayout()
 end
 
 --[[------------------------------------------------------------------
+  Applies a theme's properties
+  @param {string} theme identifier
+]]--------------------------------------------------------------------
+function W98HUD:applyTheme(id)
+  local theme = W98HUD:getTheme(id)
+  W98HUD:applyChanges(theme.items, theme.sounds, id)
+end
+
+--[[------------------------------------------------------------------
   Applies the given theme data to the current one and stores it
   @param {table} items settings
   @param {table} sounds
+  @param {string} which theme does the configuration belong to
 ]]--------------------------------------------------------------------
-function W98HUD:applyChanges(items, sounds)
-  overrideCache(items, sounds) -- override cache data
+function W98HUD:applyChanges(items, sounds, theme)
+  overrideCache(items, sounds, theme) -- override cache data
   storeLayout() -- save to disk
 end
 
@@ -120,7 +132,7 @@ function W98HUD:setup()
     end
 
     -- read themes
-    local files, _ = file.Find(filename(THEMES_FOLDER)) -- find custom themes
+    local files, _ = file.Find('*.' .. EXTENSION, filename(THEMES_FOLDER)) -- find custom themes
     if files then -- check whether any custom themes have been stored
       local len = string.len(EXTENSION) -- file extension length
       for i=1, #files do
@@ -139,11 +151,12 @@ function W98HUD:setup()
     -- read cache
     local _file = file.Read(filename(CACHE_FILE_NAME .. EXTENSION))
     if _file then
-      overrideCache(_file.items, _file.sounds) -- override cache object with the file's data
+      overrideCache(_file.items, _file.sounds, _file.theme) -- override cache object with the file's data
       W98HUD:print(CURRENT_READ)
     else
       local default = W98HUD:getDefaultTheme() -- get default theme
-      overrideCache(default.items, default.sounds) -- override cache with default theme data
+      local data = W98HUD:getTheme(default).data -- get theme's data
+      overrideCache(data.items, data.sounds, default) -- override cache with default theme data
       W98HUD:print(NO_CURRENT_FOUND) -- if not found, return to default
     end
 

@@ -15,6 +15,12 @@
 
 if SERVER then return end
 
-W98HUD:addItem('3dobj', '3D Objects', false, true, false, false)
-W98HUD:addItem('aborder', 'Active Window Border', false, true, false, false)
-W98HUD:addItem('atitle', 'Active Title Bar', false, true, true, true)
+W98HUD:addItem('obj3d', '3D Objects', false, true, true)
+W98HUD:addItem('atitle', 'Active Title Bar', true, true, true, true)
+W98HUD:addItem('aborder', 'Active Window Border', true, true)
+W98HUD:addItem('desktop', 'Desktop', false, true)
+W98HUD:addItem('ititle', 'Inactive Title Bar', true, true, true, true)
+W98HUD:addItem('iborder', 'Inactive Window Border', true, true)
+W98HUD:addItem('menu', 'Menu', true, true, false, true)
+W98HUD:addItem('caption', 'Caption Buttons', true)
+W98HUD:addItem('selitems', 'Selected Items', false, true, true)
