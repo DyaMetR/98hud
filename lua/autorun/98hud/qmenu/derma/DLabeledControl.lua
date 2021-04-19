@@ -2,6 +2,8 @@
   Control with a label on top of it
 ]]--------------------------------------------------------------------
 
+if SERVER then return end
+
 local HEIGHT, MARGIN = 20, 17
 
 local PANEL = {}

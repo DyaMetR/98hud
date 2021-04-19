@@ -3,6 +3,7 @@
 ]]--------------------------------------------------------------------
 
 W98HUD:include('derma/DColorMixerButton.lua')
+W98HUD:include('derma/DLabeledControl.lua')
 
 if SERVER then return end
 
@@ -162,8 +163,10 @@ local function appearance(sheet)
   local sizeWidth, colWidth = 55, 48 -- size control and colour controls sizes
   local _items, items = labeledControl(parent, ITEM, 'DComboBox', 8, preview.y + preview:GetTall() + 51, 200)
   local _, size = labeledControl(parent, SIZE, 'DNumberWang', x, _items.y, sizeWidth, items:GetTall())
-  local _, col1 = labeledControl(parent, COLOUR, 'DColorMixerButton', x + size:GetWide() + 5, _items.y, colWidth, items:GetTall())
+  local _, col1 = labeledControl(parent, COLOUR, 'DButton', x + size:GetWide() + 5, _items.y, colWidth, items:GetTall())
   local _, col2 = labeledControl(parent, COLOUR2, colourPicker(parent, 0, 0, colWidth, items:GetTall()), x + size:GetWide() + col1:GetWide() + 10, _items.y, colWidth, items:GetTall())
+
+  local colour1 = vgui.Create('DColorMixerButton', parent)
 
   -- item font
   local fPropWidth = 24 -- font properties button size
