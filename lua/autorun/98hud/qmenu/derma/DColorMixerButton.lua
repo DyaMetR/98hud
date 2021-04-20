@@ -6,6 +6,7 @@ if SERVER then return end
 
 local HORIZONTAL_MARGIN, VERTICAL_MARGIN = 5, 4
 local OUTLINE, OUTLINE_COLOUR = 1, Color(0, 0, 0)
+local DISABLED, DISABLED_OUTLINE = Color(188, 188, 188), Color(100, 100, 100)
 local MIXER_MARGIN = 5
 
 local PANEL = {}
@@ -23,8 +24,13 @@ end
 ]]--------------------------------------------------------------------
 function PANEL:PaintOver()
   local x, y, w, h = HORIZONTAL_MARGIN, VERTICAL_MARGIN, self:GetWide() - (HORIZONTAL_MARGIN * 2), self:GetTall() - (VERTICAL_MARGIN * 2)
-  draw.RoundedBox(0, x, y, w, h, OUTLINE_COLOUR)
-  draw.RoundedBox(0, x + OUTLINE, y + OUTLINE, w - (OUTLINE * 2), h - (OUTLINE * 2), self.Value)
+  local col, out = self.Value, OUTLINE_COLOUR
+  if not self:IsEnabled() then -- paint it grey if disabled
+    col = DISABLED
+    out = DISABLED_OUTLINE
+  end
+  draw.RoundedBox(0, x, y, w, h, out)
+  draw.RoundedBox(0, x + OUTLINE, y + OUTLINE, w - (OUTLINE * 2), h - (OUTLINE * 2), col)
 end
 
 --[[------------------------------------------------------------------
@@ -71,9 +77,11 @@ function PANEL:CreateColorMixer()
   self.ColorMixer:SetTitle('')
   self.ColorMixer:MakePopup()
   self.ColorMixer.OnSizeChanged = function(_self, w, h) _self.Control:SetSize(w - (MIXER_MARGIN * 2), h - (MIXER_MARGIN * 2)) end
+  self.ColorMixer.OnFocusChanged = function(_self, gained) if not gained then self:DestroyColorMixer() end end
   self.ColorMixer.Control = vgui.Create('DColorMixer', self.ColorMixer)
   self.ColorMixer.Control:SetPos(MIXER_MARGIN, MIXER_MARGIN)
   self.ColorMixer.Control:SetSize(self.ColorMixer:GetWide() - (MIXER_MARGIN * 2), self.ColorMixer:GetTall() - (MIXER_MARGIN * 2))
+  self.ColorMixer.Control:SetAlphaBar(false)
   self.ColorMixer.Control.ValueChanged = function(_self, value) self:SetValue(value) end
 end
 

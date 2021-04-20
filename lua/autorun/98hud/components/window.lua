@@ -229,7 +229,10 @@ function W98HUD.COMPONENTS:emptyWindow(label, x, y, w, h, font, colour, borderTi
   draw.RoundedBox(0, x + frame, y + frame, w - (frame * 2), titleHeight + (margin * 2), colour) -- header
   W98HUD.COMPONENTS:title(label, x + frame + margin, y + frame + margin, w - ((margin + frame) * 2), titleHeight, font, titleColour, titleColour1, titleColour2) -- title bar
   if borderTint then -- draw border
-    drawOutline(x + frame, y + frame, w - (frame * 2), h - (frame * 2), borderTint, borderTint)
+    local borderThick = WINDOW_BORDER_TINT_THICKNESS
+    drawOutline(x + frame, y + frame, w - (frame * 2), h - (frame * 2), borderTint, borderTint, borderThick)
+    frame = frame + borderThick
+    margin = margin - borderThick
   end
   return titleHeight + (margin * 2), frame
 end

@@ -59,8 +59,8 @@ W98HUD:include('data/default.lua')
 W98HUD:include('components/window.lua')
 
 -- include configuration menus
-W98HUD:include('qmenu/qmenu.lua')
-W98HUD:include('qmenu/themes.lua')
+W98HUD:include('qmenu/toolmenu.lua')
+W98HUD:include('qmenu/menu.lua')
 
 -- include HUD elements
 W98HUD:include('elements/border.lua')

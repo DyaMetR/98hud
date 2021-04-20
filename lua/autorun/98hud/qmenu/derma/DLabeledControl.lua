@@ -11,6 +11,7 @@ local PANEL = {}
 -- override
 function PANEL:Init()
   self.Label = vgui.Create('DLabel', self)
+  self:SetTall(self.Label:GetTall() + HEIGHT + MARGIN)
 end
 
 --[[------------------------------------------------------------------
@@ -20,8 +21,8 @@ end
 function PANEL:SetLabel(label)
   self.Label:SetText(label)
   self.Label:SizeToContents()
-  if self.Control then return end
-  self:SetSize(self.Label:GetWide(), self.Label:GetTall())
+  if self.Control or self:GetWide() >= self.Label:GetWide() then return end
+  self:SetWide(self.Label:GetWide())
 end
 
 --[[------------------------------------------------------------------
@@ -37,10 +38,10 @@ end
   @param {Panel} control
 ]]--------------------------------------------------------------------
 function PANEL:SetControl(control)
+  self.Control = control
   control:SetParent(self)
-  control:SetSize(self.Wide, HEIGHT)
+  control:SetSize(self:GetWide(), HEIGHT)
   control:SetPos(0, MARGIN)
-  self:SetTall(self.Label:GetTall() + self.Control:GetTall())
 end
 
 --[[------------------------------------------------------------------
@@ -52,12 +53,21 @@ function PANEL:CreateControl(class)
 end
 
 --[[------------------------------------------------------------------
-  Changes the child's control width
+  Called when the size changes
   @param {number} width
 ]]--------------------------------------------------------------------
-function PANEL:SetWide(width)
-  self.Control:SetWide(width)
-  self.Wide = math.max(width, self.Label:GetWide())
+function PANEL:OnSizeChanged(w, h)
+  if not self.Control then return end
+  self.Control:SetWide(w)
+end
+
+--[[------------------------------------------------------------------
+  Toggles the control usability
+  @param {boolean} enabled
+]]--------------------------------------------------------------------
+function PANEL:SetEnabled(enabled)
+  if not self.Control then return end
+  self.Control:SetEnabled(enabled)
 end
 
 vgui.Register( 'DLabeledControl', PANEL, 'Panel' )
