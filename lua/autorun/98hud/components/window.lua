@@ -51,7 +51,7 @@ end
   @param {string} font
   @return
 ]]--------------------------------------------------------------------
-local function getTextHeight(text, font)
+function W98HUD:getTextHeight(text, font)
   surface.SetFont(font)
   local _w, _h = surface.GetTextSize(text)
   return _h
@@ -63,8 +63,8 @@ end
   @param {string} font
   @param {number} height
 ]]--------------------------------------------------------------------
-local function getTitleBarHeight(text, font, h)
-  return math.max(getTextHeight(text, font) + TITLE_LABEL_VERTICAL_MARGIN, h or 0)
+function W98HUD:getTitleBarHeight(text, font, h)
+  return math.max(W98HUD:getTextHeight(text, font) + TITLE_LABEL_VERTICAL_MARGIN, h or 0)
 end
 
 --[[------------------------------------------------------------------
@@ -101,7 +101,6 @@ end
 ]]--------------------------------------------------------------------
 function W98HUD.COMPONENTS:title(label, x, y, w, h, font, textColour, colour1, colour2)
   local margin = TITLE_LABEL_HORIZONTAL_MARGIN
-  h = getTitleBarHeight(label, font, h) -- get real height
   draw.RoundedBox(0, x, y, w, h, colour1)
   if colour2 then -- draw gradient
     surface.SetTexture(GRADIENT)
@@ -223,7 +222,7 @@ end
   @return {number} frame size
 ]]--------------------------------------------------------------------
 function W98HUD.COMPONENTS:emptyWindow(label, x, y, w, h, font, colour, borderTint, titleColour, titleColour1, titleColour2, titleHeight)
-  titleHeight = getTitleBarHeight(label, font, titleHeight or 0) -- get actual height
+  titleHeight = W98HUD:getTitleBarHeight(label, font, titleHeight or 0) -- get actual height
   local margin = TITLE_LABEL_HORIZONTAL_MARGIN
   local frame = W98HUD.COMPONENTS:windowBorder(x, y, w, h, colour) -- window frame
   draw.RoundedBox(0, x + frame, y + frame, w - (frame * 2), titleHeight + (margin * 2), colour) -- header

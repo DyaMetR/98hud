@@ -6,6 +6,7 @@ if SERVER then return end
 
 local FONT_PREFIX = '98hud_settings_%s'
 local ATITLE, ITITLE = 'atitle', 'ititle'
+local CAPTION_ICON_FONT = '98hud_settings_3'
 local SCHEME, ITEM, FONT, SIZE, COLOUR, COLOUR2 = 'Scheme', 'Item', 'Font', 'Size', 'Color', 'Color 2'
 local FONT_TOOLTIP = 'Press ENTER to preview the new font family'
 local APPLY, CANCEL, OK = 'Apply', 'Cancel', 'OK'
@@ -19,8 +20,6 @@ local CAPTION_ITEMS = { -- list of items that share size with caption icons
   atitle = true,
   caption = true
 }
-
-local cache = {} -- menu theme cache
 
 --[[------------------------------------------------------------------
   Updates the font used for the preview screen
@@ -101,7 +100,6 @@ function W98HUD.CreateAppereanceMenu(sheet, cache)
 
   -- cache sample fonts
   updateSampleFont(ATITLE, cache.items.atitle)
-  updateSampleFont(ITITLE, cache.items.ititle)
   updateCaptionFont(cache.items.caption.size)
 
   -- preview window
@@ -111,19 +109,18 @@ function W98HUD.CreateAppereanceMenu(sheet, cache)
   preview.Paint = function()
     local w, h = preview:GetWide() * .95, preview:GetTall() * .7
     local items = cache.items
-    local header = math.max(items.ititle.size, items.atitle.size, items.caption.size)
-    local aTitleFont, iTitleFont = string.format(FONT_PREFIX, ATITLE), string.format(FONT_PREFIX, ITITLE)
+    local titleFont = string.format(FONT_PREFIX, ATITLE)
     -- draw
     draw.RoundedBox(0, 0, 0, preview:GetWide(), preview:GetTall(), items.desktop.colour1)
     W98HUD.COMPONENTS:windowBorder(0, 0, preview:GetWide(), preview:GetTall(), DEFAULT_COLOUR, true)
     -- inactive window
     local x, y = preview:GetWide() * .02, preview:GetTall() * .04
-    W98HUD.COMPONENTS:window(INACTIVE_WINDOW, x, y, w, h, aTitleFont, items.obj3d.colour1, items.iborder.colour1, items.ititle.fontColour, items.ititle.colour1, items.ititle.colour2, header)
-    W98HUD.COMPONENTS:windowControls(x + w - 6, y + 6, items.obj3d.colour1, items.obj3d.colour2, true, nil, header, CAPTION_ICON_FONT)
+    W98HUD.COMPONENTS:window(INACTIVE_WINDOW, x, y, w, h, titleFont, items.obj3d.colour1, items.iborder.colour1, items.ititle.fontColour, items.ititle.colour1, items.ititle.colour2, items.ititle.size)
+    W98HUD.COMPONENTS:windowControls(x + w - 6, y + 6, items.obj3d.colour1, items.obj3d.colour2, true, nil, items.ititle.size, CAPTION_ICON_FONT)
     -- active window
     x, y = preview:GetWide() * .03, preview:GetWide() * .09
-    W98HUD.COMPONENTS:window(ACTIVE_WINDOW, x, y, w, h, iTitleFont, items.obj3d.colour1, items.aborder.colour1, items.atitle.fontColour, items.atitle.colour1, items.atitle.colour2, header)
-    W98HUD.COMPONENTS:windowControls(x + w - 6, y + 6, items.obj3d.colour1, items.obj3d.colour2, true, nil, header, CAPTION_ICON_FONT)
+    W98HUD.COMPONENTS:window(ACTIVE_WINDOW, x, y, w, h, titleFont, items.obj3d.colour1, items.aborder.colour1, items.atitle.fontColour, items.atitle.colour1, items.atitle.colour2, items.atitle.size)
+    W98HUD.COMPONENTS:windowControls(x + w - 6, y + 6, items.obj3d.colour1, items.obj3d.colour2, true, nil, items.atitle.size, CAPTION_ICON_FONT)
   end
 
   --[[------------------------------------------------------------------
@@ -159,22 +156,21 @@ function W98HUD.CreateAppereanceMenu(sheet, cache)
   size:GetControl().OnValueChanged = function(self, value)
     if not self:IsEnabled() then return end
     local _, _item = item:GetControl():GetSelected()
-    cache.items[_item].size = value
-    if CAPTION_ITEMS[_item] then updateCaptionFont(value) end -- update custom caption icons font
+    cache:SetItemValue(_item, 'size', value)
   end
 
   -- primary colour
   local colour1 = labeledControl(parent, 'DColorMixerButton', COLOUR, size.x + size:GetWide() + 5, size.y, colourWidth)
   colour1:GetControl().OnValueChanged = function(self, value)
     local _, _item = item:GetControl():GetSelected()
-    cache.items[_item].colour1 = value
+    cache:SetItemValue(_item, 'colour1', value)
   end
 
   -- secondary colour
   local colour2 = labeledControl(parent, 'DColorMixerButton', COLOUR2, colour1.x + colour1:GetWide() + 5, colour1.y, colourWidth)
   colour2:GetControl().OnValueChanged = function(self, value)
     local _, _item = item:GetControl():GetSelected()
-    cache.items[_item].colour2 = value
+    cache:SetItemValue(_item, 'colour2', value)
   end
 
   -- font family
@@ -182,50 +178,57 @@ function W98HUD.CreateAppereanceMenu(sheet, cache)
   fFamily:GetControl():SetToolTip(FONT_TOOLTIP)
   fFamily:GetControl().OnEnter = function(self)
     local _, _item = item:GetControl():GetSelected()
-    cache.items[_item].fontFamily = self:GetValue()
-    updateSampleFont(_item, cache.items[_item])
+    cache:SetItemValue(_item, 'fontFamily', self:GetText())
   end
 
   -- font size
   local fSize = labeledControl(parent, 'DNumberWang', SIZE, x + fFamily:GetWide() + 5, fFamily.y, sizeWidth)
   fSize:GetControl().OnValueChanged = function(self, value)
     local _, _item = item:GetControl():GetSelected()
-    cache.items[_item].fontSize = value
-    updateSampleFont(_item, cache.items[_item])
+    value = tonumber(value) -- parse to number
+    cache:SetItemValue(_item, 'fontSize', value)
   end
 
   -- font colour
   local fColour = labeledControl(parent, 'DColorMixerButton', COLOUR, fSize.x + fSize:GetWide() + 5, fSize.y, colourWidth)
   fColour:GetControl().OnValueChanged = function(self, value)
     local _, _item = item:GetControl():GetSelected()
-    cache.items[_item].fontColour = value
+    cache:SetItemValue(_item, 'fontColour', value)
   end
 
   -- font weight
   local fBold = button(parent, 'B', fColour.x + fColour:GetWide() + 5, fSize.y + labelMargin, fontWidth)
-  fBold:GetControl().DoClick = function(self)
+  fBold.DoClick = function(self)
     local _, _item = item:GetControl():GetSelected()
     local data = cache.items[_item] -- get item data
     local value = REGULAR
-    if data.fontSize == REGULAR then value = BOLD end
-    data.fontSize = value -- toggle font weight
-    updateSampleFont(_item, data)
+    if data.fontWeight == REGULAR then value = BOLD end
+    cache:SetItemValue(_item, 'fontWeight', value)
   end
 
   -- font italic
   local fItalic = button(parent, 'I', fBold.x + fBold:GetWide(), fBold.y, fontWidth)
-  fItalic:GetControl().DoClick = function(self)
+  fItalic.DoClick = function(self)
     local _, _item = item:GetControl():GetSelected()
-    cache.items[_item].fontItalic = not cache.items[_item].fontItalic -- toggle italics
-    updateSampleFont(_item, cache.items[_item])
+    cache:SetItemValue(_item, 'fontItalic', not cache.items[_item].fontItalic)
   end
+
+  --[[------------------------------------------------------------------
+    Cache change event listeners
+  ]]--------------------------------------------------------------------
+  cache:AddChangeEvent('caption', 'size', function(_, _, value) updateCaptionFont(value) end)
+  cache:AddChangeEvent('atitle', {'fontSize', 'fontFamily', 'fontWeight', 'fontItalic'}, function(item, parameter)
+    updateSampleFont(item, cache.items[item])
+    if parameter == 'fontSize' then size:GetControl():SetValue(cache.items[item].size) end
+  end)
+  cache:AddChangeEvent('atitle', 'size', function(item) fSize:GetControl():SetValue(cache.items[item].fontSize) end)
 
   --[[------------------------------------------------------------------
     Update all controls after selecting a new item or theme
   ]]--------------------------------------------------------------------
-  -- declare function
-  item:GetControl().Update = function(self, id)
-    local _item = W98HUD:getItem(id)
+  -- call function upon changing items
+  item:GetControl().OnSelect = function(self, index, value, data)
+    local _item = W98HUD:getItem(data)
     -- toggle controls based on item properties
     size:SetEnabled(_item.size)
     colour1:SetEnabled(_item.colour1)
@@ -236,7 +239,7 @@ function W98HUD.CreateAppereanceMenu(sheet, cache)
     fBold:SetEnabled(_item.font)
     fItalic:SetEnabled(_item.font)
     -- change controls' values to that of the cache
-    local values = cache.items[id]
+    local values = cache.items[data]
     if _item.size then size:GetControl():SetValue(values.size) end
     if _item.colour1 then colour1:GetControl():SetValue(values.colour1) end
     if _item.colour2 then colour2:GetControl():SetValue(values.colour2) end
@@ -246,9 +249,6 @@ function W98HUD.CreateAppereanceMenu(sheet, cache)
       fColour:GetControl():SetValue(values.fontColour)
     end
   end
-
-  -- call function upon changing items
-  item:GetControl().OnSelect = function(self, index, value, data) self:Update(data) end
 
   -- initialize items
   for i, _item in pairs(W98HUD:getItems()) do

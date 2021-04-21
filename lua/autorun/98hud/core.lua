@@ -45,6 +45,7 @@ if CLIENT then
 end
 
 -- include core
+W98HUD:include('core/Cache.lua')
 W98HUD:include('core/themes.lua')
 W98HUD:include('core/parameters.lua')
 W98HUD:include('core/sounds.lua')

@@ -14,7 +14,7 @@ local APPLY, CANCEL, OK = 'Apply', 'Cancel', 'OK'
 local APPEARANCE, SOUNDS = 'Appearance', 'Sounds'
 local BUTTON_WIDTH, BUTTON_HEIGHT, BUTTON_MARGIN = 75, 23, 3
 
-local cache = {} -- menu theme cache
+local cache -- menu theme cache
 
 --[[------------------------------------------------------------------
   Creates a button and returns it

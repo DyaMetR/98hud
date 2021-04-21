@@ -20,11 +20,7 @@ local SAVING = 'Saving \'%s\' theme as \'%s\'...'
 local SAVE_SUCCESS = 'Theme \'%s\' saved successfully as \'%s\'.'
 local DONE = 'Done.'
 
-local cache = { -- current configuration instance
-  theme = nil, -- last theme selected
-  items = {},
-  sounds = {}
-}
+local cache = W98HUD:Cache() -- current configuration instance
 
 --[[------------------------------------------------------------------
   Returns a file name with the master folder attached to it
