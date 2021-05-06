@@ -82,6 +82,7 @@ function PANEL:CreateColorMixer()
   self.ColorMixer.Control:SetPos(MIXER_MARGIN, MIXER_MARGIN)
   self.ColorMixer.Control:SetSize(self.ColorMixer:GetWide() - (MIXER_MARGIN * 2), self.ColorMixer:GetTall() - (MIXER_MARGIN * 2))
   self.ColorMixer.Control:SetAlphaBar(false)
+  self.ColorMixer.Control:SetColor(self.Value)
   self.ColorMixer.Control.ValueChanged = function(_self, value) self:SetValue(value) end
 end
 

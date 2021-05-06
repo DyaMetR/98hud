@@ -12,15 +12,34 @@
 if SERVER then return end
 
 W98HUD:addDefaultTheme('default', 'Windows Standard-Gradients', {
-  items = {
-    obj3d = { colour1 = Color(184, 188, 184), colour2 = Color(0, 0, 0) },
-    atitle = { size = 18, colour1 = Color(0, 128, 200), colour2 = Color(0, 0, 120), fontFamily = 'pix MS Sans Serif 8pt', fontSize = 13, fontColour = Color(255, 255, 255), fontWeight = 1000 },
-    aborder = { size = 1, colour1 = Color(184, 188, 184) },
-    desktop = { colour1 = Color(0, 124, 120) },
-    ititle = { size = 18, colour1 = Color(176, 176, 176), colour2 = Color(120, 124, 120), fontFamily = 'pix MS Sans Serif 8pt', fontSize = 13, fontColour = Color(184, 188, 184), fontWeight = 1000 },
-    iborder = { size = 1, colour1 = Color(184, 188, 184) },
-    menu = { size = 18, colour1 = Color(184, 188, 184), fontFamily = 'pix MS Sans Serif 8pt', fontSize = 13, fontColour = Color(0, 0, 0) },
-    caption = { size = 18 },
-    selitems = { colour1 = Color(0, 0, 120), colour2 = Color(255, 255, 255) }
+  parameters = {
+    desktop = Color(0, 124, 120),
+    bgCol1 = Color(184, 188, 184),
+    bgCol2 = Color(0, 0, 0),
+    titleSize = 18,
+    titleTxtFont = 'pix MS Sans Serif 8pt',
+    titleTxtSize = 13,
+    titleTxtWeight = 1000,
+    titleTxtItalic = false,
+    aTitleCol1 = Color(0, 128, 200),
+    aTitleCol2 = Color(0, 0, 120),
+    aTitleTxtCol = Color(255, 255, 255),
+    iTitleCol1 = Color(176, 176, 176),
+    iTitleCol2 = Color(120, 124, 120),
+    iTitleTxtCol = Color(184, 188, 184),
+    borderSize = 1,
+    aBorderCol = Color(184, 188, 184),
+    iBorderCol = Color(184, 188, 184),
+    menuSize = 18,
+    menuCol = Color(184, 188, 184),
+    menuTxtFont = 'pix MS Sans Serif 8pt',
+    menuTxtSize = 13,
+    menuTxtCol = Color(0, 0, 0),
+    menuTxtWeight = 0,
+    menuTxtItalic = false,
+    selItemsCol1 = Color(0, 0, 120),
+    selItemsCol2 = Color(255, 255, 255),
+    winBgCol = Color(255, 255, 255),
+    winTxtCol = Color(0, 0, 0)
   }
 })

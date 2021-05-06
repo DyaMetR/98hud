@@ -47,17 +47,20 @@ end
 -- include core
 W98HUD:include('core/Cache.lua')
 W98HUD:include('core/themes.lua')
+W98HUD:include('core/items.lua')
 W98HUD:include('core/parameters.lua')
 W98HUD:include('core/sounds.lua')
 W98HUD:include('core/persistance.lua')
 
 -- include core default implementation
 W98HUD:include('data/items.lua')
+W98HUD:include('data/parameters.lua')
 W98HUD:include('data/sounds.lua')
 W98HUD:include('data/default.lua')
 
 -- include UI components
 W98HUD:include('components/window.lua')
+W98HUD:include('components/progressbar.lua')
 
 -- include configuration menus
 W98HUD:include('qmenu/toolmenu.lua')
@@ -65,6 +68,8 @@ W98HUD:include('qmenu/menu.lua')
 
 -- include HUD elements
 W98HUD:include('elements/border.lua')
+W98HUD:include('elements/health.lua')
+W98HUD:include('elements/ammunition.lua')
 
 -- include add-ons
 local files, _ = file.Find('autorun/98hud/add-ons/*', 'LUA') -- read add-ons
@@ -86,4 +91,18 @@ hook.Add('HUDPaint', '98hud', function()
   for i=1, #elements do
     elements[i]()
   end
+end)
+
+--[[------------------------------------------------------------------
+  Hide HUD
+]]--------------------------------------------------------------------
+local hide = {
+  ['CHudHealth'] = true,
+  ['CHudBattery'] = true,
+  ['CHudAmmo'] = true,
+  ['CHudSecondaryAmmo'] = true
+}
+hook.Add('HUDShouldDraw', '98hud', function(name)
+  if hide[name] then return false end
+  if not LocalPlayer():Alive() and name == 'CHudDamageIndicator' then return false end
 end)

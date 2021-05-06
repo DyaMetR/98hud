@@ -4,127 +4,41 @@
 
 if SERVER then return end
 
-local fonts = {} -- items with fonts (reduce iterations)
-local parameters = {} -- items
-local parameterOrder = {} -- in which order do items appear
-local shared = {} -- items that share properties with other items
-local convert = {} -- items that have to convert their properties
+local TYPE_TABLE = 'table'
+
+local parameters = {} -- parameters
+local shared = {} -- parameters that upon changing affect other parameters
 
 --[[------------------------------------------------------------------
-  Declares a new parameter item
-  @param {string} unique identifier
-  @param {string} print name
-  @param {boolean} whether the item size can be changed
-  @param {boolean} whether it has a primary colour
-  @param {boolean} whether it has a secondary colour
-  @param {boolean} whether has an editable font
+  Declares a new customization parameter
+  @param {string} parameter
 ]]--------------------------------------------------------------------
-function W98HUD:addItem(id, name, hasSize, hasColour1, hasColour2, hasFont)
-  parameters[id] = {name = name, size = hasSize, colour1 = hasColour1, colour2 = hasColour2, font = hasFont}
-  table.insert(parameterOrder, id)
-  if hasFont then table.insert(fonts, id) end
+function W98HUD:addParameter(id)
+  parameters[id] = true
 end
 
 --[[------------------------------------------------------------------
-  Shares a parameter value between items
-  @param {string} parameter
-  @param {table} items to share with
+  Gives a function to apply to another parameter when this one changes
+  @param {string} origin
+  @param {string|table} destination
+  @param {function} function to apply
 ]]--------------------------------------------------------------------
-function W98HUD:shareParameter(parameter, items)
-  for _, item in pairs(items) do
-    if not shared[item] then shared[item] = {} end
-    if not shared[item][parameter] then shared[item][parameter] = {} end
-    for _, sibling in pairs(items) do -- add other items
-      if sibling == item then continue end
-      shared[item][parameter][sibling] = true
+function W98HUD:shareParameter(origin, destination, func)
+  if not shared[origin] then shared[origin] = {} end
+  if type(destination) == TYPE_TABLE then
+    for _, dest in pairs(destination) do
+      shared[origin][dest] = func
     end
+  else
+    shared[origin][destination] = func
   end
 end
 
 --[[------------------------------------------------------------------
-  Adds a parameter to convert when another one is updated
-  @param {table} items
-  @param {string} parameter origin
-  @param {string} parameter target
-  @param {function} conversion function
+  Gets the parameters the given one is sharing a function with
+  @param {string} id
+  @return {table} parameters shared
 ]]--------------------------------------------------------------------
-function W98HUD:convertParameter(items, origin, target, func)
-  for _, item in pairs(items) do
-    if not convert[item] then convert[item] = {} end
-    if not convert[item][origin] then convert[item][origin] = {} end
-    convert[item][origin][target] = func
-  end
-end
-
---[[------------------------------------------------------------------
-  Get a declared parameter item
-  @param {string} unique identifier
-  @return {table} item details
-]]--------------------------------------------------------------------
-function W98HUD:getItem(id)
-  return parameters[id]
-end
-
---[[------------------------------------------------------------------
-  Gets all declared parameter items
-  @return {table} items
-]]--------------------------------------------------------------------
-function W98HUD:getItems()
-  return parameters
-end
-
---[[------------------------------------------------------------------
-  Gets all declared parameter items' order
-  @return {table} items' order
-]]--------------------------------------------------------------------
-function W98HUD:getItemsOrdered()
-  return parameterOrder
-end
-
---[[------------------------------------------------------------------
-  Gets all items with a font attached to them
-  @return {table} fonts
-]]--------------------------------------------------------------------
-function W98HUD:getFonts()
-  return fonts
-end
-
---[[------------------------------------------------------------------
-  Returns the list of items an item is sharing a parameter with
-  @param {string} item
-  @param {string} parameter
-  @return {table} shared items
-]]--------------------------------------------------------------------
-function W98HUD:getSharedParameter(item, parameter)
-  return shared[item][parameter]
-end
-
---[[------------------------------------------------------------------
-  Whether a parameter is shared (or if the item shares anything at all)
-  @param {string} item
-  @param {string} parameter
-  @return {boolean} shares
-]]--------------------------------------------------------------------
-function W98HUD:isParameterShared(item, parameter)
-  return shared[item] and shared[item][parameter]
-end
-
---[[------------------------------------------------------------------
-  Returns the list of parameters connected in an item
-  @param {string} item
-  @param {string} parameter
-  @return {table} parameters
-]]--------------------------------------------------------------------
-function W98HUD:getConversionTable(item, parameter)
-  return convert[item][parameter]
-end
-
---[[------------------------------------------------------------------
-  Whether there are parameters to make a conversion
-  @param {string} item
-  @param {string} parameter
-  @return {boolean} is there anything to convert
-]]--------------------------------------------------------------------
-function W98HUD:isConversionApplied(item, parameter)
-  return convert[item] and convert[item][parameter]
+function W98HUD:getParametersShared(id)
+  return shared[id]
 end

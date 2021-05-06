@@ -1,7 +1,7 @@
 --[[------------------------------------------------------------------
   Windows 98 styled HUD
   Version 2
-  April 17th, 2021
+  May 5th, 2021
 
   Made by DyaMetR
   * full credits found in the details below
@@ -14,7 +14,7 @@ if CLIENT then
   W98HUD.name = '98HUD'
   W98HUD.category = 'DyaMetR'
   W98HUD.version = '2'
-  W98HUD.date = 'April 17th, 2021'
+  W98HUD.date = 'May 5th, 2021'
   W98HUD.credits = { -- {name, contribution}
     {'DyaMetR', 'Developer'},
     {'Matsilagi', 'Reference material\nTesting'},

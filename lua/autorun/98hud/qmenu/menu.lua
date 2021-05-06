@@ -71,12 +71,20 @@ local function menu()
 
   -- accept button
   local accept = button(frame, frame:GetWide() - sheet.x - (BUTTON_WIDTH * 3) - (BUTTON_MARGIN * 2), sheet.y + sheet:GetTall() + sheet.x, OK)
+  accept.DoClick = function()
+    W98HUD:applyChanges(cache.parameters, cache.sounds, cache.theme)
+    frame:Close()
+  end
 
   -- cancel button
   local cancel = button(frame, frame:GetWide() - sheet.x - (BUTTON_WIDTH * 2) - BUTTON_MARGIN, sheet.y + sheet:GetTall() + sheet.x, CANCEL)
+  cancel.DoClick = function() frame:Close() end
 
   -- apply button
   local apply = button(frame, frame:GetWide() - sheet.x - BUTTON_WIDTH, sheet.y + sheet:GetTall() + sheet.x, APPLY)
+  apply.DoClick = function()
+    W98HUD:applyChanges(cache.parameters, cache.sounds, cache.theme)
+  end
 
   return frame -- return frame
 end

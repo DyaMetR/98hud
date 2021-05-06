@@ -12,13 +12,13 @@ local WINDOW_IN_BORDER_COLOUR1 = Color(133, 137, 141) -- colour values to add
 local WINDOW_IN_BORDER_COLOUR2 = 0.69 -- multiplier
 local TITLE_LABEL_HORIZONTAL_MARGIN = 2 -- horizontal title text inner margin
 local TITLE_LABEL_VERTICAL_MARGIN = 5 -- vertical title text inner margin
-local WINDOW_TITLE_MARGIN = 2 -- title bar margin from window borders
+local WINDOW_TITLE_MARGIN = 1 -- title bar margin from window borders
 local GRADIENT = surface.GetTextureID('gui/gradient') -- title bar gradient texture
 local WINDOW_CONTROL_W, WINDOW_CONTROL_H = 16, 14 -- window controls buttons' size
 local WINDOW_CONTROL_FONT = 'internal_98hud_wcontrol' -- window controls font
 local C_CLOSE, C_MAX, C_MIN, C_HELP = 'C', 'B', 'A', '?' -- window control icons
 local WINDOW_CONTROL_MARGIN = 2 -- window control buttons margin with title bar
-local WINDOW_CONTROL_ICON_MARGIN = 2 -- window control button icon margin
+local WINDOW_CONTROL_ICON_MARGIN = 1 -- window control button icon margin
 
 local outCol1 = Color(0, 0, 0) -- outer border primary colour cache
 local inCol1 = Color(0, 0, 0) -- inner border primary colour
@@ -138,7 +138,6 @@ end
   @param {number} height
   @param {Color} colour
   @param {boolean} whether the colours are inverted
-  @return {number} size
 ]]--------------------------------------------------------------------
 function W98HUD.COMPONENTS:windowBorder(x, y, w, h, colour, inverted)
   -- compute colours
@@ -150,6 +149,51 @@ function W98HUD.COMPONENTS:windowBorder(x, y, w, h, colour, inverted)
     return W98HUD.COMPONENTS:border(x, y, w, h, outCol1, WINDOW_OUT_BORDER_COLOUR2, inCol1, inCol2)
   else
     return W98HUD.COMPONENTS:border(x, y, w, h, inCol2, inCol1, WINDOW_OUT_BORDER_COLOUR2, outCol1)
+  end
+end
+
+--[[------------------------------------------------------------------
+  Draws a single outline fake 3D border with window colour scheme
+  @param {number} x
+  @param {number} y
+  @param {number} width
+  @param {number} height
+  @param {Color} colour
+  @param {boolean} whether the colours are inverted
+]]--------------------------------------------------------------------
+function W98HUD.COMPONENTS:simpleBorder(x, y, w, h, colour, inverted)
+  local thick = WINDOW_BORDER_THICKNESS
+  -- compute colours
+  setColour(inCol1, colour.r + WINDOW_IN_BORDER_COLOUR1.r, colour.g + WINDOW_IN_BORDER_COLOUR1.g, colour.b + WINDOW_IN_BORDER_COLOUR1.b)
+  setColour(inCol2, colour.r * WINDOW_IN_BORDER_COLOUR2, colour.g * WINDOW_IN_BORDER_COLOUR2, colour.b * WINDOW_IN_BORDER_COLOUR2)
+  -- draw border with colours in desired order
+  if not inverted then
+    drawOutline(x, y, w, h, inCol1, inCol2, thick)
+  else
+    drawOutline(x, y, w, h, inCol2, inCol1, thick)
+  end
+  return thick
+end
+
+--[[------------------------------------------------------------------
+  Draws a simple separator
+  @param {number} x
+  @param {number} y
+  @param {number} size
+  @param {Color} colour
+  @param {boolean} vertical
+]]--------------------------------------------------------------------
+function W98HUD.COMPONENTS:separator(x, y, size, colour, vertical)
+  -- compute colours
+  setColour(inCol1, colour.r + WINDOW_IN_BORDER_COLOUR1.r, colour.g + WINDOW_IN_BORDER_COLOUR1.g, colour.b + WINDOW_IN_BORDER_COLOUR1.b)
+  setColour(inCol2, colour.r * WINDOW_IN_BORDER_COLOUR2, colour.g * WINDOW_IN_BORDER_COLOUR2, colour.b * WINDOW_IN_BORDER_COLOUR2)
+  -- draw
+  if vertical then
+    draw.RoundedBox(0, x, y, 1, size, inCol2)
+    draw.RoundedBox(0, x + 1, y, 1, size, inCol1)
+  else
+    draw.RoundedBox(0, x, y, size, 1, inCol2)
+    draw.RoundedBox(0, x, y + 1, size, 1, inCol1)
   end
 end
 
@@ -171,7 +215,7 @@ local function windowControl(x, y, text, colour, iconColour, size, font)
   x = x - w -- aligned to the right
   draw.RoundedBox(0, x, y, w, h, colour)
   W98HUD.COMPONENTS:windowBorder(x, y, w, h, colour)
-  draw.SimpleText(text, font, math.Round(x + (w * .5) - margin), math.Round(y + (h * .5)), iconColour, TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER)
+  draw.SimpleText(text, font, x + math.Round(w * .5) - margin, math.Round(y + (h * .5)), iconColour, TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER)
   return w, h
 end
 
@@ -221,19 +265,17 @@ end
   @return {number} title bar height + margin
   @return {number} frame size
 ]]--------------------------------------------------------------------
-function W98HUD.COMPONENTS:emptyWindow(label, x, y, w, h, font, colour, borderTint, titleColour, titleColour1, titleColour2, titleHeight)
+function W98HUD.COMPONENTS:emptyWindow(label, x, y, w, h, font, colour, borderTint, borderSize, titleColour, titleColour1, titleColour2, titleHeight)
   titleHeight = W98HUD:getTitleBarHeight(label, font, titleHeight or 0) -- get actual height
-  local margin = TITLE_LABEL_HORIZONTAL_MARGIN
+  local margin = WINDOW_TITLE_MARGIN
   local frame = W98HUD.COMPONENTS:windowBorder(x, y, w, h, colour) -- window frame
-  draw.RoundedBox(0, x + frame, y + frame, w - (frame * 2), titleHeight + (margin * 2), colour) -- header
-  W98HUD.COMPONENTS:title(label, x + frame + margin, y + frame + margin, w - ((margin + frame) * 2), titleHeight, font, titleColour, titleColour1, titleColour2) -- title bar
   if borderTint then -- draw border
-    local borderThick = WINDOW_BORDER_TINT_THICKNESS
-    drawOutline(x + frame, y + frame, w - (frame * 2), h - (frame * 2), borderTint, borderTint, borderThick)
-    frame = frame + borderThick
-    margin = margin - borderThick
+    drawOutline(x + frame, y + frame, w - (frame * 2), h - (frame * 2), borderTint, borderTint, borderSize)
+    frame = frame + borderSize
   end
-  return titleHeight + (margin * 2), frame
+  draw.RoundedBox(0, x + frame, y + frame, w - (frame * 2), titleHeight + (margin * 2), colour) -- header
+  W98HUD.COMPONENTS:title(label, x + frame, y + frame, w - (frame * 2), titleHeight, font, titleColour, titleColour1, titleColour2) -- title bar
+  return titleHeight, frame
 end
 
 --[[------------------------------------------------------------------
@@ -246,12 +288,13 @@ end
   @param {string|nil} font
   @param {Color|nil} background colour
   @param {Color|nil} border colour
+  @param {number|nil} border size
   @param {Color|nil} title colour
   @param {Color|nil} title bar primary colour
   @param {Color|nil} title bar secondary colour
   @param {number|nil} title bar height
 ]]--------------------------------------------------------------------
-function W98HUD.COMPONENTS:window(label, x, y, w, h, font, colour, borderTint, titleColour, titleColour1, titleColour2, titleHeight)
-  local margin, frame = W98HUD.COMPONENTS:emptyWindow(label, x, y, w, h, font, colour, borderTint, titleColour, titleColour1, titleColour2, titleHeight)
+function W98HUD.COMPONENTS:window(label, x, y, w, h, font, colour, borderTint, borderSize, titleColour, titleColour1, titleColour2, titleHeight)
+  local margin, frame = W98HUD.COMPONENTS:emptyWindow(label, x, y, w, h, font, colour, borderTint, borderSize, titleColour, titleColour1, titleColour2, titleHeight)
   draw.RoundedBox(0, x + frame, y + frame + margin, w - (frame * 2), h - ((frame * 2) + margin), colour) -- draw filling
 end

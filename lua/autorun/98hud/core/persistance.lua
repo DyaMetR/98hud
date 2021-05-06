@@ -32,46 +32,6 @@ local function filename(path)
 end
 
 --[[------------------------------------------------------------------
-  Precaches all sounds in the given table
-  @param {table} sounds
-]]--------------------------------------------------------------------
-local function precacheSounds(sounds)
-  if not sounds then return end
-  for sound, path in pairs(sounds) do
-    util.PrecacheSound(path) -- precache sounds to avoid freezing when sounding
-  end
-end
-
---[[------------------------------------------------------------------
-  Precaches all fonts
-]]--------------------------------------------------------------------
-local function precacheFonts()
-  for _, item in pairs(W98HUD:getFonts()) do
-    local font = W98HUD:getItem(item)
-    surface.CreateFont(item, {
-      font = font.fontFamily,
-      size = font.fontSize,
-      weight = font.fontWeight or 0,
-      italic = font.fontItalic or false
-    })
-  end
-end
-
---[[------------------------------------------------------------------
-  Overrides the current cache parameters with the given data
-  @param {table} items settings
-  @param {table} sounds
-  @param {string} which theme does the configuration belong to
-]]--------------------------------------------------------------------
-local function overrideCache(items, sounds, theme)
-  cache.theme = theme
-  cache.items = table.Copy(items) -- copy item parameters
-  cache.sounds = table.Copy(sounds) -- copy sound parameters
-  precacheSounds(sounds) -- precache new sounds
-  precacheFonts() -- precache fonts
-end
-
---[[------------------------------------------------------------------
   Persists the current layout in disk
 ]]--------------------------------------------------------------------
 local function storeLayout()
@@ -85,18 +45,18 @@ end
 ]]--------------------------------------------------------------------
 function W98HUD:applyTheme(id)
   local theme = W98HUD:getTheme(id)
-  W98HUD:applyChanges(theme.items, theme.sounds, id)
+  W98HUD:applyChanges(theme.parameters, theme.sounds, id)
 end
 
 --[[------------------------------------------------------------------
   Applies the given theme data to the current one and stores it
-  @param {table} items settings
+  @param {table} parameters
   @param {table} sounds
   @param {string} which theme does the configuration belong to
 ]]--------------------------------------------------------------------
-function W98HUD:applyChanges(items, sounds, theme)
-  overrideCache(items, sounds, theme) -- override cache data
-  storeLayout() -- save to disk
+function W98HUD:applyChanges(parameters, sounds, theme)
+  cache:Override(parameters, sounds, theme) -- override cache data
+  --storeLayout() -- save to disk
 end
 
 --[[------------------------------------------------------------------
@@ -112,7 +72,11 @@ function W98HUD:saveAs(path, name)
   W98HUD:print(string.format(SAVING, name, path .. EXTENSION)) -- start save process
   local new = { -- build new theme object
     name = name,
-    data = cache
+    data = {
+      theme = cache.theme,
+      parameters = cache.parameters,
+      sounds = cache.sounds
+    }
   }
   file.Write(filename(string.format(FOLDER_FORMAT, THEMES_FOLDER, path .. EXTENSION)), util.TableToJSON(new))
   W98HUD:print(string.format(SAVE_SUCCESS, name, path .. EXTENSION)) -- notify user of successful save
@@ -147,12 +111,12 @@ function W98HUD:setup()
     -- read cache
     local _file = file.Read(filename(CACHE_FILE_NAME .. EXTENSION))
     if _file then
-      overrideCache(_file.items, _file.sounds, _file.theme) -- override cache object with the file's data
+      cache:Override(_file.parameters, _file.sounds, _file.theme) -- override cache object with the file's data
       W98HUD:print(CURRENT_READ)
     else
       local default = W98HUD:getDefaultTheme() -- get default theme
       local data = W98HUD:getTheme(default).data -- get theme's data
-      overrideCache(data.items, data.sounds, default) -- override cache with default theme data
+      cache:Override(data.parameters, data.sounds, default) -- override cache with default theme data
       W98HUD:print(NO_CURRENT_FOUND) -- if not found, return to default
     end
 
@@ -170,12 +134,11 @@ end
 
 --[[------------------------------------------------------------------
   Returns an item's parameter's value from the current configuration
-  @param {string} item unique identifier
   @param {string} parameter
   @return {any} value
 ]]--------------------------------------------------------------------
-function W98HUD:getItemValue(item, parameter)
-  return cache.items[item][parameter]
+function W98HUD:getItemValue(parameter)
+  return cache.parameters[parameter]
 end
 
 --[[------------------------------------------------------------------
