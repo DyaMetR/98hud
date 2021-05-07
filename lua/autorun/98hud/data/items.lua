@@ -14,12 +14,12 @@
 if SERVER then return end
 
 -- add items
-W98HUD:addItem('desktop', 'Desktop', { colour1 = 'desktop' })
+W98HUD:addItem('desktop', 'Background', { colour1 = 'desktop' })
 W98HUD:addItem('obj3d', '3D Objects', { colour1 = 'bgCol1', fontColour = 'bgCol2' })
 W98HUD:addItem('atitle', 'Active Title Bar', {
   size = 'titleSize',
-  colour1 = 'aTitleCol1',
-  colour2 = 'aTitleCol2',
+  colour1 = 'aTitleCol2',
+  colour2 = 'aTitleCol1',
   fontFamily = 'titleTxtFont',
   fontSize = 'titleTxtSize',
   fontColour = 'aTitleTxtCol',
@@ -29,8 +29,8 @@ W98HUD:addItem('atitle', 'Active Title Bar', {
 W98HUD:addItem('aborder', 'Active Windows Border', { size = 'borderSize', colour1 = 'aBorderCol' })
 W98HUD:addItem('ititle', 'Inactive Title Bar', {
   size = 'titleSize',
-  colour1 = 'iTitleCol1',
-  colour2 = 'iTitleCol2',
+  colour1 = 'iTitleCol2',
+  colour2 = 'iTitleCol1',
   fontFamily = 'titleTxtFont',
   fontSize = 'titleTxtSize',
   fontColour = 'iTitleTxtCol',
@@ -38,14 +38,14 @@ W98HUD:addItem('ititle', 'Inactive Title Bar', {
   fontItalic = 'titleTxtItalic'
 })
 W98HUD:addItem('iborder', 'Inactive Window Border', { size = 'borderSize', colour1 = 'iBorderCol' })
-W98HUD:addItem('menu', 'Menu', {
+--[[W98HUD:addItem('menu', 'Menu', {
   size = 'menuSize',
   colour1 = 'menuCol',
   fontFamily = 'menuTxtFont',
   fontColour = 'menuTxtCol',
   fontWeight = 'menuTxtWeight',
   fontItalic = 'menuTxtItalic'
-})
+})]]
 W98HUD:addItem('caption', 'Caption Buttons', { size = 'titleSize' })
 W98HUD:addItem('selitems', 'Selected Items', { colour1 = 'selItemsCol1', colour2 = 'selItemsCol2' })
 W98HUD:addItem('window', 'Window', { colour1 = 'winBgCol', fontColour = 'winTxtCol' })

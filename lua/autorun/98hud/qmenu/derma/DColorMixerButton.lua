@@ -77,7 +77,15 @@ function PANEL:CreateColorMixer()
   self.ColorMixer:SetTitle('')
   self.ColorMixer:MakePopup()
   self.ColorMixer.OnSizeChanged = function(_self, w, h) _self.Control:SetSize(w - (MIXER_MARGIN * 2), h - (MIXER_MARGIN * 2)) end
-  self.ColorMixer.OnFocusChanged = function(_self, gained) if not gained then self:DestroyColorMixer() end end
+  self.ColorMixer.OnFocusChanged = function(_self, gained)
+    if not gained then
+      timer.Simple(0.01, function() -- cheating death with this simple trick -- not the cleanest, but I couldn't find a better way for now
+        if not self or not IsValid(self) or not self.ColorMixer then return end
+        if self.ColorMixer.Control.txtR:HasFocus() or self.ColorMixer.Control.txtG:HasFocus() or self.ColorMixer.Control.txtB:HasFocus() then return end
+        self:DestroyColorMixer()
+      end)
+    end
+  end
   self.ColorMixer.Control = vgui.Create('DColorMixer', self.ColorMixer)
   self.ColorMixer.Control:SetPos(MIXER_MARGIN, MIXER_MARGIN)
   self.ColorMixer.Control:SetSize(self.ColorMixer:GetWide() - (MIXER_MARGIN * 2), self.ColorMixer:GetTall() - (MIXER_MARGIN * 2))

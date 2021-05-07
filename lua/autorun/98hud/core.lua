@@ -46,7 +46,7 @@ end
 
 -- include core
 W98HUD:include('core/convars.lua')
-W98HUD:include('core/Cache.lua')
+W98HUD:include('core/cache.lua')
 W98HUD:include('core/themes.lua')
 W98HUD:include('core/items.lua')
 W98HUD:include('core/parameters.lua')

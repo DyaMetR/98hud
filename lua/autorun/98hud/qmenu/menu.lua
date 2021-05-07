@@ -2,8 +2,8 @@
   Theme menu
 ]]--------------------------------------------------------------------
 
-W98HUD:include('derma/DColorMixerButton.lua')
-W98HUD:include('derma/DLabeledControl.lua')
+W98HUD:include('derma/dcolormixerbutton.lua')
+W98HUD:include('derma/dlabeledcontrol.lua')
 W98HUD:include('menu/appearance.lua')
 
 if SERVER then return end
