@@ -13,6 +13,14 @@ local SAVE_AS, DELETE = 'Save As...', 'Delete'
 local INACTIVE_WINDOW, ACTIVE_WINDOW = 'Inactive Window', 'Active Window'
 local DEFAULT_COLOUR = Color(167, 171, 174)
 local BOLD, REGULAR = 1000, 0 -- font weights
+local SAVE_QUERY1 = 'Enter a name for your new scheme.'
+local SAVE_QUERY2 = 'Enter a file name to store your scheme into.'
+local SAVED_MESSAGE = 'Scheme \'%s\' saved successfully!'
+local SAVE_ERROR = 'File names cannot contain \' / : * ? < > |'
+local DELETE_QUERY = 'Are you sure you want to delete this scheme?'
+local DELETE_ERROR = 'Default scheme \'%s\' cannot be deleted.'
+local YES, NO, OK = 'Yes', 'No', 'OK'
+local ILLEGAL_CHARACTERS = {'\'', '/', ':', '*', '?', '"', '<', '>', '|'}
 
 --[[------------------------------------------------------------------
   Updates the primary font with the given cache's properties
@@ -145,9 +153,48 @@ function W98HUD.CreateAppereanceMenu(sheet, cache)
 
   -- save current configuration
   local save = button(parent, SAVE_AS, x + scheme:GetWide() + 5, y + labelMargin, buttonWidth)
+  save.DoClick = function()
+    local _, _theme = scheme:GetControl():GetSelected()
+    local theme = W98HUD:getTheme(_theme)
+    local name, fileName = '', ''
+    if _theme and theme and not theme.pure then -- if custom scheme is being edited, ease overwrite
+      name = theme.name
+      fileName = _theme
+    end
+
+    -- do questions
+    Derma_StringRequest(SAVE_AS, SAVE_QUERY1, name, function(_name)
+      Derma_StringRequest(SAVE_AS, SAVE_QUERY2, fileName, function(_fileName)
+        local illegal = string.len(string.Trim(_fileName)) <= 0
+        for _, char in pairs(ILLEGAL_CHARACTERS) do
+          if string.find(_fileName, char) then
+            illegal = true
+            break
+          end
+        end
+        if illegal then
+          Derma_Message(SAVE_ERROR, SAVE_AS, OK)
+        else
+          W98HUD:saveAs(_fileName, _name)
+          LocalPlayer():ChatPrint(string.format(SAVED_MESSAGE, _name))
+          sheet:GetParent():Close() -- close frame
+        end
+      end)
+    end)
+  end
 
   -- delete scheme
   local delete = button(parent, DELETE, x + scheme:GetWide() + save:GetWide() + 10, y + labelMargin, buttonWidth)
+  delete.DoClick = function()
+    local _, _theme = scheme:GetControl():GetSelected()
+    if not _theme then return end -- ignore invalid selections
+    local theme = W98HUD:getTheme(_theme)
+    if theme.pure then
+      Derma_Message(string.format(DELETE_ERROR, theme.name), DELETE)
+    else
+      LocalPlayer():ChatPrint('Not implemented.')
+    end
+  end
 
   -- items
   local item = labeledControl(parent, 'DComboBox', ITEM, x, scheme.y + 45, largeWidth)

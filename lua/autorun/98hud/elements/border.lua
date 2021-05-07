@@ -6,6 +6,7 @@ if SERVER then return end
 
 -- register element
 W98HUD:register(function()
+  if not W98HUD:GetWindowConVar() then return end -- hide if disabled
   local config = W98HUD:getUserCfg().parameters
   local title = GetHostName() -- get server name as window title
   local w, h = ScrW(), ScrH()

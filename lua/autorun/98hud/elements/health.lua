@@ -7,18 +7,42 @@ if SERVER then return end
 local FORMAT = '%i%%';
 local HEALTH, SUIT = 'Health', 'Suit'
 
+--[[------------------------------------------------------------------
+  Draws a player status bar
+  @param {number} x
+  @param {number} y
+  @param {number} width
+  @param {number} height
+  @param {string} label
+  @param {number} value
+  @param {boolean} whether the bars are segmented
+  @param {Color} frame colour
+  @param {Color} background colour
+  @param {Color} foreground colour
+  @param {string} text colour
+]]--------------------------------------------------------------------
+local function drawBar(x, y, w, h, label, value, isSegmented, frameColour, backgroundColour, foregroundColour, textColour)
+  draw.SimpleText(label, W98HUD.FONTS.PROGRESS, x + 2, y, textColour, nil, TEXT_ALIGN_BOTTOM)
+  if isSegmented then
+    W98HUD.COMPONENTS:segmentBar(x, y + 3, w, h, value * .01, frameColour, foregroundColour)
+  else
+    W98HUD.COMPONENTS:progressBar(x, y + 3, w, h, value * .01, frameColour, foregroundColour, backgroundColour, false, string.format(FORMAT, value), W98HUD.FONTS.PROGRESS, textColour)
+  end
+end
+
 -- register element
 W98HUD:register(function()
   local config = W98HUD:getUserCfg().parameters
   local w, h = 285, 113
-  local barW, barH = w - 26, 17
-  local title = LocalPlayer():Name() .. '.xlsx'
+  local barW, barH, margin = w - 26, 17, 38
+  local title = LocalPlayer():Name() .. '.' .. W98HUD:GetPlayerConVar()
   local col1, col2, colt, colb = config.aTitleCol1, config.aTitleCol2, config.aTitleTxtCol, config.aBorderCol
   local titleSize, borderSize = config.titleSize, config.borderSize
-  local isSegmented = false
+  local isSegmented = W98HUD:GetHealthConVar()
   if isSegmented then -- make bars thinner if segmented and the frame shorter
     barH = 13
     h = 103
+    margin = 33
   end
   local x, y = 20, ScrH() - (h + 20)
 
@@ -39,25 +63,11 @@ W98HUD:register(function()
   x = x + borderSize - 1
   y = y + math.max(borderSize - 4, 0) + math.max(titleSize - 20, 0)
 
-  -- TODO: abstract bars into a separate function
-
   -- draw health
-  local health = math.max(LocalPlayer():Health(), 0)
-  draw.SimpleText(HEALTH, W98HUD.FONTS.PROGRESS, x + 15, y, config.winTxtCol, nil, TEXT_ALIGN_BOTTOM)
-  if isSegmented then
-    W98HUD.COMPONENTS:segmentBar(x + 13, y + 3, barW, barH, health * .01, config.bgCol1, config.selItemsCol1)
-    y = y + 33
-  else
-    W98HUD.COMPONENTS:progressBar(x + 13, y + 3, barW, barH, health * .01, config.bgCol1, config.selItemsCol1, config.selItemsCol2, false, string.format(FORMAT, health), W98HUD.FONTS.PROGRESS, config.winTxtCol)
-    y = y + 38
-  end
+  drawBar(x + 13, y, barW, barH, HEALTH, math.max(LocalPlayer():Health(), 0), isSegmented, config.bgCol1, config.selItemsCol2, config.selItemsCol1, config.winTxtCol)
+  y = y + margin
 
   -- draw armour
-  local armour = LocalPlayer():Armor()
-  draw.SimpleText(SUIT, W98HUD.FONTS.PROGRESS, x + 15, y, config.winTxtCol, nil, TEXT_ALIGN_BOTTOM)
-  if isSegmented then
-    W98HUD.COMPONENTS:segmentBar(x + 13, y + 3, barW, barH, armour * .01, config.bgCol1, config.selItemsCol1, false, false, config.selItemsCol2)
-  else
-    W98HUD.COMPONENTS:progressBar(x + 13, y + 3, barW, barH, armour * .01, config.bgCol1, config.selItemsCol1, config.selItemsCol2, false, string.format(FORMAT, armour), W98HUD.FONTS.PROGRESS, config.winTxtCol)
-  end
+  drawBar(x + 13, y, barW, barH, SUIT, LocalPlayer():Armor(), isSegmented, config.bgCol1, config.selItemsCol2, config.selItemsCol1, config.winTxtCol)
+
 end)

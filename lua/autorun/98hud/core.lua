@@ -45,6 +45,7 @@ if CLIENT then
 end
 
 -- include core
+W98HUD:include('core/convars.lua')
 W98HUD:include('core/Cache.lua')
 W98HUD:include('core/themes.lua')
 W98HUD:include('core/items.lua')
@@ -86,6 +87,7 @@ W98HUD:setup()
   Drawing phase
 ]]--------------------------------------------------------------------
 hook.Add('HUDPaint', '98hud', function()
+  if not W98HUD:GetEnabledConVar() then return end
   local elements = W98HUD:getElements()
   if #elements <= 0 then return end
   for i=1, #elements do
@@ -103,6 +105,7 @@ local hide = {
   ['CHudSecondaryAmmo'] = true
 }
 hook.Add('HUDShouldDraw', '98hud', function(name)
+  if not W98HUD:GetEnabledConVar() then return end
   if hide[name] then return false end
-  if not LocalPlayer():Alive() and name == 'CHudDamageIndicator' then return false end
+  if LocalPlayer().Alive and not LocalPlayer():Alive() and name == 'CHudDamageIndicator' then return false end
 end)

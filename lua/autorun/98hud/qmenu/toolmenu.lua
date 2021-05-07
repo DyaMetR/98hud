@@ -14,14 +14,17 @@ hook.Add('PopulateToolMenu', UID, function()
     panel:ClearControls()
     panel:CheckBox('Enabled', '98hud_enabled')
     panel:Help('\nLayout') -- separator
-    local mode, _ = panel:ComboBox('Layout mode', '98hud_layout')
+    --[[local mode, _ = panel:ComboBox('Layout mode', '98hud_layout')
       mode:AddChoice('Default', 1)
-      mode:AddChoice('Desktop icons', 2)
+      mode:AddChoice('Desktop icons', 2)]]
     panel:CheckBox('Windowed', '98hud_window')
-    panel:CheckBox('Taskbar', '98hud_taskbar')
-    panel:ComboBox('Health', '98hud_health')
-    panel:ComboBox('Ammunition', '98hud_ammo')
-    panel:CheckBox('Weapon selector', '98hud_weapon')
+    --panel:CheckBox('Taskbar', '98hud_taskbar')
+    panel:TextEntry('Player extension', '98hud_player')
+    panel:CheckBox('Segmented health/suit', '98hud_health')
+    panel:TextEntry('Weapon extension', '98hud_weapon')
+    panel:CheckBox('Segmented ammunition', '98hud_ammo')
+    --panel:CheckBox('Weapon selector', '98hud_weapon')
+    --panel:CheckBox('Pickup history', '98hud_pickup')
     panel:Help('') -- separator
     panel:Button('Open display settings', '98hud_menu')
     panel:Help('\nCredits') -- separator
@@ -31,5 +34,8 @@ hook.Add('PopulateToolMenu', UID, function()
       panel:ControlHelp(credit[2])
     end
     panel:Help('\n' .. W98HUD.date)
+    -- development version notice
+    panel:Help('\nDevelopment version')
+    panel:ControlHelp('Current build may not represent the final product')
   end)
 end)

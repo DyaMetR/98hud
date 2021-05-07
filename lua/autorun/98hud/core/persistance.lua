@@ -56,7 +56,7 @@ end
 ]]--------------------------------------------------------------------
 function W98HUD:applyChanges(parameters, sounds, theme)
   cache:Override(parameters, sounds, theme) -- override cache data
-  --storeLayout() -- save to disk
+  storeLayout() -- save to disk
 end
 
 --[[------------------------------------------------------------------
@@ -69,6 +69,10 @@ function W98HUD:saveAs(path, name)
     W98HUD:print(SAVE_ERROR)
     return
   end
+  local themeFolder = filename(THEMES_FOLDER)
+  if not file.Exists(themeFolder, GAME_FOLDER) then
+      file.CreateDir(themeFolder, GAME_FOLDER) -- create master data folder
+  end
   W98HUD:print(string.format(SAVING, name, path .. EXTENSION)) -- start save process
   local new = { -- build new theme object
     name = name,
@@ -79,6 +83,7 @@ function W98HUD:saveAs(path, name)
     }
   }
   file.Write(filename(string.format(FOLDER_FORMAT, THEMES_FOLDER, path .. EXTENSION)), util.TableToJSON(new))
+  W98HUD:addTheme(path, name, new.data, true)
   W98HUD:print(string.format(SAVE_SUCCESS, name, path .. EXTENSION)) -- notify user of successful save
 end
 
@@ -92,15 +97,15 @@ function W98HUD:setup()
     end
 
     -- read themes
-    local files, _ = file.Find('*.' .. EXTENSION, filename(THEMES_FOLDER)) -- find custom themes
+    local files, _ = file.Find(filename(THEMES_FOLDER) .. '/*' .. EXTENSION, GAME_FOLDER) -- find custom themes
     if files then -- check whether any custom themes have been stored
       local len = string.len(EXTENSION) -- file extension length
       for i=1, #files do
-        local _file = file[i] -- file name
+        local _file = files[i] -- file name
         local path = filename(string.format(FOLDER_FORMAT, THEMES_FOLDER, _file)) -- file full path
         local raw = file.Read(path, GAME_FOLDER) -- raw file data
         local theme = util.JSONToTable(raw) -- table data
-        local name = string.sub(1, string.len(_file) - len) -- file name without extension
+        local name = string.sub(_file, 1, string.len(_file) - len) -- file name without extension
         W98HUD:addTheme(name, theme.name, theme.data, true) -- add new theme
       end
       W98HUD:print(string.format(THEMES_READ, #files))
@@ -111,7 +116,8 @@ function W98HUD:setup()
     -- read cache
     local _file = file.Read(filename(CACHE_FILE_NAME .. EXTENSION))
     if _file then
-      cache:Override(_file.parameters, _file.sounds, _file.theme) -- override cache object with the file's data
+      local data = util.JSONToTable(_file)
+      cache:Override(data.parameters, data.sounds, data.theme) -- override cache object with the file's data
       W98HUD:print(CURRENT_READ)
     else
       local default = W98HUD:getDefaultTheme() -- get default theme
