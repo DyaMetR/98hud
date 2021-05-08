@@ -28,6 +28,10 @@ W98HUD:addParameter('desktop')
 W98HUD:addParameter('bgCol1')
 W98HUD:addParameter('bgCol2')
 
+-- buttons
+W98HUD:addParameter('btnCol1')
+W98HUD:addParameter('btnCol2')
+
 -- declare common title bars' parameters
 W98HUD:addParameter('titleSize')
 W98HUD:addParameter('titleTxtFont')
@@ -36,6 +40,9 @@ W98HUD:addParameter('titleTxtWeight')
 W98HUD:addParameter('titleTxtItalic')
 W98HUD:shareParameter('titleSize', 'titleTxtSize', function(size) return size - 5 end)
 W98HUD:shareParameter('titleTxtSize', 'titleSize', function(font) return font + 5 end)
+
+-- caption buttons
+W98HUD:addParameter('captionCol')
 
 -- title bar font
 W98HUD:getUserCfg():AddChangeEvent('titleSize', 'font', function()
@@ -58,9 +65,6 @@ W98HUD:getUserCfg():AddChangeEvent({'titleTxtFont', 'titleTxtSize', 'titleTxtWei
   })
 end)
 
--- declare common window border's properties
-W98HUD:addParameter('borderSize')
-
 -- windows status types
 local windowStatuses = {'a', 'i'}
 
@@ -73,16 +77,8 @@ for _, status in pairs(windowStatuses) do
 
   -- declare window borders' parameters
   W98HUD:addParameter(status .. 'BorderCol')
+  W98HUD:addParameter(status .. 'BorderSize')
 end
-
--- declare menu properties
-W98HUD:addParameter('menuSize')
-W98HUD:addParameter('menuCol')
-W98HUD:addParameter('menuTxtFont')
-W98HUD:addParameter('menuTxtSize')
-W98HUD:addParameter('menuTxtCol')
-W98HUD:addParameter('menuTxtWeight')
-W98HUD:addParameter('menuTxtItalic')
 
 -- selected items parameters
 W98HUD:addParameter('selItemsCol1')

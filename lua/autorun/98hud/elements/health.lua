@@ -32,13 +32,17 @@ end
 
 -- register element
 W98HUD:register(function()
+  local mode = W98HUD:GetHealthConVar()
+  if mode <= 0 then return end
   local config = W98HUD:getUserCfg().parameters
   local w, h = 285, 113
   local barW, barH, margin = w - 26, 17, 38
-  local title = LocalPlayer():Name() .. '.' .. W98HUD:GetPlayerConVar()
+  local title = LocalPlayer():Name()
+  local extension = W98HUD:GetPlayerConVar()
   local col1, col2, colt, colb = config.aTitleCol1, config.aTitleCol2, config.aTitleTxtCol, config.aBorderCol
-  local titleSize, borderSize = config.titleSize, config.borderSize
-  local isSegmented = W98HUD:GetHealthConVar()
+  local titleSize, borderSize = config.titleSize, config.aBorderSize
+  local isSegmented = mode == 2
+  if string.len(extension) > 0 then title = title .. '.' .. extension end -- separate name and extension with dot
   if isSegmented then -- make bars thinner if segmented and the frame shorter
     barH = 13
     h = 103
@@ -51,11 +55,12 @@ W98HUD:register(function()
     col2 = config.iTitleCol2
     colt = config.iTitleTxtCol
     colb = config.iBorderCol
+    borderSize = config.iBorderSize
   end
 
   -- draw element
-  W98HUD.COMPONENTS:window(title, x, y, w, h, W98HUD.FONTS.TITLE, config.bgCol1, colb, config.borderSize, colt, col1, col2, config.titleSize)
-  W98HUD.COMPONENTS:windowControls(x + w - (4 + borderSize), y + (4 + borderSize), config.bgCol1, config.bgCol2, false, false, config.titleSize, W98HUD.FONTS.CAPTION)
+  W98HUD.COMPONENTS:window(title, x, y, w, h, W98HUD.FONTS.TITLE, config.bgCol1, colb, borderSize, colt, col1, col2, config.titleSize)
+  W98HUD.COMPONENTS:windowControls(x + w - (4 + borderSize), y + (4 + borderSize), config.captionCol, config.btnCol1, config.btnCol2, config.bgCol2, false, false, config.titleSize, W98HUD.FONTS.CAPTION)
   y = y + 41
 
   -- apply border and title bar sizes

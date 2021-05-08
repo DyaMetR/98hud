@@ -11,8 +11,8 @@ local CONVARS = { -- console variables to use
   enabled = true,
   layout = 0,
   window = true,
-  health = false,
-  ammo = true,
+  health = 1,
+  ammo = 2,
   player = 'xslx',
   weapon = 'dll'
 }

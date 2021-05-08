@@ -120,18 +120,19 @@ function W98HUD.CreateAppereanceMenu(sheet, cache)
   preview.Paint = function()
     local w, h = preview:GetWide() * .95, preview:GetTall() * .7
     local parameters = cache.parameters
-    local borderSize = cache.parameters.borderSize
     -- draw
     draw.RoundedBox(0, 0, 0, preview:GetWide(), preview:GetTall(), parameters.desktop)
     W98HUD.COMPONENTS:windowBorder(0, 0, preview:GetWide(), preview:GetTall(), DEFAULT_COLOUR, true)
     -- inactive window
     local x, y = preview:GetWide() * .02, preview:GetTall() * .04
-    W98HUD.COMPONENTS:window(INACTIVE_WINDOW, x, y, w, h, PRIMARY_FONT, parameters.bgCol1, parameters.iBorderCol, parameters.borderSize, parameters.iTitleTxtCol, parameters.iTitleCol1, parameters.iTitleCol2, parameters.titleSize)
-    W98HUD.COMPONENTS:windowControls(x + w - (5 + borderSize), y + (5 + borderSize), parameters.bgCol1, parameters.bgCol2, true, nil, parameters.titleSize, CAPTION_ICON_FONT)
+    local borderSize = parameters.iBorderSize
+    W98HUD.COMPONENTS:window(INACTIVE_WINDOW, x, y, w, h, PRIMARY_FONT, parameters.bgCol1, parameters.iBorderCol, borderSize, parameters.iTitleTxtCol, parameters.iTitleCol1, parameters.iTitleCol2, parameters.titleSize)
+    W98HUD.COMPONENTS:windowControls(x + w - (5 + borderSize), y + (5 + borderSize), parameters.captionCol, parameters.btnCol1, parameters.btnCol2, parameters.bgCol2, true, nil, parameters.titleSize, CAPTION_ICON_FONT)
     -- active window
     x, y = preview:GetWide() * .03, preview:GetWide() * .09
-    W98HUD.COMPONENTS:window(ACTIVE_WINDOW, x, y, w, h, PRIMARY_FONT, parameters.bgCol1, parameters.aBorderCol, parameters.borderSize, parameters.aTitleTxtCol, parameters.aTitleCol1, parameters.aTitleCol2, parameters.titleSize)
-    W98HUD.COMPONENTS:windowControls(x + w - (5 + borderSize), y + (5 + borderSize), parameters.bgCol1, parameters.bgCol2, true, nil, parameters.titleSize, CAPTION_ICON_FONT)
+    borderSize = parameters.aBorderSize
+    W98HUD.COMPONENTS:window(ACTIVE_WINDOW, x, y, w, h, PRIMARY_FONT, parameters.bgCol1, parameters.aBorderCol, parameters.aBorderSize, parameters.aTitleTxtCol, parameters.aTitleCol1, parameters.aTitleCol2, parameters.titleSize)
+    W98HUD.COMPONENTS:windowControls(x + w - (5 + borderSize), y + (5 + borderSize), parameters.captionCol, parameters.btnCol1, parameters.btnCol2, parameters.bgCol2, true, nil, parameters.titleSize, CAPTION_ICON_FONT)
   end
 
   --[[------------------------------------------------------------------

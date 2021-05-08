@@ -20,11 +20,23 @@ hook.Add('PopulateToolMenu', UID, function()
     panel:CheckBox('Windowed', '98hud_window')
     --panel:CheckBox('Taskbar', '98hud_taskbar')
     panel:TextEntry('Player extension', '98hud_player')
-    panel:CheckBox('Segmented health/suit', '98hud_health')
+
+    local health, _ = panel:ComboBox('Health & suit', '98hud_health')
+    health:AddChoice('Disabled', 0)
+    health:AddChoice('Progress bar', 1)
+    health:AddChoice('Segmented', 2)
+
     panel:TextEntry('Weapon extension', '98hud_weapon')
-    panel:CheckBox('Segmented ammunition', '98hud_ammo')
+
+    local ammo, _ = panel:ComboBox('Ammunition', '98hud_ammo')
+    ammo:AddChoice('Disabled', 0)
+    ammo:AddChoice('Straight', 1)
+    ammo:AddChoice('Straight InstallShield Wizard', 2)
+    ammo:AddChoice('Segmented', 3)
+    ammo:AddChoice('Segmented InstallShield Wizard', 4)
     --panel:CheckBox('Weapon selector', '98hud_weapon')
     --panel:CheckBox('Pickup history', '98hud_pickup')
+
     panel:Help('') -- separator
     panel:Button('Open display settings', '98hud_menu')
     panel:Help('\nCredits') -- separator

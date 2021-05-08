@@ -26,7 +26,7 @@ W98HUD:addItem('atitle', 'Active Title Bar', {
   fontWeight = 'titleTxtWeight',
   fontItalic = 'titleTxtItalic'
 })
-W98HUD:addItem('aborder', 'Active Windows Border', { size = 'borderSize', colour1 = 'aBorderCol' })
+W98HUD:addItem('aborder', 'Active Windows Border', { size = 'aBorderSize', colour1 = 'aBorderCol' })
 W98HUD:addItem('ititle', 'Inactive Title Bar', {
   size = 'titleSize',
   colour1 = 'iTitleCol2',
@@ -37,15 +37,8 @@ W98HUD:addItem('ititle', 'Inactive Title Bar', {
   fontWeight = 'titleTxtWeight',
   fontItalic = 'titleTxtItalic'
 })
-W98HUD:addItem('iborder', 'Inactive Window Border', { size = 'borderSize', colour1 = 'iBorderCol' })
---[[W98HUD:addItem('menu', 'Menu', {
-  size = 'menuSize',
-  colour1 = 'menuCol',
-  fontFamily = 'menuTxtFont',
-  fontColour = 'menuTxtCol',
-  fontWeight = 'menuTxtWeight',
-  fontItalic = 'menuTxtItalic'
-})]]
-W98HUD:addItem('caption', 'Caption Buttons', { size = 'titleSize' })
+W98HUD:addItem('iborder', 'Inactive Window Border', { size = 'iBorderSize', colour1 = 'iBorderCol' })
+W98HUD:addItem('caption', 'Caption Buttons', { size = 'titleSize', colour1 = 'captionCol' })
+W98HUD:addItem('button', 'Buttons', { colour1 = 'btnCol1', colour2 = 'btnCol2' })
 W98HUD:addItem('selitems', 'Selected Items', { colour1 = 'selItemsCol1', colour2 = 'selItemsCol2' })
 W98HUD:addItem('window', 'Window', { colour1 = 'winBgCol', fontColour = 'winTxtCol' })

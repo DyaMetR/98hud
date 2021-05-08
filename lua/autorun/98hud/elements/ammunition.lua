@@ -4,8 +4,9 @@
 
 if SERVER then return end
 
-local TITLE = 'weapon.'
+local TITLE, TITLE_WINDOWNAME = 'weapon', 'Weapon'
 local ALT, RESERVE, CLIP = 'Alt', 'Reserve', 'Clip'
+local ISW_COL1, ISW_COL2 = Color(0, 0, 120), Color(120, 0, 120)
 
 --[[------------------------------------------------------------------
   Draws an ammunition bar
@@ -42,12 +43,14 @@ end
 
 -- register element
 W98HUD:register(function()
+  local mode =  W98HUD:GetAmmoConVar()
+  if mode <= 0 then return end
   local config = W98HUD:getUserCfg().parameters
   local w, h = 127, 260
   local x, y = ScrW() - w - 20, (ScrH() * .5) - (h * .5)
   local barW, barH = 17, h - 66
   local col1, col2, colt, colb = config.aTitleCol1, config.aTitleCol2, config.aTitleTxtCol, config.aBorderCol -- colours
-  local borderSize, titleSize = config.borderSize, config.titleSize -- surrounding sizes
+  local borderSize, titleSize = config.aBorderSize, config.titleSize -- surrounding sizes
 
   -- get weapon variables
   local weapon = LocalPlayer():GetActiveWeapon()
@@ -56,8 +59,19 @@ W98HUD:register(function()
   if primary <= 0 and secondary <= 0 then return end -- hide if weapon does not use ammo
   local clip, reserve, alt = weapon:Clip1(), LocalPlayer():GetAmmoCount(primary), LocalPlayer():GetAmmoCount(secondary)
   local maxClip, maxReserve, maxAlt = weapon:GetMaxClip1(), game.GetAmmoMax(primary), game.GetAmmoMax(secondary)
-  local isSegmented = W98HUD:GetAmmoConVar() -- whether the bars are segmented
-  local title = TITLE .. W98HUD:GetWeaponConVar()
+  local isSegmented = mode >= 3 -- whether the bars are segmented
+  local title = TITLE_WINDOWNAME
+  local extension = W98HUD:GetWeaponConVar()
+  local barCol1, barCol2 = config.selItemsCol1, config.selItemsCol1
+
+  -- select InstallShield Wizard colours based on mode
+  if mode % 2 == 0 then
+    barCol1 = ISW_COL1
+    barCol2 = ISW_COL2
+  end
+
+  -- separate title and extension with dot
+  if string.len(extension) > 0 then title = TITLE .. '.' .. extension end
 
   -- use alt as reserve if the weapon only uses alt ammunition
   if primary <= 0 then
@@ -75,11 +89,12 @@ W98HUD:register(function()
     col2 = config.iTitleCol2
     colt = config.iTitleTxtCol
     colb = config.iBorderCol
+    border = config.iBorderSize
   end
 
   -- draw element
-  W98HUD.COMPONENTS:window(title, x, y, w, h, W98HUD.FONTS.TITLE, config.bgCol1, colb, config.borderSize, colt, col1, col2, config.titleSize)
-  W98HUD.COMPONENTS:windowControls(x + w - (4 + borderSize), y + (4 + borderSize), config.bgCol1, config.bgCol2, false, false, config.titleSize, W98HUD.FONTS.CAPTION)
+  W98HUD.COMPONENTS:window(title, x, y, w, h, W98HUD.FONTS.TITLE, config.bgCol1, colb, borderSize, colt, col1, col2, config.titleSize)
+  W98HUD.COMPONENTS:windowControls(x + w - (4 + borderSize), y + (4 + borderSize), config.captionCol, config.btnCol1, config.btnCol2, config.bgCol2, false, false, config.titleSize, W98HUD.FONTS.CAPTION)
   y = y + 28
 
   -- apply border and title bar sizes
@@ -87,13 +102,13 @@ W98HUD:register(function()
   barH = barH - math.max((borderSize * 2) - 8, 0) - math.max(titleSize - 21, 0)
 
   -- draw alt
-  drawBar(x + 13, y, barW, barH, ALT, alt / maxAlt, alt, isSegmented, secondary > 0, config.bgCol1, config.selItemsCol2, config.selItemsCol1, config.winTxtCol)
+  drawBar(x + 13, y, barW, barH, ALT, alt / maxAlt, alt, isSegmented, secondary > 0, config.bgCol1, config.selItemsCol2, barCol1, config.winTxtCol)
   x = x + barW + 24
 
   -- draw reserve
-  drawBar(x + 13, y, barW, barH, RESERVE, reserve / maxReserve, reserve, isSegmented, true, config.bgCol1, config.selItemsCol2, config.selItemsCol1, config.winTxtCol)
+  drawBar(x + 13, y, barW, barH, RESERVE, reserve / maxReserve, reserve, isSegmented, true, config.bgCol1, config.selItemsCol2, barCol1, config.winTxtCol)
   x = x + barW + 24
 
   -- draw clip
-  drawBar(x + 13, y, barW, barH, CLIP, clip / maxClip, clip, isSegmented, clip > -1, config.bgCol1, config.selItemsCol2, Color(120, 0, 120), config.winTxtCol)
+  drawBar(x + 13, y, barW, barH, CLIP, clip / maxClip, clip, isSegmented, clip > -1, config.bgCol1, config.selItemsCol2, barCol2, config.winTxtCol)
 end)

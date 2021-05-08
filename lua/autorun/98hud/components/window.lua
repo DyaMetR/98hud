@@ -203,18 +203,21 @@ end
   @param {number} y
   @param {string} text
   @param {Color} colour
+  @param {Color} light colour
+  @param {Color} shadow colour
   @param {Color} icon colour
   @param {number|nil} title bar size
   @param {string|nil} font for icons
 ]]--------------------------------------------------------------------
-local function windowControl(x, y, text, colour, iconColour, size, font)
+local function windowControl(x, y, text, colour, lightColour, shadowColour, iconColour, size, font)
   size = size or WINDOW_CONTROL_W
   font = font or WINDOW_CONTROL_FONT
   local w, h = size - WINDOW_CONTROL_MARGIN, size - (WINDOW_CONTROL_MARGIN + (WINDOW_CONTROL_W - WINDOW_CONTROL_H))
   local margin = WINDOW_CONTROL_ICON_MARGIN
+  local thick = WINDOW_BORDER_THICKNESS
   x = x - w -- aligned to the right
-  draw.RoundedBox(0, x, y, w, h, colour)
-  W98HUD.COMPONENTS:windowBorder(x, y, w, h, colour)
+  draw.RoundedBox(0, x, y, w, h, colour) -- background
+  drawOutline(x, y, w, h, lightColour, shadowColour, thick)
   draw.SimpleText(text, font, x + math.Round(w * .5) - margin, math.Round(y + (h * .5)), iconColour, TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER)
   return w, h
 end
@@ -230,21 +233,21 @@ end
   @param {number|nil} title bar size
   @param {string|nil} icon font
 ]]--------------------------------------------------------------------
-function W98HUD.COMPONENTS:windowControls(x, y, colour, iconColour, minimize, help, size, font)
+function W98HUD.COMPONENTS:windowControls(x, y, colour, lightColour, shadowColour, iconColour, minimize, help, size, font)
   local margin = WINDOW_CONTROL_MARGIN
   -- close button
-  local w = windowControl(x, y, C_CLOSE, colour, iconColour, size, font)
+  local w = windowControl(x, y, C_CLOSE, colour, lightColour, shadowColour, iconColour, size, font)
   if minimize then
     x = x - w - margin
     -- maximize button
-    w = windowControl(x, y, C_MAX, colour, iconColour, size, font)
+    w = windowControl(x, y, C_MAX, colour, lightColour, shadowColour, iconColour, size, font)
     x = x - w
     -- minimize button
-    w = windowControl(x, y, C_MIN, colour, iconColour, size, font)
+    w = windowControl(x, y, C_MIN, colour, lightColour, shadowColour, iconColour, size, font)
   end
   if help then
     x = x - w - margin
-    w = windowControl(x, y, C_HELP, colour, iconColour, size, font)
+    w = windowControl(x, y, C_HELP, colour, lightColour, shadowColour, iconColour, size, font)
   end
 end
 

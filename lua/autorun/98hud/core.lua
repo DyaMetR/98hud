@@ -98,14 +98,21 @@ end)
 --[[------------------------------------------------------------------
   Hide HUD
 ]]--------------------------------------------------------------------
+local HEALTH, BATTERY, AMMO, ALT, DAMAGE = 'CHudHealth', 'CHudBattery', 'CHudAmmo', 'CHudSecondaryAmmo', 'CHudDamageIndicator'
 local hide = {
-  ['CHudHealth'] = true,
-  ['CHudBattery'] = true,
-  ['CHudAmmo'] = true,
-  ['CHudSecondaryAmmo'] = true
+  [HEALTH] = true,
+  [BATTERY] = true,
+  [AMMO] = true,
+  [ALT] = true
 }
 hook.Add('HUDShouldDraw', '98hud', function(name)
   if not W98HUD:GetEnabledConVar() then return end
+  local health = W98HUD:GetHealthConVar() > 0
+  local ammo = W98HUD:GetAmmoConVar() > 0
+  hide[DAMAGE] = LocalPlayer().Alive and LocalPlayer():Alive()
+  hide[HEALTH] = health
+  hide[BATTERY] = health
+  hide[AMMO] = ammo
+  hide[ALT] = ammo
   if hide[name] then return false end
-  if LocalPlayer().Alive and not LocalPlayer():Alive() and name == 'CHudDamageIndicator' then return false end
 end)
