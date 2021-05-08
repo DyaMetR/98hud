@@ -25,13 +25,13 @@ local ISW_COL1, ISW_COL2 = Color(0, 0, 120), Color(120, 0, 120)
   @param {Color} text colour
 ]]--------------------------------------------------------------------
 local function drawBar(x, y, w, h, label, percentage, value, isSegmented, isValid, frameColour, backgroundColour, colour, textColour)
-  draw.SimpleText(label, W98HUD.FONTS.PROGRESS, x + (w * .5), y, textColour, TEXT_ALIGN_CENTER) -- draw label
+  draw.SimpleText(label, W98HUD.FONTS.MESSAGE_BOX, x + (w * .5), y, textColour, TEXT_ALIGN_CENTER) -- draw label
   -- if the percentage is invalid, don't draw bar filling and grey out the background
   if not isValid then
     percentage = 0
     backgroundColour = frameColour
   else
-    draw.SimpleText(value, W98HUD.FONTS.PROGRESS, x + (w * .5), y + h + 19, textColour, TEXT_ALIGN_CENTER)
+    draw.SimpleText(value, W98HUD.FONTS.MESSAGE_BOX, x + (w * .5), y + h + 19, textColour, TEXT_ALIGN_CENTER)
   end
   -- draw bar
   if isSegmented then
@@ -102,13 +102,13 @@ W98HUD:register(function()
   barH = barH - math.max((borderSize * 2) - 8, 0) - math.max(titleSize - 21, 0)
 
   -- draw alt
-  drawBar(x + 13, y, barW, barH, ALT, alt / maxAlt, alt, isSegmented, secondary > 0, config.bgCol1, config.selItemsCol2, barCol1, config.winTxtCol)
+  drawBar(x + 13, y, barW, barH, ALT, alt / maxAlt, alt, isSegmented, secondary > 0, config.bgCol1, config.selItemsCol2, barCol1, config.msgCol)
   x = x + barW + 24
 
   -- draw reserve
-  drawBar(x + 13, y, barW, barH, RESERVE, reserve / maxReserve, reserve, isSegmented, true, config.bgCol1, config.selItemsCol2, barCol1, config.winTxtCol)
+  drawBar(x + 13, y, barW, barH, RESERVE, reserve / maxReserve, reserve, isSegmented, true, config.bgCol1, config.selItemsCol2, barCol1, config.msgCol)
   x = x + barW + 24
 
   -- draw clip
-  drawBar(x + 13, y, barW, barH, CLIP, clip / maxClip, clip, isSegmented, clip > -1, config.bgCol1, config.selItemsCol2, barCol2, config.winTxtCol)
+  drawBar(x + 13, y, barW, barH, CLIP, clip / maxClip, clip, isSegmented, clip > -1, config.bgCol1, config.selItemsCol2, barCol2, config.msgCol)
 end)

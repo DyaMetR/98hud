@@ -11,32 +11,35 @@
 
 if SERVER then return end
 
-W98HUD:addDefaultTheme('default', 'Windows Standard-Gradients', {
+W98HUD:addDefaultTheme('default', 'Windows Default (high color)', {
   parameters = {
-    desktop = Color(0, 124, 120),
-    bgCol1 = Color(184, 188, 184),
-    bgCol2 = Color(0, 0, 0),
-    captionCol = Color(184, 188, 184),
-    btnCol1 = Color(255, 255, 255),
-    btnCol2 = Color(0, 0, 0),
-    titleSize = 18,
-    titleTxtFont = 'pix MS Sans Serif 8pt',
-    titleTxtSize = 13,
-    titleTxtWeight = 1000,
-    titleTxtItalic = false,
-    aTitleCol1 = Color(0, 128, 200),
-    aTitleCol2 = Color(0, 0, 120),
-    aTitleTxtCol = Color(255, 255, 255),
-    iTitleCol1 = Color(176, 176, 176),
-    iTitleCol2 = Color(120, 124, 120),
-    iTitleTxtCol = Color(184, 188, 184),
-    aBorderSize = 1,
-    aBorderCol = Color(184, 188, 184),
-    iBorderSize = 1,
-    iBorderCol = Color(184, 188, 184),
-    selItemsCol1 = Color(0, 0, 120),
-    selItemsCol2 = Color(255, 255, 255),
-    winBgCol = Color(255, 255, 255),
-    winTxtCol = Color(0, 0, 0)
+    desktop = Color(0, 128, 128), -- Background
+    bgCol1 = Color(192, 192, 192), -- Window Color
+    bgCol2 = Color(0, 0, 0), -- Caption Button Icon Color
+    captionCol = Color(192, 192, 192), -- Caption Button Color
+    btnCol1 = Color(255, 255, 255), -- Button Light
+    btnCol2 = Color(0, 0, 0), -- Button Shadow
+    titleSize = 18, -- Titlebar Size
+    titleTxtFont = 'pix MS Sans Serif 8pt', -- Titlebar Font
+    titleTxtSize = 13, -- Titlebar Font Size
+    titleTxtWeight = 1000, -- Titlebar Text Weight
+    titleTxtItalic = false, -- Titlebar Text Italic
+    aTitleCol1 = Color(16, 132, 208), -- Ative Titlebar Gradient Color
+    aTitleCol2 = Color(0, 0, 128), -- Active Titlebar Color
+    aTitleTxtCol = Color(255, 255, 255), -- Active Titlebar Text Color
+    iTitleCol1 = Color(184, 180, 184), -- Inactive Titlebar Gradient Color
+    iTitleCol2 = Color(128, 128, 128), -- Inactive Titlebar Color
+    iTitleTxtCol = Color(192, 192, 192), -- Inactive Titlebar Text Color
+    aBorderSize = 1, -- Active Window Border Size
+    aBorderCol = Color(192, 192, 192), -- Active Window Border Color
+    iBorderSize = 1, -- Inactive Window Border Size
+    iBorderCol = Color(192, 192, 192), -- Inactive Window Border Color
+    selItemsCol1 = Color(0, 0, 128), -- Selected Item (Highlight) Color
+    selItemsCol2 = Color(255, 255, 255), -- Selected Item (Highlight) Text Color
+    msgFont = 'pix MS Sans Serif 8pt', -- Message Box Font
+    msgSize = 13, -- Message Box Font Size
+    msgCol = Color(0, 0, 0), -- Message Box Font Colour
+    msgWeight = 0, -- Message Box Font Weight
+    msgItalic = false -- Message Box Font Italic
   }
 })

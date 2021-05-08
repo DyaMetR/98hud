@@ -41,4 +41,10 @@ W98HUD:addItem('iborder', 'Inactive Window Border', { size = 'iBorderSize', colo
 W98HUD:addItem('caption', 'Caption Buttons', { size = 'titleSize', colour1 = 'captionCol' })
 W98HUD:addItem('button', 'Buttons', { colour1 = 'btnCol1', colour2 = 'btnCol2' })
 W98HUD:addItem('selitems', 'Selected Items', { colour1 = 'selItemsCol1', colour2 = 'selItemsCol2' })
-W98HUD:addItem('window', 'Window', { colour1 = 'winBgCol', fontColour = 'winTxtCol' })
+W98HUD:addItem('msgbox', 'Message Box', {
+  fontFamily = 'msgFont',
+  fontSize = 'msgSize',
+  fontColour = 'msgCol',
+  fontWeight = 'msgWeight',
+  fontItalic = 'msgItalic'
+})

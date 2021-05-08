@@ -17,7 +17,7 @@ if CLIENT then
   W98HUD.date = 'May 8th, 2021'
   W98HUD.credits = { -- {name, contribution}
     {'DyaMetR', 'Developer'},
-    {'Matsilagi', 'Reference material\nThemes porting\nTesting'},
+    {'Matsilagi', 'Reference material\nPorting all 78 themes\nTesting'},
     {'Microsoft', 'Original components design\nDefault themes reference'}
   }
 end

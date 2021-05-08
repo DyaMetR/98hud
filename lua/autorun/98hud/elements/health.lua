@@ -22,7 +22,7 @@ local HEALTH, SUIT = 'Health', 'Suit'
   @param {string} text colour
 ]]--------------------------------------------------------------------
 local function drawBar(x, y, w, h, label, value, isSegmented, frameColour, backgroundColour, foregroundColour, textColour)
-  draw.SimpleText(label, W98HUD.FONTS.PROGRESS, x + 2, y, textColour, nil, TEXT_ALIGN_BOTTOM)
+  draw.SimpleText(label, W98HUD.FONTS.MESSAGE_BOX, x + 2, y, textColour, nil, TEXT_ALIGN_BOTTOM)
   if isSegmented then
     W98HUD.COMPONENTS:segmentBar(x, y + 3, w, h, value * .01, frameColour, foregroundColour)
   else
@@ -69,10 +69,10 @@ W98HUD:register(function()
   y = y + math.max(borderSize - 4, 0) + math.max(titleSize - 20, 0)
 
   -- draw health
-  drawBar(x + 13, y, barW, barH, HEALTH, math.max(LocalPlayer():Health(), 0), isSegmented, config.bgCol1, config.selItemsCol2, config.selItemsCol1, config.winTxtCol)
+  drawBar(x + 13, y, barW, barH, HEALTH, math.max(LocalPlayer():Health(), 0), isSegmented, config.bgCol1, config.selItemsCol2, config.selItemsCol1, config.msgCol)
   y = y + margin
 
   -- draw armour
-  drawBar(x + 13, y, barW, barH, SUIT, LocalPlayer():Armor(), isSegmented, config.bgCol1, config.selItemsCol2, config.selItemsCol1, config.winTxtCol)
+  drawBar(x + 13, y, barW, barH, SUIT, LocalPlayer():Armor(), isSegmented, config.bgCol1, config.selItemsCol2, config.selItemsCol1, config.msgCol)
 
 end)

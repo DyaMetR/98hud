@@ -18,7 +18,8 @@ if SERVER then return end
 W98HUD.FONTS = { -- font names
   TITLE = '98hud_font1',
   CAPTION = '98hud_font2',
-  PROGRESS = '98hud_font3'
+  PROGRESS = '98hud_font3',
+  MESSAGE_BOX = '98hud_font4'
 }
 
 -- desktop colour
@@ -84,9 +85,23 @@ end
 W98HUD:addParameter('selItemsCol1')
 W98HUD:addParameter('selItemsCol2')
 
--- window text
-W98HUD:addParameter('winBgCol')
-W98HUD:addParameter('winTxtCol')
+-- message box
+W98HUD:addParameter('msgFont')
+W98HUD:addParameter('msgSize')
+W98HUD:addParameter('msgCol')
+W98HUD:addParameter('msgWeight')
+W98HUD:addParameter('msgItalic')
+
+W98HUD:getUserCfg():AddChangeEvent({'msgFont', 'msgSize', 'msgWeight', 'msgItalic'}, 'font', function()
+  local cache = W98HUD:getUserCfg()
+  surface.CreateFont(W98HUD.FONTS.MESSAGE_BOX, {
+    font = cache.parameters.msgFont,
+    size = cache.parameters.msgSize,
+    weight = cache.parameters.msgWeight,
+    italic = cache.parameters.msgItalic,
+    antialias = false
+  })
+end)
 
 -- window fonts
 surface.CreateFont(W98HUD.FONTS.PROGRESS, {
