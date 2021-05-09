@@ -216,9 +216,13 @@ local function windowControl(x, y, text, colour, lightColour, shadowColour, icon
   local margin = WINDOW_CONTROL_ICON_MARGIN
   local thick = WINDOW_BORDER_THICKNESS
   x = x - w -- aligned to the right
+  setColour(inCol2, colour.r * WINDOW_IN_BORDER_COLOUR2, colour.g * WINDOW_IN_BORDER_COLOUR2, colour.b * WINDOW_IN_BORDER_COLOUR2)
   draw.RoundedBox(0, x, y, w, h, colour) -- background
-  drawOutline(x, y, w, h, lightColour, shadowColour, thick)
-  draw.SimpleText(text, font, x + math.Round(w * .5) - margin, math.Round(y + (h * .5)), iconColour, TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER)
+  drawOutline(x, y, w, h, lightColour, shadowColour, thick) -- exterior outline
+  -- do inner shadow
+  draw.RoundedBox(0, x + w - (thick * 2), y + thick, thick, h - (thick * 2), inCol2)
+  draw.RoundedBox(0, x + thick, y + h - (thick * 2), w - (thick * 3), thick, inCol2)
+  draw.SimpleText(text, font, x + math.Round(w * .5) - margin, math.Round(y + (h * .5)), iconColour, TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER) -- icon
   return w, h
 end
 

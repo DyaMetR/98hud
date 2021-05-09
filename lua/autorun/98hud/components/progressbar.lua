@@ -42,9 +42,11 @@ end
   @param {Color} secondary colour
   @param {boolean} is it vertical
   @param {string} font
-  @param {Color} colour
+  @param {Color} percentage colour
+  @param {Color} percentage colour 2
 ]]--------------------------------------------------------------------
-function W98HUD.COMPONENTS:progressBar(x, y, w, h, percentage, background, colour1, colour2, vertical, text, font, fontColour)
+function W98HUD.COMPONENTS:progressBar(x, y, w, h, percentage, background, colour1, colour2, vertical, text, font, fontColour, fontColour2)
+  fontColour2 = fontColour2 or colour2
   local value = math.min(percentage, 1)
   -- draw background
   draw.RoundedBox(0, x, y, w, h, colour2)
@@ -64,7 +66,7 @@ function W98HUD.COMPONENTS:progressBar(x, y, w, h, percentage, background, colou
     end
     -- foreground font
     render.SetScissorRect(x1, y1, x2, y2, true)
-    draw.SimpleText(text, font, x + (w * .5), y + (h * .5), colour2, TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER)
+    draw.SimpleText(text, font, x + (w * .5), y + (h * .5), fontColour2, TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER)
     render.SetScissorRect(0, 0, 0, 0, false)
     -- get background position and size
     if not vertical then

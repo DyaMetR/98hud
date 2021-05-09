@@ -58,6 +58,7 @@ W98HUD:include('data/items.lua')
 W98HUD:include('data/parameters.lua')
 W98HUD:include('data/sounds.lua')
 W98HUD:include('data/default.lua')
+W98HUD:include('data/msthemes.lua')
 
 -- include UI components
 W98HUD:include('components/window.lua')
@@ -109,7 +110,7 @@ hook.Add('HUDShouldDraw', '98hud', function(name)
   if not W98HUD:GetEnabledConVar() then return end
   local health = W98HUD:GetHealthConVar() > 0
   local ammo = W98HUD:GetAmmoConVar() > 0
-  hide[DAMAGE] = LocalPlayer().Alive and LocalPlayer():Alive()
+  hide[DAMAGE] = LocalPlayer().Alive and not LocalPlayer():Alive()
   hide[HEALTH] = health
   hide[BATTERY] = health
   hide[AMMO] = ammo

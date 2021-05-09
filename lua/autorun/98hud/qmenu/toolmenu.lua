@@ -24,7 +24,8 @@ hook.Add('PopulateToolMenu', UID, function()
     local health, _ = panel:ComboBox('Health & suit', '98hud_health')
     health:AddChoice('Disabled', 0)
     health:AddChoice('Progress bar', 1)
-    health:AddChoice('Segmented', 2)
+    health:AddChoice('Progress bar with background', 2)
+    health:AddChoice('Segmented', 3)
 
     panel:TextEntry('Weapon extension', '98hud_weapon')
 

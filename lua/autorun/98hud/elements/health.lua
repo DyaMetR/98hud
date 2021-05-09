@@ -19,14 +19,15 @@ local HEALTH, SUIT = 'Health', 'Suit'
   @param {Color} frame colour
   @param {Color} background colour
   @param {Color} foreground colour
-  @param {string} text colour
+  @param {Color} text colour
+  @param {Color} text colour 2
 ]]--------------------------------------------------------------------
-local function drawBar(x, y, w, h, label, value, isSegmented, frameColour, backgroundColour, foregroundColour, textColour)
+local function drawBar(x, y, w, h, label, value, isSegmented, frameColour, backgroundColour, foregroundColour, textColour, textColour2)
   draw.SimpleText(label, W98HUD.FONTS.MESSAGE_BOX, x + 2, y, textColour, nil, TEXT_ALIGN_BOTTOM)
   if isSegmented then
     W98HUD.COMPONENTS:segmentBar(x, y + 3, w, h, value * .01, frameColour, foregroundColour)
   else
-    W98HUD.COMPONENTS:progressBar(x, y + 3, w, h, value * .01, frameColour, foregroundColour, backgroundColour, false, string.format(FORMAT, value), W98HUD.FONTS.PROGRESS, textColour)
+    W98HUD.COMPONENTS:progressBar(x, y + 3, w, h, value * .01, frameColour, foregroundColour, backgroundColour, false, string.format(FORMAT, value), W98HUD.FONTS.PROGRESS, textColour, textColour2)
   end
 end
 
@@ -41,13 +42,20 @@ W98HUD:register(function()
   local extension = W98HUD:GetPlayerConVar()
   local col1, col2, colt, colb = config.aTitleCol1, config.aTitleCol2, config.aTitleTxtCol, config.aBorderCol
   local titleSize, borderSize = config.titleSize, config.aBorderSize
-  local isSegmented = mode == 2
+  local bgCol = config.bgCol1
+  local isSegmented = mode == 3
+  local textSize = config.msgSize - 13
   if string.len(extension) > 0 then title = title .. '.' .. extension end -- separate name and extension with dot
+  if mode == 2 then bgCol = config.selItemsCol2 end
   if isSegmented then -- make bars thinner if segmented and the frame shorter
     barH = 13
     h = 103
     margin = 33
   end
+  -- apply border and title bar sizes to the window
+  h = h + ((borderSize * 2) - 2) + (titleSize - 18) + (textSize * 2)
+
+  -- get position
   local x, y = 20, ScrH() - (h + 20)
 
   if not LocalPlayer():Alive() then -- change colours while dead
@@ -66,13 +74,13 @@ W98HUD:register(function()
   -- apply border and title bar sizes
   barW = barW - (borderSize * 2) + 2
   x = x + borderSize - 1
-  y = y + math.max(borderSize - 4, 0) + math.max(titleSize - 20, 0)
+  y = y + (borderSize - 1) + (titleSize - 18) + textSize
 
   -- draw health
-  drawBar(x + 13, y, barW, barH, HEALTH, math.max(LocalPlayer():Health(), 0), isSegmented, config.bgCol1, config.selItemsCol2, config.selItemsCol1, config.msgCol)
-  y = y + margin
+  drawBar(x + 13, y, barW, barH, HEALTH, math.max(LocalPlayer():Health(), 0), isSegmented, config.bgCol1, bgCol, config.selItemsCol1, config.msgCol, config.selItemsCol2)
+  y = y + margin + textSize
 
   -- draw armour
-  drawBar(x + 13, y, barW, barH, SUIT, LocalPlayer():Armor(), isSegmented, config.bgCol1, config.selItemsCol2, config.selItemsCol1, config.msgCol)
+  drawBar(x + 13, y, barW, barH, SUIT, LocalPlayer():Armor(), isSegmented, config.bgCol1, bgCol, config.selItemsCol1, config.msgCol, config.selItemsCol2)
 
 end)

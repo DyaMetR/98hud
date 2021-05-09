@@ -25,19 +25,19 @@ local ISW_COL1, ISW_COL2 = Color(0, 0, 120), Color(120, 0, 120)
   @param {Color} text colour
 ]]--------------------------------------------------------------------
 local function drawBar(x, y, w, h, label, percentage, value, isSegmented, isValid, frameColour, backgroundColour, colour, textColour)
-  draw.SimpleText(label, W98HUD.FONTS.MESSAGE_BOX, x + (w * .5), y, textColour, TEXT_ALIGN_CENTER) -- draw label
+  draw.SimpleText(label, W98HUD.FONTS.MESSAGE_BOX, x + (w * .5), y, textColour, TEXT_ALIGN_CENTER, TEXT_ALIGN_BOTTOM) -- draw label
   -- if the percentage is invalid, don't draw bar filling and grey out the background
   if not isValid then
     percentage = 0
     backgroundColour = frameColour
   else
-    draw.SimpleText(value, W98HUD.FONTS.MESSAGE_BOX, x + (w * .5), y + h + 19, textColour, TEXT_ALIGN_CENTER)
+    draw.SimpleText(value, W98HUD.FONTS.MESSAGE_BOX, x + (w * .5), y + h + 6, textColour, TEXT_ALIGN_CENTER)
   end
   -- draw bar
   if isSegmented then
-    W98HUD.COMPONENTS:segmentBar(x, y + 16, w, h, percentage, frameColour, colour, true, true, backgroundColour)
+    W98HUD.COMPONENTS:segmentBar(x, y + 3, w, h, percentage, frameColour, colour, true, true, backgroundColour)
   else
-    W98HUD.COMPONENTS:progressBar(x, y + 16, w, h, percentage, frameColour, colour, backgroundColour, true)
+    W98HUD.COMPONENTS:progressBar(x, y + 3, w, h, percentage, frameColour, colour, backgroundColour, true)
   end
 end
 
@@ -47,10 +47,11 @@ W98HUD:register(function()
   if mode <= 0 then return end
   local config = W98HUD:getUserCfg().parameters
   local w, h = 127, 260
-  local x, y = ScrW() - w - 20, (ScrH() * .5) - (h * .5)
   local barW, barH = 17, h - 66
   local col1, col2, colt, colb = config.aTitleCol1, config.aTitleCol2, config.aTitleTxtCol, config.aBorderCol -- colours
   local borderSize, titleSize = config.aBorderSize, config.titleSize -- surrounding sizes
+  local textSize = config.msgSize
+  local barBgCol = config.bgCol1
 
   -- get weapon variables
   local weapon = LocalPlayer():GetActiveWeapon()
@@ -63,11 +64,13 @@ W98HUD:register(function()
   local title = TITLE_WINDOWNAME
   local extension = W98HUD:GetWeaponConVar()
   local barCol1, barCol2 = config.selItemsCol1, config.selItemsCol1
+  local textHorMargin = math.Round((textSize - 13) * 1.33) -- text horizontal margin
 
   -- select InstallShield Wizard colours based on mode
   if mode % 2 == 0 then
     barCol1 = ISW_COL1
     barCol2 = ISW_COL2
+    barBgCol = config.selItemsCol2
   end
 
   -- separate title and extension with dot
@@ -89,26 +92,34 @@ W98HUD:register(function()
     col2 = config.iTitleCol2
     colt = config.iTitleTxtCol
     colb = config.iBorderCol
-    border = config.iBorderSize
+    borderSize = config.iBorderSize
   end
+
+  -- apply title bar and border size
+  w = w + ((borderSize - 1) * 2) + (textHorMargin * 2)
+  h = h + (textSize - 13)
+
+  -- get position
+  local x, y = ScrW() - w - 20, (ScrH() * .5) - (h * .5)
 
   -- draw element
   W98HUD.COMPONENTS:window(title, x, y, w, h, W98HUD.FONTS.TITLE, config.bgCol1, colb, borderSize, colt, col1, col2, config.titleSize)
   W98HUD.COMPONENTS:windowControls(x + w - (4 + borderSize), y + (4 + borderSize), config.captionCol, config.btnCol1, config.btnCol2, config.bgCol2, false, false, config.titleSize, W98HUD.FONTS.CAPTION)
-  y = y + 28
+  y = y + 41
 
   -- apply border and title bar sizes
-  y = y + math.max(borderSize - 4, 0) + math.max(titleSize - 21, 0)
-  barH = barH - math.max((borderSize * 2) - 8, 0) - math.max(titleSize - 21, 0)
+  x = x + (borderSize - 1)
+  y = y + (borderSize - 1) + (titleSize - 18) + (textSize - 13)
+  barH = barH - ((borderSize * 2) - 2) - (titleSize - 18) - (textSize - 13)
 
   -- draw alt
-  drawBar(x + 13, y, barW, barH, ALT, alt / maxAlt, alt, isSegmented, secondary > 0, config.bgCol1, config.selItemsCol2, barCol1, config.msgCol)
-  x = x + barW + 24
+  drawBar(x + 13, y, barW, barH, ALT, alt / maxAlt, alt, isSegmented, secondary > 0, config.bgCol1, barBgCol, barCol1, config.msgCol)
+  x = x + barW + 24 + textHorMargin
 
   -- draw reserve
-  drawBar(x + 13, y, barW, barH, RESERVE, reserve / maxReserve, reserve, isSegmented, true, config.bgCol1, config.selItemsCol2, barCol1, config.msgCol)
-  x = x + barW + 24
+  drawBar(x + 13, y, barW, barH, RESERVE, reserve / maxReserve, reserve, isSegmented, true, config.bgCol1, barBgCol, barCol1, config.msgCol)
+  x = x + barW + 24 + textHorMargin
 
   -- draw clip
-  drawBar(x + 13, y, barW, barH, CLIP, clip / maxClip, clip, isSegmented, clip > -1, config.bgCol1, config.selItemsCol2, barCol2, config.msgCol)
+  drawBar(x + 13, y, barW, barH, CLIP, clip / maxClip, clip, isSegmented, clip > -1, config.bgCol1, barBgCol, barCol2, config.msgCol)
 end)
