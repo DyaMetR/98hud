@@ -6,10 +6,7 @@ if SERVER then return end
 
 local WINDOW_BORDER_THICKNESS = 1
 local WINDOW_BORDER_TINT_THICKNESS = 1
-local WINDOW_OUT_BORDER_COLOUR1 = 1.17 -- multiplier
-local WINDOW_OUT_BORDER_COLOUR2 = Color(0, 0, 0) -- absolute colour
-local WINDOW_IN_BORDER_COLOUR1 = Color(133, 137, 141) -- colour values to add
-local WINDOW_IN_BORDER_COLOUR2 = 0.69 -- multiplier
+local WINDOW_OUT_BORDER_COLOUR2 = Color(0, 0, 0) -- outer dark shadow fallback
 local TITLE_LABEL_HORIZONTAL_MARGIN = 2 -- horizontal title text inner margin
 local TITLE_LABEL_VERTICAL_MARGIN = 5 -- vertical title text inner margin
 local WINDOW_TITLE_MARGIN = 1 -- title bar margin from window borders
@@ -20,30 +17,12 @@ local C_CLOSE, C_MAX, C_MIN, C_HELP = 'C', 'B', 'A', '?' -- window control icons
 local WINDOW_CONTROL_MARGIN = 2 -- window control buttons margin with title bar
 local WINDOW_CONTROL_ICON_MARGIN = 1 -- window control button icon margin
 
-local outCol1 = Color(0, 0, 0) -- outer border primary colour cache
-local inCol1 = Color(0, 0, 0) -- inner border primary colour
-local inCol2 = Color(0, 0, 0) -- innter border secondary colour
-
 -- control icons font
 surface.CreateFont(WINDOW_CONTROL_FONT, {
   font = 'MarlettCustom',
   size = 8,
   antialias = false
 })
-
---[[------------------------------------------------------------------
-  Sets the values of the given colour object
-  @param {Color} colour object
-  @param {number} red
-  @param {number} green
-  @param {number} blue
-]]--------------------------------------------------------------------
-local function setColour(colObj, r, g, b)
-  colObj.r = r
-  colObj.g = g
-  colObj.b = b
-  return colObj
-end
 
 --[[------------------------------------------------------------------
   Gets the real text height
@@ -141,9 +120,9 @@ end
 ]]--------------------------------------------------------------------
 function W98HUD.COMPONENTS:windowBorder(x, y, w, h, colour, inverted)
   -- compute colours
-  setColour(outCol1, colour.r * WINDOW_OUT_BORDER_COLOUR1, colour.g * WINDOW_OUT_BORDER_COLOUR1, colour.b * WINDOW_OUT_BORDER_COLOUR1)
-  setColour(inCol1, colour.r + WINDOW_IN_BORDER_COLOUR1.r, colour.g + WINDOW_IN_BORDER_COLOUR1.g, colour.b + WINDOW_IN_BORDER_COLOUR1.b)
-  setColour(inCol2, colour.r * WINDOW_IN_BORDER_COLOUR2, colour.g * WINDOW_IN_BORDER_COLOUR2, colour.b * WINDOW_IN_BORDER_COLOUR2)
+  local outCol1 = W98HUD:CalculateOutCol1(colour)
+  local inCol1 = W98HUD:CalculateInCol1(colour)
+  local inCol2 = W98HUD:CalculateInCol2(colour)
   -- draw border with colours in desired order
   if not inverted then
     return W98HUD.COMPONENTS:border(x, y, w, h, outCol1, WINDOW_OUT_BORDER_COLOUR2, inCol1, inCol2)
@@ -164,8 +143,8 @@ end
 function W98HUD.COMPONENTS:simpleBorder(x, y, w, h, colour, inverted)
   local thick = WINDOW_BORDER_THICKNESS
   -- compute colours
-  setColour(inCol1, colour.r + WINDOW_IN_BORDER_COLOUR1.r, colour.g + WINDOW_IN_BORDER_COLOUR1.g, colour.b + WINDOW_IN_BORDER_COLOUR1.b)
-  setColour(inCol2, colour.r * WINDOW_IN_BORDER_COLOUR2, colour.g * WINDOW_IN_BORDER_COLOUR2, colour.b * WINDOW_IN_BORDER_COLOUR2)
+  local inCol1 = W98HUD:CalculateInCol1(colour)
+  local inCol2 = W98HUD:CalculateInCol2(colour)
   -- draw border with colours in desired order
   if not inverted then
     drawOutline(x, y, w, h, inCol1, inCol2, thick)
@@ -185,8 +164,8 @@ end
 ]]--------------------------------------------------------------------
 function W98HUD.COMPONENTS:separator(x, y, size, colour, vertical)
   -- compute colours
-  setColour(inCol1, colour.r + WINDOW_IN_BORDER_COLOUR1.r, colour.g + WINDOW_IN_BORDER_COLOUR1.g, colour.b + WINDOW_IN_BORDER_COLOUR1.b)
-  setColour(inCol2, colour.r * WINDOW_IN_BORDER_COLOUR2, colour.g * WINDOW_IN_BORDER_COLOUR2, colour.b * WINDOW_IN_BORDER_COLOUR2)
+  local inCol1 = W98HUD:CalculateInCol1(colour)
+  local inCol2 = W98HUD:CalculateInCol2(colour)
   -- draw
   if vertical then
     draw.RoundedBox(0, x, y, 1, size, inCol2)
@@ -205,23 +184,23 @@ end
   @param {Color} colour
   @param {Color} light colour
   @param {Color} shadow colour
+  @param {Color} dark shadow colour
   @param {Color} icon colour
   @param {number|nil} title bar size
   @param {string|nil} font for icons
 ]]--------------------------------------------------------------------
-local function windowControl(x, y, text, colour, lightColour, shadowColour, iconColour, size, font)
+local function windowControl(x, y, text, colour, lightColour, shadowColour, darkShadowColour, iconColour, size, font)
   size = size or WINDOW_CONTROL_W
   font = font or WINDOW_CONTROL_FONT
   local w, h = size - WINDOW_CONTROL_MARGIN, size - (WINDOW_CONTROL_MARGIN + (WINDOW_CONTROL_W - WINDOW_CONTROL_H))
   local margin = WINDOW_CONTROL_ICON_MARGIN
   local thick = WINDOW_BORDER_THICKNESS
   x = x - w -- aligned to the right
-  setColour(inCol2, colour.r * WINDOW_IN_BORDER_COLOUR2, colour.g * WINDOW_IN_BORDER_COLOUR2, colour.b * WINDOW_IN_BORDER_COLOUR2)
   draw.RoundedBox(0, x, y, w, h, colour) -- background
-  drawOutline(x, y, w, h, lightColour, shadowColour, thick) -- exterior outline
+  drawOutline(x, y, w, h, lightColour, darkShadowColour, thick) -- exterior outline
   -- do inner shadow
-  draw.RoundedBox(0, x + w - (thick * 2), y + thick, thick, h - (thick * 2), inCol2)
-  draw.RoundedBox(0, x + thick, y + h - (thick * 2), w - (thick * 3), thick, inCol2)
+  draw.RoundedBox(0, x + w - (thick * 2), y + thick, thick, h - (thick * 2), shadowColour)
+  draw.RoundedBox(0, x + thick, y + h - (thick * 2), w - (thick * 3), thick, shadowColour)
   draw.SimpleText(text, font, x + math.Round(w * .5) - margin, math.Round(y + (h * .5)), iconColour, TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER) -- icon
   return w, h
 end
@@ -231,27 +210,31 @@ end
   @param {number} x
   @param {number} y
   @param {Color} colour
+  @param {Color} light colour
+  @param {Color} shadow colour
+  @param {Color} dark shadow colour
   @param {Color} icon colour
   @param {boolean|nil} window minimization controls
   @param {boolean|nil} help
   @param {number|nil} title bar size
   @param {string|nil} icon font
 ]]--------------------------------------------------------------------
-function W98HUD.COMPONENTS:windowControls(x, y, colour, lightColour, shadowColour, iconColour, minimize, help, size, font)
+function W98HUD.COMPONENTS:windowControls(x, y, colour, lightColour, shadowColour, darkShadowColour, iconColour, minimize, help, size, font)
+  darkShadowColour = darkShadowColour or WINDOW_OUT_BORDER_COLOUR2
   local margin = WINDOW_CONTROL_MARGIN
   -- close button
-  local w = windowControl(x, y, C_CLOSE, colour, lightColour, shadowColour, iconColour, size, font)
+  local w = windowControl(x, y, C_CLOSE, colour, lightColour, shadowColour, darkShadowColour, iconColour, size, font)
   if minimize then
     x = x - w - margin
     -- maximize button
-    w = windowControl(x, y, C_MAX, colour, lightColour, shadowColour, iconColour, size, font)
+    w = windowControl(x, y, C_MAX, colour, lightColour, shadowColour, darkShadowColour, iconColour, size, font)
     x = x - w
     -- minimize button
-    w = windowControl(x, y, C_MIN, colour, lightColour, shadowColour, iconColour, size, font)
+    w = windowControl(x, y, C_MIN, colour, lightColour, shadowColour, darkShadowColour, iconColour, size, font)
   end
   if help then
     x = x - w - margin
-    w = windowControl(x, y, C_HELP, colour, lightColour, shadowColour, iconColour, size, font)
+    w = windowControl(x, y, C_HELP, colour, lightColour, shadowColour, darkShadowColour, iconColour, size, font)
   end
 end
 

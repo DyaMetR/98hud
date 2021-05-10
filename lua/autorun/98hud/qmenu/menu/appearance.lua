@@ -127,12 +127,12 @@ function W98HUD.CreateAppereanceMenu(sheet, cache)
     local x, y = preview:GetWide() * .02, preview:GetTall() * .04
     local borderSize = parameters.iBorderSize
     W98HUD.COMPONENTS:window(INACTIVE_WINDOW, x, y, w, h, PRIMARY_FONT, parameters.bgCol1, parameters.iBorderCol, borderSize, parameters.iTitleTxtCol, parameters.iTitleCol1, parameters.iTitleCol2, parameters.titleSize)
-    W98HUD.COMPONENTS:windowControls(x + w - (5 + borderSize), y + (5 + borderSize), parameters.captionCol, parameters.btnCol1, parameters.btnCol2, parameters.bgCol2, true, nil, parameters.titleSize, CAPTION_ICON_FONT)
+    W98HUD.COMPONENTS:windowControls(x + w - (5 + borderSize), y + (5 + borderSize), parameters.captionCol, parameters.btnCol1, parameters.btnCol2, parameters.btnCol3, parameters.bgCol2, true, nil, parameters.titleSize, CAPTION_ICON_FONT)
     -- active window
     x, y = preview:GetWide() * .03, preview:GetWide() * .09
     borderSize = parameters.aBorderSize
     W98HUD.COMPONENTS:window(ACTIVE_WINDOW, x, y, w, h, PRIMARY_FONT, parameters.bgCol1, parameters.aBorderCol, parameters.aBorderSize, parameters.aTitleTxtCol, parameters.aTitleCol1, parameters.aTitleCol2, parameters.titleSize)
-    W98HUD.COMPONENTS:windowControls(x + w - (5 + borderSize), y + (5 + borderSize), parameters.captionCol, parameters.btnCol1, parameters.btnCol2, parameters.bgCol2, true, nil, parameters.titleSize, CAPTION_ICON_FONT)
+    W98HUD.COMPONENTS:windowControls(x + w - (5 + borderSize), y + (5 + borderSize), parameters.captionCol, parameters.btnCol1, parameters.btnCol2, parameters.btnCol3, parameters.bgCol2, true, nil, parameters.titleSize, CAPTION_ICON_FONT)
   end
 
   --[[------------------------------------------------------------------
@@ -215,7 +215,7 @@ function W98HUD.CreateAppereanceMenu(sheet, cache)
   -- primary colour
   local colour1 = labeledControl(parent, 'DColorMixerButton', COLOUR, size.x + size:GetWide() + 5, size.y, colourWidth)
   colour1:GetControl().OnValueChanged = function(self, value)
-    if not self:IsEnabled() or size.AvoidUpdate then return end
+    if not self:IsEnabled() or colour1.AvoidUpdate then return end
     local _, _item = item:GetControl():GetSelected()
     cache:SetParameterValue(W98HUD:getItem(_item).colour1, value)
   end
@@ -224,7 +224,7 @@ function W98HUD.CreateAppereanceMenu(sheet, cache)
   -- secondary colour
   local colour2 = labeledControl(parent, 'DColorMixerButton', COLOUR2, colour1.x + colour1:GetWide() + 5, colour1.y, colourWidth)
   colour2:GetControl().OnValueChanged = function(self, value)
-    if not self:IsEnabled() or size.AvoidUpdate then return end
+    if not self:IsEnabled() or colour2.AvoidUpdate then return end
     local _, _item = item:GetControl():GetSelected()
     cache:SetParameterValue(W98HUD:getItem(_item).colour2, value)
   end
@@ -234,7 +234,7 @@ function W98HUD.CreateAppereanceMenu(sheet, cache)
   local fFamily = labeledControl(parent, 'DTextEntry', FONT, x, scheme.y + 90, largeWidth)
   fFamily:GetControl():SetToolTip(FONT_TOOLTIP)
   fFamily:GetControl().OnEnter = function(self)
-    if not self:IsEnabled() or size.AvoidUpdate then return end
+    if not self:IsEnabled() or fFamily.AvoidUpdate then return end
     local _, _item = item:GetControl():GetSelected()
     cache:SetParameterValue(W98HUD:getItem(_item).fontFamily, self:GetText())
   end
@@ -243,7 +243,7 @@ function W98HUD.CreateAppereanceMenu(sheet, cache)
   -- font size
   local fSize = labeledControl(parent, 'DNumberWang', SIZE, x + fFamily:GetWide() + 5, fFamily.y, sizeWidth)
   fSize:GetControl().OnValueChanged = function(self, value)
-    if not self:IsEnabled() or size.AvoidUpdate then return end
+    if not self:IsEnabled() or fSize.AvoidUpdate then return end
     local _, _item = item:GetControl():GetSelected()
     value = tonumber(value) -- parse to number
     cache:SetParameterValue(W98HUD:getItem(_item).fontSize, value)
@@ -253,7 +253,7 @@ function W98HUD.CreateAppereanceMenu(sheet, cache)
   -- font colour
   local fColour = labeledControl(parent, 'DColorMixerButton', COLOUR, fSize.x + fSize:GetWide() + 5, fSize.y, colourWidth)
   fColour:GetControl().OnValueChanged = function(self, value)
-    if not self:IsEnabled() or size.AvoidUpdate then return end
+    if not self:IsEnabled() or fColour.AvoidUpdate then return end
     local _, _item = item:GetControl():GetSelected()
     cache:SetParameterValue(W98HUD:getItem(_item).fontColour, value)
   end
@@ -262,7 +262,7 @@ function W98HUD.CreateAppereanceMenu(sheet, cache)
   -- font weight
   local fBold = button(parent, 'B', fColour.x + fColour:GetWide() + 5, fSize.y + labelMargin, fontWidth)
   fBold.DoClick = function(self)
-    if not self:IsEnabled() or size.AvoidUpdate then return end
+    if not self:IsEnabled() or fBold.AvoidUpdate then return end
     local _, _item = item:GetControl():GetSelected()
     local data = W98HUD:getItem(_item).fontWeight -- get item data
     local value = REGULAR
@@ -274,7 +274,7 @@ function W98HUD.CreateAppereanceMenu(sheet, cache)
   -- font italic
   local fItalic = button(parent, 'I', fBold.x + fBold:GetWide(), fBold.y, fontWidth)
   fItalic.DoClick = function(self)
-    if not self:IsEnabled() or size.AvoidUpdate then return end
+    if not self:IsEnabled() or fItalic.AvoidUpdate then return end
     local _, _item = item:GetControl():GetSelected()
     local parameter = W98HUD:getItem(_item).fontItalic
     cache:SetParameterValue(parameter, not cache.parameters[parameter])

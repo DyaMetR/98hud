@@ -32,6 +32,7 @@ W98HUD:addParameter('bgCol2')
 -- buttons
 W98HUD:addParameter('btnCol1')
 W98HUD:addParameter('btnCol2')
+W98HUD:addParameter('btnCol3')
 
 -- declare common title bars' parameters
 W98HUD:addParameter('titleSize')
@@ -44,6 +45,11 @@ W98HUD:shareParameter('titleTxtSize', 'titleSize', function(font) return font + 
 
 -- caption buttons
 W98HUD:addParameter('captionCol')
+
+-- calculate
+W98HUD:shareParameter('captionCol', 'btnCol1', function(colour) return table.Copy(W98HUD:CalculateInCol1(colour)) end)
+W98HUD:shareParameter('captionCol', 'btnCol2', function(colour) return table.Copy(W98HUD:CalculateInCol2(colour)) end)
+W98HUD:shareParameter('captionCol', 'btnCol3', function(colour) return nil end)
 
 -- title bar font
 W98HUD:getUserCfg():AddChangeEvent('titleSize', 'font', function()

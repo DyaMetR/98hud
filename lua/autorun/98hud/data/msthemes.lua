@@ -1,8 +1,3 @@
---[[------------------------------------------------------------------
-  Windows 98 default themes
-  @author Matsilagi
-]]--------------------------------------------------------------------
-
 if SERVER then return end
 
 local sizeadd = 6
@@ -14,9 +9,9 @@ W98HUD:addTheme('architec', 'Architecture', {
     bgCol2 = Color(0, 0, 0), --Caption Button Icon Color
     captionCol = Color(192, 192, 192), --Caption Button Color
     btnCol1 = Color(255, 255, 255), --Button Light
-    btnCol2 = Color(0, 0, 0), --Button Shadow
+    btnCol2 = Color(128, 128, 128), --Button Shadow
     titleSize = 20, --Titlebar Size
-    titleTxtFont = 'Times New Roman', --Titlebar Font
+    titleTxtFont = 'Times Roman', --Titlebar Font
     titleTxtSize = sizeadd + 9, --Titlebar Font Size
     titleTxtWeight = 1000, --Titlebar Text Weight
     titleTxtItalic = false, --Titlebar Text Italic
@@ -104,7 +99,7 @@ W98HUD:addTheme('bugs', 'Bugs (256 color)', {
     selItemsCol2 = Color(255, 128, 128), --Selected Item (Highlight) Text Color
     winBgCol = Color(255, 255, 255), --Window Content Background Color
     winTxtCol = Color(0, 0, 0), --Window Text Color
-	msgFont = 'Times New Roman', -- Message Box Font
+	msgFont = 'Times Roman', -- Message Box Font
     msgSize = sizeadd + 9, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
@@ -160,11 +155,11 @@ W98HUD:addTheme('city', 'Cityscape', {
     titleTxtSize = sizeadd + 9, --Titlebar Font Size
     titleTxtWeight = 1000, --Titlebar Text Weight
     titleTxtItalic = false, --Titlebar Text Italic
-    aTitleCol1 = Color(0, 0, 152), --Ative Titlebar Gradient Color
-    aTitleCol2 = Color(144, 168, 255), --Active Titlebar Color
+    aTitleCol1 = Color(144, 168, 255), --Ative Titlebar Gradient Color
+    aTitleCol2 = Color(0, 0, 152), --Active Titlebar Color
     aTitleTxtCol = Color(255, 255, 255), --Active Titlebar Text Color
-    iTitleCol1 = Color(16, 0, 72), --Inactive Titlebar Gradient Color
-    iTitleCol2 = Color(152, 168, 216), --Inactive Titlebar Color
+    iTitleCol1 = Color(152, 168, 216), --Inactive Titlebar Gradient Color
+    iTitleCol2 = Color(16, 0, 72), --Inactive Titlebar Color
     iTitleTxtCol = Color(255, 255, 255), --Inactive Titlebar Text Color
     aBorderSize = 1, --Active Window Border Size
     aBorderCol = Color(192, 192, 192), --Active Window Border Color
@@ -213,7 +208,7 @@ W98HUD:addTheme('corbis', 'Corbis Photography (high color)', {
     msgSize = sizeadd + 8, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -248,7 +243,7 @@ W98HUD:addTheme('danger', 'Dangerous Creatures (256 color)', {
     msgSize = sizeadd + 8, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -283,7 +278,7 @@ W98HUD:addTheme('doon', 'Doonesbury', {
     msgSize = sizeadd + 8, -- Message Box Font Size
     msgCol = Color(128, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -318,7 +313,7 @@ W98HUD:addTheme('fallingl', 'Falling Leaves (high color)', {
     msgSize = sizeadd + 8, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -353,7 +348,7 @@ W98HUD:addTheme('fash', 'Fashion (high color)', {
     msgSize = sizeadd + 8, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -388,7 +383,7 @@ W98HUD:addTheme('foxt', 'FoxTrot', {
     msgSize = sizeadd + 9, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -399,7 +394,7 @@ W98HUD:addTheme('garfielf', 'Garfield', {
     bgCol2 = Color(128, 128, 128), --Caption Button Icon Color
     captionCol = Color(192, 192, 192), --Caption Button Color
     btnCol1 = Color(255, 255, 255), --Button Light
-    btnCol2 = Color(0, 0, 0), --Button Shadow
+    btnCol2 = Color(128, 128, 128), --Button Shadow
     titleSize = 18, --Titlebar Size
     titleTxtFont = 'Comic Sans MS', --Titlebar Font
     titleTxtSize = sizeadd + 8, --Titlebar Font Size
@@ -423,7 +418,7 @@ W98HUD:addTheme('garfielf', 'Garfield', {
     msgSize = sizeadd + 8, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -458,7 +453,7 @@ W98HUD:addTheme('geom', 'Geometry (high color)', {
     msgSize = sizeadd + 8, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -493,7 +488,7 @@ W98HUD:addTheme('horr', 'Horror Channel (high color)', {
     msgSize = sizeadd + 9, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -528,7 +523,7 @@ W98HUD:addTheme('horse', 'Horses (256 color)', {
     msgSize = sizeadd + 8, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -563,7 +558,7 @@ W98HUD:addTheme('comp', 'Inside your Computer (high color)', {
     msgSize = sizeadd + 9, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -598,7 +593,7 @@ W98HUD:addTheme('jazz', 'Jazz', {
     msgSize = sizeadd + 8, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -633,7 +628,7 @@ W98HUD:addTheme('jung', 'Jungle (256 color)', {
     msgSize = sizeadd + 9, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -668,7 +663,7 @@ W98HUD:addTheme('davinki', 'Leonardo da Vinci (256 color)', {
     msgSize = sizeadd + 9, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -703,7 +698,7 @@ W98HUD:addTheme('mess', 'Messy Room (256 color)', {
     msgSize = sizeadd + 9, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -738,7 +733,7 @@ W98HUD:addTheme('morewin', 'More Windows (high color)', {
     msgSize = sizeadd + 8, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -773,7 +768,7 @@ W98HUD:addTheme('myster', 'Mystery (high color)', {
     msgSize = sizeadd + 8, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -808,7 +803,7 @@ W98HUD:addTheme('nat', 'Nature (high color)', {
     msgSize = sizeadd + 9, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -843,7 +838,7 @@ W98HUD:addTheme('peanus', 'Peanuts', {
     msgSize = sizeadd + 8, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -878,7 +873,7 @@ W98HUD:addTheme('photo', 'PhotoDisc (high color)', {
     msgSize = sizeadd + 8, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -913,7 +908,7 @@ W98HUD:addTheme('reeeman', 'RE-man (high color)', {
     msgSize = sizeadd + 9, -- Message Box Font Size
     msgCol = Color(128, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -926,7 +921,7 @@ W98HUD:addTheme('rock', 'Rock-n-Roll (high color)', {
     btnCol1 = Color(255, 255, 255), --Button Light
     btnCol2 = Color(128, 128, 128), --Button Shadow
     titleSize = 20, --Titlebar Size
-    titleTxtFont = 'Times New Roman', --Titlebar Font
+    titleTxtFont = 'Times Roman', --Titlebar Font
     titleTxtSize = sizeadd + 9, --Titlebar Font Size
     titleTxtWeight = 1000, --Titlebar Text Weight
     titleTxtItalic = false, --Titlebar Text Italic
@@ -948,7 +943,7 @@ W98HUD:addTheme('rock', 'Rock-n-Roll (high color)', {
     msgSize = sizeadd + 8, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -983,7 +978,7 @@ W98HUD:addTheme('sci', 'Science (256 color)', {
     msgSize = sizeadd + 8, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -1004,7 +999,7 @@ W98HUD:addTheme('scifi', 'Science Fiction (high color)', {
     aTitleCol2 = Color(224, 72, 0), --Active Titlebar Color
     aTitleTxtCol = Color(255, 255, 255), --Active Titlebar Text Color
     iTitleCol1 = Color(232, 40, 56), --Inactive Titlebar Gradient Color
-    iTitleCol2 = Color(192, 192, 192), --Inactive Titlebar Color
+    iTitleCol2 = Color(120, 0, 64), --Inactive Titlebar Color
     iTitleTxtCol = Color(255, 255, 255), --Inactive Titlebar Text Color
     aBorderSize = 1, --Active Window Border Size
     aBorderCol = Color(192, 192, 192), --Active Window Border Color
@@ -1018,7 +1013,7 @@ W98HUD:addTheme('scifi', 'Science Fiction (high color)', {
     msgSize = sizeadd + 8, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -1053,7 +1048,7 @@ W98HUD:addTheme('snowb', 'Snowboarding (256 color)', {
     msgSize = sizeadd + 8, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -1088,7 +1083,7 @@ W98HUD:addTheme('space', 'Space (256 color)', {
     msgSize = sizeadd + 8, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -1123,7 +1118,7 @@ W98HUD:addTheme('sporty', 'Sports (256 color)', {
     msgSize = sizeadd + 9, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -1158,7 +1153,7 @@ W98HUD:addTheme('hippie', 'The 60s USA (256 color)', {
     msgSize = sizeadd + 9, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = true -- Message Box Font Italic
+    msgItalic = true -- Message Box Font Italic  
 	}
 })
 
@@ -1193,7 +1188,7 @@ W98HUD:addTheme('goldera', 'The Golden Era (high color)', {
     msgSize = sizeadd + 8, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -1228,7 +1223,7 @@ W98HUD:addTheme('train', 'Travel (high color)', {
     msgSize = sizeadd + 9, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -1263,7 +1258,7 @@ W98HUD:addTheme('treeh', 'Tree House (256 color)', {
     msgSize = sizeadd + 8, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -1274,7 +1269,7 @@ W98HUD:addTheme('underw', 'Underwater (high color)', {
     bgCol2 = Color(0, 0, 0), --Caption Button Icon Color
     captionCol = Color(56, 104, 200), --Caption Button Color
     btnCol1 = Color(152, 176, 224), --Button Light
-    btnCol2 = Color(0, 0, 0), --Button Shadow
+    btnCol2 = Color(40, 72, 128), --Button Shadow
     titleSize = 19, --Titlebar Size
     titleTxtFont = 'Haettenschweiler', --Titlebar Font
     titleTxtSize = sizeadd + 12, --Titlebar Font Size
@@ -1298,7 +1293,7 @@ W98HUD:addTheme('underw', 'Underwater (high color)', {
     msgSize = sizeadd + 9, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -1333,7 +1328,7 @@ W98HUD:addTheme('w98', 'Windows 98 (256 color)', {
     msgSize = sizeadd + 8, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -1354,7 +1349,7 @@ W98HUD:addTheme('w98plus', 'Windows 98 (high color)', {
     aTitleCol2 = Color(16, 72, 112), --Active Titlebar Color
     aTitleTxtCol = Color(255, 255, 255), --Active Titlebar Text Color
     iTitleCol1 = Color(0, 144, 0), --Inactive Titlebar Gradient Color
-    iTitleCol2 = Color(120, 124, 120), --Inactive Titlebar Color
+    iTitleCol2 = Color(0, 64, 0), --Inactive Titlebar Color
     iTitleTxtCol = Color(255, 255, 255), --Inactive Titlebar Text Color
     aBorderSize = 1, --Active Window Border Size
     aBorderCol = Color(192, 192, 192), --Active Window Border Color
@@ -1368,7 +1363,7 @@ W98HUD:addTheme('w98plus', 'Windows 98 (high color)', {
     msgSize = sizeadd + 8, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -1403,7 +1398,7 @@ W98HUD:addTheme('world', 'World Traveler (high color)', {
     msgSize = sizeadd + 8, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -1414,7 +1409,7 @@ W98HUD:addTheme('default98', 'Windows Default', {
     bgCol2 = Color(0, 0, 0), -- Caption Button Icon Color
     captionCol = Color(192, 192, 192), -- Caption Button Color
     btnCol1 = Color(255, 255, 255), -- Button Light
-    btnCol2 = Color(0, 0, 0), -- Button Shadow
+    btnCol2 = Color(128, 128, 128), -- Button Shadow
     titleSize = 18, -- Titlebar Size
     titleTxtFont = 'W95FA', -- Titlebar Font
     titleTxtSize = sizeadd + 8, -- Titlebar Font Size
@@ -1471,7 +1466,7 @@ W98HUD:addTheme('brick', 'Brick', {
     msgSize = sizeadd + 8, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -1506,7 +1501,7 @@ W98HUD:addTheme('desert', 'Desert', {
     msgSize = sizeadd + 8, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -1541,7 +1536,7 @@ W98HUD:addTheme('penis', 'Eggplant', {
     msgSize = sizeadd + 9, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -1646,7 +1641,7 @@ W98HUD:addTheme('highc1', 'High Contrast #1', {
     msgSize = sizeadd + 8, -- Message Box Font Size
     msgCol = Color(255, 255, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic 
 	}
 })
 
@@ -1681,7 +1676,7 @@ W98HUD:addTheme('highc2_xl', 'High Contrast #2 (extra large)', {
     msgSize = 23, -- Message Box Font Size
     msgCol = Color(0, 255, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -1716,7 +1711,7 @@ W98HUD:addTheme('highc2_l', 'High Contrast #2 (large)', {
     msgSize = 18, -- Message Box Font Size
     msgCol = Color(0, 255, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -1751,7 +1746,7 @@ W98HUD:addTheme('highc2', 'High Contrast #2', {
     msgSize = sizeadd + 8, -- Message Box Font Size
     msgCol = Color(0, 255, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic 
 	}
 })
 
@@ -1786,7 +1781,7 @@ W98HUD:addTheme('highcb_xl', 'High Contrast Black (extra large)', {
     msgSize = 23, -- Message Box Font Size
     msgCol = Color(255, 255, 255), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -1821,7 +1816,7 @@ W98HUD:addTheme('highcb_l', 'High Contrast Black (large)', {
     msgSize = 18, -- Message Box Font Size
     msgCol = Color(255, 255, 255), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic   
 	}
 })
 
@@ -1856,7 +1851,7 @@ W98HUD:addTheme('highcb', 'High Contrast Black', {
     msgSize = sizeadd + 8, -- Message Box Font Size
     msgCol = Color(255, 255, 255), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -1891,7 +1886,7 @@ W98HUD:addTheme('highcw_xl', 'High Contrast White (extra large)', {
     msgSize = 15, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -1926,7 +1921,7 @@ W98HUD:addTheme('highcw_l', 'High Contrast White (large)', {
     msgSize = 15, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic   
 	}
 })
 
@@ -1961,7 +1956,7 @@ W98HUD:addTheme('highcw', 'High Contrast White', {
     msgSize = sizeadd + 8, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic   
 	}
 })
 
@@ -1996,7 +1991,7 @@ W98HUD:addTheme('lilac_l', 'Lilac (large)', {
     msgSize = 12, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -2031,7 +2026,7 @@ W98HUD:addTheme('lilac', 'Lilac', {
     msgSize = sizeadd + 9, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -2066,7 +2061,7 @@ W98HUD:addTheme('maple', 'Maple', {
     msgSize = sizeadd + 8, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -2101,7 +2096,7 @@ W98HUD:addTheme('marine', 'Marine (high color)', {
     msgSize = sizeadd + 8, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -2136,7 +2131,7 @@ W98HUD:addTheme('plum', 'Plum (high color)', {
     msgSize = sizeadd + 8, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -2171,7 +2166,7 @@ W98HUD:addTheme('pumpkin', 'Pumpkin (large)', {
     msgSize = 12, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -2206,7 +2201,7 @@ W98HUD:addTheme('rainy', 'Rainy Day', {
     msgSize = sizeadd + 8, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -2241,7 +2236,7 @@ W98HUD:addTheme('rwb', 'Red, White, and Blue (VGA)', {
     msgSize = sizeadd + 9, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -2276,7 +2271,7 @@ W98HUD:addTheme('rose_l', 'Rose (large)', {
     msgSize = 12, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -2311,7 +2306,7 @@ W98HUD:addTheme('rose', 'Rose', {
     msgSize = sizeadd + 8, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -2346,7 +2341,7 @@ W98HUD:addTheme('slate', 'Slate', {
     msgSize = sizeadd + 8, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -2381,7 +2376,7 @@ W98HUD:addTheme('spruce', 'Spruce', {
     msgSize = sizeadd + 8, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -2416,7 +2411,7 @@ W98HUD:addTheme('storm', 'Storm (VGA)', {
     msgSize = sizeadd + 8, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -2451,7 +2446,7 @@ W98HUD:addTheme('teal', 'Teal (VGA)', {
     msgSize = sizeadd + 8, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -2486,7 +2481,7 @@ W98HUD:addTheme('wheat', 'Wheat', {
     msgSize = sizeadd + 8, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -2497,7 +2492,7 @@ W98HUD:addTheme('default98_xl', 'Windows Standard (extra large)', {
     bgCol2 = Color(0, 0, 0), -- Caption Button Icon Color
     captionCol = Color(192, 192, 192), -- Caption Button Color
     btnCol1 = Color(255, 255, 255), -- Button Light
-    btnCol2 = Color(0, 0, 0), -- Button Shadow
+    btnCol2 = Color(128, 128, 128), -- Button Shadow
     titleSize = 24, -- Titlebar Size
     titleTxtFont = 'Arial', -- Titlebar Font
     titleTxtSize = sizeadd + 14, -- Titlebar Font Size
@@ -2530,7 +2525,7 @@ W98HUD:addTheme('default98_l', 'Windows Standard (large)', {
     bgCol2 = Color(0, 0, 0), -- Caption Button Icon Color
     captionCol = Color(192, 192, 192), -- Caption Button Color
     btnCol1 = Color(255, 255, 255), -- Button Light
-    btnCol2 = Color(0, 0, 0), -- Button Shadow
+    btnCol2 = Color(128, 128, 128), -- Button Shadow
     titleSize = 22, -- Titlebar Size
     titleTxtFont = 'W95FA', -- Titlebar Font
     titleTxtSize = sizeadd + 12, -- Titlebar Font Size
@@ -2587,6 +2582,6 @@ W98HUD:addTheme('default_2k', 'Windows Classic', {
     msgSize = sizeadd + 8, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
