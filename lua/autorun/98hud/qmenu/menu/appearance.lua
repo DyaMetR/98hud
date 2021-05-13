@@ -126,12 +126,12 @@ function W98HUD.CreateAppereanceMenu(sheet, cache)
     -- inactive window
     local x, y = preview:GetWide() * .02, preview:GetTall() * .04
     local borderSize = parameters.iBorderSize
-    W98HUD.COMPONENTS:window(INACTIVE_WINDOW, x, y, w, h, PRIMARY_FONT, parameters.bgCol1, parameters.iBorderCol, borderSize, parameters.iTitleTxtCol, parameters.iTitleCol1, parameters.iTitleCol2, parameters.titleSize)
+    W98HUD.COMPONENTS:window(INACTIVE_WINDOW, x, y, w, h, PRIMARY_FONT, parameters.bgCol1, parameters.iBorderCol, borderSize, parameters.iTitleTxtCol, parameters.iTitleCol1, parameters.iTitleCol2, parameters.titleSize, parameters.bgEdge, parameters.bgLight, parameters.bgShadow, parameters.bgDarkShadow)
     W98HUD.COMPONENTS:windowControls(x + w - (5 + borderSize), y + (5 + borderSize), parameters.captionCol, parameters.btnCol1, parameters.btnCol2, parameters.btnCol3, parameters.bgCol2, true, nil, parameters.titleSize, CAPTION_ICON_FONT)
     -- active window
     x, y = preview:GetWide() * .03, preview:GetWide() * .09
     borderSize = parameters.aBorderSize
-    W98HUD.COMPONENTS:window(ACTIVE_WINDOW, x, y, w, h, PRIMARY_FONT, parameters.bgCol1, parameters.aBorderCol, parameters.aBorderSize, parameters.aTitleTxtCol, parameters.aTitleCol1, parameters.aTitleCol2, parameters.titleSize)
+    W98HUD.COMPONENTS:window(ACTIVE_WINDOW, x, y, w, h, PRIMARY_FONT, parameters.bgCol1, parameters.aBorderCol, parameters.aBorderSize, parameters.aTitleTxtCol, parameters.aTitleCol1, parameters.aTitleCol2, parameters.titleSize, parameters.bgEdge, parameters.bgLight, parameters.bgShadow, parameters.bgDarkShadow)
     W98HUD.COMPONENTS:windowControls(x + w - (5 + borderSize), y + (5 + borderSize), parameters.captionCol, parameters.btnCol1, parameters.btnCol2, parameters.btnCol3, parameters.bgCol2, true, nil, parameters.titleSize, CAPTION_ICON_FONT)
   end
 

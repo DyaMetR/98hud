@@ -25,12 +25,12 @@ local function segmentBar(x, y, w, h, segmentSize, margin, percentage, colour, v
   for i=1, segments do
     local segment = (segmentSize + margin) -- previous segments' size
     -- cut off last segment if it doesn't fit
-    if i >= segments then segmentSize = size - (segment * (i - 1)) end
+    if i >= segments then segmentSize = math.min(size - (segment * (i - 1)), segmentSize) end
     -- draw vertically or horizontally
     if not vertical then
       draw.RoundedBox(0, x + (segment * (i - 1)), y, segmentSize, h, colour)
     else
-      draw.RoundedBox(0, x, y + h + margin - (segment * i), w, segmentSize, colour)
+      draw.RoundedBox(0, x, y + h - (segment * (i - 1)) - segmentSize, w, segmentSize, colour)
     end
   end
 end

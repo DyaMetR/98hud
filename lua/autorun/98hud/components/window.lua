@@ -173,11 +173,11 @@ function W98HUD.COMPONENTS:separator(x, y, size, colour, vertical, lightColour, 
   shadowColour = shadowColour or W98HUD:CalculateInCol2(colour)
   -- draw
   if vertical then
-    draw.RoundedBox(0, x, y, 1, size, inCol2)
-    draw.RoundedBox(0, x + 1, y, 1, size, inCol1)
+    draw.RoundedBox(0, x, y, 1, size, shadowColour)
+    draw.RoundedBox(0, x + 1, y, 1, size, lightColour)
   else
-    draw.RoundedBox(0, x, y, size, 1, inCol2)
-    draw.RoundedBox(0, x, y + 1, size, 1, inCol1)
+    draw.RoundedBox(0, x, y, size, 1, shadowColour)
+    draw.RoundedBox(0, x, y + 1, size, 1, lightColour)
   end
 end
 
@@ -269,7 +269,7 @@ end
 function W98HUD.COMPONENTS:emptyWindow(label, x, y, w, h, font, colour, borderTint, borderSize, titleColour, titleColour1, titleColour2, titleHeight, edgeColour, lightColour, shadowColour, darkShadowColour)
   titleHeight = W98HUD:getTitleBarHeight(label, font, titleHeight or 0) -- get actual height
   local margin = WINDOW_TITLE_MARGIN
-  local frame = W98HUD.COMPONENTS:windowBorder(x, y, w, h, colour, edgeColour, lightColour, shadowColour, darkShadowColour) -- window frame
+  local frame = W98HUD.COMPONENTS:windowBorder(x, y, w, h, colour, false, edgeColour, lightColour, shadowColour, darkShadowColour) -- window frame
   if borderTint then -- draw border
     drawOutline(x + frame, y + frame, w - (frame * 2), h - (frame * 2), borderTint, borderTint, borderSize)
     frame = frame + borderSize
