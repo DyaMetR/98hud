@@ -48,6 +48,7 @@ W98HUD:register(function()
   local config = W98HUD:getUserCfg().parameters
   local w, h = 127, 260
   local barW, barH = 17, h - 66
+  local margin, spacing = 13, 24
   local col1, col2, colt, colb = config.aTitleCol1, config.aTitleCol2, config.aTitleTxtCol, config.aBorderCol -- colours
   local borderSize, titleSize = config.aBorderSize, config.titleSize -- surrounding sizes
   local textSize = config.msgSize
@@ -64,7 +65,14 @@ W98HUD:register(function()
   local title = TITLE_WINDOWNAME
   local extension = W98HUD:GetWeaponConVar()
   local barCol1, barCol2 = config.selItemsCol1, config.selItemsCol1
-  local textHorMargin = math.Round((textSize - 13) * 1.33) -- text horizontal margin
+
+  -- take text size in account
+  surface.SetFont(W98HUD.FONTS.MESSAGE_BOX)
+  local textWidth = math.max(surface.GetTextSize(ALT) + surface.GetTextSize(RESERVE) + surface.GetTextSize(CLIP) - (spacing * 2) - (barW * 3), 0)
+  local extraSpace, extraMargin = math.ceil(textWidth * .5), math.ceil(textWidth * .25)
+  w = w + textWidth + (extraMargin * 2)
+  spacing = spacing + extraSpace
+  margin = margin + extraMargin
 
   -- select InstallShield Wizard colours based on mode
   if mode % 2 == 0 then
@@ -96,7 +104,7 @@ W98HUD:register(function()
   end
 
   -- apply title bar and border size
-  w = w + ((borderSize - 1) * 2) + (textHorMargin * 2)
+  w = w + ((borderSize - 1) * 2)
   h = h + (textSize - 13)
 
   -- get position
@@ -105,7 +113,8 @@ W98HUD:register(function()
   -- draw element
   W98HUD.COMPONENTS:window(title, x, y, w, h, W98HUD.FONTS.TITLE, config.bgCol1, colb, borderSize, colt, col1, col2, config.titleSize)
   W98HUD.COMPONENTS:windowControls(x + w - (4 + borderSize), y + (4 + borderSize), config.captionCol, config.btnCol1, config.btnCol2, config.btnCol3, config.bgCol2, false, false, config.titleSize, W98HUD.FONTS.CAPTION)
-  y = y + 41
+  y = y + 41 -- bars vertical margin
+  x = x + margin -- bars horizontal margin
 
   -- apply border and title bar sizes
   x = x + (borderSize - 1)
@@ -113,13 +122,13 @@ W98HUD:register(function()
   barH = barH - ((borderSize * 2) - 2) - (titleSize - 18) - (textSize - 13)
 
   -- draw alt
-  drawBar(x + 13, y, barW, barH, ALT, alt / maxAlt, alt, isSegmented, secondary > 0, config.bgCol1, barBgCol, barCol1, config.msgCol)
-  x = x + barW + 24 + textHorMargin
+  drawBar(x, y, barW, barH, ALT, alt / maxAlt, alt, isSegmented, secondary > 0, config.bgCol1, barBgCol, barCol1, config.msgCol)
+  x = x + barW + spacing
 
   -- draw reserve
-  drawBar(x + 13, y, barW, barH, RESERVE, reserve / maxReserve, reserve, isSegmented, true, config.bgCol1, barBgCol, barCol1, config.msgCol)
-  x = x + barW + 24 + textHorMargin
+  drawBar(x, y, barW, barH, RESERVE, reserve / maxReserve, reserve, isSegmented, true, config.bgCol1, barBgCol, barCol1, config.msgCol)
+  x = x + barW + spacing
 
   -- draw clip
-  drawBar(x + 13, y, barW, barH, CLIP, clip / maxClip, clip, isSegmented, clip > -1, config.bgCol1, barBgCol, barCol2, config.msgCol)
+  drawBar(x, y, barW, barH, CLIP, clip / maxClip, clip, isSegmented, clip > -1, config.bgCol1, barBgCol, barCol2, config.msgCol)
 end)

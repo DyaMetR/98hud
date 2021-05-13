@@ -29,6 +29,15 @@ W98HUD:addParameter('desktop')
 W98HUD:addParameter('bgCol1')
 W98HUD:addParameter('bgCol2')
 
+W98HUD:addParameter('bgEdge')
+W98HUD:addParameter('bgLight')
+W98HUD:addParameter('bgShadow')
+W98HUD:addParameter('bgDarkShadow')
+W98HUD:addParameter('bgCol1', 'bgEdge', function(colour) return nil end)
+W98HUD:shareParameter('bgCol1', 'bgLight', function(colour) return nil end)
+W98HUD:shareParameter('bgCol1', 'bgShadow', function(colour) return nil end)
+W98HUD:shareParameter('bgCol1', 'bgDarkShadow', function(colour) return nil end)
+
 -- buttons
 W98HUD:addParameter('btnCol1')
 W98HUD:addParameter('btnCol2')
@@ -47,8 +56,8 @@ W98HUD:shareParameter('titleTxtSize', 'titleSize', function(font) return font + 
 W98HUD:addParameter('captionCol')
 
 -- calculate
-W98HUD:shareParameter('captionCol', 'btnCol1', function(colour) return table.Copy(W98HUD:CalculateInCol1(colour)) end)
-W98HUD:shareParameter('captionCol', 'btnCol2', function(colour) return table.Copy(W98HUD:CalculateInCol2(colour)) end)
+W98HUD:shareParameter('captionCol', 'btnCol1', function(colour) return nil end)
+W98HUD:shareParameter('captionCol', 'btnCol2', function(colour) return nil end)
 W98HUD:shareParameter('captionCol', 'btnCol3', function(colour) return nil end)
 
 -- title bar font

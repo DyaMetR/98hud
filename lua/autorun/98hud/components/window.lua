@@ -2,6 +2,8 @@
   Basic window component
 ]]--------------------------------------------------------------------
 
+-- TODO: implement the custom colouring of window borders and separator
+
 if SERVER then return end
 
 local WINDOW_BORDER_THICKNESS = 1
@@ -115,19 +117,22 @@ end
   @param {number} y
   @param {number} width
   @param {number} height
-  @param {Color} colour
+  @param {Color} base colour
   @param {boolean} whether the colours are inverted
+  @param {Color|nil} light colour
+  @param {Color|nil} shadow colour
+  @param {Color|nil} dark shadow colour
 ]]--------------------------------------------------------------------
-function W98HUD.COMPONENTS:windowBorder(x, y, w, h, colour, inverted)
-  -- compute colours
-  local outCol1 = W98HUD:CalculateOutCol1(colour)
-  local inCol1 = W98HUD:CalculateInCol1(colour)
-  local inCol2 = W98HUD:CalculateInCol2(colour)
+function W98HUD.COMPONENTS:windowBorder(x, y, w, h, colour, inverted, edgeColour, lightColour, shadowColour, darkShadowColour)
+  edgeColour = edgeColour or W98HUD:CalculateOutCol1(colour)
+  lightColour = lightColour or W98HUD:CalculateInCol1(colour)
+  shadowColour = shadowColour or W98HUD:CalculateInCol2(colour)
+  darkShadowColour = darkShadowColour or WINDOW_OUT_BORDER_COLOUR2
   -- draw border with colours in desired order
   if not inverted then
-    return W98HUD.COMPONENTS:border(x, y, w, h, outCol1, WINDOW_OUT_BORDER_COLOUR2, inCol1, inCol2)
+    return W98HUD.COMPONENTS:border(x, y, w, h, edgeColour, darkShadowColour, lightColour, shadowColour)
   else
-    return W98HUD.COMPONENTS:border(x, y, w, h, inCol2, inCol1, WINDOW_OUT_BORDER_COLOUR2, outCol1)
+    return W98HUD.COMPONENTS:border(x, y, w, h, shadowColour, lightColour, darkShadowColour, edgeColour)
   end
 end
 
@@ -139,17 +144,18 @@ end
   @param {number} height
   @param {Color} colour
   @param {boolean} whether the colours are inverted
+  @param {Color|nil} light colour
+  @param {Color|nil} shadow colour
 ]]--------------------------------------------------------------------
-function W98HUD.COMPONENTS:simpleBorder(x, y, w, h, colour, inverted)
+function W98HUD.COMPONENTS:simpleBorder(x, y, w, h, colour, inverted, lightColour, shadowColour)
+  lightColour = lightColour or W98HUD:CalculateInCol1(colour)
+  shadowColour = shadowColour or W98HUD:CalculateInCol2(colour)
   local thick = WINDOW_BORDER_THICKNESS
-  -- compute colours
-  local inCol1 = W98HUD:CalculateInCol1(colour)
-  local inCol2 = W98HUD:CalculateInCol2(colour)
   -- draw border with colours in desired order
   if not inverted then
-    drawOutline(x, y, w, h, inCol1, inCol2, thick)
+    drawOutline(x, y, w, h, lightColour, shadowColour, thick)
   else
-    drawOutline(x, y, w, h, inCol2, inCol1, thick)
+    drawOutline(x, y, w, h, shadowColour, lightColour, thick)
   end
   return thick
 end
@@ -161,11 +167,12 @@ end
   @param {number} size
   @param {Color} colour
   @param {boolean} vertical
+  @param {Color|nil} light colour
+  @param {Color|nil} shadow colour
 ]]--------------------------------------------------------------------
-function W98HUD.COMPONENTS:separator(x, y, size, colour, vertical)
-  -- compute colours
-  local inCol1 = W98HUD:CalculateInCol1(colour)
-  local inCol2 = W98HUD:CalculateInCol2(colour)
+function W98HUD.COMPONENTS:separator(x, y, size, colour, vertical, lightColour, shadowColour)
+  lightColour = lightColour or W98HUD:CalculateInCol1(colour)
+  shadowColour = shadowColour or W98HUD:CalculateInCol2(colour)
   -- draw
   if vertical then
     draw.RoundedBox(0, x, y, 1, size, inCol2)
@@ -182,10 +189,10 @@ end
   @param {number} y
   @param {string} text
   @param {Color} colour
-  @param {Color} light colour
-  @param {Color} shadow colour
-  @param {Color} dark shadow colour
-  @param {Color} icon colour
+  @param {Color|nil} light colour
+  @param {Color|nil} shadow colour
+  @param {Color|nil} dark shadow colour
+  @param {Color|nil} icon colour
   @param {number|nil} title bar size
   @param {string|nil} font for icons
 ]]--------------------------------------------------------------------
@@ -220,6 +227,8 @@ end
   @param {string|nil} icon font
 ]]--------------------------------------------------------------------
 function W98HUD.COMPONENTS:windowControls(x, y, colour, lightColour, shadowColour, darkShadowColour, iconColour, minimize, help, size, font)
+  lightColour = lightColour or W98HUD:CalculateInCol1(colour)
+  shadowColour = shadowColour or W98HUD:CalculateInCol2(colour)
   darkShadowColour = darkShadowColour or WINDOW_OUT_BORDER_COLOUR2
   local margin = WINDOW_CONTROL_MARGIN
   -- close button
@@ -252,13 +261,17 @@ end
   @param {Color|nil} title colour
   @param {Color|nil} title bar primary colour
   @param {Color|nil} title bar secondary colour
+  @param {Color|nil} edge colour
+  @param {Color|nil} light colour
+  @param {Color|nil} shadow colour
+  @param {Color|nil} dark shadow colour
   @return {number} title bar height + margin
   @return {number} frame size
 ]]--------------------------------------------------------------------
-function W98HUD.COMPONENTS:emptyWindow(label, x, y, w, h, font, colour, borderTint, borderSize, titleColour, titleColour1, titleColour2, titleHeight)
+function W98HUD.COMPONENTS:emptyWindow(label, x, y, w, h, font, colour, borderTint, borderSize, titleColour, titleColour1, titleColour2, titleHeight, edgeColour, lightColour, shadowColour, darkShadowColour)
   titleHeight = W98HUD:getTitleBarHeight(label, font, titleHeight or 0) -- get actual height
   local margin = WINDOW_TITLE_MARGIN
-  local frame = W98HUD.COMPONENTS:windowBorder(x, y, w, h, colour) -- window frame
+  local frame = W98HUD.COMPONENTS:windowBorder(x, y, w, h, colour, edgeColour, lightColour, shadowColour, darkShadowColour) -- window frame
   if borderTint then -- draw border
     drawOutline(x + frame, y + frame, w - (frame * 2), h - (frame * 2), borderTint, borderTint, borderSize)
     frame = frame + borderSize
@@ -283,8 +296,12 @@ end
   @param {Color|nil} title bar primary colour
   @param {Color|nil} title bar secondary colour
   @param {number|nil} title bar height
+  @param {Color|nil} edge colour
+  @param {Color|nil} light colour
+  @param {Color|nil} shadow colour
+  @param {Color|nil} dark shadow colour
 ]]--------------------------------------------------------------------
-function W98HUD.COMPONENTS:window(label, x, y, w, h, font, colour, borderTint, borderSize, titleColour, titleColour1, titleColour2, titleHeight)
-  local margin, frame = W98HUD.COMPONENTS:emptyWindow(label, x, y, w, h, font, colour, borderTint, borderSize, titleColour, titleColour1, titleColour2, titleHeight)
+function W98HUD.COMPONENTS:window(label, x, y, w, h, font, colour, borderTint, borderSize, titleColour, titleColour1, titleColour2, titleHeight, edgeColour, lightColour, shadowColour, darkShadowColour)
+  local margin, frame = W98HUD.COMPONENTS:emptyWindow(label, x, y, w, h, font, colour, borderTint, borderSize, titleColour, titleColour1, titleColour2, titleHeight, edgeColour, lightColour, shadowColour, darkShadowColour)
   draw.RoundedBox(0, x + frame, y + frame + margin, w - (frame * 2), h - ((frame * 2) + margin), colour) -- draw filling
 end

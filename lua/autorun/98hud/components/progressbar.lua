@@ -4,6 +4,21 @@
 
 if SERVER then return end
 
+local SEGMENT_SIZE, SEGMENT_MARGIN, NS_SEGMENT_MARGIN, BORDER = 6, 2, 1, 1
+
+--[[------------------------------------------------------------------
+  Calculates the size a segmented bar should have in order to have
+  all of its segments properly shown
+  @param {number} border size
+  @param {number} prefered size
+  @param {number} segment margin
+  @return {number} size
+]]--------------------------------------------------------------------
+function W98HUD.COMPONENTS:getBarSize(border, size, margin)
+  local segments = (size / (SEGMENT_SIZE + margin))
+  return segments -- TODO: finish function
+end
+
 --[[------------------------------------------------------------------
   Draws the foreground of a segmented bar
   @param {number} x
@@ -20,7 +35,7 @@ local function segmentBar(x, y, w, h, segmentSize, margin, percentage, colour, v
   local size = w
   if vertical then size = h end
   local segments = ((size + margin) / (segmentSize + margin)) * percentage
-  for i=1, segments do
+  for i=1, math.ceil(segments) do
     local segment = (segmentSize + margin)
     if not vertical then
       draw.RoundedBox(0, x + (segment * (i - 1)), y, segmentSize, h, colour)
@@ -111,9 +126,9 @@ function W98HUD.COMPONENTS:segmentBar(x, y, w, h, percentage, background, colour
   end
   -- draw foreground
   if percentage > 0 then
-    local segSize, segMargin = 6, 2
-    local borderMargin = margin + 1
-    if nonSimple then segMargin = 1 end
+    local segSize, segMargin = SEGMENT_SIZE, SEGMENT_MARGIN
+    local borderMargin = margin + BORDER
+    if nonSimple then segMargin = NS_SEGMENT_MARGIN end
     segmentBar(x + borderMargin, y + borderMargin, w - (borderMargin * 2), h - (borderMargin * 2), segSize, segMargin, value, colour1, vertical)
   end
 end
