@@ -111,7 +111,7 @@ W98HUD:register(function()
   local x, y = ScrW() - w - 20, (ScrH() * .5) - (h * .5)
 
   -- draw element
-  W98HUD.COMPONENTS:window(title, x, y, w, h, W98HUD.FONTS.TITLE, config.bgCol1, colb, borderSize, colt, col1, col2, config.titleSize)
+  W98HUD.COMPONENTS:window(title, x, y, w, h, W98HUD.FONTS.TITLE, config.bgCol1, colb, borderSize, colt, col1, col2, config.titleSize, config.bgEdge, config.bgLight, config.bgShadow, config.bgDarkShadow)
   W98HUD.COMPONENTS:windowControls(x + w - (4 + borderSize), y + (4 + borderSize), config.captionCol, config.btnCol1, config.btnCol2, config.btnCol3, config.bgCol2, false, false, config.titleSize, W98HUD.FONTS.CAPTION)
   y = y + 41 -- bars vertical margin
   x = x + margin -- bars horizontal margin
@@ -123,10 +123,12 @@ W98HUD:register(function()
 
   -- draw alt
   drawBar(x, y, barW, barH, ALT, alt / maxAlt, alt, isSegmented, secondary > 0, config.bgCol1, barBgCol, barCol1, config.msgCol)
+  W98HUD:separator(x + barW + 13, y, barH, config.bgCol1, true, config.bgLight, config.bgShadow)
   x = x + barW + spacing
 
   -- draw reserve
   drawBar(x, y, barW, barH, RESERVE, reserve / maxReserve, reserve, isSegmented, true, config.bgCol1, barBgCol, barCol1, config.msgCol)
+  W98HUD:separator(x + barW + 13, y, barH, config.bgCol1, true, config.bgLight, config.bgShadow)
   x = x + barW + spacing
 
   -- draw clip

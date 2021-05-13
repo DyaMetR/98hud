@@ -2,8 +2,6 @@
   Basic window component
 ]]--------------------------------------------------------------------
 
--- TODO: implement the custom colouring of window borders and separator
-
 if SERVER then return end
 
 local WINDOW_BORDER_THICKNESS = 1

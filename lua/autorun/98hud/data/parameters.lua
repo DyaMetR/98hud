@@ -33,7 +33,9 @@ W98HUD:addParameter('bgEdge')
 W98HUD:addParameter('bgLight')
 W98HUD:addParameter('bgShadow')
 W98HUD:addParameter('bgDarkShadow')
-W98HUD:addParameter('bgCol1', 'bgEdge', function(colour) return nil end)
+
+-- reset upon changing background colour
+W98HUD:shareParameter('bgCol1', 'bgEdge', function(colour) return nil end)
 W98HUD:shareParameter('bgCol1', 'bgLight', function(colour) return nil end)
 W98HUD:shareParameter('bgCol1', 'bgShadow', function(colour) return nil end)
 W98HUD:shareParameter('bgCol1', 'bgDarkShadow', function(colour) return nil end)
