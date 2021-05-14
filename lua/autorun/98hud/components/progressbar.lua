@@ -49,8 +49,12 @@ end
   @param {string} font
   @param {Color} percentage colour
   @param {Color} percentage colour 2
+  @param {Color} edge colour
+  @param {Color} light edge colour
+  @param {Color} shadow colour
+  @param {Color} dark shadow colour
 ]]--------------------------------------------------------------------
-function W98HUD.COMPONENTS:progressBar(x, y, w, h, percentage, background, colour1, colour2, vertical, text, font, fontColour, fontColour2)
+function W98HUD.COMPONENTS:progressBar(x, y, w, h, percentage, background, colour1, colour2, vertical, text, font, fontColour, fontColour2, edgeColour, lightColour, shadowColour, darkShadowColour)
   fontColour2 = fontColour2 or colour2
   local value = math.min(percentage, 1)
   -- draw background
@@ -87,7 +91,7 @@ function W98HUD.COMPONENTS:progressBar(x, y, w, h, percentage, background, colou
     render.SetScissorRect(0, 0, 0, 0, false)
   end
   -- draw border
-  W98HUD.COMPONENTS:windowBorder(x, y, w, h, background, true)
+  W98HUD.COMPONENTS:windowBorder(x, y, w, h, background, true, edgeColour, lightColour, shadowColour, darkShadowColour)
 end
 
 
@@ -103,16 +107,20 @@ end
   @param {boolean} is it vertical
   @param {boolean} use non simple borders
   @param {Color} colour used for non simple border background
+  @param {Color} edge colour
+  @param {Color} light edge colour
+  @param {Color} shadow colour
+  @param {Color} dark shadow colour
 ]]--------------------------------------------------------------------
-function W98HUD.COMPONENTS:segmentBar(x, y, w, h, percentage, background, colour1, vertical, nonSimple, background2)
+function W98HUD.COMPONENTS:segmentBar(x, y, w, h, percentage, background, colour1, vertical, nonSimple, background2, edgeColour, lightColour, shadowColour, darkShadowColour)
   local value = math.min(percentage, 1)
   -- draw border
   local margin = 0
   if nonSimple then
     draw.RoundedBox(0, x, y, w, h, background2)
-    margin = W98HUD.COMPONENTS:windowBorder(x, y, w, h, background, true)
+    margin = W98HUD.COMPONENTS:windowBorder(x, y, w, h, background, true, edgeColour, lightColour, shadowColour, darkShadowColour)
   else
-    margin = W98HUD.COMPONENTS:simpleBorder(x, y, w, h, background, true)
+    margin = W98HUD.COMPONENTS:simpleBorder(x, y, w, h, background, true, lightColour, darkShadowColour)
   end
   -- draw foreground
   if percentage > 0 then

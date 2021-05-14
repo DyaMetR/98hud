@@ -21,13 +21,17 @@ local HEALTH, SUIT = 'Health', 'Suit'
   @param {Color} foreground colour
   @param {Color} text colour
   @param {Color} text colour 2
+  @param {Color} edge colour
+  @param {Color} light edge colour
+  @param {Color} shadow colour
+  @param {Color} dark shadow colour
 ]]--------------------------------------------------------------------
-local function drawBar(x, y, w, h, label, value, isSegmented, frameColour, backgroundColour, foregroundColour, textColour, textColour2)
+local function drawBar(x, y, w, h, label, value, isSegmented, frameColour, backgroundColour, foregroundColour, textColour, textColour2, edgeColour, lightColour, shadowColour, darkShadowColour)
   draw.SimpleText(label, W98HUD.FONTS.MESSAGE_BOX, x + 2, y, textColour, nil, TEXT_ALIGN_BOTTOM)
   if isSegmented then
-    W98HUD.COMPONENTS:segmentBar(x, y + 3, w, h, value * .01, frameColour, foregroundColour)
+    W98HUD.COMPONENTS:segmentBar(x, y + 3, w, h, value * .01, frameColour, foregroundColour, nil, edgeColour, lightColour, shadowColour, darkShadowColour)
   else
-    W98HUD.COMPONENTS:progressBar(x, y + 3, w, h, value * .01, frameColour, foregroundColour, backgroundColour, false, string.format(FORMAT, value), W98HUD.FONTS.PROGRESS, textColour, textColour2)
+    W98HUD.COMPONENTS:progressBar(x, y + 3, w, h, value * .01, frameColour, foregroundColour, backgroundColour, false, string.format(FORMAT, value), W98HUD.FONTS.PROGRESS, textColour, textColour2, edgeColour, lightColour, shadowColour, darkShadowColour)
   end
 end
 
@@ -68,7 +72,7 @@ W98HUD:register(function()
 
   -- draw element
   W98HUD.COMPONENTS:window(title, x, y, w, h, W98HUD.FONTS.TITLE, config.bgCol1, colb, borderSize, colt, col1, col2, config.titleSize, config.bgEdge, config.bgLight, config.bgShadow, config.bgDarkShadow)
-  W98HUD.COMPONENTS:windowControls(x + w - (4 + borderSize), y + (4 + borderSize), config.captionCol, config.btnCol1, config.btnCol2, config.btnCol3, config.bgCol2, false, false, config.titleSize, W98HUD.FONTS.CAPTION)
+  W98HUD.COMPONENTS:windowControls(x + w - (4 + borderSize), y + (4 + borderSize), config.bgCol1, config.bgLight, config.bgShadow, config.bgDarkShadow, config.bgCol2, false, false, config.titleSize, W98HUD.FONTS.CAPTION)
   y = y + 41
 
   -- apply border and title bar sizes
@@ -77,10 +81,10 @@ W98HUD:register(function()
   y = y + (borderSize - 1) + (titleSize - 18) + textSize
 
   -- draw health
-  drawBar(x + 13, y, barW, barH, HEALTH, math.max(LocalPlayer():Health(), 0), isSegmented, config.bgCol1, bgCol, config.selItemsCol1, config.msgCol, config.selItemsCol2)
+  drawBar(x + 13, y, barW, barH, HEALTH, math.max(LocalPlayer():Health(), 0), isSegmented, config.bgCol1, bgCol, config.selItemsCol1, config.msgCol, config.selItemsCol2, config.bgEdge, config.bgLight, config.bgShadow, config.bgDarkShadow)
   y = y + margin + textSize
 
   -- draw armour
-  drawBar(x + 13, y, barW, barH, SUIT, LocalPlayer():Armor(), isSegmented, config.bgCol1, bgCol, config.selItemsCol1, config.msgCol, config.selItemsCol2)
+  drawBar(x + 13, y, barW, barH, SUIT, LocalPlayer():Armor(), isSegmented, config.bgCol1, bgCol, config.selItemsCol1, config.msgCol, config.selItemsCol2, config.bgEdge, config.bgLight, config.bgShadow, config.bgDarkShadow)
 
 end)

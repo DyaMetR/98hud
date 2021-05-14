@@ -38,7 +38,7 @@ W98HUD:addItem('ititle', 'Inactive Title Bar', {
   fontItalic = 'titleTxtItalic'
 })
 W98HUD:addItem('iborder', 'Inactive Window Border', { size = 'iBorderSize', colour1 = 'iBorderCol' })
-W98HUD:addItem('caption', 'Caption Buttons', { size = 'titleSize', colour1 = 'captionCol' })
+W98HUD:addItem('caption', 'Caption Buttons', { size = 'titleSize' })
 W98HUD:addItem('selitems', 'Selected Items', { colour1 = 'selItemsCol1', colour2 = 'selItemsCol2' })
 W98HUD:addItem('msgbox', 'Message Box', {
   fontFamily = 'msgFont',

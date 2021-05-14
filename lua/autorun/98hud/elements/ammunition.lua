@@ -23,8 +23,12 @@ local ISW_COL1, ISW_COL2 = Color(0, 0, 120), Color(120, 0, 120)
   @param {Color} bar frame colour
   @param {Color} background colour
   @param {Color} text colour
+  @param {Color} edge colour
+  @param {Color} light edge colour
+  @param {Color} shadow colour
+  @param {Color} dark shadow colour
 ]]--------------------------------------------------------------------
-local function drawBar(x, y, w, h, label, percentage, value, isSegmented, isValid, frameColour, backgroundColour, colour, textColour)
+local function drawBar(x, y, w, h, label, percentage, value, isSegmented, isValid, frameColour, backgroundColour, colour, textColour, edgeColour, lightColour, shadowColour, darkShadowColour)
   draw.SimpleText(label, W98HUD.FONTS.MESSAGE_BOX, x + (w * .5), y, textColour, TEXT_ALIGN_CENTER, TEXT_ALIGN_BOTTOM) -- draw label
   -- if the percentage is invalid, don't draw bar filling and grey out the background
   if not isValid then
@@ -35,9 +39,9 @@ local function drawBar(x, y, w, h, label, percentage, value, isSegmented, isVali
   end
   -- draw bar
   if isSegmented then
-    W98HUD.COMPONENTS:segmentBar(x, y + 3, w, h, percentage, frameColour, colour, true, true, backgroundColour)
+    W98HUD.COMPONENTS:segmentBar(x, y + 3, w, h, percentage, frameColour, colour, true, true, backgroundColour, edgeColour, lightColour, shadowColour, darkShadowColour)
   else
-    W98HUD.COMPONENTS:progressBar(x, y + 3, w, h, percentage, frameColour, colour, backgroundColour, true)
+    W98HUD.COMPONENTS:progressBar(x, y + 3, w, h, percentage, frameColour, colour, backgroundColour, true, edgeColour, lightColour, shadowColour, darkShadowColour)
   end
 end
 
@@ -112,7 +116,7 @@ W98HUD:register(function()
 
   -- draw element
   W98HUD.COMPONENTS:window(title, x, y, w, h, W98HUD.FONTS.TITLE, config.bgCol1, colb, borderSize, colt, col1, col2, config.titleSize, config.bgEdge, config.bgLight, config.bgShadow, config.bgDarkShadow)
-  W98HUD.COMPONENTS:windowControls(x + w - (4 + borderSize), y + (4 + borderSize), config.captionCol, config.btnCol1, config.btnCol2, config.btnCol3, config.bgCol2, false, false, config.titleSize, W98HUD.FONTS.CAPTION)
+  W98HUD.COMPONENTS:windowControls(x + w - (4 + borderSize), y + (4 + borderSize), config.bgCol1, config.bgLight, config.bgShadow, config.bgDarkShadow, config.bgCol2, false, false, config.titleSize, W98HUD.FONTS.CAPTION)
   y = y + 41 -- bars vertical margin
   x = x + margin -- bars horizontal margin
 
@@ -122,15 +126,15 @@ W98HUD:register(function()
   barH = barH - ((borderSize * 2) - 2) - (titleSize - 18) - (textSize - 13)
 
   -- draw alt
-  drawBar(x, y, barW, barH, ALT, alt / maxAlt, alt, isSegmented, secondary > 0, config.bgCol1, barBgCol, barCol1, config.msgCol)
+  drawBar(x, y, barW, barH, ALT, alt / maxAlt, alt, isSegmented, secondary > 0, config.bgCol1, barBgCol, barCol1, config.msgCol, config.bgEdge, config.bgLight, config.bgShadow, config.bgDarkShadow)
   W98HUD.COMPONENTS:separator(x + barW + 11, y + 3, barH, config.bgCol1, true, config.bgLight, config.bgShadow)
   x = x + barW + spacing
 
   -- draw reserve
-  drawBar(x, y, barW, barH, RESERVE, reserve / maxReserve, reserve, isSegmented, true, config.bgCol1, barBgCol, barCol1, config.msgCol)
+  drawBar(x, y, barW, barH, RESERVE, reserve / maxReserve, reserve, isSegmented, true, config.bgCol1, barBgCol, barCol1, config.msgCol, config.bgEdge, config.bgLight, config.bgShadow, config.bgDarkShadow)
   W98HUD.COMPONENTS:separator(x + barW + 11, y + 3, barH, config.bgCol1, true, config.bgLight, config.bgShadow)
   x = x + barW + spacing
 
   -- draw clip
-  drawBar(x, y, barW, barH, CLIP, clip / maxClip, clip, isSegmented, clip > -1, config.bgCol1, barBgCol, barCol2, config.msgCol)
+  drawBar(x, y, barW, barH, CLIP, clip / maxClip, clip, isSegmented, clip > -1, config.bgCol1, barBgCol, barCol2, config.msgCol, config.bgEdge, config.bgLight, config.bgShadow, config.bgDarkShadow)
 end)
