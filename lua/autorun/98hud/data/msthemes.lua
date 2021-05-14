@@ -11,7 +11,7 @@ W98HUD:addTheme('architec', 'Architecture', {
     btnCol1 = Color(255, 255, 255), --Button Light
     btnCol2 = Color(128, 128, 128), --Button Shadow
     bgLight = Color(255, 255, 255), --Window Border Light Color
-    bgShadow = Color(128, 128, 128), --Window Border Shadow Color
+    bgDarkShadow = Color(128, 128, 128), --Window Border Shadow Color
     titleSize = 20, --Titlebar Size
     titleTxtFont = 'Times Roman', --Titlebar Font
     titleTxtSize = sizeadd + 9, --Titlebar Font Size
@@ -48,7 +48,7 @@ W98HUD:addTheme('baseb', 'Baseball (256 color)', {
     btnCol1 = Color(232, 208, 184), --Button Light
     btnCol2 = Color(160, 112, 56), --Button Shadow
     bgLight = Color(232, 208, 184), --Window Border Light Color
-    bgShadow = Color(160, 112, 56), --Window Border Shadow Color
+    bgDarkShadow = Color(160, 112, 56), --Window Border Shadow Color
     titleSize = 18, --Titlebar Size
     titleTxtFont = 'Century Gothic', --Titlebar Font
     titleTxtSize = sizeadd + 9, --Titlebar Font Size
@@ -85,7 +85,7 @@ W98HUD:addTheme('bugs', 'Bugs (256 color)', {
     btnCol1 = Color(208, 208, 192), --Button Light
     btnCol2 = Color(104, 120, 0), --Button Shadow
     bgLight = Color(208, 208, 192), --Window Border Light Color
-    bgShadow = Color(104, 120, 0), --Window Border Shadow Color
+    bgDarkShadow = Color(104, 120, 0), --Window Border Shadow Color
     titleSize = 28, --Titlebar Size
     titleTxtFont = 'Curlz MT', --Titlebar Font
     titleTxtSize = sizeadd + 14, --Titlebar Font Size
@@ -122,7 +122,7 @@ W98HUD:addTheme('cathy', 'Cathy', {
     btnCol1 = Color(255, 255, 255), --Button Light
     btnCol2 = Color(128, 128, 128), --Button Shadow
     bgLight = Color(255, 255, 255), --Window Border Light Color
-    bgShadow = Color(128, 128, 128), --Window Border Shadow Color
+    bgDarkShadow = Color(128, 128, 128), --Window Border Shadow Color
     titleSize = 20, --Titlebar Size
     titleTxtFont = 'Arial', --Titlebar Font
     titleTxtSize = sizeadd + 11, --Titlebar Font Size
@@ -159,7 +159,7 @@ W98HUD:addTheme('city', 'Cityscape', {
     btnCol1 = Color(255, 255, 255), --Button Light
     btnCol2 = Color(128, 128, 128), --Button Shadow
     bgLight = Color(255, 255, 255), --Window Border Light Color
-    bgShadow = Color(128, 128, 128), --Window Border Shadow Color
+    bgDarkShadow = Color(128, 128, 128), --Window Border Shadow Color
     titleSize = 18, --Titlebar Size
     titleTxtFont = 'OCR A Extended', --Titlebar Font
     titleTxtSize = sizeadd + 9, --Titlebar Font Size
@@ -196,7 +196,7 @@ W98HUD:addTheme('corbis', 'Corbis Photography (high color)', {
     btnCol1 = Color(255, 255, 255), --Button Light
     btnCol2 = Color(128, 128, 128), --Button Shadow
     bgLight = Color(255, 255, 255), --Window Border Light Color
-    bgShadow = Color(128, 128, 128), --Window Border Shadow Color
+    bgDarkShadow = Color(128, 128, 128), --Window Border Shadow Color
     titleSize = 18, --Titlebar Size
     titleTxtFont = 'Arial', --Titlebar Font
     titleTxtSize = sizeadd + 8, --Titlebar Font Size
@@ -233,7 +233,7 @@ W98HUD:addTheme('danger', 'Dangerous Creatures (256 color)', {
     btnCol1 = Color(184, 184, 184), --Button Light
     btnCol2 = Color(72, 72, 72), --Button Shadow
     bgLight = Color(184, 184, 184), --Window Border Light Color
-    bgShadow = Color(72, 72, 72), --Window Border Shadow Color
+    bgDarkShadow = Color(72, 72, 72), --Window Border Shadow Color
     titleSize = 18, --Titlebar Size
     titleTxtFont = 'Arial', --Titlebar Font
     titleTxtSize = sizeadd + 8, --Titlebar Font Size
@@ -270,7 +270,7 @@ W98HUD:addTheme('doon', 'Doonesbury', {
     btnCol1 = Color(255, 255, 255), --Button Light
     btnCol2 = Color(96, 104, 112), --Button Shadow
     bgLight = Color(255, 255, 255), --Window Border Light Color
-    bgShadow = Color(96, 104, 112), --Window Border Shadow Color
+    bgDarkShadow = Color(96, 104, 112), --Window Border Shadow Color
     titleSize = 18, --Titlebar Size
     titleTxtFont = 'Verdana', --Titlebar Font
     titleTxtSize = sizeadd + 9, --Titlebar Font Size
@@ -307,7 +307,7 @@ W98HUD:addTheme('fallingl', 'Falling Leaves (high color)', {
     btnCol1 = Color(255, 255, 255), --Button Light
     btnCol2 = Color(128, 128, 128), --Button Shadow
     bgLight = Color(255, 255, 255), --Window Border Light Color
-    bgShadow = Color(128, 128, 128), --Window Border Shadow Color
+    bgDarkShadow = Color(128, 128, 128), --Window Border Shadow Color
     titleSize = 18, --Titlebar Size
     titleTxtFont = 'Tempus Sans ITC', --Titlebar Font
     titleTxtSize = sizeadd + 9, --Titlebar Font Size
@@ -344,7 +344,7 @@ W98HUD:addTheme('fash', 'Fashion (high color)', {
     btnCol1 = Color(255, 255, 255), --Button Light
     btnCol2 = Color(128, 128, 128), --Button Shadow
     bgLight = Color(255, 255, 255), --Window Border Light Color
-    bgShadow = Color(128, 128, 128), --Window Border Shadow Color
+    bgDarkShadow = Color(128, 128, 128), --Window Border Shadow Color
     titleSize = 18, --Titlebar Size
     titleTxtFont = 'Lucida Handwriting', --Titlebar Font
     titleTxtSize = sizeadd + 9, --Titlebar Font Size
@@ -381,7 +381,7 @@ W98HUD:addTheme('foxt', 'FoxTrot', {
     btnCol1 = Color(200, 208, 208), --Button Light
     btnCol2 = Color(96, 104, 112), --Button Shadow
     bgLight = Color(200, 208, 208), --Window Border Light Color
-    bgShadow = Color(96, 104, 112), --Window Border Shadow Color
+    bgDarkShadow = Color(96, 104, 112), --Window Border Shadow Color
     titleSize = 23, --Titlebar Size
     titleTxtFont = 'Comic Sans MS', --Titlebar Font
     titleTxtSize = sizeadd + 11, --Titlebar Font Size
@@ -418,7 +418,7 @@ W98HUD:addTheme('garfielf', 'Garfield', {
     btnCol1 = Color(255, 255, 255), --Button Light
     btnCol2 = Color(128, 128, 128), --Button Shadow
     bgLight = Color(255, 255, 255), --Window Border Light Color
-    bgShadow = Color(128, 128, 128), --Window Border Shadow Color
+    bgDarkShadow = Color(128, 128, 128), --Window Border Shadow Color
     titleSize = 18, --Titlebar Size
     titleTxtFont = 'Comic Sans MS', --Titlebar Font
     titleTxtSize = sizeadd + 8, --Titlebar Font Size
@@ -455,7 +455,7 @@ W98HUD:addTheme('geom', 'Geometry (high color)', {
     btnCol1 = Color(255, 255, 255), --Button Light
     btnCol2 = Color(128, 128, 128), --Button Shadow
     bgLight = Color(255, 255, 255), --Window Border Light Color
-    bgShadow = Color(128, 128, 128), --Window Border Shadow Color
+    bgDarkShadow = Color(128, 128, 128), --Window Border Shadow Color
     titleSize = 18, --Titlebar Size
     titleTxtFont = 'Verdana', --Titlebar Font
     titleTxtSize = sizeadd + 9, --Titlebar Font Size
@@ -492,7 +492,7 @@ W98HUD:addTheme('horr', 'Horror Channel (high color)', {
     btnCol1 = Color(255, 255, 255), --Button Light
     btnCol2 = Color(128, 128, 128), --Button Shadow
     bgLight = Color(255, 255, 255), --Window Border Light Color
-    bgShadow = Color(128, 128, 128), --Window Border Shadow Color
+    bgDarkShadow = Color(128, 128, 128), --Window Border Shadow Color
     titleSize = 22, --Titlebar Size
     titleTxtFont = 'Dom Casual', --Titlebar Font
     titleTxtSize = sizeadd + 12, --Titlebar Font Size
@@ -529,7 +529,7 @@ W98HUD:addTheme('horse', 'Horses (256 color)', {
     btnCol1 = Color(232, 216, 224), --Button Light
     btnCol2 = Color(152, 104, 120), --Button Shadow
     bgLight = Color(232, 216, 224), --Window Border Light Color
-    bgShadow = Color(152, 104, 120), --Window Border Shadow Color
+    bgDarkShadow = Color(152, 104, 120), --Window Border Shadow Color
     titleSize = 18, --Titlebar Size
     titleTxtFont = 'Lucida Handwriting', --Titlebar Font
     titleTxtSize = sizeadd + 8, --Titlebar Font Size
@@ -566,7 +566,7 @@ W98HUD:addTheme('comp', 'Inside your Computer (high color)', {
     btnCol1 = Color(216, 224, 216), --Button Light
     btnCol2 = Color(96, 152, 96), --Button Shadow
     bgLight = Color(216, 224, 216), --Window Border Light Color
-    bgShadow = Color(96, 152, 96), --Window Border Shadow Color
+    bgDarkShadow = Color(96, 152, 96), --Window Border Shadow Color
     titleSize = 20, --Titlebar Size
     titleTxtFont = 'Abadi MT Condensed Light', --Titlebar Font
     titleTxtSize = sizeadd + 12, --Titlebar Font Size
@@ -603,7 +603,7 @@ W98HUD:addTheme('jazz', 'Jazz', {
     btnCol1 = Color(255, 255, 255), --Button Light
     btnCol2 = Color(128, 128, 128), --Button Shadow
     bgLight = Color(255, 255, 255), --Window Border Light Color
-    bgShadow = Color(128, 128, 128), --Window Border Shadow Color
+    bgDarkShadow = Color(128, 128, 128), --Window Border Shadow Color
     titleSize = 23, --Titlebar Size
     titleTxtFont = 'Curlz MT', --Titlebar Font
     titleTxtSize = sizeadd + 12, --Titlebar Font Size
@@ -640,7 +640,7 @@ W98HUD:addTheme('jung', 'Jungle (256 color)', {
     btnCol1 = Color(224, 208, 184), --Button Light
     btnCol2 = Color(128, 112, 64), --Button Shadow
     bgLight = Color(224, 208, 184), --Window Border Light Color
-    bgShadow = Color(128, 112, 64), --Window Border Shadow Color
+    bgDarkShadow = Color(128, 112, 64), --Window Border Shadow Color
     titleSize = 22, --Titlebar Size
     titleTxtFont = 'Matisse ITC', --Titlebar Font
     titleTxtSize = sizeadd + 12, --Titlebar Font Size
@@ -677,7 +677,7 @@ W98HUD:addTheme('davinki', 'Leonardo da Vinci (256 color)', {
     btnCol1 = Color(223, 210, 208), --Button Light
     btnCol2 = Color(139, 101, 92), --Button Shadow
     bgLight = Color(223, 210, 208), --Window Border Light Color
-    bgShadow = Color(139, 101, 92), --Window Border Shadow Color
+    bgDarkShadow = Color(139, 101, 92), --Window Border Shadow Color
     titleSize = 20, --Titlebar Size
     titleTxtFont = 'Book Antiqua', --Titlebar Font
     titleTxtSize = sizeadd + 9, --Titlebar Font Size
@@ -714,7 +714,7 @@ W98HUD:addTheme('mess', 'Messy Room (256 color)', {
     btnCol1 = Color(200, 200, 232), --Button Light
     btnCol2 = Color(72, 72, 168), --Button Shadow
     bgLight = Color(200, 200, 232), --Window Border Light Color
-    bgShadow = Color(72, 72, 168), --Window Border Shadow Color
+    bgDarkShadow = Color(72, 72, 168), --Window Border Shadow Color
     titleSize = 18, --Titlebar Size
     titleTxtFont = 'Tempus Sans ITC', --Titlebar Font
     titleTxtSize = sizeadd + 9, --Titlebar Font Size
@@ -751,7 +751,7 @@ W98HUD:addTheme('morewin', 'More Windows (high color)', {
     btnCol1 = Color(200, 208, 208), --Button Light
     btnCol2 = Color(96, 104, 112), --Button Shadow
     bgLight = Color(200, 208, 208), --Window Border Light Color
-    bgShadow = Color(96, 104, 112), --Window Border Shadow Color
+    bgDarkShadow = Color(96, 104, 112), --Window Border Shadow Color
     titleSize = 22, --Titlebar Size
     titleTxtFont = 'News Gothic MT', --Titlebar Font
     titleTxtSize = sizeadd + 12, --Titlebar Font Size
@@ -788,7 +788,7 @@ W98HUD:addTheme('myster', 'Mystery (high color)', {
     btnCol1 = Color(104, 120, 104), --Button Light
     btnCol2 = Color(72, 80, 72), --Button Shadow
     bgLight = Color(104, 120, 104), --Window Border Light Color
-    bgShadow = Color(72, 80, 72), --Window Border Shadow Color
+    bgDarkShadow = Color(72, 80, 72), --Window Border Shadow Color
     titleSize = 18, --Titlebar Size
     titleTxtFont = 'Calisto MT', --Titlebar Font
     titleTxtSize = sizeadd + 9, --Titlebar Font Size
@@ -825,7 +825,7 @@ W98HUD:addTheme('nat', 'Nature (high color)', {
     btnCol1 = Color(240, 224, 208), --Button Light
     btnCol2 = Color(176, 136, 72), --Button Shadow
     bgLight = Color(240, 224, 208), --Window Border Light Color
-    bgShadow = Color(176, 136, 72), --Window Border Shadow Color
+    bgDarkShadow = Color(176, 136, 72), --Window Border Shadow Color
     titleSize = 18, --Titlebar Size
     titleTxtFont = 'Copperplate Gothic Bold', --Titlebar Font
     titleTxtSize = sizeadd + 11, --Titlebar Font Size
@@ -862,7 +862,7 @@ W98HUD:addTheme('peanus', 'Peanuts', {
     btnCol1 = Color(255, 255, 255), --Button Light
     btnCol2 = Color(128, 128, 128), --Button Shadow
     bgLight = Color(255, 255, 255), --Window Border Light Color
-    bgShadow = Color(128, 128, 128), --Window Border Shadow Color
+    bgDarkShadow = Color(128, 128, 128), --Window Border Shadow Color
     titleSize = 20, --Titlebar Size
     titleTxtFont = 'Comic Sans MS', --Titlebar Font
     titleTxtSize = sizeadd + 9, --Titlebar Font Size
@@ -899,7 +899,7 @@ W98HUD:addTheme('photo', 'PhotoDisc (high color)', {
     btnCol1 = Color(218, 210, 199), --Button Light
     btnCol2 = Color(129, 112, 86), --Button Shadow
     bgLight = Color(218, 210, 199), --Window Border Light Color
-    bgShadow = Color(129, 112, 86), --Window Border Shadow Color
+    bgDarkShadow = Color(129, 112, 86), --Window Border Shadow Color
     titleSize = 18, --Titlebar Size
     titleTxtFont = 'Tahoma', --Titlebar Font
     titleTxtSize = sizeadd + 9, --Titlebar Font Size
@@ -936,7 +936,7 @@ W98HUD:addTheme('reeeman', 'RE-man (high color)', {
     btnCol1 = Color(255, 240, 120), --Button Light
     btnCol2 = Color(160, 136, 0), --Button Shadow
     bgLight = Color(255, 240, 120), --Window Border Light Color
-    bgShadow = Color(160, 136, 0), --Window Border Shadow Color
+    bgDarkShadow = Color(160, 136, 0), --Window Border Shadow Color
     titleSize = 18, --Titlebar Size
     titleTxtFont = 'Comic Sans MS', --Titlebar Font
     titleTxtSize = sizeadd + 9, --Titlebar Font Size
@@ -973,7 +973,7 @@ W98HUD:addTheme('rock', 'Rock-n-Roll (high color)', {
     btnCol1 = Color(255, 255, 255), --Button Light
     btnCol2 = Color(128, 128, 128), --Button Shadow
     bgLight = Color(255, 255, 255), --Window Border Light Color
-    bgShadow = Color(128, 128, 128), --Window Border Shadow Color
+    bgDarkShadow = Color(128, 128, 128), --Window Border Shadow Color
     titleSize = 20, --Titlebar Size
     titleTxtFont = 'Times Roman', --Titlebar Font
     titleTxtSize = sizeadd + 9, --Titlebar Font Size
@@ -1010,7 +1010,7 @@ W98HUD:addTheme('sci', 'Science (256 color)', {
     btnCol1 = Color(193, 204, 217), --Button Light
     btnCol2 = Color(79, 101, 125), --Button Shadow
     bgLight = Color(193, 204, 217), --Window Border Light Color
-    bgShadow = Color(79, 101, 125), --Window Border Shadow Color
+    bgDarkShadow = Color(79, 101, 125), --Window Border Shadow Color
     titleSize = 18, --Titlebar Size
     titleTxtFont = 'Lucida Sans Unicode', --Titlebar Font
     titleTxtSize = sizeadd + 8, --Titlebar Font Size
@@ -1047,7 +1047,7 @@ W98HUD:addTheme('scifi', 'Science Fiction (high color)', {
     btnCol1 = Color(255, 255, 255), --Button Light
     btnCol2 = Color(128, 128, 128), --Button Shadow
     bgLight = Color(255, 255, 255), --Window Border Light Color
-    bgShadow = Color(128, 128, 128), --Window Border Shadow Color
+    bgDarkShadow = Color(128, 128, 128), --Window Border Shadow Color
     titleSize = 18, --Titlebar Size
     titleTxtFont = 'OCR A Extended', --Titlebar Font
     titleTxtSize = sizeadd + 9, --Titlebar Font Size
@@ -1084,7 +1084,7 @@ W98HUD:addTheme('snowb', 'Snowboarding (256 color)', {
     btnCol1 = Color(184, 192, 144), --Button Light
     btnCol2 = Color(64, 72, 40), --Button Shadow
     bgLight = Color(184, 192, 144), --Window Border Light Color
-    bgShadow = Color(64, 72, 40), --Window Border Shadow Color
+    bgDarkShadow = Color(64, 72, 40), --Window Border Shadow Color
     titleSize = 26, --Titlebar Size
     titleTxtFont = 'Ransom', --Titlebar Font
     titleTxtSize = sizeadd + 12, --Titlebar Font Size
@@ -1121,7 +1121,7 @@ W98HUD:addTheme('space', 'Space (256 color)', {
     btnCol1 = Color(192, 200, 208), --Button Light
     btnCol2 = Color(80, 96, 104), --Button Shadow
     bgLight = Color(192, 200, 208), --Window Border Light Color
-    bgShadow = Color(80, 96, 104), --Window Border Shadow Color
+    bgDarkShadow = Color(80, 96, 104), --Window Border Shadow Color
     titleSize = 20, --Titlebar Size
     titleTxtFont = 'Westminster', --Titlebar Font
     titleTxtSize = sizeadd + 12, --Titlebar Font Size
@@ -1158,7 +1158,7 @@ W98HUD:addTheme('sporty', 'Sports (256 color)', {
     btnCol1 = Color(216, 240, 208), --Button Light
     btnCol2 = Color(104, 184, 72), --Button Shadow
     bgLight = Color(216, 240, 208), --Window Border Light Color
-    bgShadow = Color(104, 184, 72), --Window Border Shadow Color
+    bgDarkShadow = Color(104, 184, 72), --Window Border Shadow Color
     titleSize = 18, --Titlebar Size
     titleTxtFont = 'OCR A Extended', --Titlebar Font
     titleTxtSize = sizeadd + 9, --Titlebar Font Size
@@ -1195,7 +1195,7 @@ W98HUD:addTheme('hippie', 'The 60s USA (256 color)', {
     btnCol1 = Color(232, 184, 240), --Button Light
     btnCol2 = Color(160, 48, 168), --Button Shadow
     bgLight = Color(232, 184, 240), --Window Border Light Color
-    bgShadow = Color(160, 48, 168), --Window Border Shadow Color
+    bgDarkShadow = Color(160, 48, 168), --Window Border Shadow Color
     titleSize = 19, --Titlebar Size
     titleTxtFont = 'Lucida Handwriting', --Titlebar Font
     titleTxtSize = sizeadd + 9, --Titlebar Font Size
@@ -1232,7 +1232,7 @@ W98HUD:addTheme('goldera', 'The Golden Era (high color)', {
     btnCol1 = Color(220, 228, 220), --Button Light
     btnCol2 = Color(112, 143, 112), --Button Shadow
     bgLight = Color(220, 228, 220), --Window Border Light Color
-    bgShadow = Color(112, 143, 112), --Window Border Shadow Color
+    bgDarkShadow = Color(112, 143, 112), --Window Border Shadow Color
     titleSize = 23, --Titlebar Size
     titleTxtFont = 'Century Gothic', --Titlebar Font
     titleTxtSize = sizeadd + 12, --Titlebar Font Size
@@ -1269,7 +1269,7 @@ W98HUD:addTheme('train', 'Travel (high color)', {
     btnCol1 = Color(200, 192, 184), --Button Light
     btnCol2 = Color(96, 88, 72), --Button Shadow
     bgLight = Color(200, 192, 184), --Window Border Light Color
-    bgShadow = Color(96, 88, 72), --Window Border Shadow Color
+    bgDarkShadow = Color(96, 88, 72), --Window Border Shadow Color
     titleSize = 19, --Titlebar Size
     titleTxtFont = 'Comic Sans MS', --Titlebar Font
     titleTxtSize = sizeadd + 9, --Titlebar Font Size
@@ -1306,7 +1306,7 @@ W98HUD:addTheme('treeh', 'Tree House (256 color)', {
     btnCol1 = Color(200, 200, 200), --Button Light
     btnCol2 = Color(88, 88, 120), --Button Shadow
     bgLight = Color(200, 200, 200), --Window Border Light Color
-    bgShadow = Color(88, 88, 120), --Window Border Shadow Color
+    bgDarkShadow = Color(88, 88, 120), --Window Border Shadow Color
     titleSize = 20, --Titlebar Size
     titleTxtFont = 'Viner Hand ITC', --Titlebar Font
     titleTxtSize = sizeadd + 8, --Titlebar Font Size
@@ -1343,7 +1343,7 @@ W98HUD:addTheme('underw', 'Underwater (high color)', {
     btnCol1 = Color(152, 176, 224), --Button Light
     btnCol2 = Color(40, 72, 128), --Button Shadow
     bgLight = Color(152, 176, 224), --Window Border Light Color
-    bgShadow = Color(40, 72, 128), --Window Border Shadow Color
+    bgDarkShadow = Color(40, 72, 128), --Window Border Shadow Color
     titleSize = 19, --Titlebar Size
     titleTxtFont = 'Haettenschweiler', --Titlebar Font
     titleTxtSize = sizeadd + 12, --Titlebar Font Size
@@ -1380,7 +1380,7 @@ W98HUD:addTheme('w98', 'Windows 98 (256 color)', {
     btnCol1 = Color(218, 225, 237), --Button Light
     btnCol2 = Color(88, 122, 177), --Button Shadow
     bgLight = Color(218, 225, 237), --Window Border Light Color
-    bgShadow = Color(88, 122, 177), --Window Border Shadow Color
+    bgDarkShadow = Color(88, 122, 177), --Window Border Shadow Color
     titleSize = 22, --Titlebar Size
     titleTxtFont = 'News Gothic MT', --Titlebar Font
     titleTxtSize = sizeadd + 12, --Titlebar Font Size
@@ -1417,7 +1417,7 @@ W98HUD:addTheme('w98plus', 'Windows 98 (high color)', {
     btnCol1 = Color(255, 255, 255), --Button Light
     btnCol2 = Color(128, 128, 128), --Button Shadow
     bgLight = Color(255, 255, 255), --Window Border Light Color
-    bgShadow = Color(128, 128, 128), --Window Border Shadow Color
+    bgDarkShadow = Color(128, 128, 128), --Window Border Shadow Color
     titleSize = 18, --Titlebar Size
     titleTxtFont = 'Tahoma', --Titlebar Font
     titleTxtSize = sizeadd + 8, --Titlebar Font Size
@@ -1454,7 +1454,7 @@ W98HUD:addTheme('world', 'World Traveler (high color)', {
     btnCol1 = Color(255, 255, 255), --Button Light
     btnCol2 = Color(128, 128, 128), --Button Shadow
     bgLight = Color(255, 255, 255), --Window Border Light Color
-    bgShadow = Color(128, 128, 128), --Window Border Shadow Color
+    bgDarkShadow = Color(128, 128, 128), --Window Border Shadow Color
     titleSize = 23, --Titlebar Size
     titleTxtFont = 'Viner Hand ITC', --Titlebar Font
     titleTxtSize = sizeadd + 9, --Titlebar Font Size
@@ -1524,7 +1524,7 @@ W98HUD:addTheme('brick', 'Brick', {
     btnCol1 = Color(225, 224, 210), --Button Light
     btnCol2 = Color(141, 137, 97), --Button Shadow
     bgLight = Color(225, 224, 210), --Window Border Light Color
-    bgShadow = Color(141, 137, 97), --Window Border Shadow Color
+    bgDarkShadow = Color(141, 137, 97), --Window Border Shadow Color
     titleSize = 18, --Titlebar Size
     titleTxtFont = 'Arial', --Titlebar Font
     titleTxtSize = sizeadd + 9, --Titlebar Font Size
@@ -1561,7 +1561,7 @@ W98HUD:addTheme('desert', 'Desert', {
     btnCol1 = Color(255, 255, 255), --Button Light
     btnCol2 = Color(162, 141, 104), --Button Shadow
     bgLight = Color(255, 255, 255), --Window Border Light Color
-    bgShadow = Color(162, 141, 104), --Window Border Shadow Color
+    bgDarkShadow = Color(162, 141, 104), --Window Border Shadow Color
     titleSize = 18, --Titlebar Size
     titleTxtFont = 'W95FA', --Titlebar Font
     titleTxtSize = sizeadd + 8, --Titlebar Font Size
@@ -1598,7 +1598,7 @@ W98HUD:addTheme('penis', 'Eggplant', {
     btnCol1 = Color(200, 216, 216), --Button Light
     btnCol2 = Color(88, 128, 120), --Button Shadow
     bgLight = Color(200, 216, 216), --Window Border Light Color
-    bgShadow = Color(88, 128, 120), --Window Border Shadow Color
+    bgDarkShadow = Color(88, 128, 120), --Window Border Shadow Color
     titleSize = 19, --Titlebar Size
     titleTxtFont = 'Times New Roman', --Titlebar Font
     titleTxtSize = sizeadd + 11, --Titlebar Font Size
@@ -1635,7 +1635,7 @@ W98HUD:addTheme('highc1_xl', 'High Contrast #1 (extra large)', {
     btnCol1 = Color(255, 255, 255), --Button Light
     btnCol2 = Color(128, 128, 128), --Button Shadow
     bgLight = Color(255, 255, 255), --Window Border Light Color
-    bgShadow = Color(128, 128, 128), --Window Border Shadow Color
+    bgDarkShadow = Color(128, 128, 128), --Window Border Shadow Color
     titleSize = 37, --Titlebar Size
     titleTxtFont = 'Arial', --Titlebar Font
     titleTxtSize = sizeadd + 22, --Titlebar Font Size
@@ -1672,7 +1672,7 @@ W98HUD:addTheme('highc1_l', 'High Contrast #1 (large)', {
     btnCol1 = Color(255, 255, 255), --Button Light
     btnCol2 = Color(128, 128, 128), --Button Shadow
     bgLight = Color(255, 255, 255), --Window Border Light Color
-    bgShadow = Color(128, 128, 128), --Window Border Shadow Color
+    bgDarkShadow = Color(128, 128, 128), --Window Border Shadow Color
     titleSize = 31, --Titlebar Size
     titleTxtFont = 'Arial', --Titlebar Font
     titleTxtSize = sizeadd + 18, --Titlebar Font Size
@@ -1709,7 +1709,7 @@ W98HUD:addTheme('highc1', 'High Contrast #1', {
     btnCol1 = Color(255, 255, 255), --Button Light
     btnCol2 = Color(128, 128, 128), --Button Shadow
     bgLight = Color(255, 255, 255), --Window Border Light Color
-    bgShadow = Color(128, 128, 128), --Window Border Shadow Color
+    bgDarkShadow = Color(128, 128, 128), --Window Border Shadow Color
     titleSize = 20, --Titlebar Size
     titleTxtFont = 'W95FA', --Titlebar Font
     titleTxtSize = sizeadd + 8, --Titlebar Font Size
@@ -1746,7 +1746,7 @@ W98HUD:addTheme('highc2_xl', 'High Contrast #2 (extra large)', {
     btnCol1 = Color(255, 255, 255), --Button Light
     btnCol2 = Color(128, 128, 128), --Button Shadow
     bgLight = Color(255, 255, 255), --Window Border Light Color
-    bgShadow = Color(128, 128, 128), --Window Border Shadow Color
+    bgDarkShadow = Color(128, 128, 128), --Window Border Shadow Color
     titleSize = 37, --Titlebar Size
     titleTxtFont = 'Arial', --Titlebar Font
     titleTxtSize = sizeadd + 22, --Titlebar Font Size
@@ -1783,7 +1783,7 @@ W98HUD:addTheme('highc2_l', 'High Contrast #2 (large)', {
     btnCol1 = Color(255, 255, 255), --Button Light
     btnCol2 = Color(128, 128, 128), --Button Shadow
     bgLight = Color(255, 255, 255), --Window Border Light Color
-    bgShadow = Color(128, 128, 128), --Window Border Shadow Color
+    bgDarkShadow = Color(128, 128, 128), --Window Border Shadow Color
     titleSize = 31, --Titlebar Size
     titleTxtFont = 'Arial', --Titlebar Font
     titleTxtSize = sizeadd + 18, --Titlebar Font Size
@@ -1820,7 +1820,7 @@ W98HUD:addTheme('highc2', 'High Contrast #2', {
     btnCol1 = Color(255, 255, 255), --Button Light
     btnCol2 = Color(128, 128, 128), --Button Shadow
     bgLight = Color(255, 255, 255), --Window Border Light Color
-    bgShadow = Color(128, 128, 128), --Window Border Shadow Color
+    bgDarkShadow = Color(128, 128, 128), --Window Border Shadow Color
     titleSize = 20, --Titlebar Size
     titleTxtFont = 'W95FA', --Titlebar Font
     titleTxtSize = sizeadd + 8, --Titlebar Font Size
@@ -1857,7 +1857,7 @@ W98HUD:addTheme('highcb_xl', 'High Contrast Black (extra large)', {
     btnCol1 = Color(255, 255, 255), --Button Light
     btnCol2 = Color(192, 192, 192), --Button Shadow
     bgLight = Color(255, 255, 255), --Window Border Light Color
-    bgShadow = Color(192, 192, 192), --Window Border Shadow Color
+    bgDarkShadow = Color(192, 192, 192), --Window Border Shadow Color
     titleSize = 37, --Titlebar Size
     titleTxtFont = 'Arial', --Titlebar Font
     titleTxtSize = sizeadd + 22, --Titlebar Font Size
@@ -1894,7 +1894,7 @@ W98HUD:addTheme('highcb_l', 'High Contrast Black (large)', {
     btnCol1 = Color(255, 255, 255), --Button Light
     btnCol2 = Color(192, 192, 192), --Button Shadow
     bgLight = Color(255, 255, 255), --Window Border Light Color
-    bgShadow = Color(192, 192, 192), --Window Border Shadow Color
+    bgDarkShadow = Color(192, 192, 192), --Window Border Shadow Color
     titleSize = 31, --Titlebar Size
     titleTxtFont = 'Arial', --Titlebar Font
     titleTxtSize = sizeadd + 18, --Titlebar Font Size
@@ -1931,7 +1931,7 @@ W98HUD:addTheme('highcb', 'High Contrast Black', {
     btnCol1 = Color(255, 255, 255), --Button Light
     btnCol2 = Color(192, 192, 192), --Button Shadow
     bgLight = Color(255, 255, 255), --Window Border Light Color
-    bgShadow = Color(192, 192, 192), --Window Border Shadow Color
+    bgDarkShadow = Color(192, 192, 192), --Window Border Shadow Color
     titleSize = 20, --Titlebar Size
     titleTxtFont = 'W95FA', --Titlebar Font
     titleTxtSize = sizeadd + 8, --Titlebar Font Size
@@ -1968,7 +1968,7 @@ W98HUD:addTheme('highcw_xl', 'High Contrast White (extra large)', {
     btnCol1 = Color(255, 255, 255), --Button Light
     btnCol2 = Color(128, 128, 128), --Button Shadow
     bgLight = Color(255, 255, 255), --Window Border Light Color
-    bgShadow = Color(128, 128, 128), --Window Border Shadow Color
+    bgDarkShadow = Color(128, 128, 128), --Window Border Shadow Color
     titleSize = 38, --Titlebar Size
     titleTxtFont = 'Arial', --Titlebar Font
     titleTxtSize = sizeadd + 22, --Titlebar Font Size
@@ -2005,7 +2005,7 @@ W98HUD:addTheme('highcw_l', 'High Contrast White (large)', {
     btnCol1 = Color(255, 255, 255), --Button Light
     btnCol2 = Color(128, 128, 128), --Button Shadow
     bgLight = Color(255, 255, 255), --Window Border Light Color
-    bgShadow = Color(128, 128, 128), --Window Border Shadow Color
+    bgDarkShadow = Color(128, 128, 128), --Window Border Shadow Color
     titleSize = 37, --Titlebar Size
     titleTxtFont = 'Arial', --Titlebar Font
     titleTxtSize = sizeadd + 18, --Titlebar Font Size
@@ -2042,7 +2042,7 @@ W98HUD:addTheme('highcw', 'High Contrast White', {
     btnCol1 = Color(255, 255, 255), --Button Light
     btnCol2 = Color(128, 128, 128), --Button Shadow
     bgLight = Color(255, 255, 255), --Window Border Light Color
-    bgShadow = Color(128, 128, 128), --Window Border Shadow Color
+    bgDarkShadow = Color(128, 128, 128), --Window Border Shadow Color
     titleSize = 20, --Titlebar Size
     titleTxtFont = 'W95FA', --Titlebar Font
     titleTxtSize = sizeadd + 8, --Titlebar Font Size
@@ -2079,7 +2079,7 @@ W98HUD:addTheme('lilac_l', 'Lilac (large)', {
     btnCol1 = Color(216, 213, 236), --Button Light
     btnCol2 = Color(90, 78, 177), --Button Shadow
     bgLight = Color(216, 213, 236), --Window Border Light Color
-    bgShadow = Color(90, 78, 177), --Window Border Shadow Color
+    bgDarkShadow = Color(90, 78, 177), --Window Border Shadow Color
     titleSize = 29, --Titlebar Size
     titleTxtFont = 'Arial', --Titlebar Font
     titleTxtSize = sizeadd + 17, --Titlebar Font Size
@@ -2116,7 +2116,7 @@ W98HUD:addTheme('lilac', 'Lilac', {
     btnCol1 = Color(216, 213, 236), --Button Light
     btnCol2 = Color(90, 78, 177), --Button Shadow
     bgLight = Color(216, 213, 236), --Window Border Light Color
-    bgShadow = Color(90, 78, 177), --Window Border Shadow Color
+    bgDarkShadow = Color(90, 78, 177), --Window Border Shadow Color
     titleSize = 22, --Titlebar Size
     titleTxtFont = 'Arial', --Titlebar Font
     titleTxtSize = sizeadd + 12, --Titlebar Font Size
@@ -2153,7 +2153,7 @@ W98HUD:addTheme('maple', 'Maple', {
     btnCol1 = Color(240, 232, 208), --Button Light
     btnCol2 = Color(192, 156, 56), --Button Shadow
     bgLight = Color(240, 232, 208), --Window Border Light Color
-    bgShadow = Color(192, 156, 56), --Window Border Shadow Color
+    bgDarkShadow = Color(192, 156, 56), --Window Border Shadow Color
     titleSize = 18, --Titlebar Size
     titleTxtFont = 'W95FA', --Titlebar Font
     titleTxtSize = sizeadd + 8, --Titlebar Font Size
@@ -2190,7 +2190,7 @@ W98HUD:addTheme('marine', 'Marine (high color)', {
     btnCol1 = Color(196, 223, 219), --Button Light
     btnCol2 = Color(75, 141, 132), --Button Shadow
     bgLight = Color(196, 223, 219), --Window Border Light Color
-    bgShadow = Color(75, 141, 132), --Window Border Shadow Color
+    bgDarkShadow = Color(75, 141, 132), --Window Border Shadow Color
     titleSize = 18, --Titlebar Size
     titleTxtFont = 'W95FA', --Titlebar Font
     titleTxtSize = sizeadd + 8, --Titlebar Font Size
@@ -2227,7 +2227,7 @@ W98HUD:addTheme('plum', 'Plum (high color)', {
     btnCol1 = Color(216, 208, 200), --Button Light
     btnCol2 = Color(120, 96, 88), --Button Shadow
     bgLight = Color(216, 208, 200), --Window Border Light Color
-    bgShadow = Color(120, 96, 88), --Window Border Shadow Color
+    bgDarkShadow = Color(120, 96, 88), --Window Border Shadow Color
     titleSize = 18, --Titlebar Size
     titleTxtFont = 'W95FA', --Titlebar Font
     titleTxtSize = sizeadd + 8, --Titlebar Font Size
@@ -2264,7 +2264,7 @@ W98HUD:addTheme('pumpkin', 'Pumpkin (large)', {
     btnCol1 = Color(248, 234, 207), --Button Light
     btnCol2 = Color(222, 159, 44), --Button Shadow
     bgLight = Color(248, 234, 207), --Window Border Light Color
-    bgShadow = Color(222, 159, 44), --Window Border Shadow Color
+    bgDarkShadow = Color(222, 159, 44), --Window Border Shadow Color
     titleSize = 26, --Titlebar Size
     titleTxtFont = 'W95FA', --Titlebar Font
     titleTxtSize = sizeadd + 14, --Titlebar Font Size
@@ -2301,7 +2301,7 @@ W98HUD:addTheme('rainy', 'Rainy Day', {
     btnCol1 = Color(192, 204, 216), --Button Light
     btnCol2 = Color(78, 101, 124), --Button Shadow
     bgLight = Color(192, 204, 216), --Window Border Light Color
-    bgShadow = Color(78, 101, 124), --Window Border Shadow Color
+    bgDarkShadow = Color(78, 101, 124), --Window Border Shadow Color
     titleSize = 18, --Titlebar Size
     titleTxtFont = 'W95FA', --Titlebar Font
     titleTxtSize = sizeadd + 8, --Titlebar Font Size
@@ -2338,7 +2338,7 @@ W98HUD:addTheme('rwb', 'Red, White, and Blue (VGA)', {
     btnCol1 = Color(255, 255, 255), --Button Light
     btnCol2 = Color(128, 128, 128), --Button Shadow
     bgLight = Color(255, 255, 255), --Window Border Light Color
-    bgShadow = Color(128, 128, 128), --Window Border Shadow Color
+    bgDarkShadow = Color(128, 128, 128), --Window Border Shadow Color
     titleSize = 19, --Titlebar Size
     titleTxtFont = 'Times New Roman', --Titlebar Font
     titleTxtSize = sizeadd + 11, --Titlebar Font Size
@@ -2375,7 +2375,7 @@ W98HUD:addTheme('rose_l', 'Rose (large)', {
     btnCol1 = Color(232, 216, 224), --Button Light
     btnCol2 = Color(160, 96, 112), --Button Shadow
     bgLight = Color(232, 216, 224), --Window Border Light Color
-    bgShadow = Color(160, 96, 112), --Window Border Shadow Color
+    bgDarkShadow = Color(160, 96, 112), --Window Border Shadow Color
     titleSize = 28, --Titlebar Size
     titleTxtFont = 'Times New Roman', --Titlebar Font
     titleTxtSize = sizeadd + 17, --Titlebar Font Size
@@ -2412,7 +2412,7 @@ W98HUD:addTheme('rose', 'Rose', {
     btnCol1 = Color(232, 216, 224), --Button Light
     btnCol2 = Color(160, 96, 112), --Button Shadow
     bgLight = Color(232, 216, 224), --Window Border Light Color
-    bgShadow = Color(160, 96, 112), --Window Border Shadow Color
+    bgDarkShadow = Color(160, 96, 112), --Window Border Shadow Color
     titleSize = 23, --Titlebar Size
     titleTxtFont = 'Times New Roman', --Titlebar Font
     titleTxtSize = sizeadd + 14, --Titlebar Font Size
@@ -2449,7 +2449,7 @@ W98HUD:addTheme('slate', 'Slate', {
     btnCol1 = Color(206, 220, 227), --Button Light
     btnCol2 = Color(85, 128, 151), --Button Shadow
     bgLight = Color(206, 220, 227), --Window Border Light Color
-    bgShadow = Color(85, 128, 151), --Window Border Shadow Color
+    bgDarkShadow = Color(85, 128, 151), --Window Border Shadow Color
     titleSize = 18, --Titlebar Size
     titleTxtFont = 'W95FA', --Titlebar Font
     titleTxtSize = sizeadd + 8, --Titlebar Font Size
@@ -2486,7 +2486,7 @@ W98HUD:addTheme('spruce', 'Spruce', {
     btnCol1 = Color(208, 227, 211), --Button Light
     btnCol2 = Color(89, 151, 100), --Button Shadow
     bgLight = Color(208, 227, 211), --Window Border Light Color
-    bgShadow = Color(89, 151, 100), --Window Border Shadow Color
+    bgDarkShadow = Color(89, 151, 100), --Window Border Shadow Color
     titleSize = 18, --Titlebar Size
     titleTxtFont = 'W95FA', --Titlebar Font
     titleTxtSize = sizeadd + 9, --Titlebar Font Size
@@ -2523,7 +2523,7 @@ W98HUD:addTheme('storm', 'Storm (VGA)', {
     btnCol1 = Color(255, 255, 255), --Button Light
     btnCol2 = Color(128, 128, 128), --Button Shadow
     bgLight = Color(255, 255, 255), --Window Border Light Color
-    bgShadow = Color(128, 128, 128), --Window Border Shadow Color
+    bgDarkShadow = Color(128, 128, 128), --Window Border Shadow Color
     titleSize = 18, --Titlebar Size
     titleTxtFont = 'Arial', --Titlebar Font
     titleTxtSize = sizeadd + 8, --Titlebar Font Size
@@ -2560,7 +2560,7 @@ W98HUD:addTheme('teal', 'Teal (VGA)', {
     btnCol1 = Color(255, 255, 255), --Button Light
     btnCol2 = Color(128, 128, 128), --Button Shadow
     bgLight = Color(255, 255, 255), --Window Border Light Color
-    bgShadow = Color(128, 128, 128), --Window Border Shadow Color
+    bgDarkShadow = Color(128, 128, 128), --Window Border Shadow Color
     titleSize = 18, --Titlebar Size
     titleTxtFont = 'W95FA', --Titlebar Font
     titleTxtSize = sizeadd + 8, --Titlebar Font Size
@@ -2597,7 +2597,7 @@ W98HUD:addTheme('wheat', 'Wheat', {
     btnCol1 = Color(240, 240, 208), --Button Light
     btnCol2 = Color(192, 192, 63), --Button Shadow
     bgLight = Color(240, 240, 208), --Window Border Light Color
-    bgShadow = Color(192, 192, 63), --Window Border Shadow Color
+    bgDarkShadow = Color(192, 192, 63), --Window Border Shadow Color
     titleSize = 18, --Titlebar Size
     titleTxtFont = 'W95FA', --Titlebar Font
     titleTxtSize = sizeadd + 8, --Titlebar Font Size
@@ -2700,7 +2700,7 @@ W98HUD:addTheme('default_2k', 'Windows Classic', {
     btnCol1 = Color(255, 255, 255), --Button Light
     btnCol2 = Color(128, 128, 128), --Button Shadow
     bgLight = Color(255, 255, 255), --Window Border Light Color
-    bgShadow = Color(128, 128, 128), --Window Border Shadow Color
+    bgDarkShadow = Color(128, 128, 128), --Window Border Shadow Color
     titleSize = 18, --Titlebar Size
     titleTxtFont = 'W95FA', --Titlebar Font
     titleTxtSize = sizeadd + 8, --Titlebar Font Size
