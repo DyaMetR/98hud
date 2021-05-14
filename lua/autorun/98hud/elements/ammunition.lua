@@ -123,12 +123,12 @@ W98HUD:register(function()
 
   -- draw alt
   drawBar(x, y, barW, barH, ALT, alt / maxAlt, alt, isSegmented, secondary > 0, config.bgCol1, barBgCol, barCol1, config.msgCol)
-  W98HUD.COMPONENTS:separator(x + barW + 13, y, barH, config.bgCol1, true, config.bgLight, config.bgShadow)
+  W98HUD.COMPONENTS:separator(x + barW + 11, y + 3, barH, config.bgCol1, true, config.bgLight, config.bgShadow)
   x = x + barW + spacing
 
   -- draw reserve
   drawBar(x, y, barW, barH, RESERVE, reserve / maxReserve, reserve, isSegmented, true, config.bgCol1, barBgCol, barCol1, config.msgCol)
-  W98HUD.COMPONENTS:separator(x + barW + 13, y, barH, config.bgCol1, true, config.bgLight, config.bgShadow)
+  W98HUD.COMPONENTS:separator(x + barW + 11, y + 3, barH, config.bgCol1, true, config.bgLight, config.bgShadow)
   x = x + barW + spacing
 
   -- draw clip

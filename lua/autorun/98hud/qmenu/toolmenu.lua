@@ -14,11 +14,7 @@ hook.Add('PopulateToolMenu', UID, function()
     panel:ClearControls()
     panel:CheckBox('Enabled', '98hud_enabled')
     panel:Help('\nLayout') -- separator
-    --[[local mode, _ = panel:ComboBox('Layout mode', '98hud_layout')
-      mode:AddChoice('Default', 1)
-      mode:AddChoice('Desktop icons', 2)]]
     panel:CheckBox('Windowed', '98hud_window')
-    --panel:CheckBox('Taskbar', '98hud_taskbar')
     panel:TextEntry('Player extension', '98hud_player')
 
     local health, _ = panel:ComboBox('Health & suit', '98hud_health')
@@ -35,8 +31,6 @@ hook.Add('PopulateToolMenu', UID, function()
     ammo:AddChoice('Straight InstallShield Wizard', 2)
     ammo:AddChoice('Segmented', 3)
     ammo:AddChoice('Segmented InstallShield Wizard', 4)
-    --panel:CheckBox('Weapon selector', '98hud_weapon')
-    --panel:CheckBox('Pickup history', '98hud_pickup')
 
     panel:Help('') -- separator
     panel:Button('Open display settings', '98hud_menu')
@@ -48,7 +42,7 @@ hook.Add('PopulateToolMenu', UID, function()
     end
     panel:Help('\n' .. W98HUD.date)
     -- development version notice
-    panel:Help('\nDevelopment version')
-    panel:ControlHelp('Current build may not represent the final product')
+    panel:Help('\nBeta version')
+    panel:ControlHelp('Main features are implemented but bugs may occur')
   end)
 end)
