@@ -31,6 +31,14 @@ function W98HUD:addThemeItem(id, item, data)
 end
 
 --[[------------------------------------------------------------------
+  Removes a theme from the list
+  @param {string} unique identifier
+]]--------------------------------------------------------------------
+function W98HUD:removeTheme(id)
+  themes[id] = nil
+end
+
+--[[------------------------------------------------------------------
   Adds the default theme
   @param {string} unique identifier
   @param {string} print name

@@ -10,8 +10,6 @@ W98HUD:addTheme('architec', 'Architecture', {
     captionCol = Color(192, 192, 192), --Caption Button Color
     btnCol1 = Color(255, 255, 255), --Button Light
     btnCol2 = Color(128, 128, 128), --Button Shadow
-    bgLight = Color(255, 255, 255), --Window Border Light Color
-    bgDarkShadow = Color(128, 128, 128), --Window Border Shadow Color
     titleSize = 20, --Titlebar Size
     titleTxtFont = 'Times Roman', --Titlebar Font
     titleTxtSize = sizeadd + 9, --Titlebar Font Size
@@ -47,8 +45,6 @@ W98HUD:addTheme('baseb', 'Baseball (256 color)', {
     captionCol = Color(208, 168, 112), --Caption Button Color
     btnCol1 = Color(232, 208, 184), --Button Light
     btnCol2 = Color(160, 112, 56), --Button Shadow
-    bgLight = Color(232, 208, 184), --Window Border Light Color
-    bgDarkShadow = Color(160, 112, 56), --Window Border Shadow Color
     titleSize = 18, --Titlebar Size
     titleTxtFont = 'Century Gothic', --Titlebar Font
     titleTxtSize = sizeadd + 9, --Titlebar Font Size
@@ -84,12 +80,10 @@ W98HUD:addTheme('bugs', 'Bugs (256 color)', {
     captionCol = Color(152, 168, 128), --Caption Button Color
     btnCol1 = Color(208, 208, 192), --Button Light
     btnCol2 = Color(104, 120, 0), --Button Shadow
-    bgLight = Color(208, 208, 192), --Window Border Light Color
-    bgDarkShadow = Color(104, 120, 0), --Window Border Shadow Color
     titleSize = 28, --Titlebar Size
     titleTxtFont = 'Curlz MT', --Titlebar Font
     titleTxtSize = sizeadd + 14, --Titlebar Font Size
-    titleTxtWeight = 1000, --Titlebar Text Weight
+    titleTxtWeight = 1, --Titlebar Text Weight
     titleTxtItalic = false, --Titlebar Text Italic
     aTitleCol1 = Color(0, 0, 0), --Ative Titlebar Gradient Color
     aTitleCol2 = Color(0, 0, 0), --Active Titlebar Color
@@ -121,8 +115,6 @@ W98HUD:addTheme('cathy', 'Cathy', {
     captionCol = Color(192, 192, 192), --Caption Button Color
     btnCol1 = Color(255, 255, 255), --Button Light
     btnCol2 = Color(128, 128, 128), --Button Shadow
-    bgLight = Color(255, 255, 255), --Window Border Light Color
-    bgDarkShadow = Color(128, 128, 128), --Window Border Shadow Color
     titleSize = 20, --Titlebar Size
     titleTxtFont = 'Arial', --Titlebar Font
     titleTxtSize = sizeadd + 11, --Titlebar Font Size
@@ -158,8 +150,6 @@ W98HUD:addTheme('city', 'Cityscape', {
     captionCol = Color(192, 192, 192), --Caption Button Color
     btnCol1 = Color(255, 255, 255), --Button Light
     btnCol2 = Color(128, 128, 128), --Button Shadow
-    bgLight = Color(255, 255, 255), --Window Border Light Color
-    bgDarkShadow = Color(128, 128, 128), --Window Border Shadow Color
     titleSize = 18, --Titlebar Size
     titleTxtFont = 'OCR A Extended', --Titlebar Font
     titleTxtSize = sizeadd + 9, --Titlebar Font Size
@@ -195,8 +185,6 @@ W98HUD:addTheme('corbis', 'Corbis Photography (high color)', {
     captionCol = Color(192, 192, 192), --Caption Button Color
     btnCol1 = Color(255, 255, 255), --Button Light
     btnCol2 = Color(128, 128, 128), --Button Shadow
-    bgLight = Color(255, 255, 255), --Window Border Light Color
-    bgDarkShadow = Color(128, 128, 128), --Window Border Shadow Color
     titleSize = 18, --Titlebar Size
     titleTxtFont = 'Arial', --Titlebar Font
     titleTxtSize = sizeadd + 8, --Titlebar Font Size
@@ -220,7 +208,7 @@ W98HUD:addTheme('corbis', 'Corbis Photography (high color)', {
     msgSize = sizeadd + 8, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -232,8 +220,6 @@ W98HUD:addTheme('danger', 'Dangerous Creatures (256 color)', {
     captionCol = Color(112, 112, 112), --Caption Button Color
     btnCol1 = Color(184, 184, 184), --Button Light
     btnCol2 = Color(72, 72, 72), --Button Shadow
-    bgLight = Color(184, 184, 184), --Window Border Light Color
-    bgDarkShadow = Color(72, 72, 72), --Window Border Shadow Color
     titleSize = 18, --Titlebar Size
     titleTxtFont = 'Arial', --Titlebar Font
     titleTxtSize = sizeadd + 8, --Titlebar Font Size
@@ -257,7 +243,7 @@ W98HUD:addTheme('danger', 'Dangerous Creatures (256 color)', {
     msgSize = sizeadd + 8, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -269,8 +255,6 @@ W98HUD:addTheme('doon', 'Doonesbury', {
     captionCol = Color(144, 152, 160), --Caption Button Color
     btnCol1 = Color(255, 255, 255), --Button Light
     btnCol2 = Color(96, 104, 112), --Button Shadow
-    bgLight = Color(255, 255, 255), --Window Border Light Color
-    bgDarkShadow = Color(96, 104, 112), --Window Border Shadow Color
     titleSize = 18, --Titlebar Size
     titleTxtFont = 'Verdana', --Titlebar Font
     titleTxtSize = sizeadd + 9, --Titlebar Font Size
@@ -286,7 +270,7 @@ W98HUD:addTheme('doon', 'Doonesbury', {
     aBorderCol = Color(128, 128, 128), --Active Window Border Color
     iBorderSize = 1, --Inactive Window Border Size
     iBorderCol = Color(96, 104, 112), --Inactive Window Border Color
-    selItemsCol1 = Color(0, 0, 120), --Selected Item (Highlight) Color
+    selItemsCol1 = Color(0, 0, 0), --Selected Item (Highlight) Color
     selItemsCol2 = Color(255, 255, 255), --Selected Item (Highlight) Text Color
     winBgCol = Color(255, 255, 255), --Window Content Background Color
     winTxtCol = Color(0, 0, 0), --Window Text Color
@@ -294,20 +278,18 @@ W98HUD:addTheme('doon', 'Doonesbury', {
     msgSize = sizeadd + 8, -- Message Box Font Size
     msgCol = Color(128, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
 W98HUD:addTheme('fallingl', 'Falling Leaves (high color)', {
   parameters = {
-    desktop = Color(0, 124, 120), --Background
+    desktop = Color(230, 170, 98), --Background
     bgCol1 = Color(192, 192, 192), --Window Color
     bgCol2 = Color(0, 0, 0), --Caption Button Icon Color
-    captionCol = Color(184, 188, 184), --Caption Button Color
+    captionCol = Color(192, 192, 192), --Caption Button Color
     btnCol1 = Color(255, 255, 255), --Button Light
     btnCol2 = Color(128, 128, 128), --Button Shadow
-    bgLight = Color(255, 255, 255), --Window Border Light Color
-    bgDarkShadow = Color(128, 128, 128), --Window Border Shadow Color
     titleSize = 18, --Titlebar Size
     titleTxtFont = 'Tempus Sans ITC', --Titlebar Font
     titleTxtSize = sizeadd + 9, --Titlebar Font Size
@@ -331,7 +313,7 @@ W98HUD:addTheme('fallingl', 'Falling Leaves (high color)', {
     msgSize = sizeadd + 8, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -343,8 +325,6 @@ W98HUD:addTheme('fash', 'Fashion (high color)', {
     captionCol = Color(192, 192, 192), --Caption Button Color
     btnCol1 = Color(255, 255, 255), --Button Light
     btnCol2 = Color(128, 128, 128), --Button Shadow
-    bgLight = Color(255, 255, 255), --Window Border Light Color
-    bgDarkShadow = Color(128, 128, 128), --Window Border Shadow Color
     titleSize = 18, --Titlebar Size
     titleTxtFont = 'Lucida Handwriting', --Titlebar Font
     titleTxtSize = sizeadd + 9, --Titlebar Font Size
@@ -368,7 +348,7 @@ W98HUD:addTheme('fash', 'Fashion (high color)', {
     msgSize = sizeadd + 8, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -380,8 +360,6 @@ W98HUD:addTheme('foxt', 'FoxTrot', {
     captionCol = Color(144, 152, 160), --Caption Button Color
     btnCol1 = Color(200, 208, 208), --Button Light
     btnCol2 = Color(96, 104, 112), --Button Shadow
-    bgLight = Color(200, 208, 208), --Window Border Light Color
-    bgDarkShadow = Color(96, 104, 112), --Window Border Shadow Color
     titleSize = 23, --Titlebar Size
     titleTxtFont = 'Comic Sans MS', --Titlebar Font
     titleTxtSize = sizeadd + 11, --Titlebar Font Size
@@ -405,7 +383,7 @@ W98HUD:addTheme('foxt', 'FoxTrot', {
     msgSize = sizeadd + 9, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -413,12 +391,10 @@ W98HUD:addTheme('garfielf', 'Garfield', {
   parameters = {
     desktop = Color(255, 251, 240), --Background
     bgCol1 = Color(192, 192, 192), --Window Color
-    bgCol2 = Color(128, 128, 128), --Caption Button Icon Color
+    bgCol2 = Color(0, 0, 0), --Caption Button Icon Color
     captionCol = Color(192, 192, 192), --Caption Button Color
     btnCol1 = Color(255, 255, 255), --Button Light
     btnCol2 = Color(128, 128, 128), --Button Shadow
-    bgLight = Color(255, 255, 255), --Window Border Light Color
-    bgDarkShadow = Color(128, 128, 128), --Window Border Shadow Color
     titleSize = 18, --Titlebar Size
     titleTxtFont = 'Comic Sans MS', --Titlebar Font
     titleTxtSize = sizeadd + 8, --Titlebar Font Size
@@ -442,7 +418,7 @@ W98HUD:addTheme('garfielf', 'Garfield', {
     msgSize = sizeadd + 8, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -454,8 +430,6 @@ W98HUD:addTheme('geom', 'Geometry (high color)', {
     captionCol = Color(192, 192, 192), --Caption Button Color
     btnCol1 = Color(255, 255, 255), --Button Light
     btnCol2 = Color(128, 128, 128), --Button Shadow
-    bgLight = Color(255, 255, 255), --Window Border Light Color
-    bgDarkShadow = Color(128, 128, 128), --Window Border Shadow Color
     titleSize = 18, --Titlebar Size
     titleTxtFont = 'Verdana', --Titlebar Font
     titleTxtSize = sizeadd + 9, --Titlebar Font Size
@@ -479,7 +453,7 @@ W98HUD:addTheme('geom', 'Geometry (high color)', {
     msgSize = sizeadd + 8, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -491,8 +465,6 @@ W98HUD:addTheme('horr', 'Horror Channel (high color)', {
     captionCol = Color(152, 168, 112), --Caption Button Color
     btnCol1 = Color(255, 255, 255), --Button Light
     btnCol2 = Color(128, 128, 128), --Button Shadow
-    bgLight = Color(255, 255, 255), --Window Border Light Color
-    bgDarkShadow = Color(128, 128, 128), --Window Border Shadow Color
     titleSize = 22, --Titlebar Size
     titleTxtFont = 'Dom Casual', --Titlebar Font
     titleTxtSize = sizeadd + 12, --Titlebar Font Size
@@ -516,20 +488,18 @@ W98HUD:addTheme('horr', 'Horror Channel (high color)', {
     msgSize = sizeadd + 9, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
 W98HUD:addTheme('horse', 'Horses (256 color)', {
   parameters = {
     desktop = Color(155, 104, 121), --Background
-    bgCol1 = Color(184, 188, 184), --Window Color
+    bgCol1 = Color(208, 184, 192), --Window Color
     bgCol2 = Color(0, 0, 0), --Caption Button Icon Color
     captionCol = Color(208, 184, 192), --Caption Button Color
     btnCol1 = Color(232, 216, 224), --Button Light
     btnCol2 = Color(152, 104, 120), --Button Shadow
-    bgLight = Color(232, 216, 224), --Window Border Light Color
-    bgDarkShadow = Color(152, 104, 120), --Window Border Shadow Color
     titleSize = 18, --Titlebar Size
     titleTxtFont = 'Lucida Handwriting', --Titlebar Font
     titleTxtSize = sizeadd + 8, --Titlebar Font Size
@@ -553,7 +523,7 @@ W98HUD:addTheme('horse', 'Horses (256 color)', {
     msgSize = sizeadd + 8, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -565,8 +535,6 @@ W98HUD:addTheme('comp', 'Inside your Computer (high color)', {
     captionCol = Color(168, 200, 168), --Caption Button Color
     btnCol1 = Color(216, 224, 216), --Button Light
     btnCol2 = Color(96, 152, 96), --Button Shadow
-    bgLight = Color(216, 224, 216), --Window Border Light Color
-    bgDarkShadow = Color(96, 152, 96), --Window Border Shadow Color
     titleSize = 20, --Titlebar Size
     titleTxtFont = 'Abadi MT Condensed Light', --Titlebar Font
     titleTxtSize = sizeadd + 12, --Titlebar Font Size
@@ -590,7 +558,7 @@ W98HUD:addTheme('comp', 'Inside your Computer (high color)', {
     msgSize = sizeadd + 9, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -599,11 +567,9 @@ W98HUD:addTheme('jazz', 'Jazz', {
     desktop = Color(0, 0, 0), --Background
     bgCol1 = Color(192, 192, 192), --Window Color
     bgCol2 = Color(0, 0, 0), --Caption Button Icon Color
-    captionCol = Color(184, 188, 184), --Caption Button Color
+    captionCol = Color(192, 192, 192), --Caption Button Color
     btnCol1 = Color(255, 255, 255), --Button Light
     btnCol2 = Color(128, 128, 128), --Button Shadow
-    bgLight = Color(255, 255, 255), --Window Border Light Color
-    bgDarkShadow = Color(128, 128, 128), --Window Border Shadow Color
     titleSize = 23, --Titlebar Size
     titleTxtFont = 'Curlz MT', --Titlebar Font
     titleTxtSize = sizeadd + 12, --Titlebar Font Size
@@ -627,7 +593,7 @@ W98HUD:addTheme('jazz', 'Jazz', {
     msgSize = sizeadd + 8, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -639,8 +605,6 @@ W98HUD:addTheme('jung', 'Jungle (256 color)', {
     captionCol = Color(184, 160, 104), --Caption Button Color
     btnCol1 = Color(224, 208, 184), --Button Light
     btnCol2 = Color(128, 112, 64), --Button Shadow
-    bgLight = Color(224, 208, 184), --Window Border Light Color
-    bgDarkShadow = Color(128, 112, 64), --Window Border Shadow Color
     titleSize = 22, --Titlebar Size
     titleTxtFont = 'Matisse ITC', --Titlebar Font
     titleTxtSize = sizeadd + 12, --Titlebar Font Size
@@ -664,7 +628,7 @@ W98HUD:addTheme('jung', 'Jungle (256 color)', {
     msgSize = sizeadd + 9, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -676,8 +640,6 @@ W98HUD:addTheme('davinki', 'Leonardo da Vinci (256 color)', {
     captionCol = Color(191, 165, 159), --Caption Button Color
     btnCol1 = Color(223, 210, 208), --Button Light
     btnCol2 = Color(139, 101, 92), --Button Shadow
-    bgLight = Color(223, 210, 208), --Window Border Light Color
-    bgDarkShadow = Color(139, 101, 92), --Window Border Shadow Color
     titleSize = 20, --Titlebar Size
     titleTxtFont = 'Book Antiqua', --Titlebar Font
     titleTxtSize = sizeadd + 9, --Titlebar Font Size
@@ -701,7 +663,7 @@ W98HUD:addTheme('davinki', 'Leonardo da Vinci (256 color)', {
     msgSize = sizeadd + 9, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -713,8 +675,6 @@ W98HUD:addTheme('mess', 'Messy Room (256 color)', {
     captionCol = Color(144, 144, 208), --Caption Button Color
     btnCol1 = Color(200, 200, 232), --Button Light
     btnCol2 = Color(72, 72, 168), --Button Shadow
-    bgLight = Color(200, 200, 232), --Window Border Light Color
-    bgDarkShadow = Color(72, 72, 168), --Window Border Shadow Color
     titleSize = 18, --Titlebar Size
     titleTxtFont = 'Tempus Sans ITC', --Titlebar Font
     titleTxtSize = sizeadd + 9, --Titlebar Font Size
@@ -722,10 +682,10 @@ W98HUD:addTheme('mess', 'Messy Room (256 color)', {
     titleTxtItalic = false, --Titlebar Text Italic
     aTitleCol1 = Color(128, 0, 128), --Ative Titlebar Gradient Color
     aTitleCol2 = Color(128, 0, 128), --Active Titlebar Color
-    aTitleTxtCol = Color(255, 255, 255), --Active Titlebar Text Color
+    aTitleTxtCol = Color(0, 255, 0), --Active Titlebar Text Color
     iTitleCol1 = Color(72, 72, 168), --Inactive Titlebar Gradient Color
     iTitleCol2 = Color(72, 72, 168), --Inactive Titlebar Color
-    iTitleTxtCol = Color(128, 128, 128), --Inactive Titlebar Text Color
+    iTitleTxtCol = Color(128, 128, 208), --Inactive Titlebar Text Color
     aBorderSize = 1, --Active Window Border Size
     aBorderCol = Color(144, 144, 208), --Active Window Border Color
     iBorderSize = 1, --Inactive Window Border Size
@@ -738,7 +698,7 @@ W98HUD:addTheme('mess', 'Messy Room (256 color)', {
     msgSize = sizeadd + 9, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -750,8 +710,6 @@ W98HUD:addTheme('morewin', 'More Windows (high color)', {
     captionCol = Color(144, 152, 160), --Caption Button Color
     btnCol1 = Color(200, 208, 208), --Button Light
     btnCol2 = Color(96, 104, 112), --Button Shadow
-    bgLight = Color(200, 208, 208), --Window Border Light Color
-    bgDarkShadow = Color(96, 104, 112), --Window Border Shadow Color
     titleSize = 22, --Titlebar Size
     titleTxtFont = 'News Gothic MT', --Titlebar Font
     titleTxtSize = sizeadd + 12, --Titlebar Font Size
@@ -775,7 +733,7 @@ W98HUD:addTheme('morewin', 'More Windows (high color)', {
     msgSize = sizeadd + 8, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -787,8 +745,6 @@ W98HUD:addTheme('myster', 'Mystery (high color)', {
     captionCol = Color(104, 120, 104), --Caption Button Color
     btnCol1 = Color(104, 120, 104), --Button Light
     btnCol2 = Color(72, 80, 72), --Button Shadow
-    bgLight = Color(104, 120, 104), --Window Border Light Color
-    bgDarkShadow = Color(72, 80, 72), --Window Border Shadow Color
     titleSize = 18, --Titlebar Size
     titleTxtFont = 'Calisto MT', --Titlebar Font
     titleTxtSize = sizeadd + 9, --Titlebar Font Size
@@ -812,7 +768,7 @@ W98HUD:addTheme('myster', 'Mystery (high color)', {
     msgSize = sizeadd + 8, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -821,11 +777,9 @@ W98HUD:addTheme('nat', 'Nature (high color)', {
     desktop = Color(0, 0, 0), --Background
     bgCol1 = Color(216, 192, 160), --Window Color
     bgCol2 = Color(0, 0, 0), --Caption Button Icon Color
-    captionCol = Color(184, 188, 184), --Caption Button Color
+    captionCol = Color(216, 192, 160), --Caption Button Color
     btnCol1 = Color(240, 224, 208), --Button Light
     btnCol2 = Color(176, 136, 72), --Button Shadow
-    bgLight = Color(240, 224, 208), --Window Border Light Color
-    bgDarkShadow = Color(176, 136, 72), --Window Border Shadow Color
     titleSize = 18, --Titlebar Size
     titleTxtFont = 'Copperplate Gothic Bold', --Titlebar Font
     titleTxtSize = sizeadd + 11, --Titlebar Font Size
@@ -849,7 +803,7 @@ W98HUD:addTheme('nat', 'Nature (high color)', {
     msgSize = sizeadd + 9, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -857,12 +811,10 @@ W98HUD:addTheme('peanus', 'Peanuts', {
   parameters = {
     desktop = Color(0, 255, 0), --Background
     bgCol1 = Color(192, 192, 192), --Window Color
-    bgCol2 = Color(0, 0, 0), --Caption Button Icon Color
+    bgCol2 = Color(0, 0, 128), --Caption Button Icon Color
     captionCol = Color(192, 192, 192), --Caption Button Color
     btnCol1 = Color(255, 255, 255), --Button Light
     btnCol2 = Color(128, 128, 128), --Button Shadow
-    bgLight = Color(255, 255, 255), --Window Border Light Color
-    bgDarkShadow = Color(128, 128, 128), --Window Border Shadow Color
     titleSize = 20, --Titlebar Size
     titleTxtFont = 'Comic Sans MS', --Titlebar Font
     titleTxtSize = sizeadd + 9, --Titlebar Font Size
@@ -886,7 +838,7 @@ W98HUD:addTheme('peanus', 'Peanuts', {
     msgSize = sizeadd + 8, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -898,8 +850,6 @@ W98HUD:addTheme('photo', 'PhotoDisc (high color)', {
     captionCol = Color(180, 165, 143), --Caption Button Color
     btnCol1 = Color(218, 210, 199), --Button Light
     btnCol2 = Color(129, 112, 86), --Button Shadow
-    bgLight = Color(218, 210, 199), --Window Border Light Color
-    bgDarkShadow = Color(129, 112, 86), --Window Border Shadow Color
     titleSize = 18, --Titlebar Size
     titleTxtFont = 'Tahoma', --Titlebar Font
     titleTxtSize = sizeadd + 9, --Titlebar Font Size
@@ -923,7 +873,7 @@ W98HUD:addTheme('photo', 'PhotoDisc (high color)', {
     msgSize = sizeadd + 8, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -935,8 +885,8 @@ W98HUD:addTheme('reeeman', 'RE-man (high color)', {
     captionCol = Color(240, 208, 0), --Caption Button Color
     btnCol1 = Color(255, 240, 120), --Button Light
     btnCol2 = Color(160, 136, 0), --Button Shadow
-    bgLight = Color(255, 240, 120), --Window Border Light Color
-    bgDarkShadow = Color(160, 136, 0), --Window Border Shadow Color
+	btnCol3 = Color(240, 48, 48), --Button Dark Shadow
+	bgDarkShadow = Color(240, 48, 48), --Button Dark Shadow
     titleSize = 18, --Titlebar Size
     titleTxtFont = 'Comic Sans MS', --Titlebar Font
     titleTxtSize = sizeadd + 9, --Titlebar Font Size
@@ -960,7 +910,7 @@ W98HUD:addTheme('reeeman', 'RE-man (high color)', {
     msgSize = sizeadd + 9, -- Message Box Font Size
     msgCol = Color(128, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -972,8 +922,6 @@ W98HUD:addTheme('rock', 'Rock-n-Roll (high color)', {
     captionCol = Color(192, 192, 192), --Caption Button Color
     btnCol1 = Color(255, 255, 255), --Button Light
     btnCol2 = Color(128, 128, 128), --Button Shadow
-    bgLight = Color(255, 255, 255), --Window Border Light Color
-    bgDarkShadow = Color(128, 128, 128), --Window Border Shadow Color
     titleSize = 20, --Titlebar Size
     titleTxtFont = 'Times Roman', --Titlebar Font
     titleTxtSize = sizeadd + 9, --Titlebar Font Size
@@ -997,7 +945,7 @@ W98HUD:addTheme('rock', 'Rock-n-Roll (high color)', {
     msgSize = sizeadd + 8, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -1009,8 +957,6 @@ W98HUD:addTheme('sci', 'Science (256 color)', {
     captionCol = Color(131, 153, 177), --Caption Button Color
     btnCol1 = Color(193, 204, 217), --Button Light
     btnCol2 = Color(79, 101, 125), --Button Shadow
-    bgLight = Color(193, 204, 217), --Window Border Light Color
-    bgDarkShadow = Color(79, 101, 125), --Window Border Shadow Color
     titleSize = 18, --Titlebar Size
     titleTxtFont = 'Lucida Sans Unicode', --Titlebar Font
     titleTxtSize = sizeadd + 8, --Titlebar Font Size
@@ -1034,7 +980,7 @@ W98HUD:addTheme('sci', 'Science (256 color)', {
     msgSize = sizeadd + 8, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -1046,8 +992,6 @@ W98HUD:addTheme('scifi', 'Science Fiction (high color)', {
     captionCol = Color(192, 192, 192), --Caption Button Color
     btnCol1 = Color(255, 255, 255), --Button Light
     btnCol2 = Color(128, 128, 128), --Button Shadow
-    bgLight = Color(255, 255, 255), --Window Border Light Color
-    bgDarkShadow = Color(128, 128, 128), --Window Border Shadow Color
     titleSize = 18, --Titlebar Size
     titleTxtFont = 'OCR A Extended', --Titlebar Font
     titleTxtSize = sizeadd + 9, --Titlebar Font Size
@@ -1071,7 +1015,7 @@ W98HUD:addTheme('scifi', 'Science Fiction (high color)', {
     msgSize = sizeadd + 8, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -1083,8 +1027,6 @@ W98HUD:addTheme('snowb', 'Snowboarding (256 color)', {
     captionCol = Color(96, 104, 56), --Caption Button Color
     btnCol1 = Color(184, 192, 144), --Button Light
     btnCol2 = Color(64, 72, 40), --Button Shadow
-    bgLight = Color(184, 192, 144), --Window Border Light Color
-    bgDarkShadow = Color(64, 72, 40), --Window Border Shadow Color
     titleSize = 26, --Titlebar Size
     titleTxtFont = 'Ransom', --Titlebar Font
     titleTxtSize = sizeadd + 12, --Titlebar Font Size
@@ -1108,7 +1050,7 @@ W98HUD:addTheme('snowb', 'Snowboarding (256 color)', {
     msgSize = sizeadd + 8, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -1120,8 +1062,6 @@ W98HUD:addTheme('space', 'Space (256 color)', {
     captionCol = Color(128, 144, 152), --Caption Button Color
     btnCol1 = Color(192, 200, 208), --Button Light
     btnCol2 = Color(80, 96, 104), --Button Shadow
-    bgLight = Color(192, 200, 208), --Window Border Light Color
-    bgDarkShadow = Color(80, 96, 104), --Window Border Shadow Color
     titleSize = 20, --Titlebar Size
     titleTxtFont = 'Westminster', --Titlebar Font
     titleTxtSize = sizeadd + 12, --Titlebar Font Size
@@ -1145,7 +1085,7 @@ W98HUD:addTheme('space', 'Space (256 color)', {
     msgSize = sizeadd + 8, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -1154,11 +1094,9 @@ W98HUD:addTheme('sporty', 'Sports (256 color)', {
     desktop = Color(0, 0, 0), --Background
     bgCol1 = Color(176, 224, 160), --Window Color
     bgCol2 = Color(0, 0, 0), --Caption Button Icon Color
-    captionCol = Color(184, 188, 184), --Caption Button Color
+    captionCol = Color(176, 224, 160), --Caption Button Color
     btnCol1 = Color(216, 240, 208), --Button Light
     btnCol2 = Color(104, 184, 72), --Button Shadow
-    bgLight = Color(216, 240, 208), --Window Border Light Color
-    bgDarkShadow = Color(104, 184, 72), --Window Border Shadow Color
     titleSize = 18, --Titlebar Size
     titleTxtFont = 'OCR A Extended', --Titlebar Font
     titleTxtSize = sizeadd + 9, --Titlebar Font Size
@@ -1180,9 +1118,9 @@ W98HUD:addTheme('sporty', 'Sports (256 color)', {
     winTxtCol = Color(0, 0, 0), --Window Text Color
 	msgFont = 'W95FA', -- Message Box Font
     msgSize = sizeadd + 9, -- Message Box Font Size
-    msgCol = Color(0, 0, 0), -- Message Box Font Colour
+    msgCol = Color(0, 128, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -1194,8 +1132,6 @@ W98HUD:addTheme('hippie', 'The 60s USA (256 color)', {
     captionCol = Color(208, 104, 216), --Caption Button Color
     btnCol1 = Color(232, 184, 240), --Button Light
     btnCol2 = Color(160, 48, 168), --Button Shadow
-    bgLight = Color(232, 184, 240), --Window Border Light Color
-    bgDarkShadow = Color(160, 48, 168), --Window Border Shadow Color
     titleSize = 19, --Titlebar Size
     titleTxtFont = 'Lucida Handwriting', --Titlebar Font
     titleTxtSize = sizeadd + 9, --Titlebar Font Size
@@ -1219,7 +1155,7 @@ W98HUD:addTheme('hippie', 'The 60s USA (256 color)', {
     msgSize = sizeadd + 9, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = true -- Message Box Font Italic
+    msgItalic = true -- Message Box Font Italic  
 	}
 })
 
@@ -1231,8 +1167,6 @@ W98HUD:addTheme('goldera', 'The Golden Era (high color)', {
     captionCol = Color(184, 200, 184), --Caption Button Color
     btnCol1 = Color(220, 228, 220), --Button Light
     btnCol2 = Color(112, 143, 112), --Button Shadow
-    bgLight = Color(220, 228, 220), --Window Border Light Color
-    bgDarkShadow = Color(112, 143, 112), --Window Border Shadow Color
     titleSize = 23, --Titlebar Size
     titleTxtFont = 'Century Gothic', --Titlebar Font
     titleTxtSize = sizeadd + 12, --Titlebar Font Size
@@ -1256,7 +1190,7 @@ W98HUD:addTheme('goldera', 'The Golden Era (high color)', {
     msgSize = sizeadd + 8, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -1268,8 +1202,6 @@ W98HUD:addTheme('train', 'Travel (high color)', {
     captionCol = Color(144, 128, 112), --Caption Button Color
     btnCol1 = Color(200, 192, 184), --Button Light
     btnCol2 = Color(96, 88, 72), --Button Shadow
-    bgLight = Color(200, 192, 184), --Window Border Light Color
-    bgDarkShadow = Color(96, 88, 72), --Window Border Shadow Color
     titleSize = 19, --Titlebar Size
     titleTxtFont = 'Comic Sans MS', --Titlebar Font
     titleTxtSize = sizeadd + 9, --Titlebar Font Size
@@ -1293,7 +1225,7 @@ W98HUD:addTheme('train', 'Travel (high color)', {
     msgSize = sizeadd + 9, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -1305,8 +1237,6 @@ W98HUD:addTheme('treeh', 'Tree House (256 color)', {
     captionCol = Color(136, 136, 168), --Caption Button Color
     btnCol1 = Color(200, 200, 200), --Button Light
     btnCol2 = Color(88, 88, 120), --Button Shadow
-    bgLight = Color(200, 200, 200), --Window Border Light Color
-    bgDarkShadow = Color(88, 88, 120), --Window Border Shadow Color
     titleSize = 20, --Titlebar Size
     titleTxtFont = 'Viner Hand ITC', --Titlebar Font
     titleTxtSize = sizeadd + 8, --Titlebar Font Size
@@ -1330,7 +1260,7 @@ W98HUD:addTheme('treeh', 'Tree House (256 color)', {
     msgSize = sizeadd + 8, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -1342,8 +1272,6 @@ W98HUD:addTheme('underw', 'Underwater (high color)', {
     captionCol = Color(56, 104, 200), --Caption Button Color
     btnCol1 = Color(152, 176, 224), --Button Light
     btnCol2 = Color(40, 72, 128), --Button Shadow
-    bgLight = Color(152, 176, 224), --Window Border Light Color
-    bgDarkShadow = Color(40, 72, 128), --Window Border Shadow Color
     titleSize = 19, --Titlebar Size
     titleTxtFont = 'Haettenschweiler', --Titlebar Font
     titleTxtSize = sizeadd + 12, --Titlebar Font Size
@@ -1367,7 +1295,7 @@ W98HUD:addTheme('underw', 'Underwater (high color)', {
     msgSize = sizeadd + 9, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -1379,8 +1307,6 @@ W98HUD:addTheme('w98', 'Windows 98 (256 color)', {
     captionCol = Color(180, 195, 220), --Caption Button Color
     btnCol1 = Color(218, 225, 237), --Button Light
     btnCol2 = Color(88, 122, 177), --Button Shadow
-    bgLight = Color(218, 225, 237), --Window Border Light Color
-    bgDarkShadow = Color(88, 122, 177), --Window Border Shadow Color
     titleSize = 22, --Titlebar Size
     titleTxtFont = 'News Gothic MT', --Titlebar Font
     titleTxtSize = sizeadd + 12, --Titlebar Font Size
@@ -1404,7 +1330,7 @@ W98HUD:addTheme('w98', 'Windows 98 (256 color)', {
     msgSize = sizeadd + 8, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -1416,8 +1342,6 @@ W98HUD:addTheme('w98plus', 'Windows 98 (high color)', {
     captionCol = Color(192, 192, 192), --Caption Button Color
     btnCol1 = Color(255, 255, 255), --Button Light
     btnCol2 = Color(128, 128, 128), --Button Shadow
-    bgLight = Color(255, 255, 255), --Window Border Light Color
-    bgDarkShadow = Color(128, 128, 128), --Window Border Shadow Color
     titleSize = 18, --Titlebar Size
     titleTxtFont = 'Tahoma', --Titlebar Font
     titleTxtSize = sizeadd + 8, --Titlebar Font Size
@@ -1441,7 +1365,7 @@ W98HUD:addTheme('w98plus', 'Windows 98 (high color)', {
     msgSize = sizeadd + 8, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -1453,12 +1377,10 @@ W98HUD:addTheme('world', 'World Traveler (high color)', {
     captionCol = Color(192, 192, 192), --Caption Button Color
     btnCol1 = Color(255, 255, 255), --Button Light
     btnCol2 = Color(128, 128, 128), --Button Shadow
-    bgLight = Color(255, 255, 255), --Window Border Light Color
-    bgDarkShadow = Color(128, 128, 128), --Window Border Shadow Color
     titleSize = 23, --Titlebar Size
     titleTxtFont = 'Viner Hand ITC', --Titlebar Font
     titleTxtSize = sizeadd + 9, --Titlebar Font Size
-    titleTxtWeight = 1000, --Titlebar Text Weight
+    titleTxtWeight = 1, --Titlebar Text Weight
     titleTxtItalic = false, --Titlebar Text Italic
     aTitleCol1 = Color(112, 104, 232), --Ative Titlebar Gradient Color
     aTitleCol2 = Color(72, 0, 88), --Active Titlebar Color
@@ -1467,9 +1389,9 @@ W98HUD:addTheme('world', 'World Traveler (high color)', {
     iTitleCol2 = Color(0, 56, 112), --Inactive Titlebar Color
     iTitleTxtCol = Color(255, 255, 255), --Inactive Titlebar Text Color
     aBorderSize = 1, --Active Window Border Size
-    aBorderCol = Color(184, 188, 184), --Active Window Border Color
+    aBorderCol = Color(192, 192, 192), --Active Window Border Color
     iBorderSize = 1, --Inactive Window Border Size
-    iBorderCol = Color(184, 188, 184), --Inactive Window Border Color
+    iBorderCol = Color(192, 192, 192), --Inactive Window Border Color
     selItemsCol1 = Color(120, 80, 224), --Selected Item (Highlight) Color
     selItemsCol2 = Color(255, 255, 255), --Selected Item (Highlight) Text Color
     winBgCol = Color(255, 255, 255), --Window Content Background Color
@@ -1478,7 +1400,7 @@ W98HUD:addTheme('world', 'World Traveler (high color)', {
     msgSize = sizeadd + 8, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -1523,8 +1445,6 @@ W98HUD:addTheme('brick', 'Brick', {
     captionCol = Color(194, 191, 165), --Caption Button Color
     btnCol1 = Color(225, 224, 210), --Button Light
     btnCol2 = Color(141, 137, 97), --Button Shadow
-    bgLight = Color(225, 224, 210), --Window Border Light Color
-    bgDarkShadow = Color(141, 137, 97), --Window Border Shadow Color
     titleSize = 18, --Titlebar Size
     titleTxtFont = 'Arial', --Titlebar Font
     titleTxtSize = sizeadd + 9, --Titlebar Font Size
@@ -1548,7 +1468,7 @@ W98HUD:addTheme('brick', 'Brick', {
     msgSize = sizeadd + 8, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -1560,8 +1480,6 @@ W98HUD:addTheme('desert', 'Desert', {
     captionCol = Color(213, 204, 187), --Caption Button Color
     btnCol1 = Color(255, 255, 255), --Button Light
     btnCol2 = Color(162, 141, 104), --Button Shadow
-    bgLight = Color(255, 255, 255), --Window Border Light Color
-    bgDarkShadow = Color(162, 141, 104), --Window Border Shadow Color
     titleSize = 18, --Titlebar Size
     titleTxtFont = 'W95FA', --Titlebar Font
     titleTxtSize = sizeadd + 8, --Titlebar Font Size
@@ -1585,7 +1503,7 @@ W98HUD:addTheme('desert', 'Desert', {
     msgSize = sizeadd + 8, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -1597,8 +1515,6 @@ W98HUD:addTheme('penis', 'Eggplant', {
     captionCol = Color(144, 176, 168), --Caption Button Color
     btnCol1 = Color(200, 216, 216), --Button Light
     btnCol2 = Color(88, 128, 120), --Button Shadow
-    bgLight = Color(200, 216, 216), --Window Border Light Color
-    bgDarkShadow = Color(88, 128, 120), --Window Border Shadow Color
     titleSize = 19, --Titlebar Size
     titleTxtFont = 'Times New Roman', --Titlebar Font
     titleTxtSize = sizeadd + 11, --Titlebar Font Size
@@ -1622,7 +1538,7 @@ W98HUD:addTheme('penis', 'Eggplant', {
     msgSize = sizeadd + 9, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -1634,8 +1550,8 @@ W98HUD:addTheme('highc1_xl', 'High Contrast #1 (extra large)', {
     captionCol = Color(0, 0, 0), --Caption Button Color
     btnCol1 = Color(255, 255, 255), --Button Light
     btnCol2 = Color(128, 128, 128), --Button Shadow
-    bgLight = Color(255, 255, 255), --Window Border Light Color
-    bgDarkShadow = Color(128, 128, 128), --Window Border Shadow Color
+	btnCol3 = Color(255, 255, 255), --Button Dark Shadow
+	bgDarkShadow = Color(255, 255, 255), --Button Dark Shadow
     titleSize = 37, --Titlebar Size
     titleTxtFont = 'Arial', --Titlebar Font
     titleTxtSize = sizeadd + 22, --Titlebar Font Size
@@ -1671,8 +1587,8 @@ W98HUD:addTheme('highc1_l', 'High Contrast #1 (large)', {
     captionCol = Color(0, 0, 0), --Caption Button Color
     btnCol1 = Color(255, 255, 255), --Button Light
     btnCol2 = Color(128, 128, 128), --Button Shadow
-    bgLight = Color(255, 255, 255), --Window Border Light Color
-    bgDarkShadow = Color(128, 128, 128), --Window Border Shadow Color
+	btnCol3 = Color(255, 255, 255), --Button Dark Shadow
+	bgDarkShadow = Color(255, 255, 255), --Button Dark Shadow
     titleSize = 31, --Titlebar Size
     titleTxtFont = 'Arial', --Titlebar Font
     titleTxtSize = sizeadd + 18, --Titlebar Font Size
@@ -1708,8 +1624,8 @@ W98HUD:addTheme('highc1', 'High Contrast #1', {
     captionCol = Color(0, 0, 0), --Caption Button Color
     btnCol1 = Color(255, 255, 255), --Button Light
     btnCol2 = Color(128, 128, 128), --Button Shadow
-    bgLight = Color(255, 255, 255), --Window Border Light Color
-    bgDarkShadow = Color(128, 128, 128), --Window Border Shadow Color
+	btnCol3 = Color(255, 255, 255), --Button Dark Shadow
+	bgDarkShadow = Color(255, 255, 255), --Button Dark Shadow
     titleSize = 20, --Titlebar Size
     titleTxtFont = 'W95FA', --Titlebar Font
     titleTxtSize = sizeadd + 8, --Titlebar Font Size
@@ -1733,7 +1649,7 @@ W98HUD:addTheme('highc1', 'High Contrast #1', {
     msgSize = sizeadd + 8, -- Message Box Font Size
     msgCol = Color(255, 255, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic 
 	}
 })
 
@@ -1745,8 +1661,8 @@ W98HUD:addTheme('highc2_xl', 'High Contrast #2 (extra large)', {
     captionCol = Color(0, 0, 0), --Caption Button Color
     btnCol1 = Color(255, 255, 255), --Button Light
     btnCol2 = Color(128, 128, 128), --Button Shadow
-    bgLight = Color(255, 255, 255), --Window Border Light Color
-    bgDarkShadow = Color(128, 128, 128), --Window Border Shadow Color
+	btnCol3 = Color(255, 255, 255), --Button Dark Shadow
+	bgDarkShadow = Color(255, 255, 255), --Button Dark Shadow
     titleSize = 37, --Titlebar Size
     titleTxtFont = 'Arial', --Titlebar Font
     titleTxtSize = sizeadd + 22, --Titlebar Font Size
@@ -1770,7 +1686,7 @@ W98HUD:addTheme('highc2_xl', 'High Contrast #2 (extra large)', {
     msgSize = 23, -- Message Box Font Size
     msgCol = Color(0, 255, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -1782,8 +1698,8 @@ W98HUD:addTheme('highc2_l', 'High Contrast #2 (large)', {
     captionCol = Color(0, 0, 0), --Caption Button Color
     btnCol1 = Color(255, 255, 255), --Button Light
     btnCol2 = Color(128, 128, 128), --Button Shadow
-    bgLight = Color(255, 255, 255), --Window Border Light Color
-    bgDarkShadow = Color(128, 128, 128), --Window Border Shadow Color
+	btnCol3 = Color(255, 255, 255), --Button Dark Shadow
+	bgDarkShadow = Color(255, 255, 255), --Button Dark Shadow
     titleSize = 31, --Titlebar Size
     titleTxtFont = 'Arial', --Titlebar Font
     titleTxtSize = sizeadd + 18, --Titlebar Font Size
@@ -1807,7 +1723,7 @@ W98HUD:addTheme('highc2_l', 'High Contrast #2 (large)', {
     msgSize = 18, -- Message Box Font Size
     msgCol = Color(0, 255, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -1819,8 +1735,8 @@ W98HUD:addTheme('highc2', 'High Contrast #2', {
     captionCol = Color(0, 0, 0), --Caption Button Color
     btnCol1 = Color(255, 255, 255), --Button Light
     btnCol2 = Color(128, 128, 128), --Button Shadow
-    bgLight = Color(255, 255, 255), --Window Border Light Color
-    bgDarkShadow = Color(128, 128, 128), --Window Border Shadow Color
+	btnCol3 = Color(255, 255, 255), --Button Dark Shadow
+	bgDarkShadow = Color(255, 255, 255), --Button Dark Shadow
     titleSize = 20, --Titlebar Size
     titleTxtFont = 'W95FA', --Titlebar Font
     titleTxtSize = sizeadd + 8, --Titlebar Font Size
@@ -1844,7 +1760,7 @@ W98HUD:addTheme('highc2', 'High Contrast #2', {
     msgSize = sizeadd + 8, -- Message Box Font Size
     msgCol = Color(0, 255, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic 
 	}
 })
 
@@ -1856,8 +1772,8 @@ W98HUD:addTheme('highcb_xl', 'High Contrast Black (extra large)', {
     captionCol = Color(0, 0, 0), --Caption Button Color
     btnCol1 = Color(255, 255, 255), --Button Light
     btnCol2 = Color(192, 192, 192), --Button Shadow
-    bgLight = Color(255, 255, 255), --Window Border Light Color
-    bgDarkShadow = Color(192, 192, 192), --Window Border Shadow Color
+	btnCol3 = Color(255, 255, 255), --Button Dark Shadow
+	bgDarkShadow = Color(255, 255, 255), --Button Dark Shadow
     titleSize = 37, --Titlebar Size
     titleTxtFont = 'Arial', --Titlebar Font
     titleTxtSize = sizeadd + 22, --Titlebar Font Size
@@ -1881,7 +1797,7 @@ W98HUD:addTheme('highcb_xl', 'High Contrast Black (extra large)', {
     msgSize = 23, -- Message Box Font Size
     msgCol = Color(255, 255, 255), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -1893,8 +1809,8 @@ W98HUD:addTheme('highcb_l', 'High Contrast Black (large)', {
     captionCol = Color(0, 0, 0), --Caption Button Color
     btnCol1 = Color(255, 255, 255), --Button Light
     btnCol2 = Color(192, 192, 192), --Button Shadow
-    bgLight = Color(255, 255, 255), --Window Border Light Color
-    bgDarkShadow = Color(192, 192, 192), --Window Border Shadow Color
+	btnCol3 = Color(255, 255, 255), --Button Dark Shadow
+	bgDarkShadow = Color(255, 255, 255), --Button Dark Shadow
     titleSize = 31, --Titlebar Size
     titleTxtFont = 'Arial', --Titlebar Font
     titleTxtSize = sizeadd + 18, --Titlebar Font Size
@@ -1918,7 +1834,7 @@ W98HUD:addTheme('highcb_l', 'High Contrast Black (large)', {
     msgSize = 18, -- Message Box Font Size
     msgCol = Color(255, 255, 255), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic   
 	}
 })
 
@@ -1930,8 +1846,8 @@ W98HUD:addTheme('highcb', 'High Contrast Black', {
     captionCol = Color(0, 0, 0), --Caption Button Color
     btnCol1 = Color(255, 255, 255), --Button Light
     btnCol2 = Color(192, 192, 192), --Button Shadow
-    bgLight = Color(255, 255, 255), --Window Border Light Color
-    bgDarkShadow = Color(192, 192, 192), --Window Border Shadow Color
+	btnCol3 = Color(255, 255, 255), --Button Dark Shadow
+	bgDarkShadow = Color(255, 255, 255), --Button Dark Shadow
     titleSize = 20, --Titlebar Size
     titleTxtFont = 'W95FA', --Titlebar Font
     titleTxtSize = sizeadd + 8, --Titlebar Font Size
@@ -1955,7 +1871,7 @@ W98HUD:addTheme('highcb', 'High Contrast Black', {
     msgSize = sizeadd + 8, -- Message Box Font Size
     msgCol = Color(255, 255, 255), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -1967,8 +1883,6 @@ W98HUD:addTheme('highcw_xl', 'High Contrast White (extra large)', {
     captionCol = Color(255, 255, 255), --Caption Button Color
     btnCol1 = Color(255, 255, 255), --Button Light
     btnCol2 = Color(128, 128, 128), --Button Shadow
-    bgLight = Color(255, 255, 255), --Window Border Light Color
-    bgDarkShadow = Color(128, 128, 128), --Window Border Shadow Color
     titleSize = 38, --Titlebar Size
     titleTxtFont = 'Arial', --Titlebar Font
     titleTxtSize = sizeadd + 22, --Titlebar Font Size
@@ -1992,7 +1906,7 @@ W98HUD:addTheme('highcw_xl', 'High Contrast White (extra large)', {
     msgSize = 15, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -2004,8 +1918,6 @@ W98HUD:addTheme('highcw_l', 'High Contrast White (large)', {
     captionCol = Color(255, 255, 255), --Caption Button Color
     btnCol1 = Color(255, 255, 255), --Button Light
     btnCol2 = Color(128, 128, 128), --Button Shadow
-    bgLight = Color(255, 255, 255), --Window Border Light Color
-    bgDarkShadow = Color(128, 128, 128), --Window Border Shadow Color
     titleSize = 37, --Titlebar Size
     titleTxtFont = 'Arial', --Titlebar Font
     titleTxtSize = sizeadd + 18, --Titlebar Font Size
@@ -2029,7 +1941,7 @@ W98HUD:addTheme('highcw_l', 'High Contrast White (large)', {
     msgSize = 15, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic   
 	}
 })
 
@@ -2041,8 +1953,6 @@ W98HUD:addTheme('highcw', 'High Contrast White', {
     captionCol = Color(255, 255, 255), --Caption Button Color
     btnCol1 = Color(255, 255, 255), --Button Light
     btnCol2 = Color(128, 128, 128), --Button Shadow
-    bgLight = Color(255, 255, 255), --Window Border Light Color
-    bgDarkShadow = Color(128, 128, 128), --Window Border Shadow Color
     titleSize = 20, --Titlebar Size
     titleTxtFont = 'W95FA', --Titlebar Font
     titleTxtSize = sizeadd + 8, --Titlebar Font Size
@@ -2066,7 +1976,7 @@ W98HUD:addTheme('highcw', 'High Contrast White', {
     msgSize = sizeadd + 8, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic   
 	}
 })
 
@@ -2078,8 +1988,6 @@ W98HUD:addTheme('lilac_l', 'Lilac (large)', {
     captionCol = Color(174, 168, 217), --Caption Button Color
     btnCol1 = Color(216, 213, 236), --Button Light
     btnCol2 = Color(90, 78, 177), --Button Shadow
-    bgLight = Color(216, 213, 236), --Window Border Light Color
-    bgDarkShadow = Color(90, 78, 177), --Window Border Shadow Color
     titleSize = 29, --Titlebar Size
     titleTxtFont = 'Arial', --Titlebar Font
     titleTxtSize = sizeadd + 17, --Titlebar Font Size
@@ -2103,7 +2011,7 @@ W98HUD:addTheme('lilac_l', 'Lilac (large)', {
     msgSize = 12, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -2115,8 +2023,6 @@ W98HUD:addTheme('lilac', 'Lilac', {
     captionCol = Color(174, 168, 217), --Caption Button Color
     btnCol1 = Color(216, 213, 236), --Button Light
     btnCol2 = Color(90, 78, 177), --Button Shadow
-    bgLight = Color(216, 213, 236), --Window Border Light Color
-    bgDarkShadow = Color(90, 78, 177), --Window Border Shadow Color
     titleSize = 22, --Titlebar Size
     titleTxtFont = 'Arial', --Titlebar Font
     titleTxtSize = sizeadd + 12, --Titlebar Font Size
@@ -2140,7 +2046,7 @@ W98HUD:addTheme('lilac', 'Lilac', {
     msgSize = sizeadd + 9, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -2152,8 +2058,6 @@ W98HUD:addTheme('maple', 'Maple', {
     captionCol = Color(224, 204, 152), --Caption Button Color
     btnCol1 = Color(240, 232, 208), --Button Light
     btnCol2 = Color(192, 156, 56), --Button Shadow
-    bgLight = Color(240, 232, 208), --Window Border Light Color
-    bgDarkShadow = Color(192, 156, 56), --Window Border Shadow Color
     titleSize = 18, --Titlebar Size
     titleTxtFont = 'W95FA', --Titlebar Font
     titleTxtSize = sizeadd + 8, --Titlebar Font Size
@@ -2177,7 +2081,7 @@ W98HUD:addTheme('maple', 'Maple', {
     msgSize = sizeadd + 8, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -2189,8 +2093,6 @@ W98HUD:addTheme('marine', 'Marine (high color)', {
     captionCol = Color(136, 192, 184), --Caption Button Color
     btnCol1 = Color(196, 223, 219), --Button Light
     btnCol2 = Color(75, 141, 132), --Button Shadow
-    bgLight = Color(196, 223, 219), --Window Border Light Color
-    bgDarkShadow = Color(75, 141, 132), --Window Border Shadow Color
     titleSize = 18, --Titlebar Size
     titleTxtFont = 'W95FA', --Titlebar Font
     titleTxtSize = sizeadd + 8, --Titlebar Font Size
@@ -2214,7 +2116,7 @@ W98HUD:addTheme('marine', 'Marine (high color)', {
     msgSize = sizeadd + 8, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -2226,8 +2128,6 @@ W98HUD:addTheme('plum', 'Plum (high color)', {
     captionCol = Color(168, 152, 144), --Caption Button Color
     btnCol1 = Color(216, 208, 200), --Button Light
     btnCol2 = Color(120, 96, 88), --Button Shadow
-    bgLight = Color(216, 208, 200), --Window Border Light Color
-    bgDarkShadow = Color(120, 96, 88), --Window Border Shadow Color
     titleSize = 18, --Titlebar Size
     titleTxtFont = 'W95FA', --Titlebar Font
     titleTxtSize = sizeadd + 8, --Titlebar Font Size
@@ -2251,7 +2151,7 @@ W98HUD:addTheme('plum', 'Plum (high color)', {
     msgSize = sizeadd + 8, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -2263,8 +2163,6 @@ W98HUD:addTheme('pumpkin', 'Pumpkin (large)', {
     captionCol = Color(240, 212, 160), --Caption Button Color
     btnCol1 = Color(248, 234, 207), --Button Light
     btnCol2 = Color(222, 159, 44), --Button Shadow
-    bgLight = Color(248, 234, 207), --Window Border Light Color
-    bgDarkShadow = Color(222, 159, 44), --Window Border Shadow Color
     titleSize = 26, --Titlebar Size
     titleTxtFont = 'W95FA', --Titlebar Font
     titleTxtSize = sizeadd + 14, --Titlebar Font Size
@@ -2288,7 +2186,7 @@ W98HUD:addTheme('pumpkin', 'Pumpkin (large)', {
     msgSize = 12, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -2300,8 +2198,6 @@ W98HUD:addTheme('rainy', 'Rainy Day', {
     captionCol = Color(128, 152, 176), --Caption Button Color
     btnCol1 = Color(192, 204, 216), --Button Light
     btnCol2 = Color(78, 101, 124), --Button Shadow
-    bgLight = Color(192, 204, 216), --Window Border Light Color
-    bgDarkShadow = Color(78, 101, 124), --Window Border Shadow Color
     titleSize = 18, --Titlebar Size
     titleTxtFont = 'W95FA', --Titlebar Font
     titleTxtSize = sizeadd + 8, --Titlebar Font Size
@@ -2325,7 +2221,7 @@ W98HUD:addTheme('rainy', 'Rainy Day', {
     msgSize = sizeadd + 8, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -2337,8 +2233,6 @@ W98HUD:addTheme('rwb', 'Red, White, and Blue (VGA)', {
     captionCol = Color(192, 192, 192), --Caption Button Color
     btnCol1 = Color(255, 255, 255), --Button Light
     btnCol2 = Color(128, 128, 128), --Button Shadow
-    bgLight = Color(255, 255, 255), --Window Border Light Color
-    bgDarkShadow = Color(128, 128, 128), --Window Border Shadow Color
     titleSize = 19, --Titlebar Size
     titleTxtFont = 'Times New Roman', --Titlebar Font
     titleTxtSize = sizeadd + 11, --Titlebar Font Size
@@ -2362,7 +2256,7 @@ W98HUD:addTheme('rwb', 'Red, White, and Blue (VGA)', {
     msgSize = sizeadd + 9, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -2374,8 +2268,6 @@ W98HUD:addTheme('rose_l', 'Rose (large)', {
     captionCol = Color(208, 176, 184), --Caption Button Color
     btnCol1 = Color(232, 216, 224), --Button Light
     btnCol2 = Color(160, 96, 112), --Button Shadow
-    bgLight = Color(232, 216, 224), --Window Border Light Color
-    bgDarkShadow = Color(160, 96, 112), --Window Border Shadow Color
     titleSize = 28, --Titlebar Size
     titleTxtFont = 'Times New Roman', --Titlebar Font
     titleTxtSize = sizeadd + 17, --Titlebar Font Size
@@ -2399,7 +2291,7 @@ W98HUD:addTheme('rose_l', 'Rose (large)', {
     msgSize = 12, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -2411,8 +2303,6 @@ W98HUD:addTheme('rose', 'Rose', {
     captionCol = Color(208, 176, 184), --Caption Button Color
     btnCol1 = Color(232, 216, 224), --Button Light
     btnCol2 = Color(160, 96, 112), --Button Shadow
-    bgLight = Color(232, 216, 224), --Window Border Light Color
-    bgDarkShadow = Color(160, 96, 112), --Window Border Shadow Color
     titleSize = 23, --Titlebar Size
     titleTxtFont = 'Times New Roman', --Titlebar Font
     titleTxtSize = sizeadd + 14, --Titlebar Font Size
@@ -2436,7 +2326,7 @@ W98HUD:addTheme('rose', 'Rose', {
     msgSize = sizeadd + 8, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -2445,11 +2335,9 @@ W98HUD:addTheme('slate', 'Slate', {
     desktop = Color(65, 65, 65), --Background
     bgCol1 = Color(157, 185, 200), --Window Color
     bgCol2 = Color(0, 0, 0), --Caption Button Icon Color
-    captionCol = Color(184, 188, 184), --Caption Button Color
+    captionCol = Color(157, 185, 200), --Caption Button Color
     btnCol1 = Color(206, 220, 227), --Button Light
     btnCol2 = Color(85, 128, 151), --Button Shadow
-    bgLight = Color(206, 220, 227), --Window Border Light Color
-    bgDarkShadow = Color(85, 128, 151), --Window Border Shadow Color
     titleSize = 18, --Titlebar Size
     titleTxtFont = 'W95FA', --Titlebar Font
     titleTxtSize = sizeadd + 8, --Titlebar Font Size
@@ -2473,7 +2361,7 @@ W98HUD:addTheme('slate', 'Slate', {
     msgSize = sizeadd + 8, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -2485,8 +2373,6 @@ W98HUD:addTheme('spruce', 'Spruce', {
     captionCol = Color(162, 200, 169), --Caption Button Color
     btnCol1 = Color(208, 227, 211), --Button Light
     btnCol2 = Color(89, 151, 100), --Button Shadow
-    bgLight = Color(208, 227, 211), --Window Border Light Color
-    bgDarkShadow = Color(89, 151, 100), --Window Border Shadow Color
     titleSize = 18, --Titlebar Size
     titleTxtFont = 'W95FA', --Titlebar Font
     titleTxtSize = sizeadd + 9, --Titlebar Font Size
@@ -2510,7 +2396,7 @@ W98HUD:addTheme('spruce', 'Spruce', {
     msgSize = sizeadd + 8, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -2522,8 +2408,6 @@ W98HUD:addTheme('storm', 'Storm (VGA)', {
     captionCol = Color(192, 192, 192), --Caption Button Color
     btnCol1 = Color(255, 255, 255), --Button Light
     btnCol2 = Color(128, 128, 128), --Button Shadow
-    bgLight = Color(255, 255, 255), --Window Border Light Color
-    bgDarkShadow = Color(128, 128, 128), --Window Border Shadow Color
     titleSize = 18, --Titlebar Size
     titleTxtFont = 'Arial', --Titlebar Font
     titleTxtSize = sizeadd + 8, --Titlebar Font Size
@@ -2547,7 +2431,7 @@ W98HUD:addTheme('storm', 'Storm (VGA)', {
     msgSize = sizeadd + 8, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -2559,8 +2443,6 @@ W98HUD:addTheme('teal', 'Teal (VGA)', {
     captionCol = Color(192, 192, 192), --Caption Button Color
     btnCol1 = Color(255, 255, 255), --Button Light
     btnCol2 = Color(128, 128, 128), --Button Shadow
-    bgLight = Color(255, 255, 255), --Window Border Light Color
-    bgDarkShadow = Color(128, 128, 128), --Window Border Shadow Color
     titleSize = 18, --Titlebar Size
     titleTxtFont = 'W95FA', --Titlebar Font
     titleTxtSize = sizeadd + 8, --Titlebar Font Size
@@ -2584,7 +2466,7 @@ W98HUD:addTheme('teal', 'Teal (VGA)', {
     msgSize = sizeadd + 8, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -2596,8 +2478,6 @@ W98HUD:addTheme('wheat', 'Wheat', {
     captionCol = Color(224, 224, 160), --Caption Button Color
     btnCol1 = Color(240, 240, 208), --Button Light
     btnCol2 = Color(192, 192, 63), --Button Shadow
-    bgLight = Color(240, 240, 208), --Window Border Light Color
-    bgDarkShadow = Color(192, 192, 63), --Window Border Shadow Color
     titleSize = 18, --Titlebar Size
     titleTxtFont = 'W95FA', --Titlebar Font
     titleTxtSize = sizeadd + 8, --Titlebar Font Size
@@ -2621,7 +2501,7 @@ W98HUD:addTheme('wheat', 'Wheat', {
     msgSize = sizeadd + 8, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -2699,8 +2579,6 @@ W98HUD:addTheme('default_2k', 'Windows Classic', {
     captionCol = Color(212, 208, 200), --Caption Button Color
     btnCol1 = Color(255, 255, 255), --Button Light
     btnCol2 = Color(128, 128, 128), --Button Shadow
-    bgLight = Color(255, 255, 255), --Window Border Light Color
-    bgDarkShadow = Color(128, 128, 128), --Window Border Shadow Color
     titleSize = 18, --Titlebar Size
     titleTxtFont = 'W95FA', --Titlebar Font
     titleTxtSize = sizeadd + 8, --Titlebar Font Size
@@ -2724,6 +2602,6 @@ W98HUD:addTheme('default_2k', 'Windows Classic', {
     msgSize = sizeadd + 8, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = false -- Message Box Font Italic
+    msgItalic = false -- Message Box Font Italic  
 	}
 })

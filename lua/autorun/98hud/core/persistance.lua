@@ -18,6 +18,8 @@ local CURRENT_SAVED = 'Layout saved successfully.'
 local SAVE_ERROR = 'Attempted saving a theme with an invalid name!'
 local SAVING = 'Saving \'%s\' theme as \'%s\'...'
 local SAVE_SUCCESS = 'Theme \'%s\' saved successfully as \'%s\'.'
+local DELETING = 'Deleting \'%s\' theme...'
+local DELETE_SUCCESS = 'Deleted theme \'%s\'.'
 local DONE = 'Done.'
 
 local cache = W98HUD:Cache() -- current configuration instance
@@ -85,6 +87,20 @@ function W98HUD:saveAs(path, name)
   file.Write(filename(string.format(FOLDER_FORMAT, THEMES_FOLDER, path .. EXTENSION)), util.TableToJSON(new))
   W98HUD:addTheme(path, name, new.data, true)
   W98HUD:print(string.format(SAVE_SUCCESS, name, path .. EXTENSION)) -- notify user of successful save
+end
+
+--[[------------------------------------------------------------------
+  Deletes the given theme
+  @param {string} theme identifier
+]]--------------------------------------------------------------------
+function W98HUD:delete(id)
+  local theme = W98HUD:getTheme(id)
+  local name = theme.name
+  if not theme or theme.pure then return end
+  W98HUD:print(string.format(DELETING, name))
+  file.Delete(filename(string.format(FOLDER_FORMAT, THEMES_FOLDER, id .. EXTENSION)))
+  W98HUD:removeTheme(id)
+  W98HUD:print(string.format(DELETE_SUCCESS, name))
 end
 
 --[[------------------------------------------------------------------

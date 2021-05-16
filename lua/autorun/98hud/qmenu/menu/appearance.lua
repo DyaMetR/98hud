@@ -4,13 +4,14 @@
 
 if SERVER then return end
 
-local PRIMARY_FONT, CAPTION_ICON_FONT = '98hud_settings_1', '98hud_settings_2'
+local PRIMARY_FONT, SECONDARY_FONT, CAPTION_ICON_FONT, OK_FONT = '98hud_settings_1', '98hud_settings_2', '98hud_settings_3', '98hud_settings_4'
 local SCHEME, ITEM, FONT, SIZE, COLOUR, COLOUR2 = 'Scheme', 'Item', 'Font', 'Size', 'Color', 'Color 2'
 local FONT_TOOLTIP = 'Press ENTER to preview the new font family'
 local APPLY, CANCEL, OK = 'Apply', 'Cancel', 'OK'
 local APPEARANCE, SOUNDS = 'Appearance', 'Sounds'
 local SAVE_AS, DELETE = 'Save As...', 'Delete'
 local INACTIVE_WINDOW, ACTIVE_WINDOW = 'Inactive Window', 'Active Window'
+local MESSAGE_BOX, MESSAGE_TEXT = 'Message Box', 'Message text'
 local DEFAULT_COLOUR = Color(167, 171, 174)
 local BOLD, REGULAR = 1000, 0 -- font weights
 local SAVE_QUERY1 = 'Enter a name for your new scheme.'
@@ -19,6 +20,7 @@ local SAVED_MESSAGE = 'Scheme \'%s\' saved successfully!'
 local SAVE_ERROR = 'File names cannot contain \' / : * ? < > |'
 local DELETE_QUERY = 'Are you sure you want to delete this scheme?'
 local DELETE_ERROR = 'Default scheme \'%s\' cannot be deleted.'
+local DELETED_MESSAGE = 'Scheme \'%s\' has been deleted.'
 local YES, NO, OK = 'Yes', 'No', 'OK'
 local ILLEGAL_CHARACTERS = {'\'', '/', ':', '*', '?', '"', '<', '>', '|'}
 
@@ -33,6 +35,29 @@ local function updatePrimaryFont(cache)
     antialias = false,
     weight = cache.parameters.titleTxtWeight,
     italic = cache.parameters.titleTxtItalic
+  })
+end
+
+--[[------------------------------------------------------------------
+  Updates the secondary font with the given cache's properties
+  @param {table} cache
+]]--------------------------------------------------------------------
+local function updateSecondaryFont(cache)
+  -- message text font
+  surface.CreateFont(SECONDARY_FONT, {
+    font = cache.parameters.msgFont,
+    size = cache.parameters.msgSize,
+    antialias = false,
+    weight = cache.parameters.msgWeight,
+    italic = cache.parameters.msgItalic
+  })
+  -- ok button font
+  surface.CreateFont(OK_FONT, {
+    font = cache.parameters.msgFont,
+    size = cache.parameters.msgSize + 1,
+    antialias = false,
+    weight = 1000,
+    italic = false
   })
 end
 
@@ -111,6 +136,7 @@ function W98HUD.CreateAppereanceMenu(sheet, cache)
 
   -- cache sample fonts
   updatePrimaryFont(cache)
+  updateSecondaryFont(cache)
   updateCaptionFont(cache)
 
   -- preview window
@@ -127,12 +153,24 @@ function W98HUD.CreateAppereanceMenu(sheet, cache)
     local x, y = preview:GetWide() * .02, preview:GetTall() * .04
     local borderSize = parameters.iBorderSize
     W98HUD.COMPONENTS:window(INACTIVE_WINDOW, x, y, w, h, PRIMARY_FONT, parameters.bgCol1, parameters.iBorderCol, borderSize, parameters.iTitleTxtCol, parameters.iTitleCol1, parameters.iTitleCol2, parameters.titleSize, parameters.bgEdge, parameters.bgLight, parameters.bgShadow, parameters.bgDarkShadow)
-    W98HUD.COMPONENTS:windowControls(x + w - (5 + borderSize), y + (5 + borderSize), parameters.captionCol, parameters.btnCol1, parameters.btnCol2, parameters.btnCol3, parameters.bgCol2, true, nil, parameters.titleSize, CAPTION_ICON_FONT)
+    W98HUD.COMPONENTS:windowControls(x + w - (5 + borderSize), y + (5 + borderSize), parameters.bgCol1, parameters.bgLight, parameters.bgShadow, parameters.bgDarkShadow, parameters.bgCol2, true, nil, parameters.titleSize, CAPTION_ICON_FONT)
     -- active window
-    x, y = preview:GetWide() * .03, preview:GetWide() * .09
+    x, y = preview:GetWide() * .03, preview:GetTall() * .17
     borderSize = parameters.aBorderSize
     W98HUD.COMPONENTS:window(ACTIVE_WINDOW, x, y, w, h, PRIMARY_FONT, parameters.bgCol1, parameters.aBorderCol, parameters.aBorderSize, parameters.aTitleTxtCol, parameters.aTitleCol1, parameters.aTitleCol2, parameters.titleSize, parameters.bgEdge, parameters.bgLight, parameters.bgShadow, parameters.bgDarkShadow)
-    W98HUD.COMPONENTS:windowControls(x + w - (5 + borderSize), y + (5 + borderSize), parameters.captionCol, parameters.btnCol1, parameters.btnCol2, parameters.btnCol3, parameters.bgCol2, true, nil, parameters.titleSize, CAPTION_ICON_FONT)
+    W98HUD.COMPONENTS:windowControls(x + w - (5 + borderSize), y + (5 + borderSize), parameters.bgCol1, parameters.bgLight, parameters.bgShadow, parameters.bgDarkShadow, parameters.bgCol2, true, nil, parameters.titleSize, CAPTION_ICON_FONT)
+    -- message box
+    local titleHeight, textSize = parameters.titleSize - 18, parameters.msgSize - 9
+    local btnW, btnH = 72, 24 + textSize -- button sizes
+    w, h = preview:GetWide() * .6, (preview:GetTall() * .35) + (titleHeight + (textSize * 2) + (borderSize - 1))
+    x, y = preview:GetWide() * .09, (preview:GetTall() * .95) - h
+    W98HUD.COMPONENTS:window(MESSAGE_BOX, x, y, w, h, PRIMARY_FONT, parameters.bgCol1, parameters.aBorderCol, parameters.aBorderSize, parameters.aTitleTxtCol, parameters.aTitleCol1, parameters.aTitleCol2, parameters.titleSize, parameters.bgEdge, parameters.bgLight, parameters.bgShadow, parameters.bgDarkShadow)
+    W98HUD.COMPONENTS:windowControls(x + w - (5 + borderSize), y + (5 + borderSize), parameters.bgCol1, parameters.bgLight, parameters.bgShadow, parameters.bgDarkShadow, parameters.bgCol2, true, nil, parameters.titleSize, CAPTION_ICON_FONT)
+    draw.SimpleText(MESSAGE_TEXT, SECONDARY_FONT, x + (5 + borderSize), y + 23 + borderSize + titleHeight, parameters.msgCol)
+    -- OK button
+    y = y + h - btnH - 6 - borderSize
+    W98HUD.COMPONENTS:windowBorder(x + (w * .5) - (btnW * .5), y, btnW, btnH, parameters.bgCol1, false, parameters.bgEdge, parameters.bgLight, parameters.bgShadow, parameters.bgDarkShadow)
+    draw.SimpleText(OK, OK_FONT, x + (w * .5), y + (btnH * .5), parameters.msgCol, TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER)
   end
 
   --[[------------------------------------------------------------------
@@ -176,6 +214,7 @@ function W98HUD.CreateAppereanceMenu(sheet, cache)
         if illegal then
           Derma_Message(SAVE_ERROR, SAVE_AS, OK)
         else
+          W98HUD:applyChanges(cache.parameters, cache.sounds, _fileName)
           W98HUD:saveAs(_fileName, _name)
           LocalPlayer():ChatPrint(string.format(SAVED_MESSAGE, _name))
           sheet:GetParent():Close() -- close frame
@@ -193,7 +232,12 @@ function W98HUD.CreateAppereanceMenu(sheet, cache)
     if theme.pure then
       Derma_Message(string.format(DELETE_ERROR, theme.name), DELETE)
     else
-      LocalPlayer():ChatPrint('Not implemented.')
+      local name = theme.name
+      Derma_Query(DELETE_QUERY, DELETE, YES, function()
+        W98HUD:delete(W98HUD:getUserCfg().theme)
+        LocalPlayer():ChatPrint(string.format(DELETED_MESSAGE, name))
+        sheet:GetParent():Close()
+      end, NO)
     end
   end
 
@@ -296,6 +340,7 @@ function W98HUD.CreateAppereanceMenu(sheet, cache)
   end)
   cache:AddChangeEvent('titleSize', 'font', function() updateCaptionFont(cache) end)
   cache:AddChangeEvent({'titleTxtFont', 'titleTxtSize', 'titleTxtWeight', 'titleTxtItalic'}, 'font', function() updatePrimaryFont(cache) end)
+  cache:AddChangeEvent({'msgFont', 'msgSize', 'msgWeight', 'msgItalic'}, 'font', function() updateSecondaryFont(cache) end)
 
   --[[------------------------------------------------------------------
     Update all controls after selecting a new item or theme

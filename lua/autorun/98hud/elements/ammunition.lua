@@ -6,7 +6,7 @@ if SERVER then return end
 
 local TITLE, TITLE_WINDOWNAME = 'weapon', 'Weapon'
 local ALT, RESERVE, CLIP = 'Alt', 'Reserve', 'Clip'
-local ISW_COL1, ISW_COL2 = Color(0, 0, 120), Color(120, 0, 120)
+local ISW_COL1, ISW_COL2, ISW_COL3 = Color(0, 0, 120), Color(120, 0, 120), Color(255, 255, 255)
 
 --[[------------------------------------------------------------------
   Draws an ammunition bar
@@ -41,7 +41,7 @@ local function drawBar(x, y, w, h, label, percentage, value, isSegmented, isVali
   if isSegmented then
     W98HUD.COMPONENTS:segmentBar(x, y + 3, w, h, percentage, frameColour, colour, true, true, backgroundColour, edgeColour, lightColour, shadowColour, darkShadowColour)
   else
-    W98HUD.COMPONENTS:progressBar(x, y + 3, w, h, percentage, frameColour, colour, backgroundColour, true, edgeColour, lightColour, shadowColour, darkShadowColour)
+    W98HUD.COMPONENTS:progressBar(x, y + 3, w, h, percentage, frameColour, colour, backgroundColour, true, nil, nil, nil, nil, edgeColour, lightColour, shadowColour, darkShadowColour)
   end
 end
 
@@ -82,7 +82,7 @@ W98HUD:register(function()
   if mode % 2 == 0 then
     barCol1 = ISW_COL1
     barCol2 = ISW_COL2
-    barBgCol = config.selItemsCol2
+    barBgCol = ISW_COL3
   end
 
   -- separate title and extension with dot
@@ -127,12 +127,12 @@ W98HUD:register(function()
 
   -- draw alt
   drawBar(x, y, barW, barH, ALT, alt / maxAlt, alt, isSegmented, secondary > 0, config.bgCol1, barBgCol, barCol1, config.msgCol, config.bgEdge, config.bgLight, config.bgShadow, config.bgDarkShadow)
-  W98HUD.COMPONENTS:separator(x + barW + 11, y + 3, barH, config.bgCol1, true, config.bgLight, config.bgShadow)
+  W98HUD.COMPONENTS:separator(x + barW + math.floor(spacing * .5), y + 3, barH, config.bgCol1, true, config.bgLight, config.bgShadow)
   x = x + barW + spacing
 
   -- draw reserve
   drawBar(x, y, barW, barH, RESERVE, reserve / maxReserve, reserve, isSegmented, true, config.bgCol1, barBgCol, barCol1, config.msgCol, config.bgEdge, config.bgLight, config.bgShadow, config.bgDarkShadow)
-  W98HUD.COMPONENTS:separator(x + barW + 11, y + 3, barH, config.bgCol1, true, config.bgLight, config.bgShadow)
+  W98HUD.COMPONENTS:separator(x + barW + math.floor(spacing * .5), y + 3, barH, config.bgCol1, true, config.bgLight, config.bgShadow)
   x = x + barW + spacing
 
   -- draw clip

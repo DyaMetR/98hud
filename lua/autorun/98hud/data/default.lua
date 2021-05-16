@@ -18,7 +18,7 @@ W98HUD:addDefaultTheme('default', 'Windows Default (high color)', {
     bgCol2 = Color(0, 0, 0), -- Caption Button Icon Color
     captionCol = Color(192, 192, 192), -- Caption Button Color
     btnCol1 = Color(255, 255, 255), -- Button Light
-    btnCol2 = Color(0, 0, 0), -- Button Shadow
+    btnCol2 = Color(128, 128, 128), -- Button Shadow
     titleSize = 18, -- Titlebar Size
     titleTxtFont = 'pix MS Sans Serif 8pt', -- Titlebar Font
     titleTxtSize = 13, -- Titlebar Font Size
