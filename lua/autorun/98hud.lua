@@ -1,7 +1,7 @@
 --[[------------------------------------------------------------------
   Windows 98 styled HUD
   Version 2
-  September 17th, 2021
+  September 23th, 2021
 
   Made by DyaMetR
   * full credits found in the details below
