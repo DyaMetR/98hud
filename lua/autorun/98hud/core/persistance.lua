@@ -63,19 +63,19 @@ end
 
 --[[------------------------------------------------------------------
   Saves the current configuration in cache as a new theme
-  @param {string} file name
-  @param {string} print name
+  @param {string} theme name
 ]]--------------------------------------------------------------------
-function W98HUD:saveAs(path, name)
-  if string.len(path) <= 0 or string.len(name) <= 0 then -- failproof invalid themes
+function W98HUD:saveAs(name)
+  if string.len(name) <= 0 then -- failproof invalid themes
     W98HUD:print(SAVE_ERROR)
     return
   end
+  local fileName = string.lower(name)
   local themeFolder = filename(THEMES_FOLDER)
   if not file.Exists(themeFolder, GAME_FOLDER) then
       file.CreateDir(themeFolder, GAME_FOLDER) -- create master data folder
   end
-  W98HUD:print(string.format(SAVING, name, path .. EXTENSION)) -- start save process
+  W98HUD:print(string.format(SAVING, name, fileName .. EXTENSION)) -- start save process
   local new = { -- build new theme object
     name = name,
     data = {
@@ -84,9 +84,9 @@ function W98HUD:saveAs(path, name)
       sounds = cache.sounds
     }
   }
-  file.Write(filename(string.format(FOLDER_FORMAT, THEMES_FOLDER, path .. EXTENSION)), util.TableToJSON(new))
-  W98HUD:addTheme(path, name, new.data, true)
-  W98HUD:print(string.format(SAVE_SUCCESS, name, path .. EXTENSION)) -- notify user of successful save
+  file.Write(filename(string.format(FOLDER_FORMAT, THEMES_FOLDER, fileName .. EXTENSION)), util.TableToJSON(new))
+  W98HUD:addTheme(fileName, name, new.data, true)
+  W98HUD:print(string.format(SAVE_SUCCESS, name, fileName .. EXTENSION)) -- notify user of successful save
 end
 
 --[[------------------------------------------------------------------

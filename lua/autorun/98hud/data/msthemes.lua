@@ -1,6 +1,6 @@
 if SERVER then return end
 
-local sizeadd = 6
+local bitsize = 13
 
 W98HUD:addTheme('architec', 'Architecture', {
   parameters = {
@@ -11,9 +11,9 @@ W98HUD:addTheme('architec', 'Architecture', {
     btnCol1 = Color(255, 255, 255), --Button Light
     btnCol2 = Color(128, 128, 128), --Button Shadow
     titleSize = 20, --Titlebar Size
-    titleTxtFont = 'Times Roman', --Titlebar Font
-    titleTxtSize = sizeadd + 9, --Titlebar Font Size
-    titleTxtWeight = 1000, --Titlebar Text Weight
+    titleTxtFont = 'pix MS Serif 9PT Bold', --Titlebar Font
+    titleTxtSize = bitsize, --Titlebar Font Size
+    titleTxtWeight = 1, --Titlebar Text Weight
     titleTxtItalic = false, --Titlebar Text Italic
     aTitleCol1 = Color(224, 160, 96), --Ative Titlebar Gradient Color
     aTitleCol2 = Color(104, 56, 0), --Active Titlebar Color
@@ -30,7 +30,7 @@ W98HUD:addTheme('architec', 'Architecture', {
     winBgCol = Color(255, 255, 255), --Window Content Background Color
     winTxtCol = Color(0, 0, 0), --Window Text Color
 	msgFont = 'Arial', -- Message Box Font
-    msgSize = sizeadd + 8, -- Message Box Font Size
+    msgSize = 14, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
     msgItalic = false -- Message Box Font Italic
@@ -47,7 +47,7 @@ W98HUD:addTheme('baseb', 'Baseball (256 color)', {
     btnCol2 = Color(160, 112, 56), --Button Shadow
     titleSize = 18, --Titlebar Size
     titleTxtFont = 'Century Gothic', --Titlebar Font
-    titleTxtSize = sizeadd + 9, --Titlebar Font Size
+    titleTxtSize = 17, --Titlebar Font Size
     titleTxtWeight = 1000, --Titlebar Text Weight
     titleTxtItalic = false, --Titlebar Text Italic
     aTitleCol1 = Color(255, 0, 0), --Ative Titlebar Gradient Color
@@ -64,8 +64,8 @@ W98HUD:addTheme('baseb', 'Baseball (256 color)', {
     selItemsCol2 = Color(255, 255, 255), --Selected Item (Highlight) Text Color
     winBgCol = Color(255, 255, 255), --Window Content Background Color
     winTxtCol = Color(0, 0, 0), --Window Text Color
-	msgFont = 'W95FA', -- Message Box Font
-    msgSize = sizeadd + 8, -- Message Box Font Size
+	msgFont = 'pix MS Sans Serif 8PT', -- Message Box Font
+    msgSize = bitsize, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
     msgItalic = false -- Message Box Font Italic
@@ -82,7 +82,7 @@ W98HUD:addTheme('bugs', 'Bugs (256 color)', {
     btnCol2 = Color(104, 120, 0), --Button Shadow
     titleSize = 28, --Titlebar Size
     titleTxtFont = 'Curlz MT', --Titlebar Font
-    titleTxtSize = sizeadd + 14, --Titlebar Font Size
+    titleTxtSize = 26, --Titlebar Font Size
     titleTxtWeight = 1, --Titlebar Text Weight
     titleTxtItalic = false, --Titlebar Text Italic
     aTitleCol1 = Color(0, 0, 0), --Ative Titlebar Gradient Color
@@ -99,8 +99,8 @@ W98HUD:addTheme('bugs', 'Bugs (256 color)', {
     selItemsCol2 = Color(255, 128, 128), --Selected Item (Highlight) Text Color
     winBgCol = Color(255, 255, 255), --Window Content Background Color
     winTxtCol = Color(0, 0, 0), --Window Text Color
-	msgFont = 'Times Roman', -- Message Box Font
-    msgSize = sizeadd + 9, -- Message Box Font Size
+	msgFont = 'pix MS Serif 9PT', -- Message Box Font
+    msgSize = bitsize, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
     msgItalic = false -- Message Box Font Italic
@@ -116,8 +116,8 @@ W98HUD:addTheme('cathy', 'Cathy', {
     btnCol1 = Color(255, 255, 255), --Button Light
     btnCol2 = Color(128, 128, 128), --Button Shadow
     titleSize = 20, --Titlebar Size
-    titleTxtFont = 'Arial', --Titlebar Font
-    titleTxtSize = sizeadd + 11, --Titlebar Font Size
+    titleTxtFont = 'Times New Roman', --Titlebar Font
+    titleTxtSize = 18, --Titlebar Font Size
     titleTxtWeight = 1000, --Titlebar Text Weight
     titleTxtItalic = true, --Titlebar Text Italic
     aTitleCol1 = Color(128, 0, 128), --Ative Titlebar Gradient Color
@@ -134,8 +134,8 @@ W98HUD:addTheme('cathy', 'Cathy', {
     selItemsCol2 = Color(255, 255, 255), --Selected Item (Highlight) Text Color
     winBgCol = Color(255, 255, 255), --Window Content Background Color
     winTxtCol = Color(0, 0, 0), --Window Text Color
-	msgFont = 'W95FA', -- Message Box Font
-    msgSize = sizeadd + 8, -- Message Box Font Size
+	msgFont = 'pix MS Sans Serif 8PT', -- Message Box Font
+    msgSize = bitsize, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
     msgItalic = false -- Message Box Font Italic
@@ -152,7 +152,7 @@ W98HUD:addTheme('city', 'Cityscape', {
     btnCol2 = Color(128, 128, 128), --Button Shadow
     titleSize = 18, --Titlebar Size
     titleTxtFont = 'OCR A Extended', --Titlebar Font
-    titleTxtSize = sizeadd + 9, --Titlebar Font Size
+    titleTxtSize = 16, --Titlebar Font Size
     titleTxtWeight = 1000, --Titlebar Text Weight
     titleTxtItalic = false, --Titlebar Text Italic
     aTitleCol1 = Color(144, 168, 255), --Ative Titlebar Gradient Color
@@ -169,8 +169,8 @@ W98HUD:addTheme('city', 'Cityscape', {
     selItemsCol2 = Color(255, 255, 255), --Selected Item (Highlight) Text Color
     winBgCol = Color(255, 255, 255), --Window Content Background Color
     winTxtCol = Color(0, 0, 0), --Window Text Color
-	msgFont = 'W95FA', -- Message Box Font
-    msgSize = sizeadd + 8, -- Message Box Font Size
+	msgFont = 'pix MS Sans Serif 8PT', -- Message Box Font
+    msgSize = bitsize, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
     msgItalic = false -- Message Box Font Italic
@@ -187,7 +187,7 @@ W98HUD:addTheme('corbis', 'Corbis Photography (high color)', {
     btnCol2 = Color(128, 128, 128), --Button Shadow
     titleSize = 18, --Titlebar Size
     titleTxtFont = 'Arial', --Titlebar Font
-    titleTxtSize = sizeadd + 8, --Titlebar Font Size
+    titleTxtSize = 14, --Titlebar Font Size
     titleTxtWeight = 1000, --Titlebar Text Weight
     titleTxtItalic = false, --Titlebar Text Italic
     aTitleCol1 = Color(0, 0, 0), --Ative Titlebar Gradient Color
@@ -205,7 +205,7 @@ W98HUD:addTheme('corbis', 'Corbis Photography (high color)', {
     winBgCol = Color(255, 255, 255), --Window Content Background Color
     winTxtCol = Color(0, 0, 0), --Window Text Color
 	msgFont = 'Arial', -- Message Box Font
-    msgSize = sizeadd + 8, -- Message Box Font Size
+    msgSize = 14, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
     msgItalic = false -- Message Box Font Italic  
@@ -222,7 +222,7 @@ W98HUD:addTheme('danger', 'Dangerous Creatures (256 color)', {
     btnCol2 = Color(72, 72, 72), --Button Shadow
     titleSize = 18, --Titlebar Size
     titleTxtFont = 'Arial', --Titlebar Font
-    titleTxtSize = sizeadd + 8, --Titlebar Font Size
+    titleTxtSize = 14, --Titlebar Font Size
     titleTxtWeight = 1000, --Titlebar Text Weight
     titleTxtItalic = false, --Titlebar Text Italic
     aTitleCol1 = Color(0, 128, 128), --Ative Titlebar Gradient Color
@@ -240,7 +240,7 @@ W98HUD:addTheme('danger', 'Dangerous Creatures (256 color)', {
     winBgCol = Color(255, 255, 255), --Window Content Background Color
     winTxtCol = Color(0, 0, 0), --Window Text Color
 	msgFont = 'Arial', -- Message Box Font
-    msgSize = sizeadd + 8, -- Message Box Font Size
+    msgSize = 14, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
     msgItalic = false -- Message Box Font Italic  
@@ -257,7 +257,7 @@ W98HUD:addTheme('doon', 'Doonesbury', {
     btnCol2 = Color(96, 104, 112), --Button Shadow
     titleSize = 18, --Titlebar Size
     titleTxtFont = 'Verdana', --Titlebar Font
-    titleTxtSize = sizeadd + 9, --Titlebar Font Size
+    titleTxtSize = 16, --Titlebar Font Size
     titleTxtWeight = 1000, --Titlebar Text Weight
     titleTxtItalic = false, --Titlebar Text Italic
     aTitleCol1 = Color(255, 255, 0), --Ative Titlebar Gradient Color
@@ -274,8 +274,8 @@ W98HUD:addTheme('doon', 'Doonesbury', {
     selItemsCol2 = Color(255, 255, 255), --Selected Item (Highlight) Text Color
     winBgCol = Color(255, 255, 255), --Window Content Background Color
     winTxtCol = Color(0, 0, 0), --Window Text Color
-	msgFont = 'W95FA', -- Message Box Font
-    msgSize = sizeadd + 8, -- Message Box Font Size
+	msgFont = 'Verdana', -- Message Box Font
+    msgSize = 13, -- Message Box Font Size
     msgCol = Color(128, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
     msgItalic = false -- Message Box Font Italic  
@@ -292,7 +292,7 @@ W98HUD:addTheme('fallingl', 'Falling Leaves (high color)', {
     btnCol2 = Color(128, 128, 128), --Button Shadow
     titleSize = 18, --Titlebar Size
     titleTxtFont = 'Tempus Sans ITC', --Titlebar Font
-    titleTxtSize = sizeadd + 9, --Titlebar Font Size
+    titleTxtSize = 16, --Titlebar Font Size
     titleTxtWeight = 1000, --Titlebar Text Weight
     titleTxtItalic = false, --Titlebar Text Italic
     aTitleCol1 = Color(240, 104, 64), --Ative Titlebar Gradient Color
@@ -309,8 +309,8 @@ W98HUD:addTheme('fallingl', 'Falling Leaves (high color)', {
     selItemsCol2 = Color(255, 255, 255), --Selected Item (Highlight) Text Color
     winBgCol = Color(255, 255, 255), --Window Content Background Color
     winTxtCol = Color(0, 0, 0), --Window Text Color
-	msgFont = 'W95FA', -- Message Box Font
-    msgSize = sizeadd + 8, -- Message Box Font Size
+	msgFont = 'pix MS Sans Serif 8PT', -- Message Box Font
+    msgSize = bitsize, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
     msgItalic = false -- Message Box Font Italic  
@@ -327,7 +327,7 @@ W98HUD:addTheme('fash', 'Fashion (high color)', {
     btnCol2 = Color(128, 128, 128), --Button Shadow
     titleSize = 18, --Titlebar Size
     titleTxtFont = 'Lucida Handwriting', --Titlebar Font
-    titleTxtSize = sizeadd + 9, --Titlebar Font Size
+    titleTxtSize = 16, --Titlebar Font Size
     titleTxtWeight = 1, --Titlebar Text Weight
     titleTxtItalic = false, --Titlebar Text Italic
     aTitleCol1 = Color(184, 104, 104), --Ative Titlebar Gradient Color
@@ -344,8 +344,8 @@ W98HUD:addTheme('fash', 'Fashion (high color)', {
     selItemsCol2 = Color(255, 255, 255), --Selected Item (Highlight) Text Color
     winBgCol = Color(255, 255, 255), --Window Content Background Color
     winTxtCol = Color(0, 0, 0), --Window Text Color
-	msgFont = 'W95FA', -- Message Box Font
-    msgSize = sizeadd + 8, -- Message Box Font Size
+	msgFont = 'pix MS Sans Serif 8PT', -- Message Box Font
+    msgSize = bitsize, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
     msgItalic = false -- Message Box Font Italic  
@@ -362,7 +362,7 @@ W98HUD:addTheme('foxt', 'FoxTrot', {
     btnCol2 = Color(96, 104, 112), --Button Shadow
     titleSize = 23, --Titlebar Size
     titleTxtFont = 'Comic Sans MS', --Titlebar Font
-    titleTxtSize = sizeadd + 11, --Titlebar Font Size
+    titleTxtSize = 20, --Titlebar Font Size
     titleTxtWeight = 1000, --Titlebar Text Weight
     titleTxtItalic = false, --Titlebar Text Italic
     aTitleCol1 = Color(255, 255, 0), --Ative Titlebar Gradient Color
@@ -380,7 +380,7 @@ W98HUD:addTheme('foxt', 'FoxTrot', {
     winBgCol = Color(255, 255, 255), --Window Content Background Color
     winTxtCol = Color(0, 0, 0), --Window Text Color
 	msgFont = 'Comic Sans MS', -- Message Box Font
-    msgSize = sizeadd + 9, -- Message Box Font Size
+    msgSize = 16, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
     msgItalic = false -- Message Box Font Italic  
@@ -397,7 +397,7 @@ W98HUD:addTheme('garfielf', 'Garfield', {
     btnCol2 = Color(128, 128, 128), --Button Shadow
     titleSize = 18, --Titlebar Size
     titleTxtFont = 'Comic Sans MS', --Titlebar Font
-    titleTxtSize = sizeadd + 8, --Titlebar Font Size
+    titleTxtSize = 16, --Titlebar Font Size
     titleTxtWeight = 1000, --Titlebar Text Weight
     titleTxtItalic = false, --Titlebar Text Italic
     aTitleCol1 = Color(255, 153, 0), --Ative Titlebar Gradient Color
@@ -415,7 +415,7 @@ W98HUD:addTheme('garfielf', 'Garfield', {
     winBgCol = Color(255, 255, 255), --Window Content Background Color
     winTxtCol = Color(0, 0, 0), --Window Text Color
 	msgFont = 'Comic Sans MS', -- Message Box Font
-    msgSize = sizeadd + 8, -- Message Box Font Size
+    msgSize = 15, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
     msgItalic = false -- Message Box Font Italic  
@@ -432,7 +432,7 @@ W98HUD:addTheme('geom', 'Geometry (high color)', {
     btnCol2 = Color(128, 128, 128), --Button Shadow
     titleSize = 18, --Titlebar Size
     titleTxtFont = 'Verdana', --Titlebar Font
-    titleTxtSize = sizeadd + 9, --Titlebar Font Size
+    titleTxtSize = 15, --Titlebar Font Size
     titleTxtWeight = 1000, --Titlebar Text Weight
     titleTxtItalic = false, --Titlebar Text Italic
     aTitleCol1 = Color(0, 0, 208), --Ative Titlebar Gradient Color
@@ -449,8 +449,8 @@ W98HUD:addTheme('geom', 'Geometry (high color)', {
     selItemsCol2 = Color(255, 255, 255), --Selected Item (Highlight) Text Color
     winBgCol = Color(255, 255, 255), --Window Content Background Color
     winTxtCol = Color(0, 0, 0), --Window Text Color
-	msgFont = 'W95FA', -- Message Box Font
-    msgSize = sizeadd + 8, -- Message Box Font Size
+	msgFont = 'pix MS Sans Serif 8PT', -- Message Box Font
+    msgSize = bitsize, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
     msgItalic = false -- Message Box Font Italic  
@@ -467,7 +467,7 @@ W98HUD:addTheme('horr', 'Horror Channel (high color)', {
     btnCol2 = Color(128, 128, 128), --Button Shadow
     titleSize = 22, --Titlebar Size
     titleTxtFont = 'Dom Casual', --Titlebar Font
-    titleTxtSize = sizeadd + 12, --Titlebar Font Size
+    titleTxtSize = 20, --Titlebar Font Size
     titleTxtWeight = 1, --Titlebar Text Weight
     titleTxtItalic = true, --Titlebar Text Italic
     aTitleCol1 = Color(72, 16, 112), --Ative Titlebar Gradient Color
@@ -485,7 +485,7 @@ W98HUD:addTheme('horr', 'Horror Channel (high color)', {
     winBgCol = Color(255, 255, 255), --Window Content Background Color
     winTxtCol = Color(0, 0, 0), --Window Text Color
 	msgFont = 'Dom Casual', -- Message Box Font
-    msgSize = sizeadd + 9, -- Message Box Font Size
+    msgSize = 16, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
     msgItalic = false -- Message Box Font Italic  
@@ -502,7 +502,7 @@ W98HUD:addTheme('horse', 'Horses (256 color)', {
     btnCol2 = Color(152, 104, 120), --Button Shadow
     titleSize = 18, --Titlebar Size
     titleTxtFont = 'Lucida Handwriting', --Titlebar Font
-    titleTxtSize = sizeadd + 8, --Titlebar Font Size
+    titleTxtSize = 15, --Titlebar Font Size
     titleTxtWeight = 1000, --Titlebar Text Weight
     titleTxtItalic = false, --Titlebar Text Italic
     aTitleCol1 = Color(152, 104, 144), --Ative Titlebar Gradient Color
@@ -519,8 +519,8 @@ W98HUD:addTheme('horse', 'Horses (256 color)', {
     selItemsCol2 = Color(255, 255, 255), --Selected Item (Highlight) Text Color
     winBgCol = Color(255, 255, 255), --Window Content Background Color
     winTxtCol = Color(0, 0, 0), --Window Text Color
-	msgFont = 'W95FA', -- Message Box Font
-    msgSize = sizeadd + 8, -- Message Box Font Size
+	msgFont = 'pix MS Sans Serif 8PT', -- Message Box Font
+    msgSize = bitsize, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
     msgItalic = false -- Message Box Font Italic  
@@ -537,7 +537,7 @@ W98HUD:addTheme('comp', 'Inside your Computer (high color)', {
     btnCol2 = Color(96, 152, 96), --Button Shadow
     titleSize = 20, --Titlebar Size
     titleTxtFont = 'Abadi MT Condensed Light', --Titlebar Font
-    titleTxtSize = sizeadd + 12, --Titlebar Font Size
+    titleTxtSize = 17, --Titlebar Font Size
     titleTxtWeight = 1000, --Titlebar Text Weight
     titleTxtItalic = false, --Titlebar Text Italic
     aTitleCol1 = Color(224, 0, 0), --Ative Titlebar Gradient Color
@@ -555,7 +555,7 @@ W98HUD:addTheme('comp', 'Inside your Computer (high color)', {
     winBgCol = Color(255, 255, 255), --Window Content Background Color
     winTxtCol = Color(0, 0, 0), --Window Text Color
 	msgFont = 'Abadi MT Condensed Light', -- Message Box Font
-    msgSize = sizeadd + 9, -- Message Box Font Size
+    msgSize = 15, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
     msgItalic = false -- Message Box Font Italic  
@@ -572,7 +572,7 @@ W98HUD:addTheme('jazz', 'Jazz', {
     btnCol2 = Color(128, 128, 128), --Button Shadow
     titleSize = 23, --Titlebar Size
     titleTxtFont = 'Curlz MT', --Titlebar Font
-    titleTxtSize = sizeadd + 12, --Titlebar Font Size
+    titleTxtSize = 21, --Titlebar Font Size
     titleTxtWeight = 1, --Titlebar Text Weight
     titleTxtItalic = false, --Titlebar Text Italic
     aTitleCol1 = Color(208, 0, 0), --Ative Titlebar Gradient Color
@@ -589,8 +589,8 @@ W98HUD:addTheme('jazz', 'Jazz', {
     selItemsCol2 = Color(255, 255, 255), --Selected Item (Highlight) Text Color
     winBgCol = Color(255, 255, 255), --Window Content Background Color
     winTxtCol = Color(0, 0, 0), --Window Text Color
-	msgFont = 'W95FA', -- Message Box Font
-    msgSize = sizeadd + 8, -- Message Box Font Size
+	msgFont = 'pix MS Sans Serif 8PT', -- Message Box Font
+    msgSize = bitsize, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
     msgItalic = false -- Message Box Font Italic  
@@ -607,7 +607,7 @@ W98HUD:addTheme('jung', 'Jungle (256 color)', {
     btnCol2 = Color(128, 112, 64), --Button Shadow
     titleSize = 22, --Titlebar Size
     titleTxtFont = 'Matisse ITC', --Titlebar Font
-    titleTxtSize = sizeadd + 12, --Titlebar Font Size
+    titleTxtSize = 18, --Titlebar Font Size
     titleTxtWeight = 1, --Titlebar Text Weight
     titleTxtItalic = false, --Titlebar Text Italic
     aTitleCol1 = Color(0, 0, 0), --Ative Titlebar Gradient Color
@@ -625,7 +625,7 @@ W98HUD:addTheme('jung', 'Jungle (256 color)', {
     winBgCol = Color(255, 255, 255), --Window Content Background Color
     winTxtCol = Color(0, 0, 0), --Window Text Color
 	msgFont = 'Tempus Sans ITC', -- Message Box Font
-    msgSize = sizeadd + 9, -- Message Box Font Size
+    msgSize = 15, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
     msgItalic = false -- Message Box Font Italic  
@@ -642,7 +642,7 @@ W98HUD:addTheme('davinki', 'Leonardo da Vinci (256 color)', {
     btnCol2 = Color(139, 101, 92), --Button Shadow
     titleSize = 20, --Titlebar Size
     titleTxtFont = 'Book Antiqua', --Titlebar Font
-    titleTxtSize = sizeadd + 9, --Titlebar Font Size
+    titleTxtSize = 17, --Titlebar Font Size
     titleTxtWeight = 1000, --Titlebar Text Weight
     titleTxtItalic = false, --Titlebar Text Italic
     aTitleCol1 = Color(128, 0, 0), --Ative Titlebar Gradient Color
@@ -659,8 +659,8 @@ W98HUD:addTheme('davinki', 'Leonardo da Vinci (256 color)', {
     selItemsCol2 = Color(255, 255, 255), --Selected Item (Highlight) Text Color
     winBgCol = Color(255, 255, 255), --Window Content Background Color
     winTxtCol = Color(0, 0, 0), --Window Text Color
-	msgFont = 'W95FA', -- Message Box Font
-    msgSize = sizeadd + 9, -- Message Box Font Size
+	msgFont = 'pix MS Sans Serif 9PT', -- Message Box Font
+    msgSize = bitsize, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
     msgItalic = false -- Message Box Font Italic  
@@ -677,8 +677,8 @@ W98HUD:addTheme('mess', 'Messy Room (256 color)', {
     btnCol2 = Color(72, 72, 168), --Button Shadow
     titleSize = 18, --Titlebar Size
     titleTxtFont = 'Tempus Sans ITC', --Titlebar Font
-    titleTxtSize = sizeadd + 9, --Titlebar Font Size
-    titleTxtWeight = 1, --Titlebar Text Weight
+    titleTxtSize = 15, --Titlebar Font Size
+    titleTxtWeight = 1000, --Titlebar Text Weight
     titleTxtItalic = false, --Titlebar Text Italic
     aTitleCol1 = Color(128, 0, 128), --Ative Titlebar Gradient Color
     aTitleCol2 = Color(128, 0, 128), --Active Titlebar Color
@@ -695,7 +695,7 @@ W98HUD:addTheme('mess', 'Messy Room (256 color)', {
     winBgCol = Color(255, 255, 255), --Window Content Background Color
     winTxtCol = Color(0, 0, 0), --Window Text Color
 	msgFont = 'Tempus Sans ITC', -- Message Box Font
-    msgSize = sizeadd + 9, -- Message Box Font Size
+    msgSize = 15, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
     msgItalic = false -- Message Box Font Italic  
@@ -712,7 +712,7 @@ W98HUD:addTheme('morewin', 'More Windows (high color)', {
     btnCol2 = Color(96, 104, 112), --Button Shadow
     titleSize = 22, --Titlebar Size
     titleTxtFont = 'News Gothic MT', --Titlebar Font
-    titleTxtSize = sizeadd + 12, --Titlebar Font Size
+    titleTxtSize = 21, --Titlebar Font Size
     titleTxtWeight = 1000, --Titlebar Text Weight
     titleTxtItalic = true, --Titlebar Text Italic
     aTitleCol1 = Color(0, 0, 0), --Ative Titlebar Gradient Color
@@ -729,8 +729,8 @@ W98HUD:addTheme('morewin', 'More Windows (high color)', {
     selItemsCol2 = Color(0, 0, 0), --Selected Item (Highlight) Text Color
     winBgCol = Color(255, 255, 255), --Window Content Background Color
     winTxtCol = Color(0, 0, 0), --Window Text Color
-	msgFont = 'W95FA', -- Message Box Font
-    msgSize = sizeadd + 8, -- Message Box Font Size
+	msgFont = 'pix MS Sans Serif 8PT', -- Message Box Font
+    msgSize = bitsize, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
     msgItalic = false -- Message Box Font Italic  
@@ -747,7 +747,7 @@ W98HUD:addTheme('myster', 'Mystery (high color)', {
     btnCol2 = Color(72, 80, 72), --Button Shadow
     titleSize = 18, --Titlebar Size
     titleTxtFont = 'Calisto MT', --Titlebar Font
-    titleTxtSize = sizeadd + 9, --Titlebar Font Size
+    titleTxtSize = 15, --Titlebar Font Size
     titleTxtWeight = 1000, --Titlebar Text Weight
     titleTxtItalic = false, --Titlebar Text Italic
     aTitleCol1 = Color(80, 56, 64), --Ative Titlebar Gradient Color
@@ -764,8 +764,8 @@ W98HUD:addTheme('myster', 'Mystery (high color)', {
     selItemsCol2 = Color(255, 255, 255), --Selected Item (Highlight) Text Color
     winBgCol = Color(255, 255, 255), --Window Content Background Color
     winTxtCol = Color(0, 0, 0), --Window Text Color
-	msgFont = 'W95FA', -- Message Box Font
-    msgSize = sizeadd + 8, -- Message Box Font Size
+	msgFont = 'pix MS Sans Serif 8PT', -- Message Box Font
+    msgSize = bitsize, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
     msgItalic = false -- Message Box Font Italic  
@@ -782,7 +782,7 @@ W98HUD:addTheme('nat', 'Nature (high color)', {
     btnCol2 = Color(176, 136, 72), --Button Shadow
     titleSize = 18, --Titlebar Size
     titleTxtFont = 'Copperplate Gothic Bold', --Titlebar Font
-    titleTxtSize = sizeadd + 11, --Titlebar Font Size
+    titleTxtSize = 17, --Titlebar Font Size
     titleTxtWeight = 1000, --Titlebar Text Weight
     titleTxtItalic = false, --Titlebar Text Italic
     aTitleCol1 = Color(0, 72, 72), --Ative Titlebar Gradient Color
@@ -799,8 +799,8 @@ W98HUD:addTheme('nat', 'Nature (high color)', {
     selItemsCol2 = Color(0, 0, 0), --Selected Item (Highlight) Text Color
     winBgCol = Color(255, 255, 255), --Window Content Background Color
     winTxtCol = Color(0, 0, 0), --Window Text Color
-	msgFont = 'W95FA', -- Message Box Font
-    msgSize = sizeadd + 9, -- Message Box Font Size
+	msgFont = 'pix MS Sans Serif 9PT', -- Message Box Font
+    msgSize = bitsize, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
     msgItalic = false -- Message Box Font Italic  
@@ -817,7 +817,7 @@ W98HUD:addTheme('peanus', 'Peanuts', {
     btnCol2 = Color(128, 128, 128), --Button Shadow
     titleSize = 20, --Titlebar Size
     titleTxtFont = 'Comic Sans MS', --Titlebar Font
-    titleTxtSize = sizeadd + 9, --Titlebar Font Size
+    titleTxtSize = 17, --Titlebar Font Size
     titleTxtWeight = 1, --Titlebar Text Weight
     titleTxtItalic = false, --Titlebar Text Italic
     aTitleCol1 = Color(0, 128, 0), --Ative Titlebar Gradient Color
@@ -835,7 +835,7 @@ W98HUD:addTheme('peanus', 'Peanuts', {
     winBgCol = Color(255, 255, 255), --Window Content Background Color
     winTxtCol = Color(0, 0, 0), --Window Text Color
 	msgFont = 'Comic Sans MS', -- Message Box Font
-    msgSize = sizeadd + 8, -- Message Box Font Size
+    msgSize = 15, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
     msgItalic = false -- Message Box Font Italic  
@@ -852,7 +852,7 @@ W98HUD:addTheme('photo', 'PhotoDisc (high color)', {
     btnCol2 = Color(129, 112, 86), --Button Shadow
     titleSize = 18, --Titlebar Size
     titleTxtFont = 'Tahoma', --Titlebar Font
-    titleTxtSize = sizeadd + 9, --Titlebar Font Size
+    titleTxtSize = 15, --Titlebar Font Size
     titleTxtWeight = 1000, --Titlebar Text Weight
     titleTxtItalic = false, --Titlebar Text Italic
     aTitleCol1 = Color(122, 106, 95), --Ative Titlebar Gradient Color
@@ -869,8 +869,8 @@ W98HUD:addTheme('photo', 'PhotoDisc (high color)', {
     selItemsCol2 = Color(255, 255, 255), --Selected Item (Highlight) Text Color
     winBgCol = Color(255, 255, 255), --Window Content Background Color
     winTxtCol = Color(0, 0, 0), --Window Text Color
-	msgFont = 'W95FA', -- Message Box Font
-    msgSize = sizeadd + 8, -- Message Box Font Size
+	msgFont = 'pix MS Sans Serif 8PT', -- Message Box Font
+    msgSize = bitsize, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
     msgItalic = false -- Message Box Font Italic  
@@ -889,7 +889,7 @@ W98HUD:addTheme('reeeman', 'RE-man (high color)', {
 	bgDarkShadow = Color(240, 48, 48), --Button Dark Shadow
     titleSize = 18, --Titlebar Size
     titleTxtFont = 'Comic Sans MS', --Titlebar Font
-    titleTxtSize = sizeadd + 9, --Titlebar Font Size
+    titleTxtSize = 16, --Titlebar Font Size
     titleTxtWeight = 1000, --Titlebar Text Weight
     titleTxtItalic = false, --Titlebar Text Italic
     aTitleCol1 = Color(216, 24, 48), --Ative Titlebar Gradient Color
@@ -907,7 +907,7 @@ W98HUD:addTheme('reeeman', 'RE-man (high color)', {
     winBgCol = Color(255, 255, 255), --Window Content Background Color
     winTxtCol = Color(0, 0, 0), --Window Text Color
 	msgFont = 'Comic Sans MS', -- Message Box Font
-    msgSize = sizeadd + 9, -- Message Box Font Size
+    msgSize = 15, -- Message Box Font Size
     msgCol = Color(128, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
     msgItalic = false -- Message Box Font Italic  
@@ -923,8 +923,8 @@ W98HUD:addTheme('rock', 'Rock-n-Roll (high color)', {
     btnCol1 = Color(255, 255, 255), --Button Light
     btnCol2 = Color(128, 128, 128), --Button Shadow
     titleSize = 20, --Titlebar Size
-    titleTxtFont = 'Times Roman', --Titlebar Font
-    titleTxtSize = sizeadd + 9, --Titlebar Font Size
+    titleTxtFont = 'Times New Roman', --Titlebar Font
+    titleTxtSize = 14, --Titlebar Font Size
     titleTxtWeight = 1000, --Titlebar Text Weight
     titleTxtItalic = false, --Titlebar Text Italic
     aTitleCol1 = Color(192, 0, 96), --Ative Titlebar Gradient Color
@@ -941,8 +941,8 @@ W98HUD:addTheme('rock', 'Rock-n-Roll (high color)', {
     selItemsCol2 = Color(255, 255, 255), --Selected Item (Highlight) Text Color
     winBgCol = Color(255, 255, 255), --Window Content Background Color
     winTxtCol = Color(0, 0, 0), --Window Text Color
-	msgFont = 'W95FA', -- Message Box Font
-    msgSize = sizeadd + 8, -- Message Box Font Size
+	msgFont = 'pix MS Sans Serif 8PT', -- Message Box Font
+    msgSize = bitsize, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
     msgItalic = false -- Message Box Font Italic  
@@ -959,7 +959,7 @@ W98HUD:addTheme('sci', 'Science (256 color)', {
     btnCol2 = Color(79, 101, 125), --Button Shadow
     titleSize = 18, --Titlebar Size
     titleTxtFont = 'Lucida Sans Unicode', --Titlebar Font
-    titleTxtSize = sizeadd + 8, --Titlebar Font Size
+    titleTxtSize = 15, --Titlebar Font Size
     titleTxtWeight = 1000, --Titlebar Text Weight
     titleTxtItalic = false, --Titlebar Text Italic
     aTitleCol1 = Color(0, 128, 128), --Ative Titlebar Gradient Color
@@ -976,8 +976,8 @@ W98HUD:addTheme('sci', 'Science (256 color)', {
     selItemsCol2 = Color(255, 255, 255), --Selected Item (Highlight) Text Color
     winBgCol = Color(255, 255, 255), --Window Content Background Color
     winTxtCol = Color(0, 0, 0), --Window Text Color
-	msgFont = 'W95FA', -- Message Box Font
-    msgSize = sizeadd + 8, -- Message Box Font Size
+	msgFont = 'pix MS Sans Serif 8PT', -- Message Box Font
+    msgSize = bitsize, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
     msgItalic = false -- Message Box Font Italic  
@@ -994,7 +994,7 @@ W98HUD:addTheme('scifi', 'Science Fiction (high color)', {
     btnCol2 = Color(128, 128, 128), --Button Shadow
     titleSize = 18, --Titlebar Size
     titleTxtFont = 'OCR A Extended', --Titlebar Font
-    titleTxtSize = sizeadd + 9, --Titlebar Font Size
+    titleTxtSize = 15, --Titlebar Font Size
     titleTxtWeight = 1000, --Titlebar Text Weight
     titleTxtItalic = false, --Titlebar Text Italic
     aTitleCol1 = Color(232, 176, 0), --Ative Titlebar Gradient Color
@@ -1011,8 +1011,8 @@ W98HUD:addTheme('scifi', 'Science Fiction (high color)', {
     selItemsCol2 = Color(255, 255, 255), --Selected Item (Highlight) Text Color
     winBgCol = Color(255, 255, 255), --Window Content Background Color
     winTxtCol = Color(0, 0, 0), --Window Text Color
-	msgFont = 'W95FA', -- Message Box Font
-    msgSize = sizeadd + 8, -- Message Box Font Size
+	msgFont = 'pix MS Sans Serif 8PT', -- Message Box Font
+    msgSize = bitsize, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
     msgItalic = false -- Message Box Font Italic  
@@ -1029,7 +1029,7 @@ W98HUD:addTheme('snowb', 'Snowboarding (256 color)', {
     btnCol2 = Color(64, 72, 40), --Button Shadow
     titleSize = 26, --Titlebar Size
     titleTxtFont = 'Ransom', --Titlebar Font
-    titleTxtSize = sizeadd + 12, --Titlebar Font Size
+    titleTxtSize = 24, --Titlebar Font Size
     titleTxtWeight = 1, --Titlebar Text Weight
     titleTxtItalic = false, --Titlebar Text Italic
     aTitleCol1 = Color(40, 16, 64), --Ative Titlebar Gradient Color
@@ -1046,8 +1046,8 @@ W98HUD:addTheme('snowb', 'Snowboarding (256 color)', {
     selItemsCol2 = Color(255, 255, 255), --Selected Item (Highlight) Text Color
     winBgCol = Color(255, 255, 255), --Window Content Background Color
     winTxtCol = Color(0, 0, 0), --Window Text Color
-	msgFont = 'W95FA', -- Message Box Font
-    msgSize = sizeadd + 8, -- Message Box Font Size
+	msgFont = 'pix MS Sans Serif 8PT', -- Message Box Font
+    msgSize = bitsize, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
     msgItalic = false -- Message Box Font Italic  
@@ -1064,7 +1064,7 @@ W98HUD:addTheme('space', 'Space (256 color)', {
     btnCol2 = Color(80, 96, 104), --Button Shadow
     titleSize = 20, --Titlebar Size
     titleTxtFont = 'Westminster', --Titlebar Font
-    titleTxtSize = sizeadd + 12, --Titlebar Font Size
+    titleTxtSize = 18, --Titlebar Font Size
     titleTxtWeight = 1, --Titlebar Text Weight
     titleTxtItalic = false, --Titlebar Text Italic
     aTitleCol1 = Color(0, 0, 0), --Ative Titlebar Gradient Color
@@ -1082,7 +1082,7 @@ W98HUD:addTheme('space', 'Space (256 color)', {
     winBgCol = Color(255, 255, 255), --Window Content Background Color
     winTxtCol = Color(0, 0, 0), --Window Text Color
 	msgFont = 'OCR A Extended', -- Message Box Font
-    msgSize = sizeadd + 8, -- Message Box Font Size
+    msgSize = 13, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
     msgItalic = false -- Message Box Font Italic  
@@ -1099,7 +1099,7 @@ W98HUD:addTheme('sporty', 'Sports (256 color)', {
     btnCol2 = Color(104, 184, 72), --Button Shadow
     titleSize = 18, --Titlebar Size
     titleTxtFont = 'OCR A Extended', --Titlebar Font
-    titleTxtSize = sizeadd + 9, --Titlebar Font Size
+    titleTxtSize = 13, --Titlebar Font Size
     titleTxtWeight = 1, --Titlebar Text Weight
     titleTxtItalic = false, --Titlebar Text Italic
     aTitleCol1 = Color(0, 128, 128), --Ative Titlebar Gradient Color
@@ -1116,8 +1116,8 @@ W98HUD:addTheme('sporty', 'Sports (256 color)', {
     selItemsCol2 = Color(0, 0, 0), --Selected Item (Highlight) Text Color
     winBgCol = Color(255, 255, 255), --Window Content Background Color
     winTxtCol = Color(0, 0, 0), --Window Text Color
-	msgFont = 'W95FA', -- Message Box Font
-    msgSize = sizeadd + 9, -- Message Box Font Size
+	msgFont = 'pix MS Sans Serif 9PT', -- Message Box Font
+    msgSize = bitsize, -- Message Box Font Size
     msgCol = Color(0, 128, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
     msgItalic = false -- Message Box Font Italic  
@@ -1134,7 +1134,7 @@ W98HUD:addTheme('hippie', 'The 60s USA (256 color)', {
     btnCol2 = Color(160, 48, 168), --Button Shadow
     titleSize = 19, --Titlebar Size
     titleTxtFont = 'Lucida Handwriting', --Titlebar Font
-    titleTxtSize = sizeadd + 9, --Titlebar Font Size
+    titleTxtSize = 16, --Titlebar Font Size
     titleTxtWeight = 1000, --Titlebar Text Weight
     titleTxtItalic = false, --Titlebar Text Italic
     aTitleCol1 = Color(0, 0, 128), --Ative Titlebar Gradient Color
@@ -1151,11 +1151,11 @@ W98HUD:addTheme('hippie', 'The 60s USA (256 color)', {
     selItemsCol2 = Color(0, 0, 0), --Selected Item (Highlight) Text Color
     winBgCol = Color(255, 255, 255), --Window Content Background Color
     winTxtCol = Color(0, 0, 0), --Window Text Color
-	msgFont = 'W95FA', -- Message Box Font
-    msgSize = sizeadd + 9, -- Message Box Font Size
+	msgFont = 'pix MS Sans Serif 9PT Italic', -- Message Box Font
+    msgSize = bitsize, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
-    msgItalic = true -- Message Box Font Italic  
+    msgItalic = false -- Message Box Font Italic  
 	}
 })
 
@@ -1169,7 +1169,7 @@ W98HUD:addTheme('goldera', 'The Golden Era (high color)', {
     btnCol2 = Color(112, 143, 112), --Button Shadow
     titleSize = 23, --Titlebar Size
     titleTxtFont = 'Century Gothic', --Titlebar Font
-    titleTxtSize = sizeadd + 12, --Titlebar Font Size
+    titleTxtSize = 21, --Titlebar Font Size
     titleTxtWeight = 1, --Titlebar Text Weight
     titleTxtItalic = false, --Titlebar Text Italic
     aTitleCol1 = Color(216, 112, 96), --Ative Titlebar Gradient Color
@@ -1186,8 +1186,8 @@ W98HUD:addTheme('goldera', 'The Golden Era (high color)', {
     selItemsCol2 = Color(255, 248, 224), --Selected Item (Highlight) Text Color
     winBgCol = Color(255, 255, 255), --Window Content Background Color
     winTxtCol = Color(0, 0, 0), --Window Text Color
-	msgFont = 'W95FA', -- Message Box Font
-    msgSize = sizeadd + 8, -- Message Box Font Size
+	msgFont = 'pix MS Sans Serif 8PT', -- Message Box Font
+    msgSize = bitsize, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
     msgItalic = false -- Message Box Font Italic  
@@ -1204,7 +1204,7 @@ W98HUD:addTheme('train', 'Travel (high color)', {
     btnCol2 = Color(96, 88, 72), --Button Shadow
     titleSize = 19, --Titlebar Size
     titleTxtFont = 'Comic Sans MS', --Titlebar Font
-    titleTxtSize = sizeadd + 9, --Titlebar Font Size
+    titleTxtSize = 17, --Titlebar Font Size
     titleTxtWeight = 1000, --Titlebar Text Weight
     titleTxtItalic = false, --Titlebar Text Italic
     aTitleCol1 = Color(64, 72, 120), --Ative Titlebar Gradient Color
@@ -1221,8 +1221,8 @@ W98HUD:addTheme('train', 'Travel (high color)', {
     selItemsCol2 = Color(224, 224, 216), --Selected Item (Highlight) Text Color
     winBgCol = Color(255, 255, 255), --Window Content Background Color
     winTxtCol = Color(0, 0, 0), --Window Text Color
-	msgFont = 'W95FA', -- Message Box Font
-    msgSize = sizeadd + 9, -- Message Box Font Size
+	msgFont = 'pix MS Sans Serif 9PT', -- Message Box Font
+    msgSize = bitsize, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
     msgItalic = false -- Message Box Font Italic  
@@ -1239,7 +1239,7 @@ W98HUD:addTheme('treeh', 'Tree House (256 color)', {
     btnCol2 = Color(88, 88, 120), --Button Shadow
     titleSize = 20, --Titlebar Size
     titleTxtFont = 'Viner Hand ITC', --Titlebar Font
-    titleTxtSize = sizeadd + 8, --Titlebar Font Size
+    titleTxtSize = 17, --Titlebar Font Size
     titleTxtWeight = 1, --Titlebar Text Weight
     titleTxtItalic = false, --Titlebar Text Italic
     aTitleCol1 = Color(192, 192, 192), --Ative Titlebar Gradient Color
@@ -1256,8 +1256,8 @@ W98HUD:addTheme('treeh', 'Tree House (256 color)', {
     selItemsCol2 = Color(0, 0, 0), --Selected Item (Highlight) Text Color
     winBgCol = Color(255, 255, 255), --Window Content Background Color
     winTxtCol = Color(0, 0, 0), --Window Text Color
-	msgFont = 'W95FA', -- Message Box Font
-    msgSize = sizeadd + 8, -- Message Box Font Size
+	msgFont = 'pix MS Sans Serif 8PT', -- Message Box Font
+    msgSize = bitsize, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
     msgItalic = false -- Message Box Font Italic  
@@ -1274,7 +1274,7 @@ W98HUD:addTheme('underw', 'Underwater (high color)', {
     btnCol2 = Color(40, 72, 128), --Button Shadow
     titleSize = 19, --Titlebar Size
     titleTxtFont = 'Haettenschweiler', --Titlebar Font
-    titleTxtSize = sizeadd + 12, --Titlebar Font Size
+    titleTxtSize = 18, --Titlebar Font Size
     titleTxtWeight = 1, --Titlebar Text Weight
     titleTxtItalic = false, --Titlebar Text Italic
     aTitleCol1 = Color(0, 0, 48), --Ative Titlebar Gradient Color
@@ -1292,7 +1292,7 @@ W98HUD:addTheme('underw', 'Underwater (high color)', {
     winBgCol = Color(255, 255, 255), --Window Content Background Color
     winTxtCol = Color(0, 0, 0), --Window Text Color
 	msgFont = 'Haettenschweiler', -- Message Box Font
-    msgSize = sizeadd + 9, -- Message Box Font Size
+    msgSize = 18, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
     msgItalic = false -- Message Box Font Italic  
@@ -1309,7 +1309,7 @@ W98HUD:addTheme('w98', 'Windows 98 (256 color)', {
     btnCol2 = Color(88, 122, 177), --Button Shadow
     titleSize = 22, --Titlebar Size
     titleTxtFont = 'News Gothic MT', --Titlebar Font
-    titleTxtSize = sizeadd + 12, --Titlebar Font Size
+    titleTxtSize = 21, --Titlebar Font Size
     titleTxtWeight = 1000, --Titlebar Text Weight
     titleTxtItalic = true, --Titlebar Text Italic
     aTitleCol1 = Color(0, 128, 128), --Ative Titlebar Gradient Color
@@ -1326,8 +1326,8 @@ W98HUD:addTheme('w98', 'Windows 98 (256 color)', {
     selItemsCol2 = Color(255, 255, 255), --Selected Item (Highlight) Text Color
     winBgCol = Color(255, 255, 255), --Window Content Background Color
     winTxtCol = Color(0, 0, 0), --Window Text Color
-	msgFont = 'W95FA', -- Message Box Font
-    msgSize = sizeadd + 8, -- Message Box Font Size
+	msgFont = 'pix MS Sans Serif 8PT', -- Message Box Font
+    msgSize = bitsize, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
     msgItalic = false -- Message Box Font Italic  
@@ -1344,7 +1344,7 @@ W98HUD:addTheme('w98plus', 'Windows 98 (high color)', {
     btnCol2 = Color(128, 128, 128), --Button Shadow
     titleSize = 18, --Titlebar Size
     titleTxtFont = 'Tahoma', --Titlebar Font
-    titleTxtSize = sizeadd + 8, --Titlebar Font Size
+    titleTxtSize = 13, --Titlebar Font Size
     titleTxtWeight = 1000, --Titlebar Text Weight
     titleTxtItalic = false, --Titlebar Text Italic
     aTitleCol1 = Color(32, 144, 216), --Ative Titlebar Gradient Color
@@ -1362,7 +1362,7 @@ W98HUD:addTheme('w98plus', 'Windows 98 (high color)', {
     winBgCol = Color(255, 255, 255), --Window Content Background Color
     winTxtCol = Color(0, 0, 0), --Window Text Color
 	msgFont = 'Tahoma', -- Message Box Font
-    msgSize = sizeadd + 8, -- Message Box Font Size
+    msgSize = 13, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
     msgItalic = false -- Message Box Font Italic  
@@ -1379,7 +1379,7 @@ W98HUD:addTheme('world', 'World Traveler (high color)', {
     btnCol2 = Color(128, 128, 128), --Button Shadow
     titleSize = 23, --Titlebar Size
     titleTxtFont = 'Viner Hand ITC', --Titlebar Font
-    titleTxtSize = sizeadd + 9, --Titlebar Font Size
+    titleTxtSize = 21, --Titlebar Font Size
     titleTxtWeight = 1, --Titlebar Text Weight
     titleTxtItalic = false, --Titlebar Text Italic
     aTitleCol1 = Color(112, 104, 232), --Ative Titlebar Gradient Color
@@ -1396,8 +1396,8 @@ W98HUD:addTheme('world', 'World Traveler (high color)', {
     selItemsCol2 = Color(255, 255, 255), --Selected Item (Highlight) Text Color
     winBgCol = Color(255, 255, 255), --Window Content Background Color
     winTxtCol = Color(0, 0, 0), --Window Text Color
-	msgFont = 'W95FA', -- Message Box Font
-    msgSize = sizeadd + 8, -- Message Box Font Size
+	msgFont = 'pix MS Sans Serif 8PT', -- Message Box Font
+    msgSize = bitsize, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
     msgItalic = false -- Message Box Font Italic  
@@ -1413,9 +1413,9 @@ W98HUD:addTheme('default98', 'Windows Default', {
     btnCol1 = Color(255, 255, 255), -- Button Light
     btnCol2 = Color(128, 128, 128), -- Button Shadow
     titleSize = 18, -- Titlebar Size
-    titleTxtFont = 'W95FA', -- Titlebar Font
-    titleTxtSize = sizeadd + 8, -- Titlebar Font Size
-    titleTxtWeight = 1000, -- Titlebar Text Weight
+    titleTxtFont = 'pix MS Sans Serif 8PT Bold', -- Titlebar Font
+    titleTxtSize = bitsize, -- Titlebar Font Size
+    titleTxtWeight = 1, -- Titlebar Text Weight
     titleTxtItalic = false, -- Titlebar Text Italic
     aTitleCol1 = Color(0, 0, 128), -- Ative Titlebar Gradient Color
     aTitleCol2 = Color(0, 0, 128), -- Active Titlebar Color
@@ -1429,8 +1429,8 @@ W98HUD:addTheme('default98', 'Windows Default', {
     iBorderCol = Color(192, 192, 192), -- Inactive Window Border Color
     selItemsCol1 = Color(0, 0, 128), -- Selected Item (Highlight) Color
     selItemsCol2 = Color(255, 255, 255), -- Selected Item (Highlight) Text Color
-    msgFont = 'W95FA', -- Message Box Font
-    msgSize = sizeadd + 8, -- Message Box Font Size
+    msgFont = 'pix MS Sans Serif 8PT', -- Message Box Font
+    msgSize = bitsize, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
     msgItalic = false -- Message Box Font Italic
@@ -1447,7 +1447,7 @@ W98HUD:addTheme('brick', 'Brick', {
     btnCol2 = Color(141, 137, 97), --Button Shadow
     titleSize = 18, --Titlebar Size
     titleTxtFont = 'Arial', --Titlebar Font
-    titleTxtSize = sizeadd + 9, --Titlebar Font Size
+    titleTxtSize = 15, --Titlebar Font Size
     titleTxtWeight = 1000, --Titlebar Text Weight
     titleTxtItalic = false, --Titlebar Text Italic
     aTitleCol1 = Color(128, 0, 0), --Ative Titlebar Gradient Color
@@ -1464,8 +1464,8 @@ W98HUD:addTheme('brick', 'Brick', {
     selItemsCol2 = Color(255, 255, 255), --Selected Item (Highlight) Text Color
     winBgCol = Color(255, 255, 255), --Window Content Background Color
     winTxtCol = Color(0, 0, 0), --Window Text Color
-	msgFont = 'W95FA', -- Message Box Font
-    msgSize = sizeadd + 8, -- Message Box Font Size
+	msgFont = 'pix MS Sans Serif 8PT', -- Message Box Font
+    msgSize = bitsize, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
     msgItalic = false -- Message Box Font Italic  
@@ -1481,9 +1481,9 @@ W98HUD:addTheme('desert', 'Desert', {
     btnCol1 = Color(255, 255, 255), --Button Light
     btnCol2 = Color(162, 141, 104), --Button Shadow
     titleSize = 18, --Titlebar Size
-    titleTxtFont = 'W95FA', --Titlebar Font
-    titleTxtSize = sizeadd + 8, --Titlebar Font Size
-    titleTxtWeight = 1000, --Titlebar Text Weight
+    titleTxtFont = 'pix MS Sans Serif 8PT Bold', --Titlebar Font
+    titleTxtSize = bitsize, --Titlebar Font Size
+    titleTxtWeight = 1, --Titlebar Text Weight
     titleTxtItalic = false, --Titlebar Text Italic
     aTitleCol1 = Color(0, 128, 128), --Ative Titlebar Gradient Color
     aTitleCol2 = Color(0, 128, 128), --Active Titlebar Color
@@ -1499,8 +1499,8 @@ W98HUD:addTheme('desert', 'Desert', {
     selItemsCol2 = Color(255, 255, 255), --Selected Item (Highlight) Text Color
     winBgCol = Color(255, 255, 255), --Window Content Background Color
     winTxtCol = Color(0, 0, 0), --Window Text Color
-	msgFont = 'W95FA', -- Message Box Font
-    msgSize = sizeadd + 8, -- Message Box Font Size
+	msgFont = 'pix MS Sans Serif 8PT', -- Message Box Font
+    msgSize = bitsize, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
     msgItalic = false -- Message Box Font Italic  
@@ -1517,7 +1517,7 @@ W98HUD:addTheme('penis', 'Eggplant', {
     btnCol2 = Color(88, 128, 120), --Button Shadow
     titleSize = 19, --Titlebar Size
     titleTxtFont = 'Times New Roman', --Titlebar Font
-    titleTxtSize = sizeadd + 11, --Titlebar Font Size
+    titleTxtSize = 18, --Titlebar Font Size
     titleTxtWeight = 1000, --Titlebar Text Weight
     titleTxtItalic = false, --Titlebar Text Italic
     aTitleCol1 = Color(88, 128, 120), --Ative Titlebar Gradient Color
@@ -1535,7 +1535,7 @@ W98HUD:addTheme('penis', 'Eggplant', {
     winBgCol = Color(255, 255, 255), --Window Content Background Color
     winTxtCol = Color(0, 0, 0), --Window Text Color
 	msgFont = 'Times New Roman', -- Message Box Font
-    msgSize = sizeadd + 9, -- Message Box Font Size
+    msgSize = 15, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
     msgItalic = false -- Message Box Font Italic  
@@ -1554,7 +1554,7 @@ W98HUD:addTheme('highc1_xl', 'High Contrast #1 (extra large)', {
 	bgDarkShadow = Color(255, 255, 255), --Button Dark Shadow
     titleSize = 37, --Titlebar Size
     titleTxtFont = 'Arial', --Titlebar Font
-    titleTxtSize = sizeadd + 22, --Titlebar Font Size
+    titleTxtSize = 29, --Titlebar Font Size
     titleTxtWeight = 1000, --Titlebar Text Weight
     titleTxtItalic = false, --Titlebar Text Italic
     aTitleCol1 = Color(0, 0, 255), --Ative Titlebar Gradient Color
@@ -1591,7 +1591,7 @@ W98HUD:addTheme('highc1_l', 'High Contrast #1 (large)', {
 	bgDarkShadow = Color(255, 255, 255), --Button Dark Shadow
     titleSize = 31, --Titlebar Size
     titleTxtFont = 'Arial', --Titlebar Font
-    titleTxtSize = sizeadd + 18, --Titlebar Font Size
+    titleTxtSize = 21, --Titlebar Font Size
     titleTxtWeight = 1000, --Titlebar Text Weight
     titleTxtItalic = false, --Titlebar Text Italic
     aTitleCol1 = Color(0, 0, 255), --Ative Titlebar Gradient Color
@@ -1609,7 +1609,7 @@ W98HUD:addTheme('highc1_l', 'High Contrast #1 (large)', {
     winBgCol = Color(255, 255, 255), --Window Content Background Color
     winTxtCol = Color(0, 0, 0), --Window Text Color
 	msgFont = 'Arial', -- Message Box Font
-    msgSize = 18, -- Message Box Font Size
+    msgSize = 21, -- Message Box Font Size
     msgCol = Color(255, 255, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
     msgItalic = false -- Message Box Font Italic
@@ -1627,9 +1627,9 @@ W98HUD:addTheme('highc1', 'High Contrast #1', {
 	btnCol3 = Color(255, 255, 255), --Button Dark Shadow
 	bgDarkShadow = Color(255, 255, 255), --Button Dark Shadow
     titleSize = 20, --Titlebar Size
-    titleTxtFont = 'W95FA', --Titlebar Font
-    titleTxtSize = sizeadd + 8, --Titlebar Font Size
-    titleTxtWeight = 1000, --Titlebar Text Weight
+    titleTxtFont = 'pix MS Sans Serif 8PT Bold', --Titlebar Font
+    titleTxtSize = bitsize, --Titlebar Font Size
+    titleTxtWeight = 1, --Titlebar Text Weight
     titleTxtItalic = false, --Titlebar Text Italic
     aTitleCol1 = Color(0, 0, 255), --Ative Titlebar Gradient Color
     aTitleCol2 = Color(0, 0, 255), --Active Titlebar Color
@@ -1645,8 +1645,8 @@ W98HUD:addTheme('highc1', 'High Contrast #1', {
     selItemsCol2 = Color(255, 255, 255), --Selected Item (Highlight) Text Color
     winBgCol = Color(255, 255, 255), --Window Content Background Color
     winTxtCol = Color(0, 0, 0), --Window Text Color
-	msgFont = 'W95FA', -- Message Box Font
-    msgSize = sizeadd + 8, -- Message Box Font Size
+	msgFont = 'pix MS Sans Serif 8PT Bold', -- Message Box Font
+    msgSize = bitsize, -- Message Box Font Size
     msgCol = Color(255, 255, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
     msgItalic = false -- Message Box Font Italic 
@@ -1665,7 +1665,7 @@ W98HUD:addTheme('highc2_xl', 'High Contrast #2 (extra large)', {
 	bgDarkShadow = Color(255, 255, 255), --Button Dark Shadow
     titleSize = 37, --Titlebar Size
     titleTxtFont = 'Arial', --Titlebar Font
-    titleTxtSize = sizeadd + 22, --Titlebar Font Size
+    titleTxtSize = 29, --Titlebar Font Size
     titleTxtWeight = 1000, --Titlebar Text Weight
     titleTxtItalic = false, --Titlebar Text Italic
     aTitleCol1 = Color(0, 255, 255), --Ative Titlebar Gradient Color
@@ -1702,7 +1702,7 @@ W98HUD:addTheme('highc2_l', 'High Contrast #2 (large)', {
 	bgDarkShadow = Color(255, 255, 255), --Button Dark Shadow
     titleSize = 31, --Titlebar Size
     titleTxtFont = 'Arial', --Titlebar Font
-    titleTxtSize = sizeadd + 18, --Titlebar Font Size
+    titleTxtSize = 21, --Titlebar Font Size
     titleTxtWeight = 1000, --Titlebar Text Weight
     titleTxtItalic = false, --Titlebar Text Italic
     aTitleCol1 = Color(0, 255, 255), --Ative Titlebar Gradient Color
@@ -1720,7 +1720,7 @@ W98HUD:addTheme('highc2_l', 'High Contrast #2 (large)', {
     winBgCol = Color(255, 255, 255), --Window Content Background Color
     winTxtCol = Color(0, 0, 0), --Window Text Color
 	msgFont = 'Arial', -- Message Box Font
-    msgSize = 18, -- Message Box Font Size
+    msgSize = 21, -- Message Box Font Size
     msgCol = Color(0, 255, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
     msgItalic = false -- Message Box Font Italic  
@@ -1738,9 +1738,9 @@ W98HUD:addTheme('highc2', 'High Contrast #2', {
 	btnCol3 = Color(255, 255, 255), --Button Dark Shadow
 	bgDarkShadow = Color(255, 255, 255), --Button Dark Shadow
     titleSize = 20, --Titlebar Size
-    titleTxtFont = 'W95FA', --Titlebar Font
-    titleTxtSize = sizeadd + 8, --Titlebar Font Size
-    titleTxtWeight = 1000, --Titlebar Text Weight
+    titleTxtFont = 'pix MS Sans Serif 8PT Bold', --Titlebar Font
+    titleTxtSize = bitsize, --Titlebar Font Size
+    titleTxtWeight = 1, --Titlebar Text Weight
     titleTxtItalic = false, --Titlebar Text Italic
     aTitleCol1 = Color(0, 255, 255), --Ative Titlebar Gradient Color
     aTitleCol2 = Color(0, 255, 255), --Active Titlebar Color
@@ -1756,8 +1756,8 @@ W98HUD:addTheme('highc2', 'High Contrast #2', {
     selItemsCol2 = Color(255, 255, 255), --Selected Item (Highlight) Text Color
     winBgCol = Color(255, 255, 255), --Window Content Background Color
     winTxtCol = Color(0, 0, 0), --Window Text Color
-	msgFont = 'W95FA', -- Message Box Font
-    msgSize = sizeadd + 8, -- Message Box Font Size
+	msgFont = 'pix MS Sans Serif 8PT Bold', -- Message Box Font
+    msgSize = bitsize, -- Message Box Font Size
     msgCol = Color(0, 255, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
     msgItalic = false -- Message Box Font Italic 
@@ -1776,7 +1776,7 @@ W98HUD:addTheme('highcb_xl', 'High Contrast Black (extra large)', {
 	bgDarkShadow = Color(255, 255, 255), --Button Dark Shadow
     titleSize = 37, --Titlebar Size
     titleTxtFont = 'Arial', --Titlebar Font
-    titleTxtSize = sizeadd + 22, --Titlebar Font Size
+    titleTxtSize = 29, --Titlebar Font Size
     titleTxtWeight = 1000, --Titlebar Text Weight
     titleTxtItalic = false, --Titlebar Text Italic
     aTitleCol1 = Color(128, 0, 128), --Ative Titlebar Gradient Color
@@ -1813,7 +1813,7 @@ W98HUD:addTheme('highcb_l', 'High Contrast Black (large)', {
 	bgDarkShadow = Color(255, 255, 255), --Button Dark Shadow
     titleSize = 31, --Titlebar Size
     titleTxtFont = 'Arial', --Titlebar Font
-    titleTxtSize = sizeadd + 18, --Titlebar Font Size
+    titleTxtSize = 21, --Titlebar Font Size
     titleTxtWeight = 1000, --Titlebar Text Weight
     titleTxtItalic = false, --Titlebar Text Italic
     aTitleCol1 = Color(128, 0, 128), --Ative Titlebar Gradient Color
@@ -1831,7 +1831,7 @@ W98HUD:addTheme('highcb_l', 'High Contrast Black (large)', {
     winBgCol = Color(255, 255, 255), --Window Content Background Color
     winTxtCol = Color(0, 0, 0), --Window Text Color
 	msgFont = 'Arial', -- Message Box Font
-    msgSize = 18, -- Message Box Font Size
+    msgSize = 21, -- Message Box Font Size
     msgCol = Color(255, 255, 255), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
     msgItalic = false -- Message Box Font Italic   
@@ -1849,9 +1849,9 @@ W98HUD:addTheme('highcb', 'High Contrast Black', {
 	btnCol3 = Color(255, 255, 255), --Button Dark Shadow
 	bgDarkShadow = Color(255, 255, 255), --Button Dark Shadow
     titleSize = 20, --Titlebar Size
-    titleTxtFont = 'W95FA', --Titlebar Font
-    titleTxtSize = sizeadd + 8, --Titlebar Font Size
-    titleTxtWeight = 1000, --Titlebar Text Weight
+    titleTxtFont = 'pix MS Sans Serif 8PT Bold', --Titlebar Font
+    titleTxtSize = bitsize, --Titlebar Font Size
+    titleTxtWeight = 1, --Titlebar Text Weight
     titleTxtItalic = false, --Titlebar Text Italic
     aTitleCol1 = Color(128, 0, 128), --Ative Titlebar Gradient Color
     aTitleCol2 = Color(128, 0, 128), --Active Titlebar Color
@@ -1867,8 +1867,8 @@ W98HUD:addTheme('highcb', 'High Contrast Black', {
     selItemsCol2 = Color(255, 255, 255), --Selected Item (Highlight) Text Color
     winBgCol = Color(255, 255, 255), --Window Content Background Color
     winTxtCol = Color(0, 0, 0), --Window Text Color
-	msgFont = 'W95FA', -- Message Box Font
-    msgSize = sizeadd + 8, -- Message Box Font Size
+	msgFont = 'pix MS Sans Serif 8PT', -- Message Box Font
+    msgSize = bitsize, -- Message Box Font Size
     msgCol = Color(255, 255, 255), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
     msgItalic = false -- Message Box Font Italic  
@@ -1885,7 +1885,7 @@ W98HUD:addTheme('highcw_xl', 'High Contrast White (extra large)', {
     btnCol2 = Color(128, 128, 128), --Button Shadow
     titleSize = 38, --Titlebar Size
     titleTxtFont = 'Arial', --Titlebar Font
-    titleTxtSize = sizeadd + 22, --Titlebar Font Size
+    titleTxtSize = 29, --Titlebar Font Size
     titleTxtWeight = 1000, --Titlebar Text Weight
     titleTxtItalic = false, --Titlebar Text Italic
     aTitleCol1 = Color(0, 0, 0), --Ative Titlebar Gradient Color
@@ -1903,7 +1903,7 @@ W98HUD:addTheme('highcw_xl', 'High Contrast White (extra large)', {
     winBgCol = Color(255, 255, 255), --Window Content Background Color
     winTxtCol = Color(0, 0, 0), --Window Text Color
 	msgFont = 'Arial', -- Message Box Font
-    msgSize = 15, -- Message Box Font Size
+    msgSize = 23, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
     msgItalic = false -- Message Box Font Italic  
@@ -1920,7 +1920,7 @@ W98HUD:addTheme('highcw_l', 'High Contrast White (large)', {
     btnCol2 = Color(128, 128, 128), --Button Shadow
     titleSize = 37, --Titlebar Size
     titleTxtFont = 'Arial', --Titlebar Font
-    titleTxtSize = sizeadd + 18, --Titlebar Font Size
+    titleTxtSize = 21, --Titlebar Font Size
     titleTxtWeight = 1000, --Titlebar Text Weight
     titleTxtItalic = false, --Titlebar Text Italic
     aTitleCol1 = Color(0, 0, 0), --Ative Titlebar Gradient Color
@@ -1938,7 +1938,7 @@ W98HUD:addTheme('highcw_l', 'High Contrast White (large)', {
     winBgCol = Color(255, 255, 255), --Window Content Background Color
     winTxtCol = Color(0, 0, 0), --Window Text Color
 	msgFont = 'Arial', -- Message Box Font
-    msgSize = 15, -- Message Box Font Size
+    msgSize = 21, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
     msgItalic = false -- Message Box Font Italic   
@@ -1954,9 +1954,9 @@ W98HUD:addTheme('highcw', 'High Contrast White', {
     btnCol1 = Color(255, 255, 255), --Button Light
     btnCol2 = Color(128, 128, 128), --Button Shadow
     titleSize = 20, --Titlebar Size
-    titleTxtFont = 'W95FA', --Titlebar Font
-    titleTxtSize = sizeadd + 8, --Titlebar Font Size
-    titleTxtWeight = 1000, --Titlebar Text Weight
+    titleTxtFont = 'pix MS Sans Serif 8PT Bold', --Titlebar Font
+    titleTxtSize = bitsize, --Titlebar Font Size
+    titleTxtWeight = 1, --Titlebar Text Weight
     titleTxtItalic = false, --Titlebar Text Italic
     aTitleCol1 = Color(0, 0, 0), --Ative Titlebar Gradient Color
     aTitleCol2 = Color(0, 0, 0), --Active Titlebar Color
@@ -1972,8 +1972,8 @@ W98HUD:addTheme('highcw', 'High Contrast White', {
     selItemsCol2 = Color(255, 255, 255), --Selected Item (Highlight) Text Color
     winBgCol = Color(255, 255, 255), --Window Content Background Color
     winTxtCol = Color(0, 0, 0), --Window Text Color
-	msgFont = 'W95FA', -- Message Box Font
-    msgSize = sizeadd + 8, -- Message Box Font Size
+	msgFont = 'pix MS Sans Serif 8PT', -- Message Box Font
+    msgSize = bitsize, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
     msgItalic = false -- Message Box Font Italic   
@@ -1990,7 +1990,7 @@ W98HUD:addTheme('lilac_l', 'Lilac (large)', {
     btnCol2 = Color(90, 78, 177), --Button Shadow
     titleSize = 29, --Titlebar Size
     titleTxtFont = 'Arial', --Titlebar Font
-    titleTxtSize = sizeadd + 17, --Titlebar Font Size
+    titleTxtSize = 23, --Titlebar Font Size
     titleTxtWeight = 1000, --Titlebar Text Weight
     titleTxtItalic = false, --Titlebar Text Italic
     aTitleCol1 = Color(90, 78, 177), --Ative Titlebar Gradient Color
@@ -2008,7 +2008,7 @@ W98HUD:addTheme('lilac_l', 'Lilac (large)', {
     winBgCol = Color(255, 255, 255), --Window Content Background Color
     winTxtCol = Color(0, 0, 0), --Window Text Color
 	msgFont = 'Arial', -- Message Box Font
-    msgSize = 12, -- Message Box Font Size
+    msgSize = 18, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
     msgItalic = false -- Message Box Font Italic  
@@ -2025,7 +2025,7 @@ W98HUD:addTheme('lilac', 'Lilac', {
     btnCol2 = Color(90, 78, 177), --Button Shadow
     titleSize = 22, --Titlebar Size
     titleTxtFont = 'Arial', --Titlebar Font
-    titleTxtSize = sizeadd + 12, --Titlebar Font Size
+    titleTxtSize = 17, --Titlebar Font Size
     titleTxtWeight = 1000, --Titlebar Text Weight
     titleTxtItalic = false, --Titlebar Text Italic
     aTitleCol1 = Color(90, 78, 177), --Ative Titlebar Gradient Color
@@ -2043,7 +2043,7 @@ W98HUD:addTheme('lilac', 'Lilac', {
     winBgCol = Color(255, 255, 255), --Window Content Background Color
     winTxtCol = Color(0, 0, 0), --Window Text Color
 	msgFont = 'Arial', -- Message Box Font
-    msgSize = sizeadd + 9, -- Message Box Font Size
+    msgSize = 16, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
     msgItalic = false -- Message Box Font Italic  
@@ -2059,9 +2059,9 @@ W98HUD:addTheme('maple', 'Maple', {
     btnCol1 = Color(240, 232, 208), --Button Light
     btnCol2 = Color(192, 156, 56), --Button Shadow
     titleSize = 18, --Titlebar Size
-    titleTxtFont = 'W95FA', --Titlebar Font
-    titleTxtSize = sizeadd + 8, --Titlebar Font Size
-    titleTxtWeight = 1000, --Titlebar Text Weight
+    titleTxtFont = 'pix MS Sans Serif 8PT Bold', --Titlebar Font
+    titleTxtSize = bitsize, --Titlebar Font Size
+    titleTxtWeight = 1, --Titlebar Text Weight
     titleTxtItalic = false, --Titlebar Text Italic
     aTitleCol1 = Color(128, 0, 0), --Ative Titlebar Gradient Color
     aTitleCol2 = Color(128, 0, 0), --Active Titlebar Color
@@ -2077,8 +2077,8 @@ W98HUD:addTheme('maple', 'Maple', {
     selItemsCol2 = Color(0, 0, 0), --Selected Item (Highlight) Text Color
     winBgCol = Color(255, 255, 255), --Window Content Background Color
     winTxtCol = Color(0, 0, 0), --Window Text Color
-	msgFont = 'W95FA', -- Message Box Font
-    msgSize = sizeadd + 8, -- Message Box Font Size
+	msgFont = 'pix MS Sans Serif 8PT', -- Message Box Font
+    msgSize = bitsize, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
     msgItalic = false -- Message Box Font Italic  
@@ -2094,9 +2094,9 @@ W98HUD:addTheme('marine', 'Marine (high color)', {
     btnCol1 = Color(196, 223, 219), --Button Light
     btnCol2 = Color(75, 141, 132), --Button Shadow
     titleSize = 18, --Titlebar Size
-    titleTxtFont = 'W95FA', --Titlebar Font
-    titleTxtSize = sizeadd + 8, --Titlebar Font Size
-    titleTxtWeight = 1000, --Titlebar Text Weight
+    titleTxtFont = 'pix MS Sans Serif 8PT Bold', --Titlebar Font
+    titleTxtSize = bitsize, --Titlebar Font Size
+    titleTxtWeight = 1, --Titlebar Text Weight
     titleTxtItalic = false, --Titlebar Text Italic
     aTitleCol1 = Color(0, 0, 128), --Ative Titlebar Gradient Color
     aTitleCol2 = Color(0, 0, 128), --Active Titlebar Color
@@ -2112,8 +2112,8 @@ W98HUD:addTheme('marine', 'Marine (high color)', {
     selItemsCol2 = Color(255, 255, 255), --Selected Item (Highlight) Text Color
     winBgCol = Color(255, 255, 255), --Window Content Background Color
     winTxtCol = Color(0, 0, 0), --Window Text Color
-	msgFont = 'W95FA', -- Message Box Font
-    msgSize = sizeadd + 8, -- Message Box Font Size
+	msgFont = 'pix MS Sans Serif 8PT', -- Message Box Font
+    msgSize = bitsize, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
     msgItalic = false -- Message Box Font Italic  
@@ -2129,9 +2129,9 @@ W98HUD:addTheme('plum', 'Plum (high color)', {
     btnCol1 = Color(216, 208, 200), --Button Light
     btnCol2 = Color(120, 96, 88), --Button Shadow
     titleSize = 18, --Titlebar Size
-    titleTxtFont = 'W95FA', --Titlebar Font
-    titleTxtSize = sizeadd + 8, --Titlebar Font Size
-    titleTxtWeight = 1000, --Titlebar Text Weight
+    titleTxtFont = 'pix MS Sans Serif 8PT Bold', --Titlebar Font
+    titleTxtSize = bitsize, --Titlebar Font Size
+    titleTxtWeight = 1, --Titlebar Text Weight
     titleTxtItalic = false, --Titlebar Text Italic
     aTitleCol1 = Color(72, 64, 96), --Ative Titlebar Gradient Color
     aTitleCol2 = Color(72, 64, 96), --Active Titlebar Color
@@ -2147,8 +2147,8 @@ W98HUD:addTheme('plum', 'Plum (high color)', {
     selItemsCol2 = Color(216, 208, 200), --Selected Item (Highlight) Text Color
     winBgCol = Color(255, 255, 255), --Window Content Background Color
     winTxtCol = Color(0, 0, 0), --Window Text Color
-	msgFont = 'W95FA', -- Message Box Font
-    msgSize = sizeadd + 8, -- Message Box Font Size
+	msgFont = 'pix MS Sans Serif 8PT', -- Message Box Font
+    msgSize = bitsize, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
     msgItalic = false -- Message Box Font Italic  
@@ -2164,9 +2164,9 @@ W98HUD:addTheme('pumpkin', 'Pumpkin (large)', {
     btnCol1 = Color(248, 234, 207), --Button Light
     btnCol2 = Color(222, 159, 44), --Button Shadow
     titleSize = 26, --Titlebar Size
-    titleTxtFont = 'W95FA', --Titlebar Font
-    titleTxtSize = sizeadd + 14, --Titlebar Font Size
-    titleTxtWeight = 1000, --Titlebar Text Weight
+    titleTxtFont = 'pix MS Sans Serif 14PT Bold', --Titlebar Font
+    titleTxtSize = bitsize + 10, --Titlebar Font Size
+    titleTxtWeight = 1, --Titlebar Text Weight
     titleTxtItalic = false, --Titlebar Text Italic
     aTitleCol1 = Color(222, 159, 44), --Ative Titlebar Gradient Color
     aTitleCol2 = Color(222, 159, 44), --Active Titlebar Color
@@ -2182,8 +2182,8 @@ W98HUD:addTheme('pumpkin', 'Pumpkin (large)', {
     selItemsCol2 = Color(255, 255, 255), --Selected Item (Highlight) Text Color
     winBgCol = Color(255, 255, 255), --Window Content Background Color
     winTxtCol = Color(0, 0, 0), --Window Text Color
-	msgFont = 'W95FA', -- Message Box Font
-    msgSize = 12, -- Message Box Font Size
+	msgFont = 'pix MS Sans Serif 12PT', -- Message Box Font
+    msgSize = bitsize + 8, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
     msgItalic = false -- Message Box Font Italic  
@@ -2199,9 +2199,9 @@ W98HUD:addTheme('rainy', 'Rainy Day', {
     btnCol1 = Color(192, 204, 216), --Button Light
     btnCol2 = Color(78, 101, 124), --Button Shadow
     titleSize = 18, --Titlebar Size
-    titleTxtFont = 'W95FA', --Titlebar Font
-    titleTxtSize = sizeadd + 8, --Titlebar Font Size
-    titleTxtWeight = 1000, --Titlebar Text Weight
+    titleTxtFont = 'pix MS Sans Serif 8PT Bold', --Titlebar Font
+    titleTxtSize = bitsize, --Titlebar Font Size
+    titleTxtWeight = 1, --Titlebar Text Weight
     titleTxtItalic = false, --Titlebar Text Italic
     aTitleCol1 = Color(78, 101, 124), --Ative Titlebar Gradient Color
     aTitleCol2 = Color(78, 101, 124), --Active Titlebar Color
@@ -2217,8 +2217,8 @@ W98HUD:addTheme('rainy', 'Rainy Day', {
     selItemsCol2 = Color(255, 255, 255), --Selected Item (Highlight) Text Color
     winBgCol = Color(255, 255, 255), --Window Content Background Color
     winTxtCol = Color(0, 0, 0), --Window Text Color
-	msgFont = 'W95FA', -- Message Box Font
-    msgSize = sizeadd + 8, -- Message Box Font Size
+	msgFont = 'pix MS Sans Serif 8PT', -- Message Box Font
+    msgSize = bitsize, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
     msgItalic = false -- Message Box Font Italic  
@@ -2235,7 +2235,7 @@ W98HUD:addTheme('rwb', 'Red, White, and Blue (VGA)', {
     btnCol2 = Color(128, 128, 128), --Button Shadow
     titleSize = 19, --Titlebar Size
     titleTxtFont = 'Times New Roman', --Titlebar Font
-    titleTxtSize = sizeadd + 11, --Titlebar Font Size
+    titleTxtSize = 17, --Titlebar Font Size
     titleTxtWeight = 1000, --Titlebar Text Weight
     titleTxtItalic = false, --Titlebar Text Italic
     aTitleCol1 = Color(128, 0, 0), --Ative Titlebar Gradient Color
@@ -2253,7 +2253,7 @@ W98HUD:addTheme('rwb', 'Red, White, and Blue (VGA)', {
     winBgCol = Color(255, 255, 255), --Window Content Background Color
     winTxtCol = Color(0, 0, 0), --Window Text Color
 	msgFont = 'Times New Roman', -- Message Box Font
-    msgSize = sizeadd + 9, -- Message Box Font Size
+    msgSize = 15, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
     msgItalic = false -- Message Box Font Italic  
@@ -2270,7 +2270,7 @@ W98HUD:addTheme('rose_l', 'Rose (large)', {
     btnCol2 = Color(160, 96, 112), --Button Shadow
     titleSize = 28, --Titlebar Size
     titleTxtFont = 'Times New Roman', --Titlebar Font
-    titleTxtSize = sizeadd + 17, --Titlebar Font Size
+    titleTxtSize = 23, --Titlebar Font Size
     titleTxtWeight = 1, --Titlebar Text Weight
     titleTxtItalic = false, --Titlebar Text Italic
     aTitleCol1 = Color(160, 96, 112), --Ative Titlebar Gradient Color
@@ -2287,8 +2287,8 @@ W98HUD:addTheme('rose_l', 'Rose (large)', {
     selItemsCol2 = Color(255, 255, 255), --Selected Item (Highlight) Text Color
     winBgCol = Color(255, 255, 255), --Window Content Background Color
     winTxtCol = Color(0, 0, 0), --Window Text Color
-	msgFont = 'W95FA', -- Message Box Font
-    msgSize = 12, -- Message Box Font Size
+	msgFont = 'pix MS Sans Serif 12PT', -- Message Box Font
+    msgSize = bitsize + 8, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
     msgItalic = false -- Message Box Font Italic  
@@ -2305,7 +2305,7 @@ W98HUD:addTheme('rose', 'Rose', {
     btnCol2 = Color(160, 96, 112), --Button Shadow
     titleSize = 23, --Titlebar Size
     titleTxtFont = 'Times New Roman', --Titlebar Font
-    titleTxtSize = sizeadd + 14, --Titlebar Font Size
+    titleTxtSize = 20, --Titlebar Font Size
     titleTxtWeight = 1, --Titlebar Text Weight
     titleTxtItalic = false, --Titlebar Text Italic
     aTitleCol1 = Color(160, 96, 112), --Ative Titlebar Gradient Color
@@ -2322,8 +2322,8 @@ W98HUD:addTheme('rose', 'Rose', {
     selItemsCol2 = Color(255, 255, 255), --Selected Item (Highlight) Text Color
     winBgCol = Color(255, 255, 255), --Window Content Background Color
     winTxtCol = Color(0, 0, 0), --Window Text Color
-	msgFont = 'W95FA', -- Message Box Font
-    msgSize = sizeadd + 8, -- Message Box Font Size
+	msgFont = 'pix MS Sans Serif 8PT', -- Message Box Font
+    msgSize = bitsize, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
     msgItalic = false -- Message Box Font Italic  
@@ -2339,9 +2339,9 @@ W98HUD:addTheme('slate', 'Slate', {
     btnCol1 = Color(206, 220, 227), --Button Light
     btnCol2 = Color(85, 128, 151), --Button Shadow
     titleSize = 18, --Titlebar Size
-    titleTxtFont = 'W95FA', --Titlebar Font
-    titleTxtSize = sizeadd + 8, --Titlebar Font Size
-    titleTxtWeight = 1000, --Titlebar Text Weight
+    titleTxtFont = 'pix MS Sans Serif 8PT Bold', --Titlebar Font
+    titleTxtSize = bitsize, --Titlebar Font Size
+    titleTxtWeight = 1, --Titlebar Text Weight
     titleTxtItalic = false, --Titlebar Text Italic
     aTitleCol1 = Color(85, 128, 151), --Ative Titlebar Gradient Color
     aTitleCol2 = Color(85, 128, 151), --Active Titlebar Color
@@ -2357,8 +2357,8 @@ W98HUD:addTheme('slate', 'Slate', {
     selItemsCol2 = Color(255, 255, 255), --Selected Item (Highlight) Text Color
     winBgCol = Color(255, 255, 255), --Window Content Background Color
     winTxtCol = Color(0, 0, 0), --Window Text Color
-	msgFont = 'W95FA', -- Message Box Font
-    msgSize = sizeadd + 8, -- Message Box Font Size
+	msgFont = 'pix MS Sans Serif 8PT', -- Message Box Font
+    msgSize = bitsize, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
     msgItalic = false -- Message Box Font Italic  
@@ -2374,9 +2374,9 @@ W98HUD:addTheme('spruce', 'Spruce', {
     btnCol1 = Color(208, 227, 211), --Button Light
     btnCol2 = Color(89, 151, 100), --Button Shadow
     titleSize = 18, --Titlebar Size
-    titleTxtFont = 'W95FA', --Titlebar Font
-    titleTxtSize = sizeadd + 9, --Titlebar Font Size
-    titleTxtWeight = 1000, --Titlebar Text Weight
+    titleTxtFont = 'pix MS Sans Serif 9PT Bold', --Titlebar Font
+    titleTxtSize = bitsize, --Titlebar Font Size
+    titleTxtWeight = 1, --Titlebar Text Weight
     titleTxtItalic = false, --Titlebar Text Italic
     aTitleCol1 = Color(89, 151, 100), --Ative Titlebar Gradient Color
     aTitleCol2 = Color(89, 151, 100), --Active Titlebar Color
@@ -2392,8 +2392,8 @@ W98HUD:addTheme('spruce', 'Spruce', {
     selItemsCol2 = Color(255, 255, 255), --Selected Item (Highlight) Text Color
     winBgCol = Color(255, 255, 255), --Window Content Background Color
     winTxtCol = Color(0, 0, 0), --Window Text Color
-	msgFont = 'W95FA', -- Message Box Font
-    msgSize = sizeadd + 8, -- Message Box Font Size
+	msgFont = 'pix MS Sans Serif 8PT', -- Message Box Font
+    msgSize = bitsize, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
     msgItalic = false -- Message Box Font Italic  
@@ -2410,7 +2410,7 @@ W98HUD:addTheme('storm', 'Storm (VGA)', {
     btnCol2 = Color(128, 128, 128), --Button Shadow
     titleSize = 18, --Titlebar Size
     titleTxtFont = 'Arial', --Titlebar Font
-    titleTxtSize = sizeadd + 8, --Titlebar Font Size
+    titleTxtSize = 15, --Titlebar Font Size
     titleTxtWeight = 1000, --Titlebar Text Weight
     titleTxtItalic = false, --Titlebar Text Italic
     aTitleCol1 = Color(128, 0, 128), --Ative Titlebar Gradient Color
@@ -2428,7 +2428,7 @@ W98HUD:addTheme('storm', 'Storm (VGA)', {
     winBgCol = Color(255, 255, 255), --Window Content Background Color
     winTxtCol = Color(0, 0, 0), --Window Text Color
 	msgFont = 'Arial', -- Message Box Font
-    msgSize = sizeadd + 8, -- Message Box Font Size
+    msgSize = 14, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
     msgItalic = false -- Message Box Font Italic  
@@ -2444,9 +2444,9 @@ W98HUD:addTheme('teal', 'Teal (VGA)', {
     btnCol1 = Color(255, 255, 255), --Button Light
     btnCol2 = Color(128, 128, 128), --Button Shadow
     titleSize = 18, --Titlebar Size
-    titleTxtFont = 'W95FA', --Titlebar Font
-    titleTxtSize = sizeadd + 8, --Titlebar Font Size
-    titleTxtWeight = 1000, --Titlebar Text Weight
+    titleTxtFont = 'pix MS Sans Serif 8PT Bold', --Titlebar Font
+    titleTxtSize = bitsize, --Titlebar Font Size
+    titleTxtWeight = 1, --Titlebar Text Weight
     titleTxtItalic = false, --Titlebar Text Italic
     aTitleCol1 = Color(0, 128, 128), --Ative Titlebar Gradient Color
     aTitleCol2 = Color(0, 128, 128), --Active Titlebar Color
@@ -2462,8 +2462,8 @@ W98HUD:addTheme('teal', 'Teal (VGA)', {
     selItemsCol2 = Color(255, 255, 255), --Selected Item (Highlight) Text Color
     winBgCol = Color(255, 255, 255), --Window Content Background Color
     winTxtCol = Color(0, 0, 0), --Window Text Color
-	msgFont = 'W95FA', -- Message Box Font
-    msgSize = sizeadd + 8, -- Message Box Font Size
+	msgFont = 'pix MS Sans Serif 8PT', -- Message Box Font
+    msgSize = bitsize, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
     msgItalic = false -- Message Box Font Italic  
@@ -2479,9 +2479,9 @@ W98HUD:addTheme('wheat', 'Wheat', {
     btnCol1 = Color(240, 240, 208), --Button Light
     btnCol2 = Color(192, 192, 63), --Button Shadow
     titleSize = 18, --Titlebar Size
-    titleTxtFont = 'W95FA', --Titlebar Font
-    titleTxtSize = sizeadd + 8, --Titlebar Font Size
-    titleTxtWeight = 1000, --Titlebar Text Weight
+    titleTxtFont = 'pix MS Sans Serif 8PT Bold', --Titlebar Font
+    titleTxtSize = bitsize, --Titlebar Font Size
+    titleTxtWeight = 1, --Titlebar Text Weight
     titleTxtItalic = false, --Titlebar Text Italic
     aTitleCol1 = Color(128, 128, 0), --Ative Titlebar Gradient Color
     aTitleCol2 = Color(128, 128, 0), --Active Titlebar Color
@@ -2497,8 +2497,8 @@ W98HUD:addTheme('wheat', 'Wheat', {
     selItemsCol2 = Color(255, 255, 255), --Selected Item (Highlight) Text Color
     winBgCol = Color(255, 255, 255), --Window Content Background Color
     winTxtCol = Color(0, 0, 0), --Window Text Color
-	msgFont = 'W95FA', -- Message Box Font
-    msgSize = sizeadd + 8, -- Message Box Font Size
+	msgFont = 'pix MS Sans Serif 8PT', -- Message Box Font
+    msgSize = bitsize, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
     msgItalic = false -- Message Box Font Italic  
@@ -2515,7 +2515,7 @@ W98HUD:addTheme('default98_xl', 'Windows Standard (extra large)', {
     btnCol2 = Color(128, 128, 128), -- Button Shadow
     titleSize = 24, -- Titlebar Size
     titleTxtFont = 'Arial', -- Titlebar Font
-    titleTxtSize = sizeadd + 14, -- Titlebar Font Size
+    titleTxtSize = 21, -- Titlebar Font Size
     titleTxtWeight = 1000, -- Titlebar Text Weight
     titleTxtItalic = false, -- Titlebar Text Italic
     aTitleCol1 = Color(0, 0, 128), -- Ative Titlebar Gradient Color
@@ -2531,7 +2531,7 @@ W98HUD:addTheme('default98_xl', 'Windows Standard (extra large)', {
     selItemsCol1 = Color(0, 0, 128), -- Selected Item (Highlight) Color
     selItemsCol2 = Color(255, 255, 255), -- Selected Item (Highlight) Text Color
     msgFont = 'Arial', -- Message Box Font
-    msgSize = 12, -- Message Box Font Size
+    msgSize = 18, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
     msgItalic = false -- Message Box Font Italic
@@ -2547,9 +2547,9 @@ W98HUD:addTheme('default98_l', 'Windows Standard (large)', {
     btnCol1 = Color(255, 255, 255), -- Button Light
     btnCol2 = Color(128, 128, 128), -- Button Shadow
     titleSize = 22, -- Titlebar Size
-    titleTxtFont = 'W95FA', -- Titlebar Font
-    titleTxtSize = sizeadd + 12, -- Titlebar Font Size
-    titleTxtWeight = 1000, -- Titlebar Text Weight
+    titleTxtFont = 'pix MS Sans Serif 12PT Bold', -- Titlebar Font
+    titleTxtSize = bitsize + 8, -- Titlebar Font Size
+    titleTxtWeight = 1, -- Titlebar Text Weight
     titleTxtItalic = false, -- Titlebar Text Italic
     aTitleCol1 = Color(0, 0, 128), -- Ative Titlebar Gradient Color
     aTitleCol2 = Color(0, 0, 128), -- Active Titlebar Color
@@ -2563,8 +2563,8 @@ W98HUD:addTheme('default98_l', 'Windows Standard (large)', {
     iBorderCol = Color(192, 192, 192), -- Inactive Window Border Color
     selItemsCol1 = Color(0, 0, 128), -- Selected Item (Highlight) Color
     selItemsCol2 = Color(255, 255, 255), -- Selected Item (Highlight) Text Color
-    msgFont = 'W95FA', -- Message Box Font
-    msgSize = sizeadd + 9, -- Message Box Font Size
+    msgFont = 'pix MS Sans Serif 9PT', -- Message Box Font
+    msgSize = bitsize, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
     msgItalic = false -- Message Box Font Italic
@@ -2580,9 +2580,9 @@ W98HUD:addTheme('default_2k', 'Windows Classic', {
     btnCol1 = Color(255, 255, 255), --Button Light
     btnCol2 = Color(128, 128, 128), --Button Shadow
     titleSize = 18, --Titlebar Size
-    titleTxtFont = 'W95FA', --Titlebar Font
-    titleTxtSize = sizeadd + 8, --Titlebar Font Size
-    titleTxtWeight = 1000, --Titlebar Text Weight
+    titleTxtFont = 'pix MS Sans Serif 8PT Bold', --Titlebar Font
+    titleTxtSize = bitsize, --Titlebar Font Size
+    titleTxtWeight = 1, --Titlebar Text Weight
     titleTxtItalic = false, --Titlebar Text Italic
     aTitleCol1 = Color(166, 202, 240), --Ative Titlebar Gradient Color
     aTitleCol2 = Color(10, 36, 106), --Active Titlebar Color
@@ -2598,8 +2598,8 @@ W98HUD:addTheme('default_2k', 'Windows Classic', {
     selItemsCol2 = Color(255, 255, 255), --Selected Item (Highlight) Text Color
     winBgCol = Color(255, 255, 255), --Window Content Background Color
     winTxtCol = Color(0, 0, 0), --Window Text Color
-	msgFont = 'W95FA', -- Message Box Font
-    msgSize = sizeadd + 8, -- Message Box Font Size
+	msgFont = 'pix MS Sans Serif 8PT', -- Message Box Font
+    msgSize = bitsize, -- Message Box Font Size
     msgCol = Color(0, 0, 0), -- Message Box Font Colour
     msgWeight = 1, -- Message Box Font Weight
     msgItalic = false -- Message Box Font Italic  

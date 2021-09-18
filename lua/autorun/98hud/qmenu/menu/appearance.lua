@@ -14,8 +14,7 @@ local INACTIVE_WINDOW, ACTIVE_WINDOW = 'Inactive Window', 'Active Window'
 local MESSAGE_BOX, MESSAGE_TEXT = 'Message Box', 'Message text'
 local DEFAULT_COLOUR = Color(167, 171, 174)
 local BOLD, REGULAR = 1000, 0 -- font weights
-local SAVE_QUERY1 = 'Enter a name for your new scheme.'
-local SAVE_QUERY2 = 'Enter a file name to store your scheme into.'
+local SAVE_QUERY, OVERRIDE_QUERY = 'Enter a name for your new scheme.', 'There\'s already a scheme with this name and will be overwritten (or overridden). Are you sure?'
 local SAVED_MESSAGE = 'Scheme \'%s\' saved successfully!'
 local SAVE_ERROR = 'File names cannot contain \' / : * ? < > |'
 local DELETE_QUERY = 'Are you sure you want to delete this scheme?'
@@ -119,6 +118,19 @@ local function setValuePure(control, value)
 end
 
 --[[------------------------------------------------------------------
+  Functions used by the 'Save as' button to save a new scheme
+  @param {table} cache
+  @param {Panel} sheet
+  @param {string} name
+]]--------------------------------------------------------------------
+local function saveScheme(cache, sheet, name)
+  W98HUD:applyChanges(cache.parameters, cache.sounds, string.lower(name))
+  W98HUD:saveAs(name)
+  LocalPlayer():ChatPrint(string.format(SAVED_MESSAGE, name))
+  sheet:GetParent():Close() -- close frame
+end
+
+--[[------------------------------------------------------------------
   Creates the appereance editor menu
   @param {Panel} parent panel
   @param {table} cache table
@@ -195,31 +207,30 @@ function W98HUD.CreateAppereanceMenu(sheet, cache)
   save.DoClick = function()
     local _, _theme = scheme:GetControl():GetSelected()
     local theme = W98HUD:getTheme(_theme)
-    local name, fileName = '', ''
+    local name = ''
     if _theme and theme and not theme.pure then -- if custom scheme is being edited, ease overwrite
       name = theme.name
-      fileName = _theme
     end
 
     -- do questions
-    Derma_StringRequest(SAVE_AS, SAVE_QUERY1, name, function(_name)
-      Derma_StringRequest(SAVE_AS, SAVE_QUERY2, fileName, function(_fileName)
-        local illegal = string.len(string.Trim(_fileName)) <= 0
-        for _, char in pairs(ILLEGAL_CHARACTERS) do
-          if string.find(_fileName, char) then
-            illegal = true
-            break
-          end
+    Derma_StringRequest(SAVE_AS, SAVE_QUERY, name, function(_name)
+      local illegal = string.len(string.Trim(_name)) <= 0
+      for _, char in pairs(ILLEGAL_CHARACTERS) do
+        if string.find(_name, char) then
+          illegal = true
+          break
         end
-        if illegal then
-          Derma_Message(SAVE_ERROR, SAVE_AS, OK)
+      end
+      if illegal then
+        Derma_Message(SAVE_ERROR, SAVE_AS, OK)
+      else
+        -- check override
+        if W98HUD:getTheme(string.lower(_name)) then
+          Derma_Query(OVERRIDE_QUERY, SAVE_AS, YES, function() saveScheme(cache, sheet, _name) end, NO)
         else
-          W98HUD:applyChanges(cache.parameters, cache.sounds, _fileName)
-          W98HUD:saveAs(_fileName, _name)
-          LocalPlayer():ChatPrint(string.format(SAVED_MESSAGE, _name))
-          sheet:GetParent():Close() -- close frame
+          saveScheme(cache, sheet, _name)
         end
-      end)
+      end
     end)
   end
 

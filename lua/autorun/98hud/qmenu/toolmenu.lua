@@ -41,8 +41,5 @@ hook.Add('PopulateToolMenu', UID, function()
       panel:ControlHelp(credit[2])
     end
     panel:Help('\n' .. W98HUD.date)
-    -- development version notice
-    panel:Help('\nBeta version')
-    panel:ControlHelp('Main features are implemented but bugs may occur')
   end)
 end)

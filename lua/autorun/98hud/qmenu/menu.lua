@@ -36,6 +36,7 @@ end
   Opens the sounds options panel
   @param {DPanel} parent panel
   @return {DPanel} panel
+  @deprecated
 ]]--------------------------------------------------------------------
 local function sounds(sheet)
   -- create container
@@ -67,7 +68,7 @@ local function menu()
 
   -- add sheets
   sheet:AddSheet(APPEARANCE, W98HUD.CreateAppereanceMenu(sheet, cache))
-  sheet:AddSheet(SOUNDS, sounds(sheet))
+  -- sheet:AddSheet(SOUNDS, sounds(sheet))
 
   -- accept button
   local accept = button(frame, frame:GetWide() - sheet.x - (BUTTON_WIDTH * 3) - (BUTTON_MARGIN * 2), sheet.y + sheet:GetTall() + sheet.x, OK)
