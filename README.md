@@ -9,7 +9,6 @@ Heads up display addon for Garry's Mod mimicking the Windows 95 and 98 user inte
 
 ## Customization includes
 +   Toggle HUD
-+   Change scale
 +   Scheme selection
 +   Scheme editing
 +   Custom scheme creation
