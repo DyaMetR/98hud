@@ -40,3 +40,10 @@ for convar, default in pairs(CONVARS) do
   -- add it to the W98 API
   W98HUD['Get' .. string.upper(string.sub(convar, 1, 1)) .. string.sub(convar, 2) .. 'ConVar'] = func
 end
+
+-- reset command
+concommand.Add(PREFIX .. 'reset', function(_player, _, _)
+  for convar, value in pairs(CONVARS) do
+    RunConsoleCommand(PREFIX .. convar, value)
+  end
+end)

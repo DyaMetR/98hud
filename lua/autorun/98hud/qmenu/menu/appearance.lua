@@ -14,11 +14,11 @@ local INACTIVE_WINDOW, ACTIVE_WINDOW = 'Inactive Window', 'Active Window'
 local MESSAGE_BOX, MESSAGE_TEXT = 'Message Box', 'Message text'
 local DEFAULT_COLOUR = Color(167, 171, 174)
 local BOLD, REGULAR = 1000, 0 -- font weights
-local SAVE_QUERY, OVERRIDE_QUERY = 'Enter a name for your new scheme.', 'There\'s already a scheme with this name and will be overwritten (or overridden). Are you sure?'
+local SAVE_QUERY, OVERRIDE_QUERY = 'Enter a name for your new scheme.', 'There\'s already a scheme with this name and will be overwritten. Are you sure?'
 local SAVED_MESSAGE = 'Scheme \'%s\' saved successfully!'
 local SAVE_ERROR = 'File names cannot contain \' / : * ? < > |'
 local DELETE_QUERY = 'Are you sure you want to delete this scheme?'
-local DELETE_ERROR = 'Default scheme \'%s\' cannot be deleted.'
+local DELETE_ERROR, OVERRIDE_ERROR = 'Default scheme \'%s\' cannot be deleted.', 'Using this name would overwrite default scheme \'%s\'.\nPlease choose a different name for your scheme.'
 local DELETED_MESSAGE = 'Scheme \'%s\' has been deleted.'
 local YES, NO, OK = 'Yes', 'No', 'OK'
 local ILLEGAL_CHARACTERS = {'\'', '/', ':', '*', '?', '"', '<', '>', '|'}
@@ -224,9 +224,14 @@ function W98HUD.CreateAppereanceMenu(sheet, cache)
       if illegal then
         Derma_Message(SAVE_ERROR, SAVE_AS, OK)
       else
+        local theme = W98HUD:getTheme(string.lower(_name))
         -- check override
-        if W98HUD:getTheme(string.lower(_name)) then
-          Derma_Query(OVERRIDE_QUERY, SAVE_AS, YES, function() saveScheme(cache, sheet, _name) end, NO)
+        if theme then
+          if not theme.pure then -- only allow overwriting user schemes
+            Derma_Query(OVERRIDE_QUERY, SAVE_AS, YES, function() saveScheme(cache, sheet, _name) end, NO)
+          else
+            Derma_Message(string.format(OVERRIDE_ERROR, theme.name), SAVE_AS, OK)
+          end
         else
           saveScheme(cache, sheet, _name)
         end

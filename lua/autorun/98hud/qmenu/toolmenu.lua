@@ -32,6 +32,7 @@ hook.Add('PopulateToolMenu', UID, function()
     ammo:AddChoice('Segmented', 3)
     ammo:AddChoice('Segmented InstallShield Wizard', 4)
 
+    panel:Button('Reset to default', '98hud_reset')
     panel:Help('') -- separator
     panel:Button('Open display settings', '98hud_menu')
     panel:Help('\nCredits') -- separator
