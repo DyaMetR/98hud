@@ -11,7 +11,7 @@ W98HUD = {}
 
 if CLIENT then
   -- addon information
-  W98HUD.name = '98HUD'
+  W98HUD.name = '9XHUD'
   W98HUD.category = 'DyaMetR'
   W98HUD.version = '2'
   W98HUD.date = 'September 24th, 2021'
