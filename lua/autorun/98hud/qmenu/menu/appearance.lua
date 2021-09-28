@@ -243,7 +243,7 @@ function W98HUD.CreateAppereanceMenu(sheet, cache)
   local delete = button(parent, DELETE, x + scheme:GetWide() + save:GetWide() + 10, y + labelMargin, buttonWidth)
   delete.DoClick = function()
     local _, _theme = scheme:GetControl():GetSelected()
-    if not _theme then return end -- ignore invalid selections
+    if not _theme or string.len(_theme) <= 0 then return end -- ignore invalid selections
     local theme = W98HUD:getTheme(_theme)
     if theme.pure then
       Derma_Message(string.format(DELETE_ERROR, theme.name), DELETE)

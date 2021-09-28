@@ -1,7 +1,7 @@
 --[[------------------------------------------------------------------
   Windows 98 styled HUD
-  Version 2
-  September 24th, 2021
+  Version 2.0.1
+  September 28th, 2021
 
   Made by DyaMetR
   * full credits found in the details below
@@ -13,8 +13,8 @@ if CLIENT then
   -- addon information
   W98HUD.name = '9XHUD'
   W98HUD.category = 'DyaMetR'
-  W98HUD.version = '2'
-  W98HUD.date = 'September 24th, 2021'
+  W98HUD.version = '2.0.1'
+  W98HUD.date = 'September 28th, 2021'
   W98HUD.credits = { -- {name, contribution}
     {'DyaMetR', 'Developer'},
     {'Matsilagi', 'Reference material\nPorting all 75 themes\nTesting'},
