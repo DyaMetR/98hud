@@ -1,11 +1,14 @@
 {
-"title"	:	"9XHUD",
-"type"	:	"effects",
-"tags"	:	[ "fun","movie" ],
-"ignore"	:
-[
-"*.psd",
-"*.vcproj",
-"*.svn*"
-]
+	"title"	:	"9XHUD",
+	"type"	:	"effects",
+	"tags"	:	[ "fun", "movie" ],
+	"ignore"	:
+	[
+		"*.psd",
+		"*.vcproj",
+		"*.svn*",
+		"*.git*",
+		"LICENSE",
+		"README.md"
+	]
 }

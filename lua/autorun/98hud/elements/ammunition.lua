@@ -61,9 +61,8 @@ W98HUD:register(function()
   -- get weapon variables
   local weapon = LocalPlayer():GetActiveWeapon()
   if not IsValid(weapon) then return end -- hide if weapon is invalid
-  local primary, secondary = weapon:GetPrimaryAmmoType(), weapon:GetSecondaryAmmoType()
-  if primary <= 0 and secondary <= 0 then return end -- hide if weapon does not use ammo
-  local clip, reserve, alt = weapon:Clip1(), LocalPlayer():GetAmmoCount(primary), LocalPlayer():GetAmmoCount(secondary)
+	local isValid, primary, secondary, clip, reserve, alt = W98HUD:ammo(weapon)
+  if not isValid then return end -- hide if the ammunition is not valid
   local maxClip, maxReserve, maxAlt = weapon:GetMaxClip1(), game.GetAmmoMax(primary), game.GetAmmoMax(secondary)
   local isSegmented = mode >= 3 -- whether the bars are segmented
   local title = TITLE_WINDOWNAME
@@ -87,16 +86,6 @@ W98HUD:register(function()
 
   -- separate title and extension with dot
   if string.len(extension) > 0 then title = TITLE .. '.' .. extension end
-
-  -- use alt as reserve if the weapon only uses alt ammunition
-  if primary <= 0 then
-    reserve = alt
-    maxReserve = maxAlt
-    secondary = 0
-    maxAlt = 0
-    clip = -1
-    maxClip = -1
-  end
 
   -- change colours while out of ammo
   if reserve <= 0 and clip <= 0 and alt <= 0 then

@@ -53,6 +53,7 @@ W98HUD:include('core/parameters.lua')
 W98HUD:include('core/sounds.lua')
 W98HUD:include('core/persistance.lua')
 W98HUD:include('core/util.lua')
+W98HUD:include('core/ammunition.lua')
 
 -- include core default implementation
 W98HUD:include('data/items.lua')
